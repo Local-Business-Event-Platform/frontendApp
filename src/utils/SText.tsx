@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
   },
   H3xlHeight: {
     height: SWidth * 56,
-
     justifyContent: 'center',
   },
   H2xlHeight: {
@@ -142,39 +141,46 @@ const styles = StyleSheet.create({
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 60,
     lineHeight: SWidth * 60,
+    letterSpacing: -0.2,
     includeFontPadding: false,
   },
   H3xlFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 48,
     lineHeight: SWidth * 48,
+    letterSpacing: -0.2,
     includeFontPadding: false,
   },
   H2xlFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 40,
     lineHeight: SWidth * 40,
+    letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HxlFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 36,
     lineHeight: SWidth * 36,
+    letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HlgFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 28,
+    letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HmdFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 24,
+    letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HsmFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 20,
+    letterSpacing: -0.2,
     includeFontPadding: false,
   },
   BlgSbFontSize: {

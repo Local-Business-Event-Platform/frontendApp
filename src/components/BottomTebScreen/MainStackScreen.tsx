@@ -1,6 +1,7 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginPage from '../../screen/LoginPage';
 import MainPage from '../../screen/MainPage';
+import BottomTeb from './BottomTeb';
 
 const MainStackScreen = () => {
   const Stack = createNativeStackNavigator();
@@ -23,6 +24,15 @@ const MainStackScreen = () => {
       <Stack.Screen
         name="main"
         component={MainPage}
+        options={{
+          title: '',
+          headerShown: false,
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="bottomTeb"
+        component={BottomTeb}
         options={{
           title: '',
           headerShown: false,
