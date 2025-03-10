@@ -8,19 +8,14 @@ const MainStackScreen = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName="login"
+      initialRouteName="main"
       screenOptions={{
         headerShown: false,
+        statusBarBackgroundColor: 'white',
+        statusBarStyle: 'dark',
+        navigationBarColor: 'white',
+        contentStyle: {backgroundColor: 'white'},
       }}>
-      <Stack.Screen
-        name="login"
-        component={LoginPage}
-        options={{
-          title: '',
-          headerShown: false,
-          headerShadowVisible: false,
-        }}
-      />
       <Stack.Screen
         name="main"
         component={MainPage}
@@ -30,6 +25,16 @@ const MainStackScreen = () => {
           headerShadowVisible: false,
         }}
       />
+      <Stack.Screen
+        name="login"
+        component={LoginPage}
+        options={{
+          title: '',
+          headerShown: false,
+          headerShadowVisible: false,
+        }}
+      />
+
       <Stack.Screen
         name="bottomTeb"
         component={BottomTeb}

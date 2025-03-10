@@ -52,8 +52,8 @@ export const fontFamilies = {
 } as const;
 
 export const basicDimensions = {
-  height: 767,
-  width: 320,
+  height: 874,
+  width: 402,
 };
 
 export const SHeight = // 높이 변환 작업

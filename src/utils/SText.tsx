@@ -22,9 +22,19 @@ type STextProps = {
     | 'BsmRg';
   color?: ColorValue;
   text: string | number;
+  textDecorationLine?:
+    | 'none'
+    | 'underline'
+    | 'line-through'
+    | 'underline line-through';
 };
 
-const SText = ({fStyle, color, text}: STextProps) => {
+const SText = ({
+  fStyle,
+  color = '#000000',
+  text,
+  textDecorationLine,
+}: STextProps) => {
   const boxHeightList = {
     H4xl: styles.H4xlHeight,
     H3xl: styles.H3xlHeight,
@@ -65,7 +75,9 @@ const SText = ({fStyle, color, text}: STextProps) => {
 
   return (
     <View style={boxHeightList[fStyle]}>
-      <Text style={[fontSizeList[fStyle], {color}]}>{text}</Text>
+      <Text style={[fontSizeList[fStyle], {color, textDecorationLine}]}>
+        {text}
+      </Text>
     </View>
   );
 };
