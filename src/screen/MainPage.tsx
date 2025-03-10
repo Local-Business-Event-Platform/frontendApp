@@ -20,9 +20,11 @@ const MainPage = () => {
           style={[styles.buttonStyle, {backgroundColor: '#155DFC'}]}>
           <SText fStyle="BlgSb" text={'로그인'} color={'white'} />
         </Pressable>
-        <View style={[styles.buttonStyle, {backgroundColor: '#FAFAFA'}]}>
+        <Pressable
+          onPress={() => navigation.navigate('join')}
+          style={[styles.buttonStyle, {backgroundColor: '#FAFAFA'}]}>
           <SText fStyle="BlgSb" text={'회원가입'} />
-        </View>
+        </Pressable>
       </View>
     </View>
   );
