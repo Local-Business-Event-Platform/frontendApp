@@ -1,22 +1,47 @@
-import React from 'react';
+import {ParamListBase, useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../globalStyle';
 import SButton from '../components/Elements/SButton';
-import TermsCheck from '../components/TermsOfUse/TermsCheck';
-import TermsTitle from '../components/TermsOfUse/TermsTitle';
+import JoinTitle from '../components/Join/JoinTitle';
+import TermsCheck from '../components/Join/TermsOfUse/TermsCheck';
 
 const TermsOfUsePage = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const [isChecked, setIsChecked] = useState(false);
+  const [checkList, setCheckList] = useState({
+    check1: false,
+    check2: false,
+    check3: false,
+    check4: false,
+  });
+
+  const handleCheck = () => {
+    if (checkList.check1 && checkList.check2) {
+      navigation.navigate('joinUser');
+    } else {
+      console.log('약관에 모두 동의해주세요');
+    }
+    console.log(checkList);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <TermsTitle />
-        <TermsCheck />
+        <JoinTitle title1="ㅇㅇ 이용 약관에" title2="동의해 주세요" />
+        <TermsCheck
+          isChecked={isChecked}
+          setIsChecked={setIsChecked}
+          setCheckList={setCheckList}
+          checkList={checkList}
+        />
       </View>
       <SButton
         ButtonColor={'#155DFC'}
         title="동의하고 본인 인증하기"
         textColor={'#FFFFFF'}
-        onPress={() => {}}
+        onPress={handleCheck}
       />
     </View>
   );

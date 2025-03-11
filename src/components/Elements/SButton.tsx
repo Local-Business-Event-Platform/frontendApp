@@ -1,14 +1,8 @@
 import React from 'react';
-import {ColorValue, Pressable, StyleSheet} from 'react-native';
+import {Pressable, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
+import {SButtonProps} from '../../utils/types/type';
 import SText from './SText';
-
-type SButtonProps = {
-  onPress: () => void;
-  ButtonColor: ColorValue;
-  title: string;
-  textColor: ColorValue;
-};
 
 const SButton = ({onPress, ButtonColor, title, textColor}: SButtonProps) => {
   return (

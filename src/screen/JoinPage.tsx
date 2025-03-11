@@ -1,14 +1,14 @@
 import {ParamListBase, useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../globalStyle';
 import JoinSelectedButton from '../components/Join/JoinSelectedButton';
 
 const JoinPage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.selectBoxContainer}>
         <JoinSelectedButton
           title="사용자 회원가입"
@@ -21,7 +21,7 @@ const JoinPage = () => {
           onPress={() => {}}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

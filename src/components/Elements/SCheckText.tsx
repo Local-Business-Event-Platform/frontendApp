@@ -2,33 +2,9 @@ import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import RightArrow24 from '../../utils/svgs/RightArrow24';
+import {SCheckTextProps} from '../../utils/types/type';
 import SCheckBox from './SCheckBox';
 import SText from './SText';
-
-type SCheckTextProps = {
-  checkValue: boolean;
-  onPress: () => void;
-  arrowOnPress?: () => void;
-  fStyle:
-    | 'H4xl'
-    | 'H3xl'
-    | 'H2xl'
-    | 'Hxl'
-    | 'Hlg'
-    | 'Hmd'
-    | 'Hsm'
-    | 'BlgSb'
-    | 'BlgMd'
-    | 'BlgRg'
-    | 'BmdSb'
-    | 'BmdMd'
-    | 'BmdRg'
-    | 'BsmSb'
-    | 'BsmMd'
-    | 'BsmRg';
-  title: string;
-  arrow?: boolean;
-};
 
 const SCheckText = ({
   checkValue,

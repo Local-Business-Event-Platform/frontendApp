@@ -1,13 +1,8 @@
 import React from 'react';
-import {ColorValue, Pressable, StyleSheet} from 'react-native';
+import {Pressable, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
+import {JoinSelectedButtonProps} from '../../utils/types/joinType';
 import SText from '../Elements/SText';
-
-type JoinSelectedButtonProps = {
-  onPress: () => void;
-  title: string;
-  backgroundColor: ColorValue;
-};
 
 const JoinSelectedButton = ({
   onPress,

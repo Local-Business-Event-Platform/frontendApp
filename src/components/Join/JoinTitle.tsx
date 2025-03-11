@@ -1,18 +1,19 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
+import {JoinTitleProps} from '../../utils/types/joinType';
 import SText from '../Elements/SText';
 
-const TermsTitle = () => {
+const JoinTitle = ({title1, title2}: JoinTitleProps) => {
   return (
     <View style={styles.container}>
-      <SText fStyle="Hmd" text={'ㅇㅇ 이용 약관에'} />
-      <SText fStyle="Hmd" text={'동의해 주세요'} />
+      <SText fStyle="Hmd" text={title1} />
+      <SText fStyle="Hmd" text={title2} />
     </View>
   );
 };
 
-export default TermsTitle;
+export default JoinTitle;
 
 const styles = StyleSheet.create({
   container: {

@@ -1,5 +1,7 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Address from '../../screen/Address';
 import JoinPage from '../../screen/JoinPage';
+import JoinUserPage from '../../screen/JoinUserPage';
 import LoginPage from '../../screen/LoginPage';
 import MainPage from '../../screen/MainPage';
 import TermsOfUsePage from '../../screen/TermsOfUsePage';
@@ -42,6 +44,27 @@ const MainStackScreen = () => {
         }}
       />
       <Stack.Screen
+        name="joinUser"
+        component={JoinUserPage}
+        options={{
+          header() {
+            return <BackTitleAppBar title="사용자 회원가입" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="address"
+        component={Address}
+        options={{
+          title: '',
+          headerShown: false,
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
         name="main"
         component={MainPage}
         options={{
@@ -50,7 +73,6 @@ const MainStackScreen = () => {
           headerShadowVisible: false,
         }}
       />
-
       <Stack.Screen
         name="join"
         component={JoinPage}

@@ -2,15 +2,12 @@ import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import Check from '../../utils/svgs/Check';
-
-type SCheckBoxProps = {
-  checkValue: boolean;
-  onPress: () => void;
-};
+import {SCheckBoxProps} from '../../utils/types/type';
 
 const SCheckBox = ({checkValue, onPress}: SCheckBoxProps) => {
   return (
     <Pressable
+      hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}
       style={[
         styles.container,
         {
