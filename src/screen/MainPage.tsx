@@ -2,18 +2,12 @@ import {ParamListBase, useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {Text} from 'react-native-gesture-handler';
 import {SWidth} from '../../globalStyle';
-import SText from '../utils/SText';
+import SText from '../components/Elements/SText';
 const MainPage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   return (
     <View style={styles.container}>
-      <View style={{width: '100%', paddingHorizontal: SWidth * 19}}>
-        <View style={styles.logoStyle}>
-          <Text>로고</Text>
-        </View>
-      </View>
       <View style={styles.buttonContainer}>
         <Pressable
           onPress={() => navigation.navigate('login')}
@@ -39,15 +33,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: SWidth * 16,
     paddingBottom: SWidth * 32,
-  },
-
-  logoStyle: {
-    marginTop: SWidth * 84,
-    width: '100%',
-    height: SWidth * 444,
-    backgroundColor: '#F5F5F5',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 
   buttonContainer: {

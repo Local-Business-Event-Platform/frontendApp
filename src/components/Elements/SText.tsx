@@ -1,6 +1,6 @@
 import React from 'react';
 import {ColorValue, StyleSheet, Text, View} from 'react-native';
-import {fontFamilies, SWidth} from '../../globalStyle';
+import {fontFamilies, SWidth} from '../../../globalStyle';
 
 type STextProps = {
   fStyle:
@@ -21,6 +21,9 @@ type STextProps = {
     | 'BsmMd'
     | 'BsmRg';
   color?: ColorValue;
+  nLine?: number;
+  flexShrink?: number;
+  lineHeight?: number;
   text: string | number;
   textDecorationLine?:
     | 'none'
@@ -31,7 +34,10 @@ type STextProps = {
 
 const SText = ({
   fStyle,
-  color = '#000000',
+  color = '#171717',
+  nLine,
+  flexShrink,
+  lineHeight,
   text,
   textDecorationLine,
 }: STextProps) => {
@@ -74,11 +80,26 @@ const SText = ({
   };
 
   return (
-    <View style={boxHeightList[fStyle]}>
-      <Text style={[fontSizeList[fStyle], {color, textDecorationLine}]}>
-        {text}
-      </Text>
-    </View>
+    <>
+      {!flexShrink ? (
+        <View style={boxHeightList[fStyle]}>
+          {
+            <Text style={[fontSizeList[fStyle], {color, textDecorationLine}]}>
+              {text}
+            </Text>
+          }
+        </View>
+      ) : (
+        <Text
+          numberOfLines={nLine}
+          style={[
+            fontSizeList[fStyle],
+            {color, textDecorationLine, flexShrink, lineHeight},
+          ]}>
+          {text}
+        </Text>
+      )}
+    </>
   );
 };
 

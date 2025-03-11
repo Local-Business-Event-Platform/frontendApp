@@ -2,7 +2,7 @@ import React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import {SWidth} from '../../../globalStyle';
 
-const JoinBackArrow = () => {
+const AppBarBackArrow = () => {
   return (
     <Svg
       width={SWidth * 25}
@@ -17,4 +17,4 @@ const JoinBackArrow = () => {
   );
 };
 
-export default JoinBackArrow;
+export default AppBarBackArrow;

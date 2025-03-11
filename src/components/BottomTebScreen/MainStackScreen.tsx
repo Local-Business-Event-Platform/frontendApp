@@ -2,6 +2,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import JoinPage from '../../screen/JoinPage';
 import LoginPage from '../../screen/LoginPage';
 import MainPage from '../../screen/MainPage';
+import TermsOfUsePage from '../../screen/TermsOfUsePage';
+import BackTitleAppBar from './AppBar/BackTitleAppBar';
 import JoinAppBar from './AppBar/JoinAppBar';
 import BottomTeb from './BottomTeb';
 
@@ -10,7 +12,7 @@ const MainStackScreen = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName="main"
+      initialRouteName="login"
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: 'white',
@@ -18,15 +20,6 @@ const MainStackScreen = () => {
         navigationBarColor: 'white',
         contentStyle: {backgroundColor: 'white'},
       }}>
-      <Stack.Screen
-        name="main"
-        component={MainPage}
-        options={{
-          title: '',
-          headerShown: false,
-          headerShadowVisible: false,
-        }}
-      />
       <Stack.Screen
         name="login"
         component={LoginPage}
@@ -37,6 +30,28 @@ const MainStackScreen = () => {
         }}
       />
       <Stack.Screen
+        name="terms"
+        component={TermsOfUsePage}
+        options={{
+          header() {
+            return <BackTitleAppBar title="사용자 회원가입" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="main"
+        component={MainPage}
+        options={{
+          title: '',
+          headerShown: false,
+          headerShadowVisible: false,
+        }}
+      />
+
+      <Stack.Screen
         name="join"
         component={JoinPage}
         options={{
@@ -45,7 +60,6 @@ const MainStackScreen = () => {
           },
           headerShown: true,
           title: '',
-
           headerShadowVisible: false,
         }}
       />

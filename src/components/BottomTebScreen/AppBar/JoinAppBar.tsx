@@ -2,13 +2,13 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
-import JoinBackArrow from '../../../utils/svgs/JoinBackArrow';
+import AppBarBackArrow from '../../../utils/svgs/AppBarBackArrow';
 
 const JoinAppBar = () => {
   const navigate = useNavigation();
   return (
     <Pressable onPress={() => navigate.goBack()} style={styles.container}>
-      <JoinBackArrow />
+      <AppBarBackArrow />
     </Pressable>
   );
 };

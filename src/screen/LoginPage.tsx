@@ -1,56 +1,62 @@
 import {ParamListBase, useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import React from 'react';
-import {Keyboard, Pressable, StyleSheet, TextInput, View} from 'react-native';
+import React, {useState} from 'react';
+import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../globalStyle';
-import SText from '../utils/SText';
+import SButton from '../components/Elements/SButton';
+import SInput from '../components/Elements/SInput';
+import FindUser from '../components/Login/FindUser';
+import Logo from '../components/Login/Logo';
 
 const LoginPage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const [userData, setUserData] = useState({
+    id: '',
+    password: '',
+  });
   return (
     <Pressable style={styles.container} onPress={() => Keyboard.dismiss()}>
-      <View style={styles.inputContainer}>
-        <View style={styles.inputItemContainer}>
-          <SText fStyle="BmdMd" text={'아이디'} />
-          <TextInput style={styles.inputStyle} placeholder="Placeholder" />
-        </View>
-        <View style={styles.inputItemContainer}>
-          <SText fStyle="BmdMd" text={'비밀번호'} />
-          <TextInput style={styles.inputStyle} placeholder="Placeholder" />
+      <View style={styles.topContainer}>
+        <Logo />
+        <View style={styles.inputContainer}>
+          <SInput
+            title="아이디"
+            value={userData.id}
+            onChangeText={() =>
+              setUserData({
+                ...userData,
+                id: userData.id,
+              })
+            }
+          />
+          <SInput
+            title="비밀번호"
+            value={userData.password}
+            onChangeText={() =>
+              setUserData({
+                ...userData,
+                password: userData.password,
+              })
+            }
+          />
         </View>
       </View>
       <View style={styles.BottomContainer}>
-        <View style={{flexDirection: 'row'}}>
-          <SText
-            fStyle="BlgSb"
-            text={'아이디'}
-            color={'#155DFC'}
-            textDecorationLine="underline"
+        <FindUser onPress={() => {}} />
+        <View style={styles.buttonContainer}>
+          <SButton
+            title="로그인"
+            textColor={'#FFFFFF'}
+            ButtonColor={'#155DFC'}
+            onPress={() => {}}
           />
-          <SText
-            fStyle="BlgSb"
-            text={' 또는 '}
-            color={'#A1A1A1'}
-            textDecorationLine="underline"
-          />
-          <SText
-            fStyle="BlgSb"
-            text={'비밀번호'}
-            color={'#155DFC'}
-            textDecorationLine="underline"
-          />
-          <SText
-            fStyle="BlgSb"
-            text={'를 잊으셨나요?'}
-            color={'#A1A1A1'}
-            textDecorationLine="underline"
+          <SButton
+            title="회원가입"
+            textColor={'#404040'}
+            ButtonColor={'#FAFAFA'}
+            onPress={() => navigation.navigate('join')}
           />
         </View>
-        <Pressable
-          onPress={() => navigation.navigate('login')}
-          style={[styles.buttonStyle, {backgroundColor: '#155DFC'}]}>
-          <SText fStyle="BlgSb" text={'로그인'} color={'white'} />
-        </Pressable>
       </View>
     </Pressable>
   );
@@ -67,24 +73,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  inputContainer: {
-    marginTop: SWidth * 66,
+  topContainer: {
+    marginTop: SWidth * 54,
     paddingHorizontal: SWidth * 8,
+    width: '100%',
+  },
+
+  inputContainer: {
+    marginTop: SWidth * 42,
     gap: SWidth * 32,
-    width: '100%',
-  },
-
-  inputItemContainer: {
-    width: '100%',
-    gap: SWidth * 8,
-  },
-
-  inputStyle: {
-    borderWidth: 1,
-    borderColor: '#E5E5E5',
-    borderRadius: SWidth * 8,
-    height: SWidth * 48,
-    paddingHorizontal: SWidth * 12,
   },
 
   BottomContainer: {
@@ -93,11 +90,8 @@ const styles = StyleSheet.create({
     gap: SWidth * 24,
   },
 
-  buttonStyle: {
+  buttonContainer: {
     width: '100%',
-    height: SWidth * 56,
-    borderRadius: SWidth * 8,
-    alignItems: 'center',
-    justifyContent: 'center',
+    gap: SWidth * 8,
   },
 });
