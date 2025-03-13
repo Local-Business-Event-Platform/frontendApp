@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
-import Check from '../../utils/svgs/Check';
+import Check from '../../utils/svgs/auth/Check';
 import {SCheckBoxProps} from '../../utils/types/type';
 
 const SCheckBox = ({checkValue, onPress}: SCheckBoxProps) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
-import {SWidth} from '../../../globalStyle';
+import {SWidth} from '../../../../globalStyle';
 
 const RightArrow24 = () => {
   return (

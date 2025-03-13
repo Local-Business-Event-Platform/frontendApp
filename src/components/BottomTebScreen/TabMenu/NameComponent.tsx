@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {colors, fontFamilies} from '../../../../globalStyle';
+import {StyleSheet, View} from 'react-native';
+import {SWidth} from '../../../../globalStyle';
+import SText from '../../Elements/SText';
 
 type NameComponentProps = {
   focused: boolean;
@@ -10,18 +11,11 @@ type NameComponentProps = {
 const NameComponent = ({focused, name}: NameComponentProps) => {
   return (
     <View style={styles.container}>
-      {/* <FText
-        fStyle="B_12"
-        color={focused ? colors.text : colors.disabled}
+      <SText
+        fStyle="BsmMd"
         text={name}
-      /> */}
-      <Text
-        style={[
-          styles.textStyle,
-          {color: `${focused ? colors.text : colors.disabled}`},
-        ]}>
-        {name}
-      </Text>
+        color={focused ? '#1447E6' : '#404040'}
+      />
     </View>
   );
 };
@@ -30,13 +24,6 @@ export default NameComponent;
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 4,
-    // paddingVertical: 2,
-    // paddingHorizontal: 8,
-  },
-
-  textStyle: {
-    fontFamily: fontFamilies.pretendardBold,
-    fontSize: 11,
+    marginTop: SWidth * 2,
   },
 });

@@ -72,5 +72,8 @@ export type SInputProps = {
   value: string;
   onChangeText: (text: string) => void;
   editable?: boolean;
+  secureTextEntry?: boolean;
   placeholder?: string;
+  iconOn?: boolean;
+  iconOnPress?: () => void;
 };

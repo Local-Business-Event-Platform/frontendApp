@@ -1,26 +1,36 @@
 import {ParamListBase, useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import React, {useState} from 'react';
+import React from 'react';
 import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
-import {SWidth} from '../../globalStyle';
-import SButton from '../components/Elements/SButton';
-import SInput from '../components/Elements/SInput';
-import SText from '../components/Elements/SText';
-import JoinTitle from '../components/Join/JoinTitle';
-import JoinInputButton from '../components/Join/JoinUser/JoinInputButton';
-import {useAddress} from '../store/addressRoute';
+import {SWidth} from '../../../globalStyle';
+import SButton from '../../components/Elements/SButton';
+import SInput from '../../components/Elements/SInput';
+import SText from '../../components/Elements/SText';
+import JoinTitle from '../../components/Join/JoinTitle';
+import JoinInputButton from '../../components/Join/JoinUser/JoinInputButton';
+import {useUserData} from '../../store/addressRoute';
 
 const JoinUserPage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
-  const {userAddress} = useAddress();
-  const [userData, setUserData] = useState({
-    name: '',
-    phone: '',
-    zonecode: userAddress.zonecode,
-    address: `${userAddress.address} ${userAddress.buildingName}`,
-    detailAddress: '',
-  });
+  const {userData, setUserData} = useUserData();
+
+  const handleNextPage = () => {
+    if (
+      userData.name === '' ||
+      userData.phone === '' ||
+      userData.zonecode === null ||
+      userData.address === '' ||
+      userData.buildingName === '' ||
+      userData.detailAddress === ''
+    ) {
+      console.log('모든 정보를 입력해주세요.');
+      return;
+    } else {
+      navigation.navigate('joinId');
+    }
+  };
+
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <Pressable style={styles.container} onPress={Keyboard.dismiss}>
@@ -59,14 +69,14 @@ const JoinUserPage = () => {
                 />
               </View>
               <JoinInputButton
-                value={userAddress.zonecode?.toString()!}
+                value={userData.zonecode?.toString()!}
                 onChangeText={() => {}}
                 editable={false}
                 buttonTitle="우편번호 검색"
                 onPress={() => navigation.navigate('address')}
               />
               <SInput
-                value={`${userAddress.address} ${userAddress.buildingName}`}
+                value={`${userData.address} ${userData.buildingName}`}
                 onChangeText={() => {}}
                 editable={false}
               />
@@ -86,7 +96,7 @@ const JoinUserPage = () => {
           ButtonColor={'#155DFC'}
           title="아이디, 비밀번호 입력하기"
           textColor={'#FFFFFF'}
-          onPress={() => console.log(userData)}
+          onPress={handleNextPage}
         />
       </Pressable>
     </ScrollView>
@@ -97,7 +107,7 @@ export default JoinUserPage;
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
+    flex: 1,
     paddingHorizontal: SWidth * 16,
     paddingBottom: SWidth * 32,
     justifyContent: 'space-between',

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
-import RightArrow24 from '../../utils/svgs/RightArrow24';
+import RightArrow24 from '../../utils/svgs/auth/RightArrow24';
 import {SCheckTextProps} from '../../utils/types/type';
 import SCheckBox from './SCheckBox';
 import SText from './SText';

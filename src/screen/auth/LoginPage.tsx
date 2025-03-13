@@ -2,11 +2,11 @@ import {ParamListBase, useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React, {useState} from 'react';
 import {Keyboard, Pressable, ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../globalStyle';
-import SButton from '../components/Elements/SButton';
-import SInput from '../components/Elements/SInput';
-import FindUser from '../components/Login/FindUser';
-import Logo from '../components/Login/Logo';
+import {SWidth} from '../../../globalStyle';
+import SButton from '../../components/Elements/SButton';
+import SInput from '../../components/Elements/SInput';
+import FindUser from '../../components/Login/FindUser';
+import Logo from '../../components/Login/Logo';
 const LoginPage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   const [userData, setUserData] = useState({

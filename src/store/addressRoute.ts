@@ -1,30 +1,35 @@
 import {create} from 'zustand';
 
 type Address = {
-  userAddress: {
+  userData: {
+    name: string;
+    phone: string;
     zonecode: number | null;
     address: string;
     buildingName: string;
+    detailAddress: string;
+    id: string;
+    password: string;
   };
-  setUserAddress: (
-    zonecode: number | null,
-    address: string,
-    buildingName: string,
-  ) => void;
+  setUserData: (newUserData: Partial<Address['userData']>) => void;
 };
 
-export const useAddress = create<Address>(set => ({
-  userAddress: {
+export const useUserData = create<Address>(set => ({
+  userData: {
+    name: '',
+    phone: '',
     zonecode: null,
     address: '',
     buildingName: '',
+    detailAddress: '',
+    id: '',
+    password: '',
   },
-  setUserAddress: (zonecode, address, buildingName) =>
+  setUserData: newUserData =>
     set(state => ({
-      userAddress: {
-        zonecode,
-        address,
-        buildingName,
+      userData: {
+        ...state.userData,
+        ...newUserData,
       },
     })),
 }));

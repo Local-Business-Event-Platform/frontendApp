@@ -1,5 +1,10 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import {SWidth} from '../../../../globalStyle';
+import TabCommunity from '../../../utils/svgs/bottonTab/TabCommunity';
+import TabHome from '../../../utils/svgs/bottonTab/TabHome';
+import TabMap from '../../../utils/svgs/bottonTab/TabMap';
+import TabMyPage from '../../../utils/svgs/bottonTab/TabMyPage';
 
 type IconComponentProps = {
   focused: boolean;
@@ -8,27 +13,29 @@ type IconComponentProps = {
 
 const IconComponent = ({focused, name}: IconComponentProps) => {
   switch (name) {
-    case '나의 냉장고':
+    case '홈':
       return (
         <View style={styles.container}>
-          {/* <Wallet focused={focused} /> */}
+          <TabHome focused={focused} />
         </View>
       );
-    case '레시피북':
+    case '지도':
       return (
         <View style={styles.container}>
-          {/* <TabHeart focused={focused} /> */}
+          <TabMap focused={focused} />
         </View>
       );
-    case '모든 레시피':
+    case '커뮤니티':
       return (
         <View style={styles.container}>
-          {/* <EditSquare focused={focused} /> */}
+          <TabCommunity focused={focused} />
         </View>
       );
-    case '설정':
+    case '마이페이지':
       return (
-        <View style={styles.container}>{/* <More focused={focused} /> */}</View>
+        <View style={styles.container}>
+          <TabMyPage focused={focused} />
+        </View>
       );
     default:
       break;
@@ -39,6 +46,6 @@ export default IconComponent;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 14,
+    marginTop: SWidth * 8,
   },
 });

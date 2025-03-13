@@ -2,8 +2,8 @@ import {ParamListBase, useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../globalStyle';
-import JoinSelectedButton from '../components/Join/JoinSelectedButton';
+import {SWidth} from '../../../globalStyle';
+import JoinSelectedButton from '../../components/Join/JoinSelectedButton';
 
 const JoinPage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();

@@ -1,10 +1,11 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Address from '../../screen/Address';
-import JoinPage from '../../screen/JoinPage';
-import JoinUserPage from '../../screen/JoinUserPage';
-import LoginPage from '../../screen/LoginPage';
-import MainPage from '../../screen/MainPage';
-import TermsOfUsePage from '../../screen/TermsOfUsePage';
+import Address from '../../screen/auth/Address';
+import JoinIdPage from '../../screen/auth/JoinIdPage';
+import JoinPage from '../../screen/auth/JoinPage';
+import JoinUserPage from '../../screen/auth/JoinUserPage';
+import LoginPage from '../../screen/auth/LoginPage';
+import SuccessPage from '../../screen/auth/SuccessPage';
+import TermsOfUsePage from '../../screen/auth/TermsOfUsePage';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 import JoinAppBar from './AppBar/JoinAppBar';
 import BottomTeb from './BottomTeb';
@@ -14,7 +15,7 @@ const MainStackScreen = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName="login"
+      initialRouteName="bottomTeb"
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: 'white',
@@ -56,17 +57,32 @@ const MainStackScreen = () => {
         }}
       />
       <Stack.Screen
-        name="address"
-        component={Address}
+        name="joinId"
+        component={JoinIdPage}
         options={{
+          header() {
+            return <BackTitleAppBar title="사용자 회원가입" />;
+          },
           title: '',
-          headerShown: false,
+          headerShown: true,
           headerShadowVisible: false,
         }}
       />
       <Stack.Screen
-        name="main"
-        component={MainPage}
+        name="success"
+        component={SuccessPage}
+        options={{
+          header() {
+            return <BackTitleAppBar title="사용자 회원가입" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="address"
+        component={Address}
         options={{
           title: '',
           headerShown: false,
