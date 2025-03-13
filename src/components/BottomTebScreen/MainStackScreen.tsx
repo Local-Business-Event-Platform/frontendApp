@@ -1,21 +1,23 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Address from '../../screen/auth/Address';
+import JoinBusinessPage from '../../screen/auth/JoinBusinessPage';
 import JoinIdPage from '../../screen/auth/JoinIdPage';
 import JoinPage from '../../screen/auth/JoinPage';
 import JoinUserPage from '../../screen/auth/JoinUserPage';
 import LoginPage from '../../screen/auth/LoginPage';
 import SuccessPage from '../../screen/auth/SuccessPage';
 import TermsOfUsePage from '../../screen/auth/TermsOfUsePage';
+import {useUserData} from '../../store/userRoute';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 import JoinAppBar from './AppBar/JoinAppBar';
 import BottomTeb from './BottomTeb';
 
 const MainStackScreen = () => {
   const Stack = createNativeStackNavigator();
-
+  const {userData} = useUserData();
   return (
     <Stack.Navigator
-      initialRouteName="bottomTeb"
+      initialRouteName="login"
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: 'white',
@@ -33,11 +35,29 @@ const MainStackScreen = () => {
         }}
       />
       <Stack.Screen
+        name="business"
+        component={JoinBusinessPage}
+        options={{
+          header() {
+            return <BackTitleAppBar title="소상공인 회원가입" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
         name="terms"
         component={TermsOfUsePage}
         options={{
           header() {
-            return <BackTitleAppBar title="사용자 회원가입" />;
+            return (
+              <BackTitleAppBar
+                title={
+                  userData.type === 1 ? '사용자 회원가입' : '소상공인 회원가입'
+                }
+              />
+            );
           },
           title: '',
           headerShown: true,
@@ -49,7 +69,13 @@ const MainStackScreen = () => {
         component={JoinUserPage}
         options={{
           header() {
-            return <BackTitleAppBar title="사용자 회원가입" />;
+            return (
+              <BackTitleAppBar
+                title={
+                  userData.type === 1 ? '사용자 회원가입' : '소상공인 회원가입'
+                }
+              />
+            );
           },
           title: '',
           headerShown: true,
@@ -61,7 +87,13 @@ const MainStackScreen = () => {
         component={JoinIdPage}
         options={{
           header() {
-            return <BackTitleAppBar title="사용자 회원가입" />;
+            return (
+              <BackTitleAppBar
+                title={
+                  userData.type === 1 ? '사용자 회원가입' : '소상공인 회원가입'
+                }
+              />
+            );
           },
           title: '',
           headerShown: true,
@@ -73,7 +105,13 @@ const MainStackScreen = () => {
         component={SuccessPage}
         options={{
           header() {
-            return <BackTitleAppBar title="사용자 회원가입" />;
+            return (
+              <BackTitleAppBar
+                title={
+                  userData.type === 1 ? '사용자 회원가입' : '소상공인 회원가입'
+                }
+              />
+            );
           },
           title: '',
           headerShown: true,

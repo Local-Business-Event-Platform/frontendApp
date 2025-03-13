@@ -11,6 +11,7 @@ const SInput = ({
   value,
   onChangeText,
   editable,
+  keyboardType,
   secureTextEntry,
   placeholder,
   iconOn,
@@ -24,6 +25,7 @@ const SInput = ({
           value={value}
           onChangeText={onChangeText}
           editable={editable}
+          keyboardType={keyboardType}
           secureTextEntry={secureTextEntry}
           style={styles.inputStyle}
           placeholder={placeholder}

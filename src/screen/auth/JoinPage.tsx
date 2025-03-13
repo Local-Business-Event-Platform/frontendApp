@@ -4,21 +4,29 @@ import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import JoinSelectedButton from '../../components/Join/JoinSelectedButton';
+import {useUserData} from '../../store/userRoute';
 
 const JoinPage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const {setUserData} = useUserData();
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.selectBoxContainer}>
         <JoinSelectedButton
           title="사용자 회원가입"
           backgroundColor={'#EFF6FF'}
-          onPress={() => navigation.navigate('terms')}
+          onPress={() => {
+            setUserData({type: 1});
+            navigation.navigate('terms');
+          }}
         />
         <JoinSelectedButton
           title="소상공인 회원가입"
           backgroundColor={'#F5F5F5'}
-          onPress={() => {}}
+          onPress={() => {
+            setUserData({type: 2});
+            navigation.navigate('business');
+          }}
         />
       </View>
     </ScrollView>

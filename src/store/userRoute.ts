@@ -2,6 +2,7 @@ import {create} from 'zustand';
 
 type Address = {
   userData: {
+    type: number | null;
     name: string;
     phone: string;
     zonecode: number | null;
@@ -16,6 +17,7 @@ type Address = {
 
 export const useUserData = create<Address>(set => ({
   userData: {
+    type: null,
     name: '',
     phone: '',
     zonecode: null,

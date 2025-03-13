@@ -2,7 +2,8 @@ import Postcode from '@actbase/react-daum-postcode';
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {LogBox, StyleSheet, View} from 'react-native';
-import {useUserData} from '../../store/addressRoute';
+import {useUserData} from '../../store/userRoute';
+
 LogBox.ignoreLogs([
   'Support for defaultProps will be removed from function components',
 ]);

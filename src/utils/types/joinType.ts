@@ -22,6 +22,7 @@ export type JoinInputButtonProps = {
   buttonTitle: string;
   onChangeText: (text: string) => void;
   editable?: boolean;
+  keyboardType?: 'default' | 'numeric';
   placeholder?: string;
   onPress: () => void;
 };

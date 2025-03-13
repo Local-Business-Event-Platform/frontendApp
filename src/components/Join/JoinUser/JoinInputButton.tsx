@@ -11,6 +11,7 @@ const JoinInputButton = ({
   buttonTitle,
   onChangeText,
   editable,
+  keyboardType,
   placeholder,
   onPress,
 }: JoinInputButtonProps) => {
@@ -21,6 +22,7 @@ const JoinInputButton = ({
           value={value}
           title={title}
           editable={editable}
+          keyboardType={keyboardType}
           onChangeText={onChangeText}
           placeholder={placeholder}
         />

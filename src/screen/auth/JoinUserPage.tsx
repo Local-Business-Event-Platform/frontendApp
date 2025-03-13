@@ -9,7 +9,7 @@ import SInput from '../../components/Elements/SInput';
 import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
 import JoinInputButton from '../../components/Join/JoinUser/JoinInputButton';
-import {useUserData} from '../../store/addressRoute';
+import {useUserData} from '../../store/userRoute';
 
 const JoinUserPage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
@@ -21,7 +21,6 @@ const JoinUserPage = () => {
       userData.phone === '' ||
       userData.zonecode === null ||
       userData.address === '' ||
-      userData.buildingName === '' ||
       userData.detailAddress === ''
     ) {
       console.log('모든 정보를 입력해주세요.');
@@ -47,6 +46,7 @@ const JoinUserPage = () => {
               <JoinInputButton
                 value={userData.phone}
                 title="휴대폰번호"
+                keyboardType="numeric"
                 onChangeText={text => setUserData({...userData, phone: text})}
                 placeholder="´-´없이 번호만 입력"
                 buttonTitle="인증번호 전송"
@@ -61,13 +61,13 @@ const JoinUserPage = () => {
             </View>
             <View style={styles.addressInputContainer}>
               <SText fStyle="BmdMd" text={'주소'} />
-              <View style={styles.certification}>
+              {/* <View style={styles.certification}>
                 <SText
                   fStyle="BlgSb"
                   text={'동네 인증하기'}
                   color={'#404040'}
                 />
-              </View>
+              </View> */}
               <JoinInputButton
                 value={userData.zonecode?.toString()!}
                 onChangeText={() => {}}
@@ -130,11 +130,11 @@ const styles = StyleSheet.create({
     marginTop: SWidth * 32,
     gap: SWidth * 8,
   },
-  certification: {
-    height: SWidth * 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: SWidth * 4,
-    backgroundColor: '#E5E5E5',
-  },
+  // certification: {
+  //   height: SWidth * 40,
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   borderRadius: SWidth * 4,
+  //   backgroundColor: '#E5E5E5',
+  // },
 });

@@ -72,6 +72,7 @@ export type SInputProps = {
   value: string;
   onChangeText: (text: string) => void;
   editable?: boolean;
+  keyboardType?: 'default' | 'numeric';
   secureTextEntry?: boolean;
   placeholder?: string;
   iconOn?: boolean;
