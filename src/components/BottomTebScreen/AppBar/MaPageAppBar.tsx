@@ -3,10 +3,11 @@ import {Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import AppBarBackArrow from '../../../utils/svgs/AppBarBackArrow';
+import MyPageOption from '../../../utils/svgs/MyPageOption';
 import {AppBarProps} from '../../../utils/types/appBarType';
 import SText from '../../Elements/SText';
 
-const BackTitleAppBar = ({title}: AppBarProps) => {
+const MaPageAppBar = ({title}: AppBarProps) => {
   const navigate = useCustomNavigation();
   return (
     <View style={styles.container}>
@@ -14,14 +15,14 @@ const BackTitleAppBar = ({title}: AppBarProps) => {
         <AppBarBackArrow />
       </Pressable>
       <SText fStyle="BlgMd" text={title} />
-      <View style={{opacity: 0}}>
-        <AppBarBackArrow />
-      </View>
+      <Pressable onPress={() => {}}>
+        <MyPageOption />
+      </Pressable>
     </View>
   );
 };
 
-export default BackTitleAppBar;
+export default MaPageAppBar;
 
 const styles = StyleSheet.create({
   container: {
@@ -30,6 +31,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: SWidth * 23.83,
+    paddingLeft: SWidth * 23.83,
+    paddingRight: SWidth * 24.17,
   },
 });

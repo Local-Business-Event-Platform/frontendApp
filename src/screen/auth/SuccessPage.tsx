@@ -1,15 +1,14 @@
-import {ParamListBase, useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
 import JoinSuccess from '../../utils/svgs/auth/JoinSuccess';
 
 const SuccessPage = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const navigation = useCustomNavigation();
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <View style={styles.container}>

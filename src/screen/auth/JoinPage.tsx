@@ -1,13 +1,12 @@
-import {ParamListBase, useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import JoinSelectedButton from '../../components/Join/JoinSelectedButton';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
 
 const JoinPage = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const navigation = useCustomNavigation();
   const {setUserData} = useUserData();
   return (
     <ScrollView contentContainerStyle={styles.container}>

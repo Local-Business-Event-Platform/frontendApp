@@ -1,14 +1,13 @@
-import {ParamListBase, useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import JoinTitle from '../../components/Join/JoinTitle';
 import TermsCheck from '../../components/Join/TermsOfUse/TermsCheck';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
 
 const TermsOfUsePage = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const navigation = useCustomNavigation();
   const [isChecked, setIsChecked] = useState(false);
   const [checkList, setCheckList] = useState({
     check1: false,

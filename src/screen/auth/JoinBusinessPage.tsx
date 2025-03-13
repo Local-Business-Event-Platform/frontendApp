@@ -1,13 +1,12 @@
-import {ParamListBase, useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import JoinTitle from '../../components/Join/JoinTitle';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
 
 const JoinBusinessPage = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const navigation = useCustomNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>

@@ -17,7 +17,7 @@ const MainStackScreen = () => {
   const {userData} = useUserData();
   return (
     <Stack.Navigator
-      initialRouteName="login"
+      initialRouteName="bottomTeb"
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: 'white',
@@ -28,6 +28,15 @@ const MainStackScreen = () => {
       <Stack.Screen
         name="login"
         component={LoginPage}
+        options={{
+          title: '',
+          headerShown: false,
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="bottomTeb"
+        component={BottomTeb}
         options={{
           title: '',
           headerShown: false,
@@ -136,15 +145,6 @@ const MainStackScreen = () => {
           },
           headerShown: true,
           title: '',
-          headerShadowVisible: false,
-        }}
-      />
-      <Stack.Screen
-        name="bottomTeb"
-        component={BottomTeb}
-        options={{
-          title: '',
-          headerShown: false,
           headerShadowVisible: false,
         }}
       />

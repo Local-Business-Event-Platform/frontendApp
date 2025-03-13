@@ -20,6 +20,9 @@ const SText = ({
     Hlg: styles.HlgHeight,
     Hmd: styles.HmdHeight,
     Hsm: styles.HsmHeight,
+    BxlSb: styles.BxlSbHeight,
+    BxlMd: styles.BxlMdHeight,
+    BxlRg: styles.BxlRgHeight,
     BlgSb: styles.BlgSbHeight,
     BlgMd: styles.BlgMdHeight,
     BlgRg: styles.BlgRgHeight,
@@ -39,6 +42,9 @@ const SText = ({
     Hlg: styles.HlgFontSize,
     Hmd: styles.HmdFontSize,
     Hsm: styles.HsmFontSize,
+    BxlSb: styles.BxlSbFontSize,
+    BxlMd: styles.BxlMdFontSize,
+    BxlRg: styles.BxlRgFontSize,
     BlgSb: styles.BlgSbFontSize,
     BlgMd: styles.BlgMdFontSize,
     BlgRg: styles.BlgRgFontSize,
@@ -103,6 +109,18 @@ const styles = StyleSheet.create({
   },
   HsmHeight: {
     height: SWidth * 28,
+    justifyContent: 'center',
+  },
+  BxlSbHeight: {
+    height: SWidth * 24,
+    justifyContent: 'center',
+  },
+  BxlMdHeight: {
+    height: SWidth * 24,
+    justifyContent: 'center',
+  },
+  BxlRgHeight: {
+    height: SWidth * 24,
     justifyContent: 'center',
   },
   BlgSbHeight: {
@@ -185,6 +203,21 @@ const styles = StyleSheet.create({
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 20,
     letterSpacing: -0.2,
+    includeFontPadding: false,
+  },
+  BxlSbFontSize: {
+    fontFamily: fontFamilies.pretendardSemiBold,
+    fontSize: SWidth * 18,
+    includeFontPadding: false,
+  },
+  BxlMdFontSize: {
+    fontFamily: fontFamilies.pretendardMedium,
+    fontSize: SWidth * 24,
+    includeFontPadding: false,
+  },
+  BxlRgFontSize: {
+    fontFamily: fontFamilies.pretendardRegular,
+    fontSize: SWidth * 24,
     includeFontPadding: false,
   },
   BlgSbFontSize: {

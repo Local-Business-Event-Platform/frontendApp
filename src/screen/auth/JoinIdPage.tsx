@@ -1,15 +1,14 @@
-import {ParamListBase, useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React, {useState} from 'react';
 import {Keyboard, Pressable, ScrollView, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import SInput from '../../components/Elements/SInput';
 import JoinTitle from '../../components/Join/JoinTitle';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
 
 const JoinIdPage = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const navigation = useCustomNavigation();
   const {userData, setUserData} = useUserData();
   const [passwordChecked, setPasswordChecked] = useState('');
   const [iconClicked, setIconClicked] = useState([true, true]);

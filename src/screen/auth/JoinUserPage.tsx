@@ -1,5 +1,3 @@
-import {ParamListBase, useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -9,10 +7,11 @@ import SInput from '../../components/Elements/SInput';
 import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
 import JoinInputButton from '../../components/Join/JoinUser/JoinInputButton';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
 
 const JoinUserPage = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const navigation = useCustomNavigation();
   const {userData, setUserData} = useUserData();
 
   const handleNextPage = () => {

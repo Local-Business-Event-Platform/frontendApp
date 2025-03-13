@@ -1,11 +1,11 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
+import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import AppBarBackArrow from '../../../utils/svgs/AppBarBackArrow';
 
 const JoinAppBar = () => {
-  const navigate = useNavigation();
+  const navigate = useCustomNavigation();
   return (
     <Pressable onPress={() => navigate.goBack()} style={styles.container}>
       <AppBarBackArrow />

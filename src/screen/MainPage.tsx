@@ -1,10 +1,9 @@
-import {ParamListBase, useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Text} from 'react-native-gesture-handler';
+import useCustomNavigation from '../hooks/useCustomNavigation';
 const MainPage = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+  const navigation = useCustomNavigation();
   return (
     <View style={styles.container}>
       <Text>메인</Text>
@@ -20,6 +19,5 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
   },
 });
