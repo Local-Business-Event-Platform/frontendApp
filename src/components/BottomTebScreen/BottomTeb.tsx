@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {Pressable, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import MainPage from '../../screen/MainPage';
 import {useUserData} from '../../store/userRoute';
@@ -17,23 +17,20 @@ const BottomTeb = () => {
       screenOptions={({route}) => ({
         animation: 'shift',
         tabBarHideOnKeyboard: true,
-        sceneStyle: {backgroundColor: 'white', borderWidth: 0},
+        sceneStyle: {backgroundColor: 'white'},
         tabBarShowLabel: true,
-        tabBarActiveTintColor: '#1447E6',
         tabBarStyle: {
           height: SWidth * 58,
           elevation: 0,
           borderWidth: 0,
           borderColor: 'transparent',
         },
+        tabBarButton: props => <Pressable {...props} android_ripple={null} />,
         tabBarLabel({focused}) {
           return <NameComponent focused={focused} name={route.name} />;
         },
         tabBarIcon({focused}) {
           return <IconComponent focused={focused} name={route.name} />;
-        },
-        tabBarItemStyle: {
-          backgroundColor: 'white',
         },
         headerShown: false,
         headerShadowVisible: false,
