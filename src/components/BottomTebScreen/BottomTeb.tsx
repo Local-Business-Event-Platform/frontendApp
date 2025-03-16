@@ -21,7 +21,7 @@ const BottomTeb = () => {
         tabBarShowLabel: true,
         tabBarActiveTintColor: '#1447E6',
         tabBarStyle: {
-          height: SWidth * 64,
+          height: SWidth * 58,
           elevation: 0,
           borderWidth: 0,
           borderColor: 'transparent',

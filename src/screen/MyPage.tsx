@@ -15,6 +15,7 @@ const MyPage = () => {
   return (
     <ScrollView
       style={styles.container}
+      overScrollMode="never"
       contentContainerStyle={{paddingBottom: SWidth * 40}}>
       <UserInfo />
       <View style={styles.contentContainer}>
