@@ -29,6 +29,7 @@ export type STextProps = {
     | 'BsmMd'
     | 'BsmRg';
   color?: ColorValue;
+  lineColor?: ColorValue;
   nLine?: number;
   flexShrink?: number;
   lineHeight?: number;
@@ -83,4 +84,9 @@ export type SInputProps = {
   placeholder?: string;
   iconOn?: boolean;
   iconOnPress?: () => void;
+};
+
+export type SListButtonProps = {
+  title: string;
+  onPress?: () => void;
 };

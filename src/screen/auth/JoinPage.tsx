@@ -24,7 +24,7 @@ const JoinPage = () => {
           backgroundColor={'#F5F5F5'}
           onPress={() => {
             setUserData({type: 2});
-            navigation.navigate('business');
+            navigation.navigate('terms');
           }}
         />
       </View>

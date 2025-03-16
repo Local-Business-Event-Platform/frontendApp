@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
+import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 
@@ -10,16 +11,38 @@ const JoinBusinessPage = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <JoinTitle
-          title1="우리 가게, 한 번에"
-          title2="등록하고 시작해보세요!"
-        />
+        <JoinTitle title1="환영합니다" title2="가입이 완료됐어요" />
+        <View style={styles.contentTextContainer}>
+          <SText
+            nLine={1}
+            flexShrink={1}
+            lineHeight={SWidth * 20}
+            fStyle="BlgRg"
+            text={'우리 가게를 알릴 기회,'}
+          />
+          <SText
+            nLine={1}
+            flexShrink={1}
+            lineHeight={SWidth * 20}
+            fStyle="BlgRg"
+            text={'가게를 등록하고 첫 이벤트를 등록해보세요!'}
+          />
+        </View>
+        <View style={styles.iconImageContainer}>
+          <View style={styles.iconImage}>
+            <SText
+              fStyle="BlgSb"
+              text={'(아이콘, 이미지 들어갈 예정)'}
+              color={'#525252'}
+            />
+          </View>
+        </View>
       </View>
       <SButton
         ButtonColor={'#155DFC'}
-        title="계정 생성하고 가게 등록하기"
+        title="둘러보기"
         textColor={'#FFFFFF'}
-        onPress={() => navigation.navigate('terms')}
+        onPress={() => {}}
       />
     </View>
   );
@@ -37,5 +60,21 @@ const styles = StyleSheet.create({
 
   topContainer: {
     paddingHorizontal: SWidth * 8,
+  },
+
+  contentTextContainer: {
+    marginTop: SWidth * 37,
+  },
+
+  iconImageContainer: {
+    marginTop: SWidth * 48,
+  },
+  iconImage: {
+    width: '100%',
+    height: SWidth * 248,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: SWidth * 12,
+    backgroundColor: '#F5F5F5',
   },
 });

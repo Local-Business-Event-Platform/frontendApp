@@ -60,13 +60,6 @@ const JoinUserPage = () => {
             </View>
             <View style={styles.addressInputContainer}>
               <SText fStyle="BmdMd" text={'주소'} />
-              {/* <View style={styles.certification}>
-                <SText
-                  fStyle="BlgSb"
-                  text={'동네 인증하기'}
-                  color={'#404040'}
-                />
-              </View> */}
               <JoinInputButton
                 value={userData.zonecode?.toString()!}
                 onChangeText={() => {}}

@@ -6,6 +6,7 @@ import {STextProps} from '../../utils/types/type';
 const SText = ({
   fStyle,
   color = '#171717',
+  lineColor,
   nLine,
   flexShrink,
   lineHeight,
@@ -61,7 +62,11 @@ const SText = ({
       {!flexShrink ? (
         <View style={boxHeightList[fStyle]}>
           {
-            <Text style={[fontSizeList[fStyle], {color, textDecorationLine}]}>
+            <Text
+              style={[
+                fontSizeList[fStyle],
+                {color, textDecorationLine, textDecorationColor: lineColor},
+              ]}>
               {text}
             </Text>
           }

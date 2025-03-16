@@ -5,6 +5,7 @@ import TabCommunity from '../../../utils/svgs/bottonTab/TabCommunity';
 import TabHome from '../../../utils/svgs/bottonTab/TabHome';
 import TabMap from '../../../utils/svgs/bottonTab/TabMap';
 import TabMyPage from '../../../utils/svgs/bottonTab/TabMyPage';
+import TabStore from '../../../utils/svgs/bottonTab/TabStore';
 
 type IconComponentProps = {
   focused: boolean;
@@ -23,6 +24,12 @@ const IconComponent = ({focused, name}: IconComponentProps) => {
       return (
         <View style={styles.container}>
           <TabMap focused={focused} />
+        </View>
+      );
+    case '가게 관리':
+      return (
+        <View style={styles.container}>
+          <TabStore focused={focused} />
         </View>
       );
     case '커뮤니티':

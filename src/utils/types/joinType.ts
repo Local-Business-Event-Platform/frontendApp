@@ -14,6 +14,7 @@ export type JoinSelectedButtonProps = {
 export type JoinButtonProps = {
   title: string;
   onPress: () => void;
+  textDecorationLine?: 'underline' | 'none';
 };
 
 export type JoinInputButtonProps = {
@@ -25,4 +26,9 @@ export type JoinInputButtonProps = {
   keyboardType?: 'default' | 'numeric';
   placeholder?: string;
   onPress: () => void;
+  textDecorationLine?: 'underline' | 'none';
+};
+
+export type JoinSuccessSubTitleProps = {
+  userType: number | null;
 };

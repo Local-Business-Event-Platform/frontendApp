@@ -2,30 +2,20 @@ import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
-import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
+import JoinSuccessSubTitle from '../../components/Join/Success/JoinSuccessSubTitle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
-import JoinSuccess from '../../utils/svgs/auth/JoinSuccess';
+import {useUserData} from '../../store/userRoute';
 
 const SuccessPage = () => {
+  const {userData} = useUserData();
   const navigation = useCustomNavigation();
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <View style={styles.container}>
         <View style={styles.topContainer}>
           <JoinTitle title1="환영합니다!" title2="가입이 완료됐어요." />
-          <View style={styles.contentTextContainer}>
-            <SText
-              nLine={1}
-              flexShrink={1}
-              lineHeight={SWidth * 20}
-              fStyle="BlgRg"
-              text={'놓치기 아까운 우리 동네 이벤트, 지금 확인하세요!'}
-            />
-            <View style={styles.imageContainer}>
-              <JoinSuccess />
-            </View>
-          </View>
+          <JoinSuccessSubTitle userType={userData.type} />
         </View>
         <SButton
           ButtonColor={'#155DFC'}
@@ -55,14 +45,5 @@ const styles = StyleSheet.create({
 
   topContainer: {
     paddingHorizontal: SWidth * 8,
-  },
-
-  contentTextContainer: {
-    marginTop: SWidth * 37,
-  },
-
-  imageContainer: {
-    marginTop: SWidth * 70,
-    alignItems: 'center',
   },
 });

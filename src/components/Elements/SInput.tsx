@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, TextInput, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {fontFamilies, SWidth} from '../../../globalStyle';
 import JoinPasswordClose from '../../utils/svgs/auth/JoinPasswordClose';
 import JoinPasswordOpen from '../../utils/svgs/auth/JoinPasswordOpen';
 import {SInputProps} from '../../utils/types/type';
@@ -29,6 +29,7 @@ const SInput = ({
           secureTextEntry={secureTextEntry}
           style={styles.inputStyle}
           placeholder={placeholder}
+          placeholderTextColor={'#A1A1A1'}
         />
         {iconOn && (
           <Pressable style={styles.passwordIcon} onPress={iconOnPress}>
@@ -58,6 +59,8 @@ const styles = StyleSheet.create({
     borderRadius: SWidth * 8,
     height: SWidth * 48,
     paddingHorizontal: SWidth * 12,
+    fontSize: SWidth * 16,
+    fontFamily: fontFamilies.pretendardMedium,
   },
 
   passwordIcon: {

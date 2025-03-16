@@ -14,6 +14,7 @@ const JoinInputButton = ({
   keyboardType,
   placeholder,
   onPress,
+  textDecorationLine,
 }: JoinInputButtonProps) => {
   return (
     <View style={styles.container}>
@@ -27,7 +28,11 @@ const JoinInputButton = ({
           placeholder={placeholder}
         />
       </View>
-      <JoinButton title={buttonTitle} onPress={onPress} />
+      <JoinButton
+        title={buttonTitle}
+        onPress={onPress}
+        textDecorationLine={textDecorationLine}
+      />
     </View>
   );
 };

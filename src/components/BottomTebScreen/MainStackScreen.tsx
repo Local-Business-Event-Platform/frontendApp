@@ -1,6 +1,5 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Address from '../../screen/auth/Address';
-import JoinBusinessPage from '../../screen/auth/JoinBusinessPage';
 import JoinIdPage from '../../screen/auth/JoinIdPage';
 import JoinPage from '../../screen/auth/JoinPage';
 import JoinUserPage from '../../screen/auth/JoinUserPage';
@@ -43,7 +42,7 @@ const MainStackScreen = () => {
           headerShadowVisible: false,
         }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="business"
         component={JoinBusinessPage}
         options={{
@@ -54,7 +53,7 @@ const MainStackScreen = () => {
           headerShown: true,
           headerShadowVisible: false,
         }}
-      />
+      /> */}
       <Stack.Screen
         name="terms"
         component={TermsOfUsePage}
