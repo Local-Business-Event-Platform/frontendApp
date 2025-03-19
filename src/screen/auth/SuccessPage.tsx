@@ -17,17 +17,19 @@ const SuccessPage = () => {
           <JoinTitle title1="환영합니다!" title2="가입이 완료됐어요." />
           <JoinSuccessSubTitle userType={userData.type} />
         </View>
-        <SButton
-          ButtonColor={'#155DFC'}
-          title="둘러보기"
-          textColor={'#FFFFFF'}
-          onPress={() =>
-            navigation.reset({
-              index: 0,
-              routes: [{name: 'bottomTeb'}],
-            })
-          }
-        />
+        <View style={styles.buttonContainer}>
+          <SButton
+            ButtonColor={'#155DFC'}
+            title="둘러보기"
+            textColor={'#FFFFFF'}
+            onPress={() =>
+              navigation.reset({
+                index: 0,
+                routes: [{name: 'bottomTeb'}],
+              })
+            }
+          />
+        </View>
       </View>
     </ScrollView>
   );
@@ -45,5 +47,9 @@ const styles = StyleSheet.create({
 
   topContainer: {
     paddingHorizontal: SWidth * 8,
+  },
+
+  buttonContainer: {
+    height: SWidth * 56,
   },
 });

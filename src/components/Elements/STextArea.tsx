@@ -4,17 +4,22 @@ import {TextInput} from 'react-native-gesture-handler';
 import {fontFamilies, SWidth} from '../../../globalStyle';
 
 type STextAreaProps = {
+  value: string;
   placeholder: string;
+  onChangeText?: (text: string) => void;
 };
 
-const STextArea = ({placeholder}: STextAreaProps) => {
+const STextArea = ({value, placeholder, onChangeText}: STextAreaProps) => {
   return (
     <TextInput
+      value={value}
       style={styles.container}
       multiline={true}
       placeholder={placeholder}
       placeholderTextColor={'#A1A1A1'}
       numberOfLines={6}
+      maxLength={200}
+      onChangeText={onChangeText}
     />
   );
 };

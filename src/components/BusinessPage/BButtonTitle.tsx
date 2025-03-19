@@ -1,18 +1,18 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
-import BusinessDelete from '../../../utils/svgs/businessPage/BusinessDelete';
-import {BusinessTitleContainerProps} from '../../../utils/types/businessType';
-import SText from '../../Elements/SText';
-import BusinessButton from './BusinessButton';
+import {SWidth} from '../../../globalStyle';
+import BusinessDelete from '../../utils/svgs/businessPage/BusinessDelete';
+import {BTitleContainerProps} from '../../utils/types/businessType';
+import SText from '../Elements/SText';
+import BusinessButton from './Basic/BusinessButton';
 
-const BusinessTitleContainer = ({
+const BButtonTitle = ({
   title,
   onClick,
   onPress,
   deleteButton,
   deleteOnPress,
-}: BusinessTitleContainerProps) => {
+}: BTitleContainerProps) => {
   return (
     <View style={styles.container}>
       <SText fStyle="Hmd" text={title} />
@@ -28,7 +28,7 @@ const BusinessTitleContainer = ({
   );
 };
 
-export default BusinessTitleContainer;
+export default BButtonTitle;
 
 const styles = StyleSheet.create({
   container: {

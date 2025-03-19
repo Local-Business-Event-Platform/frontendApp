@@ -1,23 +1,24 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
-import BusinessPlus from '../../../utils/svgs/businessPage/BusinessPlus';
-import {EventAddButtonProps} from '../../../utils/types/businessType';
-import SText from '../../Elements/SText';
+import {SWidth} from '../../../globalStyle';
+import BusinessPlus from '../../utils/svgs/businessPage/BusinessPlus';
+import {TitleOnPressProps} from '../../utils/types/businessType';
+import SText from '../Elements/SText';
 
-const EventAddButton = ({onPress}: EventAddButtonProps) => {
+const BAddButton = ({title, onPress}: TitleOnPressProps) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
       <BusinessPlus />
-      <SText fStyle="BlgSb" text={'이벤트 추가'} color={'#525252'} />
+      <SText fStyle="BlgSb" text={title} color={'#525252'} />
     </Pressable>
   );
 };
 
-export default EventAddButton;
+export default BAddButton;
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: SWidth * 24,
     borderWidth: 1.5,
     height: SWidth * 56,
     borderRadius: SWidth * 8,

@@ -1,12 +1,13 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
+import StoreInfo from '../../components/BusinessPage/Basic/BasicStoreInfo';
 import BusinessInfo from '../../components/BusinessPage/Basic/BusinessInfo';
-import StoreInfo from '../../components/BusinessPage/Basic/StoreInfo';
+import {BasicInformationProps} from '../../utils/types/businessType';
 
-const BasicInformation = () => {
+const BasicInformation = ({data}: BasicInformationProps) => {
   return (
     <>
-      <BusinessInfo />
+      <BusinessInfo data={data} />
       <StoreInfo />
     </>
   );

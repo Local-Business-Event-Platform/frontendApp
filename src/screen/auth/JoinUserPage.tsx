@@ -84,12 +84,14 @@ const JoinUserPage = () => {
             </View>
           </View>
         </View>
-        <SButton
-          ButtonColor={'#155DFC'}
-          title="아이디, 비밀번호 입력하기"
-          textColor={'#FFFFFF'}
-          onPress={handleNextPage}
-        />
+        <View style={styles.buttonContainer}>
+          <SButton
+            ButtonColor={'#155DFC'}
+            title="아이디, 비밀번호 입력하기"
+            textColor={'#FFFFFF'}
+            onPress={handleNextPage}
+          />
+        </View>
       </Pressable>
     </ScrollView>
   );
@@ -122,11 +124,7 @@ const styles = StyleSheet.create({
     marginTop: SWidth * 32,
     gap: SWidth * 8,
   },
-  // certification: {
-  //   height: SWidth * 40,
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   borderRadius: SWidth * 4,
-  //   backgroundColor: '#E5E5E5',
-  // },
+  buttonContainer: {
+    height: SWidth * 56,
+  },
 });

@@ -18,7 +18,7 @@ export default SButton;
 
 const styles = StyleSheet.create({
   buttonStyle: {
-    width: '100%',
+    flex: 1,
     height: SWidth * 56,
     borderRadius: SWidth * 8,
     alignItems: 'center',

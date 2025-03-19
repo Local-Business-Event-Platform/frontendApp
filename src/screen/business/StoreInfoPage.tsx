@@ -8,13 +8,14 @@ import StoreInformation from './StoreInformation';
 
 const StoreInfoPage = () => {
   const [isClicked, setIsClicked] = useState(0);
+  const [data, setData] = useState('');
   return (
     <ScrollView style={styles.container} overScrollMode="never">
       <StoreInfoTab isClicked={isClicked} setIsClicked={setIsClicked} />
       <View style={styles.contentContainer}>
-        {isClicked === 0 && <BasicInformation />}
-        {isClicked === 1 && <StoreInformation />}
-        {isClicked === 2 && <EventInformation />}
+        {isClicked === 0 && <BasicInformation data={data} />}
+        {isClicked === 1 && <StoreInformation data={data} />}
+        {isClicked === 2 && <EventInformation data={data} />}
       </View>
     </ScrollView>
   );

@@ -15,6 +15,7 @@ const SInput = ({
   secureTextEntry,
   placeholder,
   iconOn,
+  textIcon,
   iconOnPress,
 }: SInputProps) => {
   return (
@@ -31,11 +32,16 @@ const SInput = ({
           placeholder={placeholder}
           placeholderTextColor={'#A1A1A1'}
         />
-        {iconOn && (
-          <Pressable style={styles.passwordIcon} onPress={iconOnPress}>
-            {secureTextEntry ? <JoinPasswordOpen /> : <JoinPasswordClose />}
-          </Pressable>
-        )}
+        {iconOn &&
+          (textIcon !== '' ? (
+            <View style={styles.passwordIcon}>
+              <SText fStyle="BlgMd" text={textIcon!} color={'#A1A1A1'} />
+            </View>
+          ) : (
+            <Pressable style={styles.passwordIcon} onPress={iconOnPress}>
+              {secureTextEntry ? <JoinPasswordOpen /> : <JoinPasswordClose />}
+            </Pressable>
+          ))}
       </View>
     </View>
   );

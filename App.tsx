@@ -2,9 +2,12 @@ import {NavigationContainer} from '@react-navigation/native';
 import {useEffect} from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import MainStackScreen from './src/components/BottomTebScreen/MainStackScreen';
+import SModal from './src/components/Elements/SModal';
 import ReactQueryProvider from './src/ReactQuery/Provider';
 import {LocationSettings} from './src/service/LocationSettings';
+import {useModalOpen} from './src/store/modalRoute';
 function App() {
+  const {modalOpen} = useModalOpen();
   useEffect(() => {
     const getLocation = async () => {
       try {
@@ -23,6 +26,7 @@ function App() {
           <MainStackScreen />
         </NavigationContainer>
       </ReactQueryProvider>
+      {modalOpen && <SModal />}
     </GestureHandlerRootView>
   );
 }

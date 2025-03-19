@@ -1,15 +1,14 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
-import BusinessCalendar from '../../../utils/svgs/businessPage/BusinessCalendar';
 import {EventDateButtonProps} from '../../../utils/types/businessType';
 import SText from '../../Elements/SText';
 
-const EventDateButton = ({title, onPress}: EventDateButtonProps) => {
+const EventDateButton = ({title, icon, onPress}: EventDateButtonProps) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
       <SText fStyle="BlgMd" text={title} color={'#A1A1A1'} />
-      <BusinessCalendar />
+      {icon}
     </Pressable>
   );
 };

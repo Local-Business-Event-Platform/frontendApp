@@ -52,12 +52,14 @@ const JoinIdPage = () => {
             />
           </View>
         </View>
-        <SButton
-          ButtonColor={'#155DFC'}
-          title="완료"
-          textColor={'#FFFFFF'}
-          onPress={handleSubmit}
-        />
+        <View style={styles.buttonContainer}>
+          <SButton
+            ButtonColor={'#155DFC'}
+            title="완료"
+            textColor={'#FFFFFF'}
+            onPress={handleSubmit}
+          />
+        </View>
       </Pressable>
     </ScrollView>
   );
@@ -79,5 +81,9 @@ const styles = StyleSheet.create({
   inputContainer: {
     marginTop: SWidth * 40,
     gap: SWidth * 32,
+  },
+
+  buttonContainer: {
+    height: SWidth * 56,
   },
 });

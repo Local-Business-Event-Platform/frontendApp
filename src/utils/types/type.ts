@@ -82,11 +82,12 @@ export type SInputProps = {
   keyboardType?: 'default' | 'numeric';
   secureTextEntry?: boolean;
   placeholder?: string;
+  textIcon?: string | undefined;
   iconOn?: boolean;
   iconOnPress?: () => void;
 };
 
 export type SListButtonProps = {
   title: string;
-  onPress?: () => void;
+  onPress: () => void;
 };

@@ -1,11 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
-
-const StoreInformation = () => {
+import StoreInfo from '../../components/BusinessPage/Store/StoreInfo';
+import StoreMenuCategory from '../../components/BusinessPage/Store/StoreMenuCategory';
+import StoreMenuInfo from '../../components/BusinessPage/Store/StoreMenuInfo';
+import {BasicInformationProps} from '../../utils/types/businessType';
+const StoreInformation = ({data}: BasicInformationProps) => {
   return (
     <View style={styles.container}>
-      <Text style={{color: 'black'}}>StoreInformation</Text>
+      <StoreInfo />
+      <StoreMenuCategory />
+      <StoreMenuInfo />
     </View>
   );
 };
@@ -14,6 +19,7 @@ export default StoreInformation;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 24,
+    flex: 1,
+    paddingBottom: SWidth * 40,
   },
 });

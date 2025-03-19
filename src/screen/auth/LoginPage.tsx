@@ -40,7 +40,7 @@ const LoginPage = () => {
             />
           </View>
         </View>
-        <View style={styles.BottomContainer}>
+        <View style={styles.bottomContainer}>
           <FindUser onPress={() => {}} />
           <View style={styles.buttonContainer}>
             <SButton
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     gap: SWidth * 32,
   },
 
-  BottomContainer: {
+  bottomContainer: {
     width: '100%',
     alignItems: 'center',
     gap: SWidth * 24,

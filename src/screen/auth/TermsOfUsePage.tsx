@@ -36,12 +36,14 @@ const TermsOfUsePage = () => {
           checkList={checkList}
         />
       </View>
-      <SButton
-        ButtonColor={'#155DFC'}
-        title="동의하고 본인 인증하기"
-        textColor={'#FFFFFF'}
-        onPress={handleCheck}
-      />
+      <View style={styles.buttonContainer}>
+        <SButton
+          ButtonColor={'#155DFC'}
+          title="동의하고 본인 인증하기"
+          textColor={'#FFFFFF'}
+          onPress={handleCheck}
+        />
+      </View>
     </View>
   );
 };
@@ -58,5 +60,9 @@ const styles = StyleSheet.create({
 
   topContainer: {
     paddingHorizontal: SWidth * 8,
+  },
+
+  buttonContainer: {
+    height: SWidth * 56,
   },
 });
