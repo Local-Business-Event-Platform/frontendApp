@@ -8,10 +8,32 @@ import Logo from '../../components/Login/Logo';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 const LoginPage = () => {
   const navigation = useCustomNavigation();
+  const [passwordOpen, setPasswordOpen] = useState(false);
+  const [errorMsg, setErrorMsg] = useState({
+    id: '',
+    password: '',
+  });
   const [userData, setUserData] = useState({
     id: '',
     password: '',
   });
+
+  const handleLogin = () => {
+    if (userData.id === '') {
+      setErrorMsg({
+        ...errorMsg,
+        id: '아이디가 일치하지 않습니다',
+      });
+      return;
+    } else if (userData.password === '') {
+      setErrorMsg({
+        ...errorMsg,
+        password: '영문/숫자/특수문자 조합 8~15자',
+      });
+      return;
+    }
+  };
+
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <Pressable style={styles.container} onPress={Keyboard.dismiss}>
@@ -20,35 +42,52 @@ const LoginPage = () => {
           <View style={styles.inputContainer}>
             <SInput
               title="아이디"
+              maxLength={20}
+              errorText={errorMsg.id}
               value={userData.id}
-              onChangeText={() =>
+              onChangeText={text => {
                 setUserData({
                   ...userData,
-                  id: userData.id,
-                })
-              }
+                  id: text,
+                });
+                setErrorMsg({
+                  ...errorMsg,
+                  id: '',
+                });
+              }}
             />
             <SInput
               title="비밀번호"
+              maxLength={20}
+              iconOn={true}
+              iconOnPress={() => setPasswordOpen(!passwordOpen)}
+              secureTextEntry={passwordOpen}
+              errorText={errorMsg.password}
               value={userData.password}
-              onChangeText={() =>
+              onChangeText={text => {
                 setUserData({
                   ...userData,
-                  password: userData.password,
-                })
-              }
+                  password: text,
+                });
+                setErrorMsg({
+                  ...errorMsg,
+                  password: '',
+                });
+              }}
             />
           </View>
-        </View>
-        <View style={styles.bottomContainer}>
-          <FindUser onPress={() => {}} />
-          <View style={styles.buttonContainer}>
+          <View style={styles.loginButtonContainer}>
             <SButton
               title="로그인"
               textColor={'#FFFFFF'}
               ButtonColor={'#155DFC'}
-              onPress={() => {}}
+              onPress={handleLogin}
             />
+          </View>
+        </View>
+        <View style={styles.bottomContainer}>
+          <FindUser onPress={() => navigation.navigate('find')} />
+          <View style={styles.buttonContainer}>
             <SButton
               title="회원가입"
               textColor={'#404040'}
@@ -69,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     paddingHorizontal: SWidth * 16,
-    paddingBottom: SWidth * 32,
+    paddingBottom: SWidth * 16,
     justifyContent: 'space-between',
     alignItems: 'center',
   },
@@ -83,6 +122,11 @@ const styles = StyleSheet.create({
   inputContainer: {
     marginTop: SWidth * 42,
     gap: SWidth * 32,
+  },
+
+  loginButtonContainer: {
+    marginTop: SWidth * 32,
+    width: '100%',
   },
 
   bottomContainer: {

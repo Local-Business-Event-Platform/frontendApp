@@ -8,9 +8,11 @@ import JoinButton from './JoinButton';
 const JoinInputButton = ({
   value,
   title,
+  titleColor,
   buttonTitle,
   onChangeText,
   editable,
+  errorText,
   keyboardType,
   placeholder,
   onPress,
@@ -22,7 +24,9 @@ const JoinInputButton = ({
         <SInput
           value={value}
           title={title}
+          titleColor={titleColor}
           editable={editable}
+          errorText={errorText}
           keyboardType={keyboardType}
           onChangeText={onChangeText}
           placeholder={placeholder}

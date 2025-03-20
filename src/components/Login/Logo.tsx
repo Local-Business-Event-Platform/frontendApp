@@ -17,13 +17,15 @@ export default Logo;
 const styles = StyleSheet.create({
   container: {
     width: '100%',
+    alignItems: 'center',
   },
 
   logoStyle: {
-    width: '100%',
-    height: SWidth * 145,
+    width: SWidth * 140,
+    height: SWidth * 140,
     backgroundColor: '#F5F5F5',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: SWidth * 8,
   },
 });

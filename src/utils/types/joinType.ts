@@ -20,9 +20,11 @@ export type JoinButtonProps = {
 export type JoinInputButtonProps = {
   value: string;
   title?: string;
+  titleColor?: ColorValue;
   buttonTitle: string;
   onChangeText: (text: string) => void;
   editable?: boolean;
+  errorText?: string;
   keyboardType?: 'default' | 'numeric';
   placeholder?: string;
   onPress: () => void;

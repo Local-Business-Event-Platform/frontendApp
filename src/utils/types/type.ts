@@ -76,7 +76,9 @@ export type SCheckTextProps = {
 
 export type SInputProps = {
   title?: string;
+  titleColor?: ColorValue;
   value: string;
+  maxLength?: number;
   onChangeText: (text: string) => void;
   editable?: boolean;
   keyboardType?: 'default' | 'numeric';
@@ -85,6 +87,7 @@ export type SInputProps = {
   textIcon?: string | undefined;
   iconOn?: boolean;
   iconOnPress?: () => void;
+  errorText?: string;
 };
 
 export type SListButtonProps = {

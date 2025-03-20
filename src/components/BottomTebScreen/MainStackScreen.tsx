@@ -1,5 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Address from '../../screen/auth/Address';
+import FindIdPassword from '../../screen/auth/FindIdPassword';
 import JoinIdPage from '../../screen/auth/JoinIdPage';
 import JoinPage from '../../screen/auth/JoinPage';
 import JoinUserPage from '../../screen/auth/JoinUserPage';
@@ -16,7 +17,7 @@ const MainStackScreen = () => {
   const {userData} = useUserData();
   return (
     <Stack.Navigator
-      initialRouteName="bottomTeb"
+      initialRouteName="login"
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: 'white',
@@ -30,6 +31,18 @@ const MainStackScreen = () => {
         options={{
           title: '',
           headerShown: false,
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="find"
+        component={FindIdPassword}
+        options={{
+          header() {
+            return <BackTitleAppBar title="아이디/비밀번호 찾기" />;
+          },
+          title: '',
+          headerShown: true,
           headerShadowVisible: false,
         }}
       />

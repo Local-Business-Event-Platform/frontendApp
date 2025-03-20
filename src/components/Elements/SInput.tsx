@@ -3,12 +3,15 @@ import {Pressable, StyleSheet, TextInput, View} from 'react-native';
 import {fontFamilies, SWidth} from '../../../globalStyle';
 import JoinPasswordClose from '../../utils/svgs/auth/JoinPasswordClose';
 import JoinPasswordOpen from '../../utils/svgs/auth/JoinPasswordOpen';
+import LoginError from '../../utils/svgs/auth/LoginError';
 import {SInputProps} from '../../utils/types/type';
 import SText from './SText';
 
 const SInput = ({
   title,
+  titleColor,
   value,
+  maxLength,
   onChangeText,
   editable,
   keyboardType,
@@ -17,13 +20,15 @@ const SInput = ({
   iconOn,
   textIcon,
   iconOnPress,
+  errorText,
 }: SInputProps) => {
   return (
     <View style={styles.container}>
-      {title && <SText fStyle="BmdMd" text={title} />}
+      {title && <SText fStyle="BmdMd" text={title} color={titleColor} />}
       <View style={styles.inputContainer}>
         <TextInput
           value={value}
+          maxLength={maxLength}
           onChangeText={onChangeText}
           editable={editable}
           keyboardType={keyboardType}
@@ -32,16 +37,25 @@ const SInput = ({
           placeholder={placeholder}
           placeholderTextColor={'#A1A1A1'}
         />
-        {iconOn &&
-          (textIcon !== '' ? (
-            <View style={styles.passwordIcon}>
-              <SText fStyle="BlgMd" text={textIcon!} color={'#A1A1A1'} />
-            </View>
-          ) : (
-            <Pressable style={styles.passwordIcon} onPress={iconOnPress}>
-              {secureTextEntry ? <JoinPasswordOpen /> : <JoinPasswordClose />}
-            </Pressable>
-          ))}
+        {textIcon !== '' && (
+          <View style={styles.passwordIcon}>
+            <SText fStyle="BlgMd" text={textIcon!} color={'#A1A1A1'} />
+          </View>
+        )}
+        {iconOn && (
+          <Pressable
+            style={styles.passwordIcon}
+            onPress={iconOnPress}
+            hitSlop={10}>
+            {secureTextEntry ? <JoinPasswordOpen /> : <JoinPasswordClose />}
+          </Pressable>
+        )}
+        {errorText && (
+          <View style={styles.errorLow}>
+            <LoginError />
+            <SText fStyle="BlgMd" text={errorText} color={'#E7000B'} />
+          </View>
+        )}
       </View>
     </View>
   );
@@ -72,5 +86,12 @@ const styles = StyleSheet.create({
   passwordIcon: {
     position: 'absolute',
     right: SWidth * 12,
+  },
+
+  errorLow: {
+    marginTop: SWidth * 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SWidth * 4,
   },
 });

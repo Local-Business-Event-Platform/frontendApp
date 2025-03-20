@@ -1,7 +1,5 @@
 export const textItems = [
-  {text: '아이디', color: '#155DFC'},
-  {text: ' 또는 ', color: '#A1A1A1'},
-  {text: '비밀번호', color: '#155DFC'},
+  {text: '아이디/비밀번호', color: '#155DFC'},
   {text: '를 잊으셨나요?', color: '#A1A1A1'},
 ];
 
