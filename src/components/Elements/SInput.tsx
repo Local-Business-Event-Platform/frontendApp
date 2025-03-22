@@ -1,16 +1,23 @@
 import React from 'react';
 import {Pressable, StyleSheet, TextInput, View} from 'react-native';
 import {fontFamilies, SWidth} from '../../../globalStyle';
+import AuthCheck from '../../screen/auth/AuthCheck';
 import JoinPasswordClose from '../../utils/svgs/auth/JoinPasswordClose';
 import JoinPasswordOpen from '../../utils/svgs/auth/JoinPasswordOpen';
 import LoginError from '../../utils/svgs/auth/LoginError';
+import MapSearchIcon from '../../utils/svgs/mapPage/MapSearchIcon';
 import {SInputProps} from '../../utils/types/type';
+import JoinButton from '../Join/JoinUser/JoinButton';
 import SText from './SText';
 
 const SInput = ({
   title,
   titleColor,
   value,
+  buttonTitle,
+  borderColor = '#E5E5E5',
+  buttonOnPress,
+  ButtonTextDecorationLine,
   maxLength,
   onChangeText,
   editable,
@@ -18,42 +25,81 @@ const SInput = ({
   secureTextEntry,
   placeholder,
   iconOn,
+  searchOn,
   textIcon,
   iconOnPress,
-  errorText,
+  msg,
+  msgType,
 }: SInputProps) => {
   return (
     <View style={styles.container}>
       {title && <SText fStyle="BmdMd" text={title} color={titleColor} />}
       <View style={styles.inputContainer}>
-        <TextInput
-          value={value}
-          maxLength={maxLength}
-          onChangeText={onChangeText}
-          editable={editable}
-          keyboardType={keyboardType}
-          secureTextEntry={secureTextEntry}
-          style={styles.inputStyle}
-          placeholder={placeholder}
-          placeholderTextColor={'#A1A1A1'}
-        />
-        {textIcon !== '' && (
-          <View style={styles.passwordIcon}>
-            <SText fStyle="BlgMd" text={textIcon!} color={'#A1A1A1'} />
+        <View style={styles.inputButton}>
+          <View
+            style={{flex: 1, position: 'relative', justifyContent: 'center'}}>
+            <TextInput
+              value={value}
+              maxLength={maxLength}
+              onChangeText={onChangeText}
+              editable={editable}
+              keyboardType={keyboardType}
+              secureTextEntry={secureTextEntry}
+              style={[
+                styles.inputStyle,
+                {
+                  borderColor: borderColor,
+                },
+              ]}
+              placeholder={placeholder}
+              placeholderTextColor={'#A1A1A1'}
+            />
+            {textIcon !== '' && (
+              <View style={styles.passwordIcon}>
+                <SText fStyle="BlgMd" text={textIcon!} color={'#A1A1A1'} />
+              </View>
+            )}
+            {iconOn && (
+              <Pressable
+                style={styles.passwordIcon}
+                onPress={iconOnPress}
+                hitSlop={10}>
+                {secureTextEntry ? <JoinPasswordClose /> : <JoinPasswordOpen />}
+              </Pressable>
+            )}
+            {searchOn && (
+              <Pressable
+                style={styles.passwordIcon}
+                onPress={iconOnPress}
+                hitSlop={10}>
+                <MapSearchIcon />
+              </Pressable>
+            )}
           </View>
-        )}
-        {iconOn && (
-          <Pressable
-            style={styles.passwordIcon}
-            onPress={iconOnPress}
-            hitSlop={10}>
-            {secureTextEntry ? <JoinPasswordOpen /> : <JoinPasswordClose />}
-          </Pressable>
-        )}
-        {errorText && (
+          {buttonTitle && (
+            <JoinButton
+              title={buttonTitle}
+              buttonOnPress={buttonOnPress}
+              textDecorationLine={ButtonTextDecorationLine}
+            />
+          )}
+        </View>
+
+        {msg && (
           <View style={styles.errorLow}>
-            <LoginError />
-            <SText fStyle="BlgMd" text={errorText} color={'#E7000B'} />
+            {msgType === 'error' && <LoginError />}
+            {msgType === 'success' && <AuthCheck />}
+            <SText
+              fStyle="BlgMd"
+              text={msg}
+              color={
+                msgType === 'error'
+                  ? '#E7000B'
+                  : msgType === 'success'
+                  ? '#00A63E'
+                  : '#525252'
+              }
+            />
           </View>
         )}
       </View>
@@ -75,8 +121,8 @@ const styles = StyleSheet.create({
 
   inputStyle: {
     borderWidth: SWidth * 1.25,
-    borderColor: '#E5E5E5',
     borderRadius: SWidth * 8,
+    backgroundColor: 'white',
     height: SWidth * 48,
     paddingHorizontal: SWidth * 12,
     fontSize: SWidth * 16,
@@ -86,6 +132,12 @@ const styles = StyleSheet.create({
   passwordIcon: {
     position: 'absolute',
     right: SWidth * 12,
+  },
+
+  inputButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SWidth * 8,
   },
 
   errorLow: {

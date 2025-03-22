@@ -2,6 +2,7 @@ import {ColorValue} from 'react-native';
 
 export type SButtonProps = {
   onPress: () => void;
+  disabled?: boolean;
   ButtonColor: ColorValue;
   title: string;
   textColor: ColorValue;
@@ -78,6 +79,10 @@ export type SInputProps = {
   title?: string;
   titleColor?: ColorValue;
   value: string;
+  borderColor?: ColorValue;
+  buttonTitle?: string;
+  buttonOnPress?: () => void;
+  ButtonTextDecorationLine?: 'underline' | 'none';
   maxLength?: number;
   onChangeText: (text: string) => void;
   editable?: boolean;
@@ -86,8 +91,10 @@ export type SInputProps = {
   placeholder?: string;
   textIcon?: string | undefined;
   iconOn?: boolean;
+  searchOn?: boolean;
   iconOnPress?: () => void;
-  errorText?: string;
+  msg?: string;
+  msgType?: 'error' | 'success' | 'undefined';
 };
 
 export type SListButtonProps = {

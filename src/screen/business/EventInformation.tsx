@@ -6,7 +6,11 @@ import BContainer from '../../components/BusinessPage/BContainer';
 import BContentArea from '../../components/BusinessPage/BContentArea';
 import BContentText from '../../components/BusinessPage/BContentText';
 import BContentTime from '../../components/BusinessPage/BContentTime';
-import {BasicInformationProps} from '../../utils/types/businessType';
+import {BDataProps} from '../../utils/types/businessType';
+
+type BasicInformationProps = {
+  data: BDataProps;
+};
 
 const EventInformation = ({data}: BasicInformationProps) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -16,6 +20,8 @@ const EventInformation = ({data}: BasicInformationProps) => {
       <BContainer>
         <BButtonTitle
           title="이벤트 정보"
+          buttonText={data ? '수정하기' : '등록하기'}
+          buttonTextColor={isClicked ? 'white' : '#525252'}
           deleteButton={true}
           onClick={isClicked}
           deleteOnPress={() => {}}
@@ -23,7 +29,8 @@ const EventInformation = ({data}: BasicInformationProps) => {
         />
         <BContentText
           title="혜택"
-          content="첫 방문 고객에게 무료 음료 증정"
+          content={data ? '첫 방문 고객에게 무료 음료 증정' : '혜택 입력'}
+          contentColor={data ? '#404040' : '#A1A1A1'}
           placeholder="예) 전 메뉴 10% 할인"
           color={'#525252'}
           onClick={isClicked}

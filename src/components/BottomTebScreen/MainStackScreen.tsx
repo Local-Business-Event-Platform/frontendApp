@@ -5,6 +5,7 @@ import JoinIdPage from '../../screen/auth/JoinIdPage';
 import JoinPage from '../../screen/auth/JoinPage';
 import JoinUserPage from '../../screen/auth/JoinUserPage';
 import LoginPage from '../../screen/auth/LoginPage';
+import NewPasswordPage from '../../screen/auth/NewPasswordPage';
 import SuccessPage from '../../screen/auth/SuccessPage';
 import TermsOfUsePage from '../../screen/auth/TermsOfUsePage';
 import {useUserData} from '../../store/userRoute';
@@ -17,7 +18,7 @@ const MainStackScreen = () => {
   const {userData} = useUserData();
   return (
     <Stack.Navigator
-      initialRouteName="login"
+      initialRouteName="bottomTeb"
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: 'white',
@@ -37,6 +38,18 @@ const MainStackScreen = () => {
       <Stack.Screen
         name="find"
         component={FindIdPassword}
+        options={{
+          header() {
+            return <BackTitleAppBar title="아이디/비밀번호 찾기" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="password"
+        component={NewPasswordPage}
         options={{
           header() {
             return <BackTitleAppBar title="아이디/비밀번호 찾기" />;

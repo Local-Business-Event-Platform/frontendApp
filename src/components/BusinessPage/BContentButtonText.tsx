@@ -2,33 +2,29 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import {BContentProps} from '../../utils/types/businessType';
+import SInput from '../Elements/SInput';
 import SText from '../Elements/SText';
-import JoinInputButton from '../Join/JoinUser/JoinInputButton';
 
 const BContentButtonText = ({
   title,
   content,
+  contentColor,
   color,
-  underline,
+  value,
+  onChangeText,
+  buttonOnPress,
   onClick,
 }: BContentProps) => {
   return (
     <View style={styles.container}>
-      <SText
-        fStyle="BmdMd"
-        text={title}
-        color={color}
-        textDecorationLine={underline}
-        lineColor={color}
-      />
+      <SText fStyle="BmdMd" text={title} color={color} lineColor={color} />
       {onClick ? (
-        <JoinInputButton
-          value={''}
-          onChangeText={() => {}}
+        <SInput
+          value={value}
+          onChangeText={onChangeText}
           placeholder={'123-45-67890'}
           buttonTitle="인증"
-          textDecorationLine="underline"
-          onPress={() => {}}
+          buttonOnPress={buttonOnPress}
         />
       ) : (
         <SText
@@ -37,7 +33,7 @@ const BContentButtonText = ({
           lineHeight={SWidth * 24}
           fStyle="BxlSb"
           text={content}
-          color={'#404040'}
+          color={contentColor}
         />
       )}
     </View>

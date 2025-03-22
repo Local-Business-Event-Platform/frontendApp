@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 import BusinessPage from '../../screen/business/BusinessPage';
 import StoreInfoPage from '../../screen/business/StoreInfoPage';
 import JoinAppBar from './AppBar/JoinAppBar';
+import OnlyTitleAppBar from './AppBar/OnlyTitleAppBar';
 
 const BusinessPageScreen = () => {
   const Stack = createNativeStackNavigator();
@@ -17,8 +18,11 @@ const BusinessPageScreen = () => {
       <Stack.Screen
         name="businessPage"
         options={{
+          header() {
+            return <OnlyTitleAppBar title="나의 가게" />;
+          },
           title: '',
-          headerShown: false,
+          headerShown: true,
           headerShadowVisible: false,
         }}
         component={BusinessPage}

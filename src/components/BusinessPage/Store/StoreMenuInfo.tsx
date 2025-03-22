@@ -10,7 +10,7 @@ import BContainer from '../BContainer';
 import BOnlyTitle from '../BOnlyTitle';
 import StoreUpdateButton from './StoreUpdateButton';
 const StoreMenuInfo = () => {
-  const {setModalOpen} = useModalOpen();
+  const {setModalTitle, setModalOpen} = useModalOpen();
   const [menuList, setMenuList] = useState([
     {
       id: 1,
@@ -65,7 +65,13 @@ const StoreMenuInfo = () => {
           ))}
         </View>
       )}
-      <BAddButton title="메뉴 추가" onPress={() => setModalOpen(true)} />
+      <BAddButton
+        title="메뉴 추가"
+        onPress={() => {
+          setModalTitle('business');
+          setModalOpen(true);
+        }}
+      />
     </BContainer>
   );
 };

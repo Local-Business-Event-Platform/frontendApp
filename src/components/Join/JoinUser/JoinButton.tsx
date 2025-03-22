@@ -4,9 +4,13 @@ import {SWidth} from '../../../../globalStyle';
 import {JoinButtonProps} from '../../../utils/types/joinType';
 import SText from '../../Elements/SText';
 
-const JoinButton = ({title, onPress, textDecorationLine}: JoinButtonProps) => {
+const JoinButton = ({
+  title,
+  buttonOnPress,
+  textDecorationLine,
+}: JoinButtonProps) => {
   return (
-    <Pressable style={styles.buttonContainer} onPress={onPress}>
+    <Pressable style={styles.buttonContainer} onPress={buttonOnPress}>
       <SText
         fStyle="BlgSb"
         text={title}

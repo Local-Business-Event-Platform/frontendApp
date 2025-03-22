@@ -19,18 +19,22 @@ const LoginPage = () => {
   });
 
   const handleLogin = () => {
-    if (userData.id === '') {
-      setErrorMsg({
-        ...errorMsg,
-        id: '아이디가 일치하지 않습니다',
-      });
-      return;
-    } else if (userData.password === '') {
-      setErrorMsg({
-        ...errorMsg,
-        password: '영문/숫자/특수문자 조합 8~15자',
-      });
-      return;
+    switch (true) {
+      case userData.id === '':
+        setErrorMsg({
+          ...errorMsg,
+          id: '아이디를 입력해주세요.',
+        });
+        break;
+      case userData.password === '':
+        setErrorMsg({
+          ...errorMsg,
+          password: '비밀번호를 입력해주세요.',
+        });
+        break;
+      default:
+        console.log('로그인 성공');
+        break;
     }
   };
 
@@ -43,7 +47,8 @@ const LoginPage = () => {
             <SInput
               title="아이디"
               maxLength={20}
-              errorText={errorMsg.id}
+              msg={errorMsg.id}
+              msgType="error"
               value={userData.id}
               onChangeText={text => {
                 setUserData({
@@ -62,7 +67,8 @@ const LoginPage = () => {
               iconOn={true}
               iconOnPress={() => setPasswordOpen(!passwordOpen)}
               secureTextEntry={passwordOpen}
-              errorText={errorMsg.password}
+              msg={errorMsg.password}
+              msgType="error"
               value={userData.password}
               onChangeText={text => {
                 setUserData({

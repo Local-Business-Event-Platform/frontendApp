@@ -4,7 +4,6 @@ import {SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import SInput from '../../components/Elements/SInput';
 import JoinTitle from '../../components/Join/JoinTitle';
-import JoinInputButton from '../../components/Join/JoinUser/JoinInputButton';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
 
@@ -24,13 +23,13 @@ const JoinIdPage = () => {
         <View style={styles.topContainer}>
           <JoinTitle title1="아이디와 비밀번호를" title2="입력해 주세요." />
           <View style={styles.inputContainer}>
-            <JoinInputButton
+            <SInput
               value={userData.id}
               title="아이디"
               onChangeText={text => setUserData({...userData, id: text})}
               placeholder="영문/숫자 조합 4~12자"
               buttonTitle="중복 확인"
-              onPress={() => {}}
+              buttonOnPress={() => {}}
             />
             <SInput
               iconOn

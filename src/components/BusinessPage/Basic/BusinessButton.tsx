@@ -5,7 +5,12 @@ import BusinessEdit from '../../../utils/svgs/businessPage/BusinessEdit';
 import {BusinessButtonProps} from '../../../utils/types/businessType';
 import SText from '../../Elements/SText';
 
-const BusinessButton = ({onClick, onPress}: BusinessButtonProps) => {
+const BusinessButton = ({
+  onClick,
+  onPress,
+  buttonText,
+  buttonTextColor,
+}: BusinessButtonProps) => {
   return (
     <Pressable
       style={[
@@ -16,11 +21,7 @@ const BusinessButton = ({onClick, onPress}: BusinessButtonProps) => {
         },
       ]}
       onPress={onPress}>
-      <SText
-        fStyle="BmdSb"
-        text={onClick ? '수정 완료' : '수정하기'}
-        color={onClick ? 'white' : '#525252'}
-      />
+      <SText fStyle="BmdSb" text={buttonText} color={buttonTextColor} />
       <BusinessEdit onClick={onClick} />
     </Pressable>
   );

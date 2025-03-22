@@ -4,11 +4,16 @@ import {SWidth} from '../../../globalStyle';
 import StoreInfo from '../../components/BusinessPage/Store/StoreInfo';
 import StoreMenuCategory from '../../components/BusinessPage/Store/StoreMenuCategory';
 import StoreMenuInfo from '../../components/BusinessPage/Store/StoreMenuInfo';
-import {BasicInformationProps} from '../../utils/types/businessType';
+import {BDataProps} from '../../utils/types/businessType';
+
+type BasicInformationProps = {
+  data: BDataProps;
+};
+
 const StoreInformation = ({data}: BasicInformationProps) => {
   return (
     <View style={styles.container}>
-      <StoreInfo />
+      <StoreInfo data={data} />
       <StoreMenuCategory />
       <StoreMenuInfo />
     </View>

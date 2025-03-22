@@ -4,10 +4,17 @@ import {SWidth} from '../../../globalStyle';
 import {SButtonProps} from '../../utils/types/type';
 import SText from './SText';
 
-const SButton = ({onPress, ButtonColor, title, textColor}: SButtonProps) => {
+const SButton = ({
+  onPress,
+  disabled,
+  ButtonColor,
+  title,
+  textColor,
+}: SButtonProps) => {
   return (
     <Pressable
       onPress={onPress}
+      disabled={disabled}
       style={[styles.buttonStyle, {backgroundColor: ButtonColor}]}>
       <SText fStyle="BlgSb" text={title} color={textColor} />
     </Pressable>

@@ -6,7 +6,6 @@ import SButton from '../../components/Elements/SButton';
 import SInput from '../../components/Elements/SInput';
 import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
-import JoinInputButton from '../../components/Join/JoinUser/JoinInputButton';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
 
@@ -42,30 +41,30 @@ const JoinUserPage = () => {
               placeholder="실명 입력"
             />
             <View style={styles.phoneInputContainer}>
-              <JoinInputButton
+              <SInput
                 value={userData.phone}
                 title="휴대폰번호"
                 keyboardType="numeric"
                 onChangeText={text => setUserData({...userData, phone: text})}
                 placeholder="´-´없이 번호만 입력"
                 buttonTitle="인증번호 전송"
-                onPress={() => {}}
+                buttonOnPress={() => {}}
               />
-              <JoinInputButton
+              <SInput
                 value=""
                 onChangeText={() => {}}
                 buttonTitle="확인"
-                onPress={() => {}}
+                buttonOnPress={() => {}}
               />
             </View>
             <View style={styles.addressInputContainer}>
               <SText fStyle="BmdMd" text={'주소'} />
-              <JoinInputButton
+              <SInput
                 value={userData.zonecode?.toString()!}
                 onChangeText={() => {}}
                 editable={false}
                 buttonTitle="우편번호 검색"
-                onPress={() => navigation.navigate('address')}
+                buttonOnPress={() => navigation.navigate('address')}
               />
               <SInput
                 value={`${userData.address} ${userData.buildingName}`}

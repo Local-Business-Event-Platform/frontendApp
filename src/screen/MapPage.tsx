@@ -1,8 +1,12 @@
 import Geolocation from '@react-native-community/geolocation';
 import {getDistance} from 'geolib';
 import React, {useEffect, useState} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
+import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import {SWidth} from '../../globalStyle';
+import SInput from '../components/Elements/SInput';
+import SText from '../components/Elements/SText';
+import MapMarker from '../utils/svgs/mapPage/MapMarker';
 
 const MapPage = () => {
   const [myLocation, setMyLocation] = useState({
@@ -11,8 +15,11 @@ const MapPage = () => {
   });
   const [mapRef, setMapRef] = useState<MapView | null>(null);
   const buildings = [
-    {name: '음식점1', latitude: 37.5675, longitude: 126.9785},
-    {name: '음식점2', latitude: 37.568, longitude: 126.979},
+    {name: '나주식당', latitude: 37.5564503, longitude: 126.9371086},
+    {name: '소담식당', latitude: 37.5574369, longitude: 126.9380307},
+    {name: '맥도날드', latitude: 37.5585312, longitude: 126.9366973},
+    {name: '피슈마라홍탕신촌점', latitude: 37.5563246, longitude: 126.9342936},
+    {name: '형제식당', latitude: 37.5554663, longitude: 126.9348035},
   ];
 
   const nearbyBuildings = buildings.filter(building => {
@@ -20,7 +27,7 @@ const MapPage = () => {
       {latitude: myLocation.latitude, longitude: myLocation.longitude},
       {latitude: building.latitude, longitude: building.longitude},
     );
-    return distance <= 10000; // 1km = 1000m
+    return distance <= 20000; // 1km = 1000m
   });
 
   useEffect(() => {
@@ -62,29 +69,42 @@ const MapPage = () => {
   }, [myLocation]);
   console.log('nearbyBuildings', myLocation);
   return (
-    <View style={styles.mapContainer}>
+    <Pressable style={styles.mapContainer} onPress={Keyboard.dismiss}>
+      <View style={styles.searchBarContainer}>
+        <View style={styles.searchBar}>
+          <SInput
+            value=""
+            onChangeText={() => {}}
+            borderColor={'#525252'}
+            searchOn={true}
+          />
+        </View>
+      </View>
       <MapView
         ref={ref => setMapRef(ref)}
+        provider={PROVIDER_GOOGLE}
         style={styles.mapSize}
         zoomEnabled={true}
         zoomControlEnabled={true}
         initialRegion={{
           latitude: Number(myLocation.latitude),
           longitude: Number(myLocation.longitude),
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitudeDelta: 0.05,
+          longitudeDelta: 0.05,
         }}>
         <Marker
-          title={'마커'}
+          title={'내위치'}
           coordinate={{
             latitude: Number(myLocation.latitude),
             longitude: Number(myLocation.longitude),
           }}>
-          <View>
-            <Image
-              source={require('../assets/images/markerIcon.png')}
-              style={{width: 50, height: 50}}
-            />
+          <View
+            style={{
+              alignItems: 'center',
+              gap: SWidth * 4,
+            }}>
+            <MapMarker />
+            <SText fStyle="BsmMd" text={'마커'} />
           </View>
         </Marker>
         {nearbyBuildings.map((building, index) => (
@@ -95,16 +115,14 @@ const MapPage = () => {
               latitude: building.latitude,
               longitude: building.longitude,
             }}>
-            <View>
-              <Image
-                source={require('../assets/images/markerIcon.png')}
-                style={{width: 50, height: 50}}
-              />
+            <View style={{alignItems: 'center', gap: SWidth * 4}}>
+              <MapMarker />
+              <SText fStyle="BsmMd" text={building.name} />
             </View>
           </Marker>
         ))}
       </MapView>
-    </View>
+    </Pressable>
   );
 };
 
@@ -112,10 +130,27 @@ export default MapPage;
 
 const styles = StyleSheet.create({
   mapContainer: {
-    marginBottom: 88,
+    position: 'relative',
+    flex: 1,
+  },
+
+  searchBarContainer: {
+    position: 'absolute',
+    width: '100%',
+    height: SWidth * 48,
+    top: SWidth * 74,
+    left: 0,
+    zIndex: 2,
+  },
+
+  searchBar: {
+    marginHorizontal: SWidth * 16,
+    borderRadius: SWidth * 8,
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
   },
 
   mapSize: {
-    height: 350,
+    width: '100%',
+    height: '100%',
   },
 });

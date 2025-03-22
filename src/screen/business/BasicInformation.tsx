@@ -2,13 +2,17 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import StoreInfo from '../../components/BusinessPage/Basic/BasicStoreInfo';
 import BusinessInfo from '../../components/BusinessPage/Basic/BusinessInfo';
-import {BasicInformationProps} from '../../utils/types/businessType';
+import {BDataProps} from '../../utils/types/businessType';
+
+type BasicInformationProps = {
+  data: BDataProps;
+};
 
 const BasicInformation = ({data}: BasicInformationProps) => {
   return (
     <>
       <BusinessInfo data={data} />
-      <StoreInfo />
+      <StoreInfo data={data} />
     </>
   );
 };

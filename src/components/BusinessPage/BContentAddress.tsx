@@ -5,11 +5,11 @@ import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {BContentAddressProps} from '../../utils/types/businessType';
 import SInput from '../Elements/SInput';
 import SText from '../Elements/SText';
-import JoinInputButton from '../Join/JoinUser/JoinInputButton';
 
 const BContentAddress = ({
   title,
   content,
+  contentColor,
   color,
   underline,
   onClick,
@@ -26,12 +26,12 @@ const BContentAddress = ({
       />
       {onClick ? (
         <View style={styles.addressContainer}>
-          <JoinInputButton
+          <SInput
             value={''}
             onChangeText={() => {}}
             editable={false}
             buttonTitle="우편번호 검색"
-            onPress={() => navigation.navigate('address')}
+            buttonOnPress={() => navigation.navigate('address')}
           />
           <SInput value={''} onChangeText={() => {}} editable={false} />
           <SInput value={''} onChangeText={text => {}} />
@@ -43,7 +43,7 @@ const BContentAddress = ({
           lineHeight={SWidth * 24}
           fStyle="BxlSb"
           text={content}
-          color={'#404040'}
+          color={contentColor}
         />
       )}
     </View>

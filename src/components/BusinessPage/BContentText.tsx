@@ -8,6 +8,7 @@ import SText from '../Elements/SText';
 const BContentText = ({
   title,
   content,
+  contentColor,
   color,
   underline,
   onClick,
@@ -37,7 +38,7 @@ const BContentText = ({
           lineHeight={SWidth * 24}
           fStyle="BxlSb"
           text={content}
-          color={'#404040'}
+          color={contentColor}
         />
       )}
     </View>

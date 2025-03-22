@@ -1,7 +1,14 @@
 import {ColorValue} from 'react-native';
 
-export type BasicInformationProps = {
-  data: string;
+export type BDataProps = {
+  storeName: string;
+  storeInfoNumber: string;
+  storeCEO: string;
+  storeCategory: string;
+  storeDetailCategory: string;
+  storeAddress: string;
+  storeZipCode: string;
+  storePhoneNumber: string;
 };
 
 export type StoreInfoTabProps = {
@@ -12,11 +19,13 @@ export type StoreInfoTabProps = {
 export type BContentProps = {
   title: string;
   content: string;
+  contentColor: ColorValue;
   color: ColorValue;
   placeholder?: string;
   underline?: 'none' | 'underline' | 'line-through' | 'underline line-through';
   onClick: boolean;
   value: string;
+  buttonOnPress?: () => void;
   onChangeText: (text: string) => void;
 };
 
@@ -44,6 +53,7 @@ export type BContentListProps = {
   title: string;
   content: string;
   color: ColorValue;
+  contentColor: ColorValue;
   placeholder?: string;
   underline?: 'none' | 'underline' | 'line-through' | 'underline line-through';
   onClick: boolean;
@@ -54,6 +64,7 @@ export type BContentListProps = {
 export type BContentAddressProps = {
   title: string;
   content: string;
+  contentColor: ColorValue;
   color: ColorValue;
   placeholder?: string;
   underline?: 'none' | 'underline' | 'line-through' | 'underline line-through';
@@ -63,12 +74,16 @@ export type BContentAddressProps = {
 export type BTitleContainerProps = {
   title: string;
   onClick: boolean;
+  buttonText: string | number;
+  buttonTextColor: ColorValue;
   onPress: () => void;
   deleteButton?: boolean;
   deleteOnPress?: () => void;
 };
 
 export type BusinessButtonProps = {
+  buttonText: string | number;
+  buttonTextColor: ColorValue;
   onClick: boolean;
   onPress: () => void;
 };

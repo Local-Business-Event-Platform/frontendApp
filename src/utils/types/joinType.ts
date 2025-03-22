@@ -13,21 +13,7 @@ export type JoinSelectedButtonProps = {
 
 export type JoinButtonProps = {
   title: string;
-  onPress: () => void;
-  textDecorationLine?: 'underline' | 'none';
-};
-
-export type JoinInputButtonProps = {
-  value: string;
-  title?: string;
-  titleColor?: ColorValue;
-  buttonTitle: string;
-  onChangeText: (text: string) => void;
-  editable?: boolean;
-  errorText?: string;
-  keyboardType?: 'default' | 'numeric';
-  placeholder?: string;
-  onPress: () => void;
+  buttonOnPress?: () => void;
   textDecorationLine?: 'underline' | 'none';
 };
 

@@ -8,6 +8,8 @@ import BusinessButton from './Basic/BusinessButton';
 
 const BButtonTitle = ({
   title,
+  buttonText,
+  buttonTextColor,
   onClick,
   onPress,
   deleteButton,
@@ -17,7 +19,12 @@ const BButtonTitle = ({
     <View style={styles.container}>
       <SText fStyle="Hmd" text={title} />
       <View style={styles.buttonContainer}>
-        <BusinessButton onClick={onClick} onPress={onPress} />
+        <BusinessButton
+          buttonText={buttonText}
+          buttonTextColor={buttonTextColor}
+          onClick={onClick}
+          onPress={onPress}
+        />
         {deleteButton && onClick && (
           <Pressable style={styles.deleteButton} onPress={deleteOnPress}>
             <BusinessDelete />
