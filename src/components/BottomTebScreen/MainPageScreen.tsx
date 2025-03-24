@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 import MainPage from '../../screen/MainPage';
 import StoreDetailPage from '../../screen/StoreDetailPage';
 import MainAppBar from './AppBar/MainAppBar';
+import StoreDetailAppBar from './AppBar/StoreDetailAppBar';
 
 const MainPageScreen = () => {
   const Stack = createNativeStackNavigator();
@@ -29,8 +30,11 @@ const MainPageScreen = () => {
       <Stack.Screen
         name="detailPage"
         options={{
+          header() {
+            return <StoreDetailAppBar />;
+          },
           title: '',
-          headerShown: false,
+          headerShown: true,
           headerShadowVisible: false,
         }}
         component={StoreDetailPage}

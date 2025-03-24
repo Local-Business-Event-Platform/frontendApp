@@ -2,15 +2,17 @@ import React, {useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {useStoreData} from '../../store/storeRoute';
 import EventItem from './EventItem';
 
 const MainEventContent = () => {
   const navigation = useCustomNavigation();
   const [clicked, setClicked] = useState(false);
+  const {setTitle} = useStoreData();
   const data = [
     {
       id: 1,
-      img: require('../../assets/images/no_image.jpg'),
+      img: require('../../assets/images/background.png'),
       title: '신메뉴 출시 기념 전 메뉴 20% 할인',
       store: '카페드파리',
       category: '양식',
@@ -52,7 +54,10 @@ const MainEventContent = () => {
           <EventItem
             clicked={clicked}
             item={item.item}
-            onPress={() => navigation.navigate('detailPage')}
+            onPress={() => {
+              setTitle(item.item.store);
+              navigation.navigate('detailPage', {item: item.item});
+            }}
             likeOnPress={() => setClicked(!clicked)}
           />
         )}

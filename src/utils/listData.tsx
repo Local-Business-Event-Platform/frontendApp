@@ -2,6 +2,9 @@ import MainArrayIcon from './svgs/mainPage/MainArrayIcon';
 import MainFilterIcon from './svgs/mainPage/MainFilterIcon';
 import MainGift from './svgs/mainPage/MainGift';
 import MainStore from './svgs/mainPage/MainStore';
+import DetailGiftIcon from './svgs/storeDetailPage/DetailGiftIcon';
+import DetailHomeIcon from './svgs/storeDetailPage/DetailHomeIcon';
+import DetailPen from './svgs/storeDetailPage/DetailPen';
 
 export const textItems = [
   {text: '아이디/비밀번호', color: '#155DFC'},
@@ -27,4 +30,10 @@ export const mainTabItems = [
 export const mainFilterItems = [
   {id: 1, title: '필터', icon: MainFilterIcon},
   {id: 2, title: '정렬', icon: MainArrayIcon},
+];
+
+export const storeDetailTabItems = [
+  {id: 1, title: '가게 정보', icon: <DetailGiftIcon />},
+  {id: 2, title: '이벤트', icon: <DetailHomeIcon />},
+  {id: 3, title: '후기', icon: <DetailPen />},
 ];
