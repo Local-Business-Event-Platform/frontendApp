@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
 import EventItem from './EventItem';
 
 const MainEventContent = () => {
+  const navigation = useCustomNavigation();
   const [clicked, setClicked] = useState(false);
   const data = [
     {
@@ -50,7 +52,7 @@ const MainEventContent = () => {
           <EventItem
             clicked={clicked}
             item={item.item}
-            onPress={() => console.log(item.item.id)}
+            onPress={() => navigation.navigate('detailPage')}
             likeOnPress={() => setClicked(!clicked)}
           />
         )}

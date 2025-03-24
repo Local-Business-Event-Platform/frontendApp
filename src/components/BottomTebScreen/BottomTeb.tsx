@@ -5,6 +5,7 @@ import {SWidth} from '../../../globalStyle';
 import MainPage from '../../screen/MainPage';
 import {useUserData} from '../../store/userRoute';
 import BusinessPageScreen from './BusinessPageScreen';
+import MainPageScreen from './MainPageScreen';
 import MapPageScreen from './MapPageScreen';
 import MyPageScreen from './MyPageScreen';
 import IconComponent from './TabMenu/IconComponent';
@@ -39,7 +40,7 @@ const BottomTeb = () => {
           backgroundColor: 'white',
         },
       })}>
-      <Tab.Screen name="홈" component={MainPage} />
+      <Tab.Screen name="홈" component={MainPageScreen} />
       <Tab.Screen name="지도" component={MapPageScreen} />
       {/* {userData.type === 2 && ( */}
       <Tab.Screen name="가게 관리" component={BusinessPageScreen} />

@@ -2,6 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import MainPage from '../../screen/MainPage';
+import StoreDetailPage from '../../screen/StoreDetailPage';
 import MainAppBar from './AppBar/MainAppBar';
 
 const MainPageScreen = () => {
@@ -12,9 +13,9 @@ const MainPageScreen = () => {
         headerShown: false,
         contentStyle: {backgroundColor: 'white'},
       }}
-      initialRouteName="myPage">
+      initialRouteName="mainPage">
       <Stack.Screen
-        name="myPage"
+        name="mainPage"
         options={{
           header() {
             return <MainAppBar />;
@@ -24,6 +25,15 @@ const MainPageScreen = () => {
           headerShadowVisible: false,
         }}
         component={MainPage}
+      />
+      <Stack.Screen
+        name="detailPage"
+        options={{
+          title: '',
+          headerShown: false,
+          headerShadowVisible: false,
+        }}
+        component={StoreDetailPage}
       />
     </Stack.Navigator>
   );
