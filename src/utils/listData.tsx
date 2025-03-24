@@ -1,3 +1,8 @@
+import MainArrayIcon from './svgs/mainPage/MainArrayIcon';
+import MainFilterIcon from './svgs/mainPage/MainFilterIcon';
+import MainGift from './svgs/mainPage/MainGift';
+import MainStore from './svgs/mainPage/MainStore';
+
 export const textItems = [
   {text: '아이디/비밀번호', color: '#155DFC'},
   {text: '를 잊으셨나요?', color: '#A1A1A1'},
@@ -13,3 +18,13 @@ export const checkItems = [
   },
   {key: 'check4', title: '[선택] 광고성 정보 수신 동의', arrow: true},
 ] as const;
+
+export const mainTabItems = [
+  {id: 1, title: '이벤트', icon: MainGift},
+  {id: 2, title: '가게', icon: MainStore},
+];
+
+export const mainFilterItems = [
+  {id: 1, title: '필터', icon: MainFilterIcon},
+  {id: 2, title: '정렬', icon: MainArrayIcon},
+];
