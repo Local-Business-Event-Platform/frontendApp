@@ -49,6 +49,26 @@ const StoreDetailPage = () => {
         img: require('../assets/images/background.png'),
       },
     ],
+    reviews: [
+      {
+        id: 1,
+        userImg: require('../assets/images/no_image.jpg'),
+        userName: '이서연',
+        reviewStar: 4,
+        reviewDate: '2025.02.15 방문',
+        reviewContent:
+          '음식이 정말 맛있고, 분위기도 좋았어요. 특히 직원분들이 친절하셔서 더욱 좋았습니다. 다음에 또 방문하고 싶네요!',
+      },
+      {
+        id: 2,
+        userImg: require('../assets/images/no_image.jpg'),
+        userName: '이서연',
+        reviewStar: 4,
+        reviewDate: '2025.02.15 방문',
+        reviewContent:
+          '음식이 정말 맛있고, 분위기도 좋았어요. 특히 직원분들이 친절하셔서 더욱 좋았습니다. 다음에 또 방문하고 싶네요!',
+      },
+    ],
   };
   return (
     <ScrollView overScrollMode="never" showsVerticalScrollIndicator={false}>
@@ -58,7 +78,7 @@ const StoreDetailPage = () => {
         <StoreDetailTab tabClicked={tabClicked} setTabClicked={setTabClicked} />
         {tabClicked === 1 && <StoreDetailInfo data={data.storeInfo} />}
         {tabClicked === 2 && <StoreDetailEvent data={data.events} />}
-        {tabClicked === 3 && <StoreDetailReview />}
+        {tabClicked === 3 && <StoreDetailReview data={data.reviews} />}
       </View>
     </ScrollView>
   );

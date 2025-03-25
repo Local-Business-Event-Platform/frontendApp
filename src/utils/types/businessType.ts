@@ -90,6 +90,7 @@ export type BusinessButtonProps = {
 
 export type TitleOnPressProps = {
   title: string;
+  marginTop?: number;
   onLongPress?: () => void;
   disabled?: boolean;
   onPress: () => void;

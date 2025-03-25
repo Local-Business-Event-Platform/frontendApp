@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+
 import {SWidth} from '../../../globalStyle';
 import BAddButton from '../../components/BusinessPage/BAddButton';
 import BStoreCard from '../../components/BusinessPage/BStoreCard';
@@ -37,6 +37,7 @@ const BusinessPage = () => {
     <View style={styles.container}>
       <View style={{paddingHorizontal: SWidth * 16}}>
         <BAddButton
+          marginTop={SWidth * 16}
           title="가게 추가하기"
           onPress={() => {
             navigation.navigate('storeInfo');
@@ -65,10 +66,6 @@ const BusinessPage = () => {
           />
         </View>
       )}
-      <LinearGradient
-        colors={['transparent', '#D3D3D399']}
-        style={styles.shadow}
-      />
     </View>
   );
 };
@@ -79,17 +76,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: 'relative',
-    marginTop: SWidth * 16,
   },
 
   listContainer: {
     marginTop: SWidth * 24,
-  },
-
-  shadow: {
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
-    height: SWidth * 56,
   },
 });

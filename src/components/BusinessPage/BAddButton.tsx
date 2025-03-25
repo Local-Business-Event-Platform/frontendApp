@@ -5,9 +5,15 @@ import BusinessPlus from '../../utils/svgs/businessPage/BusinessPlus';
 import {TitleOnPressProps} from '../../utils/types/businessType';
 import SText from '../Elements/SText';
 
-const BAddButton = ({title, onPress}: TitleOnPressProps) => {
+const BAddButton = ({
+  title,
+  marginTop = SWidth * 24,
+  onPress,
+}: TitleOnPressProps) => {
   return (
-    <Pressable style={styles.container} onPress={onPress}>
+    <Pressable
+      style={[styles.container, {marginTop: marginTop}]}
+      onPress={onPress}>
       <BusinessPlus />
       <SText fStyle="BlgSb" text={title} color={'#525252'} />
     </Pressable>
@@ -18,7 +24,6 @@ export default BAddButton;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 24,
     borderWidth: 1.5,
     height: SWidth * 56,
     borderRadius: SWidth * 8,

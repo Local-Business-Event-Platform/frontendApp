@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
-import BusinessLocation from '../../utils/svgs/businessPage/BusinessLocation';
-import BusinessStar from '../../utils/svgs/businessPage/BusinessStar';
 import SImageCard from '../Elements/SImageCard';
+import SMeterBox from '../Elements/SMeterBox';
+import SReviewBox from '../Elements/SReviewBox';
 import SText from '../Elements/SText';
 type BStoreCardProps = {
   item: {
@@ -26,16 +26,9 @@ const BStoreCard = ({item, onPress}: BStoreCardProps) => {
             <SText fStyle="BxlSb" text={item.name} />
             <SText fStyle="BlgMd" text={item.category} color={'#A1A1A1'} />
           </View>
-          <View style={styles.reviewContainer}>
-            <BusinessStar />
-            <SText fStyle="BmdSb" text={`${item.review} / 5.0`} />
-            <SText fStyle="BmdSb" text={`(${item.reviewCount})`} />
-          </View>
+          <SReviewBox review={item.review} reviewCount={item.reviewCount} />
         </View>
-        <View style={styles.rowContainer}>
-          <BusinessLocation />
-          <SText fStyle="BmdMd" text={'350m / 도보 5분'} color={'#404040'} />
-        </View>
+        <SMeterBox content="350m / 도보 5분" />
       </View>
     </SImageCard>
   );
@@ -64,15 +57,6 @@ const styles = StyleSheet.create({
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: SWidth * 4,
-  },
-  reviewContainer: {
-    backgroundColor: '#FEFCE8',
-    flexDirection: 'row',
-    paddingHorizontal: SWidth * 4,
-    paddingVertical: SWidth * 2,
-    alignItems: 'center',
-    alignSelf: 'flex-start',
     gap: SWidth * 4,
   },
 });

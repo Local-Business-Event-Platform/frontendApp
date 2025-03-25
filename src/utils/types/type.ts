@@ -101,3 +101,12 @@ export type SListButtonProps = {
   title: string;
   onPress: () => void;
 };
+
+export type SReviewBoxProps = {
+  review: number;
+  reviewCount: number;
+};
+
+export type SMeterBoxProps = {
+  content: string;
+};
