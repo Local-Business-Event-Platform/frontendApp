@@ -3,8 +3,8 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import SCarousel from '../components/Elements/SCarousel';
 import StoreDetailEvent from '../components/MainPage/StoreDetailPage/DetailEvent/StoreDetailEvent';
 import StoreDetailInfo from '../components/MainPage/StoreDetailPage/DetailInfo/StoreDetailInfo';
+import StoreDetailReview from '../components/MainPage/StoreDetailPage/DetailReview/StoreDetailReview';
 import StoreDetailContent from '../components/MainPage/StoreDetailPage/StoreDetailContent';
-import StoreDetailReview from '../components/MainPage/StoreDetailPage/StoreDetailReview';
 import StoreDetailTab from '../components/MainPage/StoreDetailPage/StoreDetailTab';
 
 const StoreDetailPage = () => {
