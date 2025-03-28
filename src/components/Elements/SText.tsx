@@ -105,15 +105,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   HlgHeight: {
-    height: SWidth * 36,
-    justifyContent: 'center',
-  },
-  HmdHeight: {
     height: SWidth * 32,
     justifyContent: 'center',
   },
-  HsmHeight: {
+  HmdHeight: {
     height: SWidth * 28,
+    justifyContent: 'center',
+  },
+  HsmHeight: {
+    height: SWidth * 24,
     justifyContent: 'center',
   },
   BxlSbHeight: {
@@ -195,18 +195,21 @@ const styles = StyleSheet.create({
   HlgFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 28,
+    lineHeight: SWidth * 28,
     letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HmdFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 24,
+    lineHeight: SWidth * 24,
     letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HsmFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 20,
+    lineHeight: SWidth * 20,
     letterSpacing: -0.2,
     includeFontPadding: false,
   },

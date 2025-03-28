@@ -56,9 +56,15 @@ export type MenuItem = {
 export const userMyPageList: MenuItem[] = [
   {id: 1, icon: MyPageUserIcon, title: '회원 정보 수정', navigation: ''},
   {id: 2, icon: MyPageMap, title: '동네 설정', navigation: 'myLocation'},
-  {id: 3, icon: MyPageCheck, title: '알림 설정', navigation: ''},
+  {id: 3, icon: MyPageCheck, title: '알림 설정', navigation: 'notification'},
   {id: 4, icon: MyPageQr, title: 'QR 코드 스캔', navigation: ''},
-  {id: 5, icon: MyPageOption, title: '설정', marginTop: true, navigation: ''},
+  {
+    id: 5,
+    icon: MyPageOption,
+    title: '설정',
+    marginTop: true,
+    navigation: 'setting',
+  },
   {id: 6, icon: MyPageInfoIcon, title: '공지사항', navigation: ''},
   {id: 7, icon: MyPageHelpIcon, title: '고객센터', navigation: ''},
 ];

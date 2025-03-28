@@ -8,9 +8,9 @@ const MapPageScreen = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+
         contentStyle: {
           backgroundColor: 'white',
-          marginTop: 0,
         },
       }}
       initialRouteName="mapPage">
@@ -18,6 +18,9 @@ const MapPageScreen = () => {
         name="mapPage"
         options={{
           title: '',
+          statusBarStyle: 'dark',
+          statusBarTranslucent: true,
+          statusBarBackgroundColor: 'transparent',
           headerShown: false,
           headerShadowVisible: false,
         }}

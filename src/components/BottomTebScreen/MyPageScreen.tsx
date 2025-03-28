@@ -3,7 +3,6 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import MyLocationPage from '../../screen/myPage/MyLocationPage';
 import MyPage from '../../screen/myPage/MyPage';
-import NotificationPage from '../../screen/myPage/NotificationPage';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 
 const MyPageScreen = () => {
@@ -38,18 +37,6 @@ const MyPageScreen = () => {
           headerShadowVisible: false,
         }}
         component={MyLocationPage}
-      />
-      <Stack.Screen
-        name="notification"
-        options={{
-          header() {
-            return <BackTitleAppBar title="알림 설정" />;
-          },
-          title: '',
-          headerShown: true,
-          headerShadowVisible: false,
-        }}
-        component={NotificationPage}
       />
     </Stack.Navigator>
   );

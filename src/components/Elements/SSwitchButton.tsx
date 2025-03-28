@@ -29,8 +29,8 @@ export default SSwitchButton;
 
 const styles = StyleSheet.create({
   container: {
-    width: SWidth * 40,
-    height: SWidth * 24,
+    width: SWidth * 48,
+    height: SWidth * 28,
     paddingHorizontal: SWidth * 4,
     justifyContent: 'center',
     borderRadius: 999,
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
   },
 
   content: {
-    width: SWidth * 16,
-    height: SWidth * 16,
+    width: SWidth * 20,
+    height: SWidth * 20,
     borderRadius: 999,
     backgroundColor: 'white',
     boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
