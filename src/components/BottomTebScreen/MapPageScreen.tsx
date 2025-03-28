@@ -4,6 +4,7 @@ import MapPage from '../../screen/MapPage';
 
 const MapPageScreen = () => {
   const Stack = createNativeStackNavigator();
+
   return (
     <Stack.Navigator
       screenOptions={{

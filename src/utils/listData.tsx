@@ -65,7 +65,7 @@ export const userMyPageList: MenuItem[] = [
     marginTop: true,
     navigation: 'setting',
   },
-  {id: 6, icon: MyPageInfoIcon, title: '공지사항', navigation: ''},
+  {id: 6, icon: MyPageInfoIcon, title: '공지사항', navigation: 'notice'},
   {id: 7, icon: MyPageHelpIcon, title: '고객센터', navigation: ''},
 ];
 

@@ -8,6 +8,7 @@ import LoginPage from '../../screen/auth/LoginPage';
 import NewPasswordPage from '../../screen/auth/NewPasswordPage';
 import SuccessPage from '../../screen/auth/SuccessPage';
 import TermsOfUsePage from '../../screen/auth/TermsOfUsePage';
+import NoticePage from '../../screen/myPage/NoticePage';
 import NotificationPage from '../../screen/myPage/NotificationPage';
 import SettingPage from '../../screen/myPage/SettingPage';
 import {useUserData} from '../../store/userRoute';
@@ -198,6 +199,18 @@ const MainStackScreen = () => {
           headerShadowVisible: false,
         }}
         component={SettingPage}
+      />
+      <Stack.Screen
+        name="notice"
+        options={{
+          header() {
+            return <BackTitleAppBar title="공지사항" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={NoticePage}
       />
     </Stack.Navigator>
   );
