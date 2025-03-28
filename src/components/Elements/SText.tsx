@@ -141,15 +141,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   BmdSbHeight: {
-    height: SWidth * 16,
+    height: SWidth * 20,
     justifyContent: 'center',
   },
   BmdMdHeight: {
-    height: SWidth * 16,
+    height: SWidth * 20,
     justifyContent: 'center',
   },
   BmdRgHeight: {
-    height: SWidth * 16,
+    height: SWidth * 20,
     justifyContent: 'center',
   },
   BsmSbHeight: {
@@ -233,6 +233,7 @@ const styles = StyleSheet.create({
   BlgMdFontSize: {
     fontFamily: fontFamilies.pretendardMedium,
     fontSize: SWidth * 16,
+    lineHeight: SWidth * 16,
     includeFontPadding: false,
   },
   BlgRgFontSize: {
@@ -243,7 +244,6 @@ const styles = StyleSheet.create({
   BmdSbFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 14,
-    lineHeight: SWidth * 14,
     includeFontPadding: false,
   },
   BmdMdFontSize: {

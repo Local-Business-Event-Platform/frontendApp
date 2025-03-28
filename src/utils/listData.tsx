@@ -2,6 +2,13 @@ import MainArrayIcon from './svgs/mainPage/MainArrayIcon';
 import MainFilterIcon from './svgs/mainPage/MainFilterIcon';
 import MainGift from './svgs/mainPage/MainGift';
 import MainStore from './svgs/mainPage/MainStore';
+import MyPageCheck from './svgs/myPage/MyPageCheck';
+import MyPageHelpIcon from './svgs/myPage/MyPageHelpIcon';
+import MyPageInfoIcon from './svgs/myPage/MyPageInfoIcon';
+import MyPageMap from './svgs/myPage/MyPageMap';
+import MyPageQr from './svgs/myPage/MyPageQr';
+import MyPageUserIcon from './svgs/myPage/MyPageUserIcon';
+import MyPageOption from './svgs/MyPageOption';
 import DetailGiftIcon from './svgs/storeDetailPage/DetailGiftIcon';
 import DetailHomeIcon from './svgs/storeDetailPage/DetailHomeIcon';
 import DetailPen from './svgs/storeDetailPage/DetailPen';
@@ -36,4 +43,28 @@ export const storeDetailTabItems = [
   {id: 1, title: '가게 정보', icon: <DetailGiftIcon />},
   {id: 2, title: '이벤트', icon: <DetailHomeIcon />},
   {id: 3, title: '후기', icon: <DetailPen />},
+];
+
+export type MenuItem = {
+  id: number;
+  icon: React.ElementType;
+  title: string;
+  navigation: string;
+  marginTop?: boolean;
+};
+
+export const userMyPageList: MenuItem[] = [
+  {id: 1, icon: MyPageUserIcon, title: '회원 정보 수정', navigation: ''},
+  {id: 2, icon: MyPageMap, title: '동네 설정', navigation: 'myLocation'},
+  {id: 3, icon: MyPageCheck, title: '알림 설정', navigation: ''},
+  {id: 4, icon: MyPageQr, title: 'QR 코드 스캔', navigation: ''},
+  {id: 5, icon: MyPageOption, title: '설정', marginTop: true, navigation: ''},
+  {id: 6, icon: MyPageInfoIcon, title: '공지사항', navigation: ''},
+  {id: 7, icon: MyPageHelpIcon, title: '고객센터', navigation: ''},
+];
+
+export const storeMyPageList: MenuItem[] = [
+  {id: 1, icon: MyPageUserIcon, title: '회원 정보 수정', navigation: ''},
+  {id: 2, icon: MyPageMap, title: '동네 설정', navigation: ''},
+  {id: 3, icon: MyPageCheck, title: '알림 설정', navigation: ''},
 ];

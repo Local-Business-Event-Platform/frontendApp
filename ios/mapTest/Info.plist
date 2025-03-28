@@ -59,5 +59,7 @@
 		<string>Pretendard-SemiBold.otf</string>
 		<string>Pretendard-Thin.otf</string>
 	</array>
+	<key>NMFClientId</key>
+	<string>YOUR_CLIENT_ID_HERE</string>
 </dict>
 </plist>

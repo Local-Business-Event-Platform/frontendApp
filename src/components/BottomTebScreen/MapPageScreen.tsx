@@ -1,15 +1,9 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import React, {useEffect} from 'react';
-import {StatusBar} from 'react-native';
+import React from 'react';
 import MapPage from '../../screen/MapPage';
 
 const MapPageScreen = () => {
   const Stack = createNativeStackNavigator();
-  useEffect(() => {
-    StatusBar.setBarStyle('dark-content');
-    StatusBar.setTranslucent(true);
-    StatusBar.setBackgroundColor('transparent');
-  }, []);
   return (
     <Stack.Navigator
       screenOptions={{

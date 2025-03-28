@@ -94,6 +94,7 @@ android {
         versionCode project.env.get("APP_VERSION_CODE").toInteger()
         versionName project.env.get("APP_VERSION")
         resValue "string", "google_map_api_key", project.env.get("GOOGLE_MAY_API_KEY")
+        resValue "string", "naver_client_id", project.env.get("NAVER_CLIENT_ID")
     }
     signingConfigs {
         debug {

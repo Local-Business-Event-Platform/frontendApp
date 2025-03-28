@@ -16,7 +16,8 @@ const SSwitchButton = ({click, onPress}: SSwitchButtonProps) => {
         styles.container,
         {
           alignItems: !click ? 'flex-start' : 'flex-end',
-          backgroundColor: !click ? '#666666' : '#155DFC',
+          backgroundColor: !click ? '#FAFAFA' : '#155DFC',
+          borderColor: !click ? '#E5E5E5' : '#155DFC',
         },
       ]}>
       <View style={styles.content} />
@@ -30,8 +31,10 @@ const styles = StyleSheet.create({
   container: {
     width: SWidth * 40,
     height: SWidth * 24,
-    padding: SWidth * 4,
+    paddingHorizontal: SWidth * 4,
+    justifyContent: 'center',
     borderRadius: 999,
+    borderWidth: 1.25,
   },
 
   content: {
@@ -39,5 +42,6 @@ const styles = StyleSheet.create({
     height: SWidth * 16,
     borderRadius: 999,
     backgroundColor: 'white',
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
   },
 });

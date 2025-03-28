@@ -12,15 +12,14 @@ type ContentItemProps = {
 
 const ContentItem = ({icon, title, onPress}: ContentItemProps) => {
   return (
-    <View style={styles.container}>
+    <Pressable onPress={onPress} style={styles.container}>
       <View style={styles.rowLine}>
         {icon}
         <SText fStyle="BlgRg" text={title} color={'#404040'} />
       </View>
-      <Pressable onPress={onPress}>
-        <RightArrow24 />
-      </Pressable>
-    </View>
+
+      <RightArrow24 />
+    </Pressable>
   );
 };
 
@@ -28,12 +27,14 @@ export default ContentItem;
 
 const styles = StyleSheet.create({
   container: {
+    height: SWidth * 56,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: SWidth * 8,
-    paddingVertical: SWidth * 16,
     backgroundColor: 'white',
     justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderColor: '#A1A1A11A',
   },
   rowLine: {
     flexDirection: 'row',
