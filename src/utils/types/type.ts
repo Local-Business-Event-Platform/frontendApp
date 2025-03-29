@@ -77,6 +77,7 @@ export type SCheckTextProps = {
 
 export type SInputProps = {
   title?: string;
+  required?: boolean;
   titleColor?: ColorValue;
   value: string;
   borderColor?: ColorValue;
@@ -92,6 +93,7 @@ export type SInputProps = {
   textIcon?: string | undefined;
   iconOn?: boolean;
   searchOn?: boolean;
+  searchIconColor?: ColorValue;
   iconOnPress?: () => void;
   msg?: string;
   msgType?: 'error' | 'success' | 'undefined';
@@ -109,4 +111,15 @@ export type SReviewBoxProps = {
 
 export type SMeterBoxProps = {
   content: string;
+};
+
+export type STabBarProps = {
+  menuList: {
+    id: number;
+    title: string;
+    icon: ({focus}: {focus: number}) => React.JSX.Element;
+  }[];
+
+  tabIndex: number;
+  setTabIndex: (tabIndex: number) => void;
 };

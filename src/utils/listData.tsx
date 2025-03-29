@@ -2,12 +2,14 @@ import MainArrayIcon from './svgs/mainPage/MainArrayIcon';
 import MainFilterIcon from './svgs/mainPage/MainFilterIcon';
 import MainGift from './svgs/mainPage/MainGift';
 import MainStore from './svgs/mainPage/MainStore';
+import CommentEditIcon from './svgs/myPage/CommentEditIcon';
 import MyPageCheck from './svgs/myPage/MyPageCheck';
 import MyPageHelpIcon from './svgs/myPage/MyPageHelpIcon';
 import MyPageInfoIcon from './svgs/myPage/MyPageInfoIcon';
 import MyPageMap from './svgs/myPage/MyPageMap';
 import MyPageQr from './svgs/myPage/MyPageQr';
 import MyPageUserIcon from './svgs/myPage/MyPageUserIcon';
+import QuestionIcon from './svgs/myPage/QuestionIcon';
 import MyPageOption from './svgs/MyPageOption';
 import DetailGiftIcon from './svgs/storeDetailPage/DetailGiftIcon';
 import DetailHomeIcon from './svgs/storeDetailPage/DetailHomeIcon';
@@ -32,6 +34,11 @@ export const checkItems = [
 export const mainTabItems = [
   {id: 1, title: '이벤트', icon: MainGift},
   {id: 2, title: '가게', icon: MainStore},
+];
+
+export const customerTabItems = [
+  {id: 1, title: 'FAQ', icon: QuestionIcon},
+  {id: 2, title: '문의하기', icon: CommentEditIcon},
 ];
 
 export const mainFilterItems = [
@@ -66,7 +73,7 @@ export const userMyPageList: MenuItem[] = [
     navigation: 'setting',
   },
   {id: 6, icon: MyPageInfoIcon, title: '공지사항', navigation: 'notice'},
-  {id: 7, icon: MyPageHelpIcon, title: '고객센터', navigation: ''},
+  {id: 7, icon: MyPageHelpIcon, title: '고객센터', navigation: 'customer'},
 ];
 
 export const storeMyPageList: MenuItem[] = [

@@ -8,6 +8,7 @@ import LoginPage from '../../screen/auth/LoginPage';
 import NewPasswordPage from '../../screen/auth/NewPasswordPage';
 import SuccessPage from '../../screen/auth/SuccessPage';
 import TermsOfUsePage from '../../screen/auth/TermsOfUsePage';
+import CustomerPage from '../../screen/myPage/CustomerPage';
 import NoticePage from '../../screen/myPage/NoticePage';
 import NotificationPage from '../../screen/myPage/NotificationPage';
 import SettingPage from '../../screen/myPage/SettingPage';
@@ -211,6 +212,18 @@ const MainStackScreen = () => {
           headerShadowVisible: false,
         }}
         component={NoticePage}
+      />
+      <Stack.Screen
+        name="customer"
+        options={{
+          header() {
+            return <BackTitleAppBar title="고객센터" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={CustomerPage}
       />
     </Stack.Navigator>
   );

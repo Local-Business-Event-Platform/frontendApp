@@ -1,17 +1,22 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../globalStyle';
+import STabBar from '../components/Elements/STabBar';
 import MainFilter from '../components/MainPage/Filter/MainFilter';
 import MainEventContent from '../components/MainPage/MainEventContent';
 import MainStoreContent from '../components/MainPage/MainStoreContent';
-import MainTab from '../components/MainPage/MainTab';
 import useCustomNavigation from '../hooks/useCustomNavigation';
+import {mainTabItems} from '../utils/listData';
 const MainPage = () => {
   const navigation = useCustomNavigation();
   const [mainTab, setMainTab] = useState(1);
   return (
     <View style={styles.container}>
-      <MainTab mainTab={mainTab} setMainTab={setMainTab} />
+      <STabBar
+        menuList={mainTabItems}
+        tabIndex={mainTab}
+        setTabIndex={setMainTab}
+      />
       <View style={styles.contentContainer}>
         <MainFilter />
         {mainTab === 1 && <MainEventContent />}

@@ -26,3 +26,18 @@ export type AlarmItemProps = {
   onPress: () => void;
   borderWidth?: number;
 };
+
+export type FAQComponentProps = {
+  searchValue: string;
+  searchOnchange: (text: string) => void;
+};
+
+export type FAQCategoryItemProps = {
+  title: string;
+  onPress: () => void;
+};
+
+export type FAQQuestionItemProps = {
+  title: string;
+  onPress: () => void;
+};

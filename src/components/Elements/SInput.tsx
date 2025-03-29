@@ -12,6 +12,7 @@ import SText from './SText';
 
 const SInput = ({
   title,
+  required,
   titleColor,
   value,
   buttonTitle,
@@ -26,6 +27,7 @@ const SInput = ({
   placeholder,
   iconOn,
   searchOn,
+  searchIconColor,
   textIcon,
   iconOnPress,
   msg,
@@ -33,7 +35,12 @@ const SInput = ({
 }: SInputProps) => {
   return (
     <View style={styles.container}>
-      {title && <SText fStyle="BmdMd" text={title} color={titleColor} />}
+      {title && (
+        <View style={styles.titleContainer}>
+          <SText fStyle="BmdMd" text={title} color={titleColor} />
+          {required && <SText fStyle="BmdMd" text={'*'} color={'#155DFC'} />}
+        </View>
+      )}
       <View style={styles.inputContainer}>
         <View style={styles.inputButton}>
           <View
@@ -72,7 +79,7 @@ const SInput = ({
                 style={styles.passwordIcon}
                 onPress={iconOnPress}
                 hitSlop={10}>
-                <MapSearchIcon />
+                <MapSearchIcon color={searchIconColor} />
               </Pressable>
             )}
           </View>
@@ -117,6 +124,11 @@ const styles = StyleSheet.create({
   inputContainer: {
     position: 'relative',
     justifyContent: 'center',
+  },
+
+  titleContainer: {
+    flexDirection: 'row',
+    gap: SWidth * 4,
   },
 
   inputStyle: {
