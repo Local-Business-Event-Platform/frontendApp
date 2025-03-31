@@ -1,8 +1,12 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
+import InterestStorePage from '../../screen/myPage/InterestStorePage';
 import MyLocationPage from '../../screen/myPage/MyLocationPage';
 import MyPage from '../../screen/myPage/MyPage';
+import ParticipationPage from '../../screen/myPage/ParticipationPage';
+import Recent from '../../screen/myPage/Recent';
+import ReviewManagementPage from '../../screen/myPage/ReviewManagementPage';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 
 const MyPageScreen = () => {
@@ -37,6 +41,54 @@ const MyPageScreen = () => {
           headerShadowVisible: false,
         }}
         component={MyLocationPage}
+      />
+      <Stack.Screen
+        name="recent"
+        options={{
+          header() {
+            return <BackTitleAppBar title="최근 조회" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={Recent}
+      />
+      <Stack.Screen
+        name="participation"
+        options={{
+          header() {
+            return <BackTitleAppBar title="참여 기록" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={ParticipationPage}
+      />
+      <Stack.Screen
+        name="reviewManagement"
+        options={{
+          header() {
+            return <BackTitleAppBar title="리뷰 관리" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={ReviewManagementPage}
+      />
+      <Stack.Screen
+        name="interestStore"
+        options={{
+          header() {
+            return <BackTitleAppBar title="리뷰 관리" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={InterestStorePage}
       />
     </Stack.Navigator>
   );

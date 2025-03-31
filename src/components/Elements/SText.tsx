@@ -21,18 +21,18 @@ const SText = ({
     Hlg: styles.HlgHeight,
     Hmd: styles.HmdHeight,
     Hsm: styles.HsmHeight,
-    BxlSb: styles.BxlSbHeight,
-    BxlMd: styles.BxlMdHeight,
-    BxlRg: styles.BxlRgHeight,
-    BlgSb: styles.BlgSbHeight,
-    BlgMd: styles.BlgMdHeight,
-    BlgRg: styles.BlgRgHeight,
-    BmdSb: styles.BmdSbHeight,
-    BmdMd: styles.BmdMdHeight,
-    BmdRg: styles.BmdRgHeight,
-    BsmSb: styles.BsmSbHeight,
-    BsmMd: styles.BsmMdHeight,
-    BsmRg: styles.BsmRgHeight,
+    BxlSb: styles.BxlHeight,
+    BxlMd: styles.BxlHeight,
+    BxlRg: styles.BxlHeight,
+    BlgSb: styles.BlgHeight,
+    BlgMd: styles.BlgHeight,
+    BlgRg: styles.BlgHeight,
+    BmdSb: styles.BmdHeight,
+    BmdMd: styles.BmdHeight,
+    BmdRg: styles.BmdHeight,
+    BsmSb: styles.BsmHeight,
+    BsmMd: styles.BsmHeight,
+    BsmRg: styles.BsmHeight,
   };
 
   const fontSizeList = {
@@ -101,69 +101,38 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   HxlHeight: {
-    height: SWidth * 40,
+    height: SWidth * 44,
     justifyContent: 'center',
   },
   HlgHeight: {
-    height: SWidth * 32,
+    height: SWidth * 36,
     justifyContent: 'center',
   },
   HmdHeight: {
-    height: SWidth * 28,
+    height: SWidth * 32,
     justifyContent: 'center',
   },
   HsmHeight: {
+    height: SWidth * 28,
+    justifyContent: 'center',
+  },
+  BxlHeight: {
+    height: SWidth * 28,
+    justifyContent: 'center',
+  },
+  BlgHeight: {
     height: SWidth * 24,
     justifyContent: 'center',
   },
-  BxlSbHeight: {
-    height: SWidth * 24,
-    justifyContent: 'center',
-  },
-  BxlMdHeight: {
-    height: SWidth * 24,
-    justifyContent: 'center',
-  },
-  BxlRgHeight: {
-    height: SWidth * 24,
-    justifyContent: 'center',
-  },
-  BlgSbHeight: {
+  BmdHeight: {
     height: SWidth * 20,
     justifyContent: 'center',
   },
-  BlgMdHeight: {
-    height: SWidth * 20,
-    justifyContent: 'center',
-  },
-  BlgRgHeight: {
-    height: SWidth * 20,
-    justifyContent: 'center',
-  },
-  BmdSbHeight: {
-    height: SWidth * 20,
-    justifyContent: 'center',
-  },
-  BmdMdHeight: {
-    height: SWidth * 20,
-    justifyContent: 'center',
-  },
-  BmdRgHeight: {
-    height: SWidth * 20,
-    justifyContent: 'center',
-  },
-  BsmSbHeight: {
+  BsmHeight: {
     height: SWidth * 16,
     justifyContent: 'center',
   },
-  BsmMdHeight: {
-    height: SWidth * 16,
-    justifyContent: 'center',
-  },
-  BsmRgHeight: {
-    height: SWidth * 16,
-    justifyContent: 'center',
-  },
+
   H4xlFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
     fontSize: SWidth * 60,
@@ -220,12 +189,12 @@ const styles = StyleSheet.create({
   },
   BxlMdFontSize: {
     fontFamily: fontFamilies.pretendardMedium,
-    fontSize: SWidth * 24,
+    fontSize: SWidth * 18,
     includeFontPadding: false,
   },
   BxlRgFontSize: {
     fontFamily: fontFamilies.pretendardRegular,
-    fontSize: SWidth * 24,
+    fontSize: SWidth * 18,
     includeFontPadding: false,
   },
   BlgSbFontSize: {

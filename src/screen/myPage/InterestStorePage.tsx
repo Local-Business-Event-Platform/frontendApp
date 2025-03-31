@@ -1,11 +1,10 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
-import useCustomNavigation from '../../hooks/useCustomNavigation';
-import MainStoreItem from './MainStoreItem';
+import MainFilter from '../../components/MainPage/Filter/MainFilter';
+import MainStoreItem from '../../components/MainPage/MainStoreItem';
 
-const MainStoreContent = () => {
-  const navigation = useCustomNavigation();
+const InterestStorePage = () => {
   const data = [
     {
       id: 1,
@@ -67,6 +66,7 @@ const MainStoreContent = () => {
 
   return (
     <View style={styles.container}>
+      <MainFilter search={false} />
       <FlatList
         data={data}
         keyExtractor={item => item.id.toString()}
@@ -75,7 +75,7 @@ const MainStoreContent = () => {
         contentContainerStyle={{
           paddingHorizontal: SWidth * 16,
           gap: SWidth * 16,
-          paddingBottom: SWidth * 100,
+          paddingBottom: SWidth * 150,
         }}
         renderItem={({item}) => (
           <MainStoreItem
@@ -84,7 +84,7 @@ const MainStoreContent = () => {
             category={item.category}
             review={item.review}
             reviewCount={item.reviewCount}
-            onPress={() => navigation.navigate('detailPage')}
+            onPress={() => {}}
           />
         )}
       />
@@ -92,10 +92,12 @@ const MainStoreContent = () => {
   );
 };
 
-export default MainStoreContent;
+export default InterestStorePage;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 24,
+    flex: 1,
+    paddingTop: SWidth * 16,
+    gap: SWidth * 24,
   },
 });

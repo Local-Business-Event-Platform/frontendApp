@@ -1,9 +1,19 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {myPageUserDataList} from '../../utils/listData';
 import SText from '../Elements/SText';
 const UserInfo = () => {
+  const navigation = useCustomNavigation();
+  const data: Record<string, number> = {
+    '최근 조회': 8,
+    '참여 기록': 10,
+    '리뷰 관리': 6,
+    '관심 가게': 4,
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.userContainer}>
@@ -18,22 +28,15 @@ const UserInfo = () => {
         </View>
       </View>
       <View style={styles.rowContainer}>
-        <View style={styles.contentStyle}>
-          <SText fStyle="BxlSb" text={'8'} />
-          <SText fStyle="BmdRg" text={'최근 조회'} />
-        </View>
-        <View style={styles.contentStyle}>
-          <SText fStyle="BxlSb" text={'10'} />
-          <SText fStyle="BmdRg" text={'참여 기록'} />
-        </View>
-        <View style={styles.contentStyle}>
-          <SText fStyle="BxlSb" text={'6'} />
-          <SText fStyle="BmdRg" text={'리뷰 관리'} />
-        </View>
-        <View style={styles.contentStyle}>
-          <SText fStyle="BxlSb" text={'4'} />
-          <SText fStyle="BmdRg" text={'관심 가게'} />
-        </View>
+        {myPageUserDataList.map(item => (
+          <Pressable
+            key={item.id}
+            style={styles.contentStyle}
+            onPress={() => navigation.navigate(item.onPress)}>
+            <SText fStyle="BxlSb" text={data[item.title]} />
+            <SText fStyle="BmdRg" text={item.title} />
+          </Pressable>
+        ))}
       </View>
     </View>
   );

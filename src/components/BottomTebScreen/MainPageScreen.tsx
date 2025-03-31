@@ -30,6 +30,7 @@ const MainPageScreen = () => {
       <Stack.Screen
         name="detailPage"
         options={{
+          animation: 'fade_from_bottom',
           header() {
             return <StoreDetailAppBar />;
           },

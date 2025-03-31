@@ -81,3 +81,26 @@ export const storeMyPageList: MenuItem[] = [
   {id: 2, icon: MyPageMap, title: '동네 설정', navigation: ''},
   {id: 3, icon: MyPageCheck, title: '알림 설정', navigation: ''},
 ];
+
+export const myPageUserDataList = [
+  {
+    id: 1,
+    title: '최근 조회',
+    onPress: 'recent',
+  },
+  {
+    id: 2,
+    title: '참여 기록',
+    onPress: 'participation',
+  },
+  {
+    id: 3,
+    title: '리뷰 관리',
+    onPress: 'reviewManagement',
+  },
+  {
+    id: 4,
+    title: '관심 가게',
+    onPress: 'interestStore',
+  },
+];

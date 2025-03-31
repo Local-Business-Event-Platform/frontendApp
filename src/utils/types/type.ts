@@ -8,6 +8,15 @@ export type SButtonProps = {
   textColor: ColorValue;
 };
 
+export type SSButtonProps = {
+  onPress: () => void;
+  disabled?: boolean;
+  ButtonColor: ColorValue;
+  title: string;
+  textColor: ColorValue;
+  borderColor?: ColorValue;
+};
+
 export type STextProps = {
   fStyle:
     | 'H4xl'

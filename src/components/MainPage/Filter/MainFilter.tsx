@@ -6,7 +6,11 @@ import SSwitchButton from '../../Elements/SSwitchButton';
 import SText from '../../Elements/SText';
 import FilterButton from './FilterButton';
 
-const MainFilter = () => {
+type MainFilterProps = {
+  search?: boolean;
+};
+
+const MainFilter = ({search = true}: MainFilterProps) => {
   const [onClicked, setonClicked] = useState(false);
   return (
     <View style={styles.container}>
@@ -20,13 +24,15 @@ const MainFilter = () => {
           />
         ))}
       </View>
-      <View style={styles.rowContainer}>
-        <SSwitchButton
-          click={onClicked}
-          onPress={() => setonClicked(!onClicked)}
-        />
-        <SText fStyle="BmdMd" text={'내 주변'} color={'#404040'} />
-      </View>
+      {search && (
+        <View style={styles.rowContainer}>
+          <SSwitchButton
+            click={onClicked}
+            onPress={() => setonClicked(!onClicked)}
+          />
+          <SText fStyle="BmdMd" text={'내 주변'} color={'#404040'} />
+        </View>
+      )}
     </View>
   );
 };

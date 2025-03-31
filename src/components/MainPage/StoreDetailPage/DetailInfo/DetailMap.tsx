@@ -1,6 +1,6 @@
+import {NaverMapView} from '@mj-studio/react-native-naver-map';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import MapView from 'react-native-maps';
 import {SWidth} from '../../../../../globalStyle';
 import DetailMapArrow from '../../../../utils/svgs/storeDetailPage/DetailMapArrow';
 import {DetailMapProps} from '../../../../utils/types/StoreDetailType';
@@ -8,16 +8,20 @@ import {DetailMapProps} from '../../../../utils/types/StoreDetailType';
 const DetailMap = ({x, y}: DetailMapProps) => {
   return (
     <View style={styles.mapContainer}>
-      <MapView
+      <NaverMapView
         style={styles.mapSize}
-        zoomEnabled={false}
-        zoomControlEnabled={false}
-        initialRegion={{
-          latitude: x,
-          longitude: y,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}></MapView>
+        isZoomGesturesEnabled={false}
+        isRotateGesturesEnabled={false}
+        isScrollGesturesEnabled={false}
+        isTiltGesturesEnabled={false}
+        isShowScaleBar={false}
+        isShowLocationButton={false}
+        isShowZoomControls={false}
+        initialCamera={{
+          latitude: y,
+          longitude: x,
+          zoom: 10,
+        }}></NaverMapView>
       <Pressable style={styles.mapArrow} onPress={() => {}}>
         <DetailMapArrow />
       </Pressable>
