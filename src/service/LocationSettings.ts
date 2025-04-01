@@ -1,6 +1,6 @@
 import {PermissionsAndroid, Platform} from 'react-native';
 
-export const LocationSettings = async () => {
+export const locationSettings = async () => {
   if (Platform.OS === 'android') {
     try {
       // 현재 위치 권한 상태 확인

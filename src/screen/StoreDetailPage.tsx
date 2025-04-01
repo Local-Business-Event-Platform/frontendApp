@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, View} from 'react-native';
+import {SWidth} from '../../globalStyle';
 import SCarousel from '../components/Elements/SCarousel';
 import StoreDetailEvent from '../components/MainPage/StoreDetailPage/DetailEvent/StoreDetailEvent';
 import StoreDetailInfo from '../components/MainPage/StoreDetailPage/DetailInfo/StoreDetailInfo';
@@ -16,9 +17,11 @@ const StoreDetailPage = () => {
     review: 4.8,
     reviewCount: 32,
     img: [
-      require('../assets/images/background.png'),
-      require('../assets/images/no_image.jpg'),
-      require('../assets/images/background.png'),
+      Image.resolveAssetSource(require('../assets/images/background.png')).uri,
+      Image.resolveAssetSource(require('../assets/images/no_image.jpg')).uri,
+      ,
+      Image.resolveAssetSource(require('../assets/images/background.png')).uri,
+      ,
     ],
     storeInfo: {
       time: '매일 11:00 ~ 21:00',
@@ -37,7 +40,9 @@ const StoreDetailPage = () => {
           '• 신메뉴 주문시 전 메뉴 20% 할인',
           '• 리뷰 작성시 3,000원 할인권 증정',
         ],
-        img: require('../assets/images/background.png'),
+        img: Image.resolveAssetSource(
+          require('../assets/images/background.png'),
+        ).uri,
       },
       {
         id: 2,
@@ -46,13 +51,17 @@ const StoreDetailPage = () => {
           '• 신메뉴 주문시 전 메뉴 20% 할인',
           '• 리뷰 작성시 3,000원 할인권 증정',
         ],
-        img: require('../assets/images/background.png'),
+        img: Image.resolveAssetSource(
+          require('../assets/images/background.png'),
+        ).uri,
       },
     ],
     reviews: [
       {
         id: 1,
-        userImg: require('../assets/images/no_image.jpg'),
+        userImg: Image.resolveAssetSource(
+          require('../assets/images/no_image.jpg'),
+        ).uri,
         userName: '이서연',
         reviewStar: 4,
         reviewDate: '2025.02.15 방문',
@@ -61,7 +70,9 @@ const StoreDetailPage = () => {
       },
       {
         id: 2,
-        userImg: require('../assets/images/no_image.jpg'),
+        userImg: Image.resolveAssetSource(
+          require('../assets/images/no_image.jpg'),
+        ).uri,
         userName: '이서연',
         reviewStar: 4,
         reviewDate: '2025.02.15 방문',
@@ -73,7 +84,12 @@ const StoreDetailPage = () => {
   return (
     <ScrollView overScrollMode="never" showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
-        <SCarousel images={data.img} />
+        <SCarousel
+          images={data.img
+            .filter((img): img is string => !!img) // undefined 제거
+            .map(img => ({url: img}))}
+          height={SWidth * 224}
+        />
         <StoreDetailContent data={data} />
         <StoreDetailTab tabClicked={tabClicked} setTabClicked={setTabClicked} />
         {tabClicked === 1 && <StoreDetailInfo data={data.storeInfo} />}

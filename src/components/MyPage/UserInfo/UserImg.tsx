@@ -1,35 +1,25 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import ImagePicker from 'react-native-image-crop-picker';
+
 import {SWidth} from '../../../../globalStyle';
+import {imageSelected} from '../../../service/imagePicker';
 import MyPagePen from '../../../utils/svgs/myPage/MyPagePen';
 import {UserImgProps} from '../../../utils/types/myPage';
 
 const UserImg = ({source, setUserImg}: UserImgProps) => {
-  const handleImagePicker = () => {
-    ImagePicker.openPicker({
-      width: 100,
-      height: 100,
-      cropperCircleOverlay: true,
-      cropping: true,
-      cropperToolbarTitle: '이미지 수정',
-      compressImageQuality: 0.8,
-      includeBase64: false,
-    })
-      .then(image => {
-        setUserImg({
-          img: image.path,
-        });
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
-
   return (
     <View style={styles.container}>
-      <Pressable style={styles.imgBox} onPress={handleImagePicker}>
+      <Pressable
+        style={styles.imgBox}
+        onPress={() =>
+          imageSelected({
+            width: 100,
+            height: 100,
+            cropperCircleOverlay: true,
+            setImage: setUserImg,
+          })
+        }>
         <FastImage
           style={styles.imgStyle}
           source={source}

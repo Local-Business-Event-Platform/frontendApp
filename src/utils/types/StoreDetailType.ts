@@ -39,7 +39,7 @@ export type StoreItemProps = {
   id: number;
   title: string;
   content: string[];
-  img: number;
+  img: string;
 };
 
 export type StoreDetailEventItemProps = {

@@ -6,7 +6,7 @@ import StoreReviewItem from './StoreReviewItem';
 type StoreDetailReviewProps = {
   data: {
     id: number;
-    userImg: number;
+    userImg: string;
     userName: string;
     reviewStar: number;
     reviewDate: string;

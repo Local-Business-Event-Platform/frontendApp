@@ -11,6 +11,7 @@ const BContentArea = ({
   underline,
   onClick,
   content,
+  contentColor = '#A1A1A1',
   value,
   onChangeText,
 }: BContentAreaProps) => {
@@ -25,7 +26,7 @@ const BContentArea = ({
           textDecorationLine={underline}
           lineColor={color}
         />
-        <SText fStyle="BmdMd" text={`${TextCount} / 200`} />
+        {onClick && <SText fStyle="BmdMd" text={`${TextCount} / 200`} />}
       </View>
       {onClick ? (
         <STextArea
@@ -47,7 +48,7 @@ const BContentArea = ({
           lineHeight={SWidth * 24}
           fStyle="BxlSb"
           text={content}
-          color={'#404040'}
+          color={contentColor}
         />
       )}
     </View>

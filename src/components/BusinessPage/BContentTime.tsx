@@ -10,6 +10,7 @@ import EventDateButton from './Event/EventDateButton';
 const BContentTime = ({
   title,
   content,
+  contentColor = '#A1A1A1',
   color,
   underline,
   onClick,
@@ -47,7 +48,7 @@ const BContentTime = ({
           lineHeight={SWidth * 24}
           fStyle="BxlSb"
           text={content}
-          color={'#404040'}
+          color={contentColor}
         />
       )}
     </View>

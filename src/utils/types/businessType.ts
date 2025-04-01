@@ -2,8 +2,10 @@ import {ColorValue} from 'react-native';
 
 export type BDataProps = {
   storeName: string;
+  storeContent: string;
   storeInfoNumber: string;
   storeCEO: string;
+  storeBusinessTime: string;
   storeCategory: string;
   storeDetailCategory: string;
   storeAddress: string;
@@ -32,6 +34,7 @@ export type BContentProps = {
 export type BContentTimeProps = {
   title: string;
   content: string;
+  contentColor: ColorValue;
   color: ColorValue;
   placeholder?: string;
   underline?: 'none' | 'underline' | 'line-through' | 'underline line-through';
@@ -41,6 +44,7 @@ export type BContentTimeProps = {
 export type BContentAreaProps = {
   title: string;
   content: string;
+  contentColor: ColorValue;
   color: ColorValue;
   placeholder?: string;
   underline?: 'none' | 'underline' | 'line-through' | 'underline line-through';

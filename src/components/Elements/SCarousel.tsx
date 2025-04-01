@@ -9,18 +9,17 @@ import Carousel, {
 import {SWidth} from '../../../globalStyle';
 
 type SCarouselProps = {
-  images: number[];
+  images: {url: string; name?: string; type?: string}[];
+  width?: number;
+  height: number;
 };
 
-const SCarousel = ({images}: SCarouselProps) => {
+const SCarousel = ({
+  width = Dimensions.get('window').width,
+  images,
+  height,
+}: SCarouselProps) => {
   const progress = useSharedValue<number>(0);
-  const screenWidth = Dimensions.get('window').width;
-
-  const baseOptions = {
-    vertical: false,
-    width: screenWidth,
-    height: SWidth * 224,
-  } as const;
 
   const ref = React.useRef<ICarouselInstance>(null);
 
@@ -34,15 +33,16 @@ const SCarousel = ({images}: SCarouselProps) => {
     <View style={styles.container}>
       <Carousel
         ref={ref}
-        {...baseOptions}
+        vertical={false}
+        height={height}
+        width={width}
         loop={true}
         onProgressChange={progress}
-        style={{width: screenWidth}}
         data={images}
         renderItem={item => (
           <FastImage
-            source={item.item}
-            style={{width: '100%', height: SWidth * 224}}
+            source={{uri: item.item.url}}
+            style={{width: '100%', height: height}}
             resizeMode={FastImage.resizeMode.cover}
           />
         )}

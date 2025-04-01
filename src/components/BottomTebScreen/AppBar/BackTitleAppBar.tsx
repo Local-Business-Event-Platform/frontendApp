@@ -10,7 +10,7 @@ const BackTitleAppBar = ({title}: AppBarProps) => {
   const navigate = useCustomNavigation();
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => navigate.goBack()}>
+      <Pressable hitSlop={10} onPress={() => navigate.goBack()}>
         <AppBarBackArrow />
       </Pressable>
       <SText fStyle="BlgMd" text={title} />

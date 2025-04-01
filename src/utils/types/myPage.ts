@@ -52,7 +52,9 @@ export type UserImgProps = {
   source: {uri: string} | number;
   setUserImg: React.Dispatch<
     React.SetStateAction<{
-      img: string;
+      url: string;
+      name: string;
+      type: string;
     }>
   >;
 };

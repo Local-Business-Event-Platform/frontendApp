@@ -10,7 +10,9 @@ import UserInfoUser from '../../components/MyPage/UserInfo/UserInfoUser';
 
 const UserInfoPage = () => {
   const [userImg, setUserImg] = useState({
-    img: '',
+    url: '',
+    name: '',
+    type: '',
   });
   return (
     <ScrollView
@@ -19,8 +21,8 @@ const UserInfoPage = () => {
       showsVerticalScrollIndicator={false}>
       <UserImg
         source={
-          userImg.img
-            ? {uri: userImg.img}
+          userImg.url
+            ? {uri: userImg.url}
             : require('../../assets/images/no_image.jpg')
         }
         setUserImg={setUserImg}
