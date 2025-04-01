@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import BusinessPage from '../../screen/business/BusinessPage';
 import StoreInfoPage from '../../screen/business/StoreInfoPage';
 import JoinAppBar from './AppBar/JoinAppBar';
@@ -12,7 +12,11 @@ const BusinessPageScreen = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        contentStyle: {backgroundColor: 'white'},
+        statusBarTranslucent: true,
+        contentStyle: {
+          paddingTop: StatusBar.currentHeight,
+          backgroundColor: 'white',
+        },
       }}
       initialRouteName="businessPage">
       <Stack.Screen

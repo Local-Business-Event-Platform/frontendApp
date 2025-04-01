@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import MainPage from '../../screen/MainPage';
 import StoreDetailPage from '../../screen/StoreDetailPage';
 import MainAppBar from './AppBar/MainAppBar';
@@ -12,7 +12,11 @@ const MainPageScreen = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        contentStyle: {backgroundColor: 'white'},
+        statusBarTranslucent: true,
+        contentStyle: {
+          paddingTop: StatusBar.currentHeight,
+          backgroundColor: 'white',
+        },
       }}
       initialRouteName="mainPage">
       <Stack.Screen

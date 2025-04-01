@@ -1,17 +1,17 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import CommunityPage from '../../screen/CommunityPage';
 
 const CommunityScreen = () => {
   const Stack = createNativeStackNavigator();
-
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-
+        statusBarTranslucent: true,
         contentStyle: {
+          paddingTop: StatusBar.currentHeight,
           backgroundColor: 'white',
         },
       }}

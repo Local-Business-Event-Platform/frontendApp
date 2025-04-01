@@ -56,7 +56,6 @@ const BottomTeb = () => {
             borderWidth: 0,
             borderColor: 'transparent',
           },
-
           tabBarButton: props => <Pressable {...props} android_ripple={null} />,
           tabBarLabel({focused}) {
             return <NameComponent focused={focused} name={route.name} />;

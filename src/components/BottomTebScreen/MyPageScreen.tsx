@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import InterestStorePage from '../../screen/myPage/InterestStorePage';
 import MyLocationPage from '../../screen/myPage/MyLocationPage';
 import MyPage from '../../screen/myPage/MyPage';
@@ -15,7 +15,11 @@ const MyPageScreen = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        contentStyle: {backgroundColor: 'white'},
+        statusBarTranslucent: true,
+        contentStyle: {
+          paddingTop: StatusBar.currentHeight,
+          backgroundColor: 'white',
+        },
       }}
       initialRouteName="myPage">
       <Stack.Screen

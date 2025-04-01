@@ -4,12 +4,13 @@ import MapPage from '../../screen/MapPage';
 
 const MapPageScreen = () => {
   const Stack = createNativeStackNavigator();
-
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-
+        statusBarStyle: 'dark',
+        statusBarTranslucent: true,
+        statusBarBackgroundColor: 'transparent',
         contentStyle: {
           backgroundColor: 'white',
         },
@@ -19,9 +20,7 @@ const MapPageScreen = () => {
         name="mapPage"
         options={{
           title: '',
-          statusBarStyle: 'dark',
-          statusBarTranslucent: true,
-          statusBarBackgroundColor: 'transparent',
+
           headerShown: false,
           headerShadowVisible: false,
         }}
