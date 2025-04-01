@@ -91,6 +91,8 @@ const styles = StyleSheet.create({
 
   carouselContainer: {
     position: 'relative',
+    borderRadius: SWidth * 8,
+    overflow: 'hidden',
   },
 
   addButton: {
