@@ -12,6 +12,8 @@ import CustomerPage from '../../screen/myPage/CustomerPage';
 import NoticePage from '../../screen/myPage/NoticePage';
 import NotificationPage from '../../screen/myPage/NotificationPage';
 import SettingPage from '../../screen/myPage/SettingPage';
+import UserInfoPage from '../../screen/myPage/UserInfoPage';
+import UserUpdatePage from '../../screen/myPage/UserUpdatePage';
 import {useUserData} from '../../store/userRoute';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 import JoinAppBar from './AppBar/JoinAppBar';
@@ -224,6 +226,30 @@ const MainStackScreen = () => {
           headerShadowVisible: false,
         }}
         component={CustomerPage}
+      />
+      <Stack.Screen
+        name="userUpdate"
+        options={{
+          header() {
+            return <BackTitleAppBar title="회원 정보 변경" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={UserUpdatePage}
+      />
+      <Stack.Screen
+        name="userInfo"
+        options={{
+          header() {
+            return <BackTitleAppBar title="회원 정보 수정" />;
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={UserInfoPage}
       />
     </Stack.Navigator>
   );

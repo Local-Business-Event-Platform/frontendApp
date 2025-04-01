@@ -6,7 +6,7 @@ import RecentEvent from '../../components/MyPage/Recent/RecentEvent';
 import RecentStore from '../../components/MyPage/Recent/RecentStore';
 import {mainTabItems} from '../../utils/listData';
 
-const Recent = () => {
+const RecentPage = () => {
   const [tabClicked, setTabClicked] = useState(1);
   return (
     <View style={styles.container}>
@@ -23,7 +23,7 @@ const Recent = () => {
   );
 };
 
-export default Recent;
+export default RecentPage;
 
 const styles = StyleSheet.create({
   container: {

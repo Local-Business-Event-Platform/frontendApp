@@ -61,7 +61,12 @@ export type MenuItem = {
 };
 
 export const userMyPageList: MenuItem[] = [
-  {id: 1, icon: MyPageUserIcon, title: '회원 정보 수정', navigation: ''},
+  {
+    id: 1,
+    icon: MyPageUserIcon,
+    title: '회원 정보 수정',
+    navigation: 'userUpdate',
+  },
   {id: 2, icon: MyPageMap, title: '동네 설정', navigation: 'myLocation'},
   {id: 3, icon: MyPageCheck, title: '알림 설정', navigation: 'notification'},
   {id: 4, icon: MyPageQr, title: 'QR 코드 스캔', navigation: ''},
@@ -77,7 +82,12 @@ export const userMyPageList: MenuItem[] = [
 ];
 
 export const storeMyPageList: MenuItem[] = [
-  {id: 1, icon: MyPageUserIcon, title: '회원 정보 수정', navigation: ''},
+  {
+    id: 1,
+    icon: MyPageUserIcon,
+    title: '회원 정보 수정',
+    navigation: 'userUpdate',
+  },
   {id: 2, icon: MyPageMap, title: '동네 설정', navigation: ''},
   {id: 3, icon: MyPageCheck, title: '알림 설정', navigation: ''},
 ];

@@ -9,13 +9,15 @@ import FAQQuestion from './FAQQuestion';
 const FAQComponent = ({searchValue, searchOnchange}: FAQComponentProps) => {
   return (
     <View style={styles.container}>
-      <SInput
-        value={searchValue}
-        onChangeText={searchOnchange}
-        searchOn
-        searchIconColor={'#525252'}
-        placeholder="궁금한 내용을 검색해보세요"
-      />
+      <View style={styles.searchContainer}>
+        <SInput
+          value={searchValue}
+          onChangeText={searchOnchange}
+          searchOn
+          searchIconColor={'#525252'}
+          placeholder="궁금한 내용을 검색해보세요"
+        />
+      </View>
       <FAQCategory />
       <FAQQuestion />
     </View>
@@ -27,6 +29,9 @@ export default FAQComponent;
 const styles = StyleSheet.create({
   container: {
     paddingTop: SWidth * 32,
+  },
+
+  searchContainer: {
     paddingHorizontal: SWidth * 24,
   },
 });

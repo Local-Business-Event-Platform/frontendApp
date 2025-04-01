@@ -51,6 +51,7 @@ export default FAQQuestion;
 const styles = StyleSheet.create({
   container: {
     marginTop: SWidth * 64,
+    paddingHorizontal: SWidth * 24,
   },
 
   titleBox: {

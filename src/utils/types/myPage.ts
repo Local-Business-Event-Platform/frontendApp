@@ -41,3 +41,24 @@ export type FAQQuestionItemProps = {
   title: string;
   onPress: () => void;
 };
+
+export type UserUpdateInputProps = {
+  userId: string;
+  value: string;
+  onChangeText: (text: string) => void;
+};
+
+export type UserImgProps = {
+  source: {uri: string} | number;
+  setUserImg: React.Dispatch<
+    React.SetStateAction<{
+      img: string;
+    }>
+  >;
+};
+
+export type UserInfoProps = {
+  userName: string;
+  userPhone: string;
+  onPress: () => void;
+};

@@ -6,9 +6,9 @@ import SText from '../../Elements/SText';
 
 const JoinSuccessSubTitle = ({userType}: JoinSuccessSubTitleProps) => {
   return (
-    <View style={styles.container}>
+    <View style={{gap: userType === 1 ? SWidth * 77 : SWidth * 53}}>
       <SText
-        nLine={1}
+        nLine={2}
         flexShrink={1}
         lineHeight={SWidth * 20}
         fStyle="BlgRg"
@@ -21,23 +21,21 @@ const JoinSuccessSubTitle = ({userType}: JoinSuccessSubTitleProps) => {
       {userType === 2 && (
         <>
           <SText
-            nLine={1}
+            nLine={2}
             flexShrink={1}
             lineHeight={SWidth * 20}
             fStyle="BlgRg"
             text={'가게를 등록하고 첫 이벤트를 등록해보세요!'}
           />
-          <View style={styles.iconImageContainer}>
-            <View style={styles.iconImage}>
-              <SText
-                fStyle="BlgSb"
-                text={'(아이콘, 이미지 들어갈 예정)'}
-                color={'#525252'}
-              />
-            </View>
-          </View>
         </>
       )}
+      <View style={styles.iconImage}>
+        <SText
+          fStyle="BlgSb"
+          text={'(아이콘, 이미지 들어갈 예정)'}
+          color={'#525252'}
+        />
+      </View>
     </View>
   );
 };
@@ -45,13 +43,6 @@ const JoinSuccessSubTitle = ({userType}: JoinSuccessSubTitleProps) => {
 export default JoinSuccessSubTitle;
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: SWidth * 37,
-  },
-
-  iconImageContainer: {
-    marginTop: SWidth * 48,
-  },
   iconImage: {
     width: '100%',
     height: SWidth * 248,

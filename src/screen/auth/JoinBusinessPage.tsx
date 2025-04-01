@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: SWidth * 16,
-    paddingBottom: SWidth * 32,
+    paddingBottom: SWidth * 16,
     justifyContent: 'space-between',
   },
 

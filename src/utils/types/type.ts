@@ -51,6 +51,13 @@ export type STextProps = {
     | 'underline line-through';
 };
 
+export type SInputSuccessProps = {
+  title: string;
+  titleColor?: ColorValue;
+  content: string;
+  contentColor?: ColorValue;
+};
+
 export type SCheckBoxProps = {
   checkValue: boolean;
   onPress: () => void;

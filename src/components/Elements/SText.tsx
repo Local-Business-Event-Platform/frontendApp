@@ -205,7 +205,6 @@ const styles = StyleSheet.create({
   BlgMdFontSize: {
     fontFamily: fontFamilies.pretendardMedium,
     fontSize: SWidth * 16,
-    lineHeight: SWidth * 16,
     includeFontPadding: false,
   },
   BlgRgFontSize: {

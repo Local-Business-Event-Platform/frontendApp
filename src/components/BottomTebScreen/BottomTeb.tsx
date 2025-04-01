@@ -3,9 +3,9 @@ import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {SWidth} from '../../../globalStyle';
-import MainPage from '../../screen/MainPage';
 import {useUserData} from '../../store/userRoute';
 import BusinessPageScreen from './BusinessPageScreen';
+import CommunityScreen from './CommunityScreen';
 import MainPageScreen from './MainPageScreen';
 import MapPageScreen from './MapPageScreen';
 import MyPageScreen from './MyPageScreen';
@@ -50,7 +50,7 @@ const BottomTeb = () => {
         {/* {userData.type === 2 && ( */}
         <Tab.Screen name="가게 관리" component={BusinessPageScreen} />
         {/* )} */}
-        <Tab.Screen name="커뮤니티" component={MainPage} />
+        <Tab.Screen name="커뮤니티" component={CommunityScreen} />
         <Tab.Screen name="마이페이지" component={MyPageScreen} />
       </Tab.Navigator>
       <LinearGradient

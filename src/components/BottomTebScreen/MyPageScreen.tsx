@@ -5,7 +5,7 @@ import InterestStorePage from '../../screen/myPage/InterestStorePage';
 import MyLocationPage from '../../screen/myPage/MyLocationPage';
 import MyPage from '../../screen/myPage/MyPage';
 import ParticipationPage from '../../screen/myPage/ParticipationPage';
-import Recent from '../../screen/myPage/Recent';
+import RecentPage from '../../screen/myPage/RecentPage';
 import ReviewManagementPage from '../../screen/myPage/ReviewManagementPage';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 
@@ -52,7 +52,7 @@ const MyPageScreen = () => {
           headerShown: true,
           headerShadowVisible: false,
         }}
-        component={Recent}
+        component={RecentPage}
       />
       <Stack.Screen
         name="participation"

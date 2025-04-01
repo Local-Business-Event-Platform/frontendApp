@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../../globalStyle';
 import MyPageTitle from '../../MyPageTitle';
 import FAQCategoryItem from './FAQCategoryItem';
@@ -29,17 +29,23 @@ const FAQCategory = () => {
   ];
 
   return (
-    <View style={styles.categoryContainer}>
+    <View style={styles.container}>
       <MyPageTitle title="카테고리" />
-      <View style={styles.itemContainer}>
-        {itemList.map(item => (
+      <FlatList
+        data={itemList}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        overScrollMode="never"
+        contentContainerStyle={styles.itemContainer}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({item}) => (
           <FAQCategoryItem
             key={item.id}
             title={item.title}
             onPress={item.onPress}
           />
-        ))}
-      </View>
+        )}
+      />
     </View>
   );
 };
@@ -47,14 +53,14 @@ const FAQCategory = () => {
 export default FAQCategory;
 
 const styles = StyleSheet.create({
-  categoryContainer: {
+  container: {
     marginTop: SWidth * 28,
     gap: SWidth * 12,
+    paddingHorizontal: SWidth * 24,
   },
+
   itemContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    gap: SWidth * 8,
   },
 
   itemBox: {

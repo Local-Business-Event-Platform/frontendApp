@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet, TextInput, View} from 'react-native';
 import {fontFamilies, SWidth} from '../../../globalStyle';
-import AuthCheck from '../../screen/auth/AuthCheck';
+import AuthCheck from '../../utils/svgs/auth/AuthCheck';
 import JoinPasswordClose from '../../utils/svgs/auth/JoinPasswordClose';
 import JoinPasswordOpen from '../../utils/svgs/auth/JoinPasswordOpen';
 import LoginError from '../../utils/svgs/auth/LoginError';
