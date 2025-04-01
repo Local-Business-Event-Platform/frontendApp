@@ -4,6 +4,7 @@ export type BDataProps = {
   storeName: string;
   storeContent: string;
   storeInfoNumber: string;
+  storeImage: string[];
   storeCEO: string;
   storeBusinessTime: string;
   storeCategory: string;

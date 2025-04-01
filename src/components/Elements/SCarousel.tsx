@@ -9,7 +9,7 @@ import Carousel, {
 import {SWidth} from '../../../globalStyle';
 
 type SCarouselProps = {
-  images: {url: string; name?: string; type?: string}[];
+  images: string[];
   width?: number;
   height: number;
 };
@@ -39,9 +39,9 @@ const SCarousel = ({
         loop={true}
         onProgressChange={progress}
         data={images}
-        renderItem={item => (
+        renderItem={({item}) => (
           <FastImage
-            source={{uri: item.item.url}}
+            source={{uri: item}}
             style={{width: '100%', height: height}}
             resizeMode={FastImage.resizeMode.cover}
           />

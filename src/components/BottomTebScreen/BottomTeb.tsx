@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import React from 'react';
-import {Pressable, StyleSheet, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {SWidth} from '../../../globalStyle';
 import {useUserData} from '../../store/userRoute';
@@ -17,6 +17,31 @@ const tabHeight = SWidth * 58;
 const BottomTeb = () => {
   const Tab = createBottomTabNavigator();
   const {userData} = useUserData();
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  useEffect(() => {
+    // 키보드가 나타나면 그라디언트 숨기기
+    const keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      () => {
+        setIsKeyboardVisible(true);
+      },
+    );
+
+    // 키보드가 사라지면 그라디언트 다시 보이기
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      () => {
+        setIsKeyboardVisible(false);
+      },
+    );
+
+    // 컴포넌트가 unmount 될 때 리스너 정리
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
+
   return (
     <View style={{flex: 1}}>
       <Tab.Navigator
@@ -53,10 +78,12 @@ const BottomTeb = () => {
         <Tab.Screen name="커뮤니티" component={CommunityScreen} />
         <Tab.Screen name="마이페이지" component={MyPageScreen} />
       </Tab.Navigator>
-      <LinearGradient
-        colors={['transparent', '#D3D3D399']}
-        style={styles.shadow}
-      />
+      {!isKeyboardVisible && (
+        <LinearGradient
+          colors={['transparent', '#D3D3D399']}
+          style={styles.shadow}
+        />
+      )}
     </View>
   );
 };

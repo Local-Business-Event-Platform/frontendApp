@@ -25,12 +25,20 @@ const StoreInfo = ({data}: BasicInformationProps) => {
     time: '',
     content: '',
   });
-  console.log('storeData', storeData, storeAdd);
+  const filteredImages = storeData.images
+    .filter(item => item.url)
+    .map(item => item.url);
   const handleStoreAdd = async () => {
     setStoreAdd(!storeAdd);
     try {
       if (storeData.title !== '' && storeData.content !== '') {
         console.log('가게 정보 등록', storeData);
+        setStoreData({
+          title: '',
+          time: '',
+          content: '',
+          images: [],
+        });
         setStoreAdd(false);
       } else {
         console.log('필수 정보가 없습니다.');
@@ -40,6 +48,32 @@ const StoreInfo = ({data}: BasicInformationProps) => {
       setStoreAdd(false);
     }
   };
+
+  const handleUpdate = async () => {
+    setStoreAdd(!storeAdd);
+    try {
+      if (storeData.title !== '' || storeData.content !== '') {
+        console.log('가게 정보 수정', storeData);
+        setStoreData({
+          title: '',
+          time: '',
+          content: '',
+          images: [],
+        });
+        setStoreAdd(false);
+      } else {
+        console.log('필수 정보가 없습니다.');
+      }
+    } catch (error) {
+      console.error(error);
+      setStoreAdd(false);
+    }
+  };
+  console.log('이미지1', data.storeImage);
+  console.log(
+    '이미지2',
+    storeData.images.filter(item => item.url).map(item => item.url),
+  );
   return (
     <BContainer>
       <BButtonTitle
@@ -47,11 +81,13 @@ const StoreInfo = ({data}: BasicInformationProps) => {
         buttonText={data.storeName ? '수정하기' : '등록하기'}
         buttonTextColor={storeAdd ? 'white' : '#525252'}
         onClick={storeAdd}
-        onPress={handleStoreAdd}
+        onPress={data.storeName ? handleUpdate : handleStoreAdd}
       />
       <StoreImage
         storeAdd={storeAdd}
-        storeImages={storeData.images}
+        storeImages={
+          filteredImages.length > 0 ? filteredImages : data.storeImage
+        }
         setStoreImages={images =>
           setStoreData(prevState => ({
             ...prevState,
@@ -64,19 +100,13 @@ const StoreInfo = ({data}: BasicInformationProps) => {
         title="가게 이름"
         placeholder="가게 이름"
         color={'#525252'}
-        content={
-          storeData.title
-            ? storeData.title
-            : data.storeName
-            ? data.storeName
-            : '가게 이름'
-        }
-        value={storeData.title ? storeData.title : data.storeName}
+        content={storeData.title || data.storeName || '가게 이름'}
+        value={storeData.title}
         contentColor={storeData.title || data.storeName ? '#404040' : '#A1A1A1'}
-        onChangeText={() => {
+        onChangeText={text => {
           setStoreData({
             ...storeData,
-            title: storeData.title,
+            title: text,
           });
         }}
       />
@@ -91,15 +121,19 @@ const StoreInfo = ({data}: BasicInformationProps) => {
       />
       <BContentArea
         value={storeData.content}
-        onChangeText={() => {
+        onChangeText={text => {
           setStoreData({
             ...storeData,
-            content: storeData.content,
+            content: text,
           });
         }}
         title="가게 설명"
         color={'#525252'}
-        content="가게 상세 설명 (200자 내외)"
+        content={
+          storeData.content ||
+          data.storeContent ||
+          '가게 상세 설명 (200자 내외)'
+        }
         contentColor={
           storeData.content || data.storeContent ? '#404040' : '#A1A1A1'
         }

@@ -9,7 +9,7 @@ import SText from '../../Elements/SText';
 
 type StoreImageProps = {
   storeAdd?: boolean;
-  storeImages: {url: string; name: string; type: string}[];
+  storeImages: string[];
   setStoreImages: (images: {url: string; name: string; type: string}[]) => void;
 };
 const StoreImage = ({
@@ -18,32 +18,37 @@ const StoreImage = ({
   setStoreImages,
 }: StoreImageProps) => {
   const [containerWidth, setContainerWidth] = useState(0);
+
+  const handleLayout = (onLayout: any) => {
+    const {width} = onLayout.nativeEvent.layout;
+    setContainerWidth(width);
+  };
   return (
     <Pressable
       style={styles.container}
       disabled={!storeAdd || storeImages.length > 0}
       onPress={() =>
         multipleImageSelected({
-          width: containerWidth,
+          width: containerWidth || 0,
           height: SWidth * 200,
           setImages: setStoreImages,
         })
       }
-      onLayout={onLayout => {
-        setContainerWidth(onLayout.nativeEvent.layout.width);
-      }}>
+      onLayout={handleLayout}>
       {storeImages && storeImages.length > 0 ? (
         <View style={styles.carouselContainer}>
-          <SCarousel
-            images={storeImages}
-            width={containerWidth}
-            height={SWidth * 200}
-          />
+          {containerWidth > 0 && (
+            <SCarousel
+              images={storeImages}
+              width={containerWidth}
+              height={SWidth * 200}
+            />
+          )}
           <Pressable
             style={styles.addButton}
             onPress={() =>
               multipleImageSelected({
-                width: containerWidth,
+                width: containerWidth || 0,
                 height: SWidth * 200,
                 setImages: setStoreImages,
               })
