@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
 import SText from '../../Elements/SText';
 import RecentStoreItem from './RecentStoreItem';
@@ -12,7 +12,9 @@ const RecentStore = () => {
       store: [
         {
           id: 1,
-          source: require('../../../assets/images/background.png'),
+          image: Image.resolveAssetSource(
+            require('../../../assets/images/background.png'),
+          ).uri,
           title: '스토어1',
           category: 'Category 1',
           review: 4.5,
@@ -20,7 +22,9 @@ const RecentStore = () => {
         },
         {
           id: 2,
-          source: require('../../../assets/images/background.png'),
+          image: Image.resolveAssetSource(
+            require('../../../assets/images/background.png'),
+          ).uri,
           title: '스토어2',
           category: 'Category 1',
           review: 4.5,
@@ -34,7 +38,9 @@ const RecentStore = () => {
       store: [
         {
           id: 1,
-          source: require('../../../assets/images/background.png'),
+          image: Image.resolveAssetSource(
+            require('../../../assets/images/background.png'),
+          ).uri,
           title: '스토어3',
           category: 'Category 1',
           review: 4.5,
@@ -42,7 +48,9 @@ const RecentStore = () => {
         },
         {
           id: 2,
-          source: require('../../../assets/images/background.png'),
+          image: Image.resolveAssetSource(
+            require('../../../assets/images/background.png'),
+          ).uri,
           title: '스토어4',
           category: 'Category 1',
           review: 4.5,
@@ -69,7 +77,7 @@ const RecentStore = () => {
             <RecentStoreItem
               key={store.id}
               title={store.title}
-              source={store.source}
+              image={store.image}
               category={store.category}
               review={store.review}
               reviewCount={store.reviewCount}

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
 import SSButton from '../../components/Elements/SSButton';
 import SText from '../../components/Elements/SText';
@@ -15,7 +15,9 @@ const ParticipationPage = () => {
       store: [
         {
           id: 1,
-          source: require('../../assets/images/background.png'),
+          source: Image.resolveAssetSource(
+            require('../../assets/images/background.png'),
+          ).uri,
           title: '스토어1',
           category: 'Category 1',
           review: 4.5,
@@ -23,7 +25,9 @@ const ParticipationPage = () => {
         },
         {
           id: 2,
-          source: require('../../assets/images/background.png'),
+          source: Image.resolveAssetSource(
+            require('../../assets/images/background.png'),
+          ).uri,
           title: '스토어2',
           category: 'Category 1',
           review: 4.5,
@@ -37,7 +41,9 @@ const ParticipationPage = () => {
       store: [
         {
           id: 1,
-          source: require('../../assets/images/background.png'),
+          source: Image.resolveAssetSource(
+            require('../../assets/images/background.png'),
+          ).uri,
           title: '스토어3',
           category: 'Category 1',
           review: 4.5,
@@ -45,7 +51,9 @@ const ParticipationPage = () => {
         },
         {
           id: 2,
-          source: require('../../assets/images/background.png'),
+          source: Image.resolveAssetSource(
+            require('../../assets/images/background.png'),
+          ).uri,
           title: '스토어4',
           category: 'Category 1',
           review: 4.5,
@@ -72,7 +80,7 @@ const ParticipationPage = () => {
             {item.store.map(store => (
               <View key={store.id} style={styles.contentGap}>
                 <RecentStoreItem
-                  source={store.source}
+                  image={store.source}
                   title={store.title}
                   category={store.category}
                   review={store.review}

@@ -1,6 +1,6 @@
 import {BottomSheetScrollView} from '@gorhom/bottom-sheet';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import MainFilter from '../MainPage/Filter/MainFilter';
@@ -11,7 +11,9 @@ const BottomSheetItemList = () => {
   const data = [
     {
       id: 1,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -19,7 +21,9 @@ const BottomSheetItemList = () => {
     },
     {
       id: 2,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -27,7 +31,9 @@ const BottomSheetItemList = () => {
     },
     {
       id: 3,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -35,7 +41,9 @@ const BottomSheetItemList = () => {
     },
     {
       id: 4,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -43,7 +51,9 @@ const BottomSheetItemList = () => {
     },
     {
       id: 5,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -51,7 +61,9 @@ const BottomSheetItemList = () => {
     },
     {
       id: 6,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -64,6 +76,7 @@ const BottomSheetItemList = () => {
       <MainFilter />
       <BottomSheetScrollView
         contentContainerStyle={{
+          flexGrow: 1,
           gap: SWidth * 16,
           height: SWidth * 376,
           paddingHorizontal: SWidth * 16,

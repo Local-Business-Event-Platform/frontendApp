@@ -102,7 +102,7 @@ const MainStoreContent = () => {
           gap: SWidth * 16,
           paddingBottom: SWidth * 100,
         }}
-        ListEmptyComponent={() => <SImageCard2Loading count={5} />}
+        ListEmptyComponent={() => <SImageCard2Loading count={4} />}
         renderItem={({item}) => (
           <MainStoreItem
             storeImg={item.storeImg}
