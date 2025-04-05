@@ -79,7 +79,7 @@ const BottomTeb = () => {
       </Tab.Navigator>
       {!isKeyboardVisible && (
         <LinearGradient
-          colors={['transparent', '#D3D3D399']}
+          colors={['transparent', '#D3D3D333']}
           style={styles.shadow}
         />
       )}
@@ -94,6 +94,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: tabHeight,
     width: '100%',
-    height: SWidth * 56,
+    height: SWidth * 27,
   },
 });

@@ -28,7 +28,10 @@ const MainFilter = ({search = true}: MainFilterProps) => {
         <View style={styles.rowContainer}>
           <SSwitchButton
             click={onClicked}
-            onPress={() => setonClicked(!onClicked)}
+            onPress={() => {
+              console.log('필터 눌림');
+              setonClicked(!onClicked);
+            }}
           />
           <SText fStyle="BmdMd" text={'내 주변'} color={'#404040'} />
         </View>
