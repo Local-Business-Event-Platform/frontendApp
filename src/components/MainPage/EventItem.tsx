@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import BusinessCalendar from '../../utils/svgs/businessPage/BusinessCalendar';
 import BusinessLocation from '../../utils/svgs/businessPage/BusinessLocation';
 import SImageCard from '../Elements/SImageCard';
@@ -37,19 +37,23 @@ const EventItem = ({item, clicked, onPress, likeOnPress}: EventItemProps) => {
           <View style={styles.rowContainer}>
             <View style={styles.rowTitleContainer}>
               <BusinessLocation />
-              <SText fStyle="BmdMd" text={item.store} color={'#404040'} />
+              <SText
+                fStyle="BmdMd"
+                text={item.store}
+                color={colors.secondary}
+              />
               <SText
                 fStyle="BmdMd"
                 text={`(${item.category})`}
-                color={'#404040'}
+                color={colors.secondary}
               />
             </View>
-            <SText fStyle="BmdMd" text={'·'} color={'#404040'} />
-            <SText fStyle="BmdMd" text={item.km} color={'#404040'} />
+            <SText fStyle="BmdMd" text={'·'} color={colors.secondary} />
+            <SText fStyle="BmdMd" text={item.km} color={colors.secondary} />
           </View>
           <View style={styles.rowTitleContainer}>
-            <BusinessCalendar color={'#155DFC'} />
-            <SText fStyle="BmdMd" text={item.date} color={'#404040'} />
+            <BusinessCalendar color={colors.interactive.primary} />
+            <SText fStyle="BmdMd" text={item.date} color={colors.secondary} />
           </View>
         </View>
       </View>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import {BOnlyTitleProps} from '../../../../utils/types/businessType';
 import SText from '../../../Elements/SText';
 
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     right: SWidth * 8,
     borderRadius: 999,
     height: SWidth * 28,
-    backgroundColor: '#155DFC',
+    backgroundColor: colors.interactive.primary,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: SWidth * 16,

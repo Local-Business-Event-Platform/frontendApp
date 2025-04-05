@@ -2,7 +2,7 @@ import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import React, {useEffect, useRef} from 'react';
 import {StyleSheet} from 'react-native';
 
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import BottomSheetHeader from './BottomSheetHeader';
 import BottomSheetItemList from './BottomSheetItemList';
 
@@ -29,7 +29,7 @@ const SBottomSheet = () => {
         handleComponent={() => <BottomSheetHeader />}
         onChange={() => {}}
         backgroundStyle={{
-          backgroundColor: '#FFFFFF',
+          backgroundColor: colors.white,
         }}
         index={0}
         style={[styles.contentContainer]}>

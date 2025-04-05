@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {JoinSuccessSubTitleProps} from '../../../utils/types/joinType';
 import SText from '../../Elements/SText';
 
@@ -33,7 +33,7 @@ const JoinSuccessSubTitle = ({userType}: JoinSuccessSubTitleProps) => {
         <SText
           fStyle="BlgSb"
           text={'(아이콘, 이미지 들어갈 예정)'}
-          color={'#525252'}
+          color={colors.tertiary}
         />
       </View>
     </View>

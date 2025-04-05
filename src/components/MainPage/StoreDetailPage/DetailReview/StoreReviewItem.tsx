@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import ReviewContent from './ReviewContent';
 import ReviewDate from './ReviewDate';
 import ReviewUser from './ReviewUser';
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     paddingVertical: SWidth * 24,
     gap: SWidth * 16,
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
   },
 
   userContainer: {

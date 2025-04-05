@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {StoreInfoTabProps} from '../../../utils/types/businessType';
 import SText from '../../Elements/SText';
 
@@ -23,7 +23,7 @@ const StoreInfoTab = ({isClicked, setIsClicked}: StoreInfoTabProps) => {
           <SText
             fStyle="BlgMd"
             text={menu}
-            color={isClicked === index ? '#1447E6' : '#404040'}
+            color={isClicked === index ? '#1447E6' : colors.secondary}
           />
         </Pressable>
       ))}

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {OnPressProps} from '../../../utils/types/businessType';
 import SButton from '../SButton';
 import SText from '../SText';
@@ -10,19 +10,19 @@ const ModalPassword = ({onPress}: OnPressProps) => {
     <View style={styles.container}>
       <SText fStyle="Hsm" text={'비밀번호 변경 완료'} />
       <View style={styles.iconContainer}>
-        <SText fStyle="BlgSb" text={'아이콘'} color={'#A1A1A1'} />
+        <SText fStyle="BlgSb" text={'아이콘'} color={colors.disabled} />
       </View>
       <SText
         fStyle="BlgMd"
         text={'비밀번호가 성공적으로 변경되었습니다.'}
-        color={'#404040'}
+        color={colors.secondary}
       />
       <View style={{width: '100%', height: SWidth * 56}}>
         <SButton
           title="확인"
           textColor={'white'}
-          onPress={onPress}
-          ButtonColor={'#155DFC'}
+          onPress={onPress!}
+          ButtonColor={colors.interactive.primary}
         />
       </View>
     </View>

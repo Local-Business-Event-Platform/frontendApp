@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import SInput from '../../components/Elements/SInput';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
@@ -49,7 +49,7 @@ const FindIdPassword = () => {
         <View style={styles.topContainer}>
           <SInput
             title="휴대폰 번호"
-            titleColor={'#525252'}
+            titleColor={colors.tertiary}
             value={userData.phone}
             msg={phoneAuth ? '인증번호가 전송되었습니다.' : ''}
             onChangeText={text => setUserData({...userData, phone: text})}
@@ -59,7 +59,7 @@ const FindIdPassword = () => {
           />
           <SInput
             title="인증번호"
-            titleColor={'#525252'}
+            titleColor={colors.tertiary}
             value={userData.authNumber}
             onChangeText={text => {
               setAuthCheck(0);
@@ -67,9 +67,9 @@ const FindIdPassword = () => {
             }}
             borderColor={
               authCheck === 0 || authCheck === 1
-                ? '#E5E5E5'
+                ? colors.interactive.secondary
                 : authCheck === 2
-                ? '#525252'
+                ? colors.tertiary
                 : '#E7000B'
             }
             placeholder={'인증번호 6자리 입력'}
@@ -88,7 +88,7 @@ const FindIdPassword = () => {
         <View>
           <SButton
             title="다음"
-            ButtonColor={'#155DFC'}
+            ButtonColor={colors.interactive.primary}
             textColor={'white'}
             onPress={() => navigation.navigate('password')}
           />

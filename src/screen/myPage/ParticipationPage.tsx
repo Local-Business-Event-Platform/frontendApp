@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SSButton from '../../components/Elements/SSButton';
 import SText from '../../components/Elements/SText';
 import RecentStoreItem from '../../components/MyPage/Recent/RecentStoreItem';
@@ -81,16 +81,28 @@ const ParticipationPage = () => {
                 <View style={styles.rowContainer}>
                   <SSButton
                     title={qrChecked ? '25.01.13 확인 완료' : 'QR코드 확인'}
-                    textColor={qrChecked ? '#8c8c8c' : '#525252'}
-                    ButtonColor={qrChecked ? '#E5E5E5' : '#FFFFFF'}
-                    borderColor={qrChecked ? '#E5E5E5' : '#525252'}
+                    textColor={qrChecked ? '#8c8c8c' : colors.tertiary}
+                    ButtonColor={
+                      qrChecked ? colors.interactive.secondary : colors.white
+                    }
+                    borderColor={
+                      qrChecked ? colors.interactive.secondary : colors.tertiary
+                    }
                     onPress={() => setQrChecked(!qrChecked)}
                   />
                   <SSButton
                     title={reviewChecked ? '후기 적성 완료' : '후기 작성하기'}
-                    textColor={reviewChecked ? '#8c8c8c' : '#525252'}
-                    ButtonColor={reviewChecked ? '#E5E5E5' : '#FFFFFF'}
-                    borderColor={reviewChecked ? '#E5E5E5' : '#525252'}
+                    textColor={reviewChecked ? '#8c8c8c' : colors.tertiary}
+                    ButtonColor={
+                      reviewChecked
+                        ? colors.interactive.secondary
+                        : colors.white
+                    }
+                    borderColor={
+                      reviewChecked
+                        ? colors.interactive.secondary
+                        : colors.tertiary
+                    }
                     onPress={() => setReviewChecked(!reviewChecked)}
                   />
                 </View>

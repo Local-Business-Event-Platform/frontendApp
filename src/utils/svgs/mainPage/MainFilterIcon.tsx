@@ -1,9 +1,9 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const MainFilterIcon = ({color = '#525252'}: SvgColorProps) => {
+const MainFilterIcon = ({color = colors.tertiary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 20}

@@ -1,7 +1,7 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {FlatList, Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SText from '../../components/Elements/SText';
 import MainFilter from '../../components/MainPage/Filter/MainFilter';
 import BusinessDelete from '../../utils/svgs/businessPage/BusinessDelete';
@@ -90,7 +90,11 @@ const ReviewManagementPage = () => {
               </View>
             </View>
             <View style={styles.rowTitle}>
-              <SText fStyle="BlgSb" text={item.store} color={'#404040'} />
+              <SText
+                fStyle="BlgSb"
+                text={item.store}
+                color={colors.secondary}
+              />
               <View style={styles.reviewContainer}>
                 {Array.from({length: 5}).map((_, index) =>
                   index < item.review ? (
@@ -136,7 +140,7 @@ const styles = StyleSheet.create({
     paddingTop: SWidth * 20,
     paddingBottom: SWidth * 28,
     gap: SWidth * 12,
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
   },
 
   rowContainer: {

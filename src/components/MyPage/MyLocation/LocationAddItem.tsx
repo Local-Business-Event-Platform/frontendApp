@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import MyPageMoreIcon from '../../../utils/svgs/myPage/MyPageMoreIcon';
 import {LocationAddItemProps} from '../../../utils/types/myPage';
 import SText from '../../Elements/SText';
@@ -11,17 +11,19 @@ const LocationAddItem = ({isClicked, title, onPress}: LocationAddItemProps) => {
       style={[
         styles.container,
         {
-          borderColor: isClicked ? '#155DFC' : '#FAFAFA',
-          backgroundColor: isClicked ? '#FFFFFF' : '#FAFAFA',
+          borderColor: isClicked ? colors.interactive.primary : '#FAFAFA',
+          backgroundColor: isClicked ? colors.white : '#FAFAFA',
         },
       ]}
       onPress={onPress}>
       <SText
         fStyle="BlgSb"
         text={title}
-        color={isClicked ? '#155DFC' : '#404040'}
+        color={isClicked ? colors.interactive.primary : colors.secondary}
       />
-      <MyPageMoreIcon color={isClicked ? '#155DFC' : '#404040'} />
+      <MyPageMoreIcon
+        color={isClicked ? colors.interactive.primary : colors.secondary}
+      />
     </Pressable>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import BusinessPlus from '../../../../utils/svgs/businessPage/BusinessPlus';
 import SButton from '../../../Elements/SButton';
 import SInput from '../../../Elements/SInput';
@@ -37,17 +37,17 @@ const QuestionComponent = () => {
           placeholder="문의하실 내용을 자세하게 작성해주세요"
         />
         <View style={styles.fileContainer}>
-          <SText fStyle="BmdMd" text={'첨부파일'} color={'#525252'} />
+          <SText fStyle="BmdMd" text={'첨부파일'} color={colors.tertiary} />
           <View style={styles.fileBox}>
-            <BusinessPlus color={'#171717'} />
+            <BusinessPlus color={colors.primary} />
           </View>
         </View>
       </View>
       <View style={styles.buttonBox}>
         <SButton
           title="문의하기"
-          textColor={'#404040'}
-          ButtonColor={'#E5E5E5'}
+          textColor={colors.secondary}
+          ButtonColor={colors.interactive.secondary}
           onPress={() => {}}
         />
       </View>
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
     backgroundColor: '#F5F5F5',
   },
 

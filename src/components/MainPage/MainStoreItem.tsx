@@ -1,7 +1,7 @@
 import FastImage from '@d11/react-native-fast-image';
 import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import MainFillHeart from '../../utils/svgs/mainPage/MainFillHeart';
 import MyPageHeart from '../../utils/svgs/myPage/MyPageHeart';
 import {MainStoreItemProps} from '../../utils/types/mainType';
@@ -30,7 +30,7 @@ const MainStoreItem = ({
           <View style={styles.titleContainer}>
             <View style={styles.rowContainer}>
               <SText fStyle="BlgSb" text={title} />
-              <SText fStyle="BmdMd" text={category} color={'#A1A1A1'} />
+              <SText fStyle="BmdMd" text={category} color={colors.disabled} />
             </View>
             <Pressable
               style={styles.iconBox}
@@ -39,7 +39,7 @@ const MainStoreItem = ({
               {isClicked ? (
                 <MainFillHeart />
               ) : (
-                <MyPageHeart color={'#155DFC'} />
+                <MyPageHeart color={colors.interactive.primary} />
               )}
             </Pressable>
           </View>

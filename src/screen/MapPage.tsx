@@ -2,7 +2,7 @@ import Geolocation from '@react-native-community/geolocation';
 import {getDistance} from 'geolib';
 import React, {useEffect, useState} from 'react';
 import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../globalStyle';
+import {colors, SWidth} from '../../globalStyle';
 import SInput from '../components/Elements/SInput';
 import Map from '../components/Map/Map';
 
@@ -63,7 +63,7 @@ const MapPage = () => {
           <SInput
             value={search}
             onChangeText={text => setSearch(text)}
-            borderColor={'#525252'}
+            borderColor={colors.tertiary}
             searchOn={true}
             iconOnPress={() => {
               console.log('검색 아이콘 클릭됨');

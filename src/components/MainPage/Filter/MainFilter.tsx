@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {mainFilterItems} from '../../../utils/listData';
 import SSwitchButton from '../../Elements/SSwitchButton';
 import SText from '../../Elements/SText';
@@ -33,7 +33,7 @@ const MainFilter = ({search = true}: MainFilterProps) => {
               setonClicked(!onClicked);
             }}
           />
-          <SText fStyle="BmdMd" text={'내 주변'} color={'#404040'} />
+          <SText fStyle="BmdMd" text={'내 주변'} color={colors.secondary} />
         </View>
       )}
     </View>

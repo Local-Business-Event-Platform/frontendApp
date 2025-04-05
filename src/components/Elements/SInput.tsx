@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, TextInput, View} from 'react-native';
-import {fontFamilies, SWidth} from '../../../globalStyle';
+import {colors, fontFamilies, SWidth} from '../../../globalStyle';
 import AuthCheck from '../../utils/svgs/auth/AuthCheck';
 import JoinPasswordClose from '../../utils/svgs/auth/JoinPasswordClose';
 import JoinPasswordOpen from '../../utils/svgs/auth/JoinPasswordOpen';
@@ -16,7 +16,7 @@ const SInput = ({
   titleColor,
   value,
   buttonTitle,
-  borderColor = '#E5E5E5',
+  borderColor = colors.interactive.secondary,
   buttonOnPress,
   ButtonTextDecorationLine,
   maxLength,
@@ -38,7 +38,13 @@ const SInput = ({
       {title && (
         <View style={styles.titleContainer}>
           <SText fStyle="BmdMd" text={title} color={titleColor} />
-          {required && <SText fStyle="BmdMd" text={'*'} color={'#155DFC'} />}
+          {required && (
+            <SText
+              fStyle="BmdMd"
+              text={'*'}
+              color={colors.interactive.primary}
+            />
+          )}
         </View>
       )}
       <View style={styles.inputContainer}>
@@ -59,11 +65,15 @@ const SInput = ({
                 },
               ]}
               placeholder={placeholder}
-              placeholderTextColor={'#A1A1A1'}
+              placeholderTextColor={colors.disabled}
             />
             {textIcon !== '' && (
               <View style={styles.passwordIcon}>
-                <SText fStyle="BlgMd" text={textIcon!} color={'#A1A1A1'} />
+                <SText
+                  fStyle="BlgMd"
+                  text={textIcon!}
+                  color={colors.disabled}
+                />
               </View>
             )}
             {iconOn && (
@@ -104,7 +114,7 @@ const SInput = ({
                   ? '#E7000B'
                   : msgType === 'success'
                   ? '#00A63E'
-                  : '#525252'
+                  : colors.tertiary
               }
             />
           </View>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import MainDownArrow from '../../../../utils/svgs/mainPage/MainDownArrow';
 import {FAQQuestionItemProps} from '../../../../utils/types/myPage';
 import SText from '../../../Elements/SText';
@@ -10,7 +10,7 @@ const FAQQuestionItem = ({title, onPress}: FAQQuestionItemProps) => {
     <Pressable style={styles.container} onPress={onPress}>
       <SText fStyle="BlgRg" text={title} />
       <View style={styles.questionIconBox}>
-        <MainDownArrow color={'#525252'} />
+        <MainDownArrow color={colors.tertiary} />
       </View>
     </Pressable>
   );
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: SWidth * 64,
     borderBottomWidth: 1,
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
   },
 
   questionIconBox: {

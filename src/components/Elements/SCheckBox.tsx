@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import Check from '../../utils/svgs/auth/Check';
 import {SCheckBoxProps} from '../../utils/types/type';
 
@@ -11,8 +11,12 @@ const SCheckBox = ({checkValue, onPress}: SCheckBoxProps) => {
       style={[
         styles.container,
         {
-          borderColor: checkValue ? '#155DFC' : '#525252',
-          backgroundColor: checkValue ? '#155DFC' : '#FFFFFF',
+          borderColor: checkValue
+            ? colors.interactive.primary
+            : colors.tertiary,
+          backgroundColor: checkValue
+            ? colors.interactive.primary
+            : colors.white,
         },
       ]}
       onPress={onPress}>

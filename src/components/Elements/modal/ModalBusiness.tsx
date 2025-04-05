@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import BusinessCirclePlus from '../../../utils/svgs/businessPage/BusinessCirclePlus';
 import {OnPressProps} from '../../../utils/types/businessType';
 import SButton from '../SButton';
@@ -13,11 +13,15 @@ const ModalBusiness = ({onPress}: OnPressProps) => {
     <>
       <View style={styles.imageContainer}>
         <BusinessCirclePlus />
-        <SText fStyle="BlgSb" text={'이미지 등록하기'} color={'#525252'} />
+        <SText
+          fStyle="BlgSb"
+          text={'이미지 등록하기'}
+          color={colors.tertiary}
+        />
       </View>
       <View style={styles.inputContainer}>
         <View style={styles.contentStyle}>
-          <SText fStyle="BmdMd" text={'카테고리'} color={'#404040'} />
+          <SText fStyle="BmdMd" text={'카테고리'} color={colors.secondary} />
           <SListButton title="카테고리 선택" onPress={() => {}} />
         </View>
         <SInput
@@ -38,14 +42,14 @@ const ModalBusiness = ({onPress}: OnPressProps) => {
       <View style={styles.rowLine}>
         <SButton
           title="닫기"
-          textColor={'#404040'}
+          textColor={colors.secondary}
           ButtonColor={'#FAFAFA'}
-          onPress={onPress}
+          onPress={onPress!}
         />
         <SButton
           title="메뉴 수정하기"
           textColor={'white'}
-          ButtonColor={'#155DFC'}
+          ButtonColor={colors.interactive.primary}
           onPress={() => {}}
         />
       </View>

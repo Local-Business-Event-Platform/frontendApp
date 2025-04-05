@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import JoinTitle from '../../components/Join/JoinTitle';
 import JoinSuccessSubTitle from '../../components/Join/Success/JoinSuccessSubTitle';
@@ -19,9 +19,9 @@ const SuccessPage = () => {
         </View>
         <View style={styles.buttonContainer}>
           <SButton
-            ButtonColor={'#155DFC'}
+            ButtonColor={colors.interactive.primary}
             title="둘러보기"
-            textColor={'#FFFFFF'}
+            textColor={colors.white}
             onPress={() =>
               navigation.reset({
                 index: 0,

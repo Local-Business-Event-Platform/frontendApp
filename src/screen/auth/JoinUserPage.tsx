@@ -1,7 +1,7 @@
 import React from 'react';
 import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import SInput from '../../components/Elements/SInput';
 import SText from '../../components/Elements/SText';
@@ -85,9 +85,9 @@ const JoinUserPage = () => {
         </View>
         <View style={styles.buttonContainer}>
           <SButton
-            ButtonColor={'#155DFC'}
+            ButtonColor={colors.interactive.primary}
             title="아이디, 비밀번호 입력하기"
-            textColor={'#FFFFFF'}
+            textColor={colors.white}
             onPress={handleNextPage}
           />
         </View>

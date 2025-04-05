@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import JoinTitle from '../../components/Join/JoinTitle';
 import TermsCheck from '../../components/Join/TermsOfUse/TermsCheck';
@@ -38,9 +38,9 @@ const TermsOfUsePage = () => {
       </View>
       <View style={styles.buttonContainer}>
         <SButton
-          ButtonColor={'#155DFC'}
+          ButtonColor={colors.interactive.primary}
           title="동의하고 본인 인증하기"
-          textColor={'#FFFFFF'}
+          textColor={colors.white}
           onPress={handleCheck}
         />
       </View>

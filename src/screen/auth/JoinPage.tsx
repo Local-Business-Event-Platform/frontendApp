@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import JoinSelectedButton from '../../components/Join/JoinSelectedButton';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
@@ -13,7 +13,7 @@ const JoinPage = () => {
       <View style={styles.selectBoxContainer}>
         <JoinSelectedButton
           title="사용자 회원가입"
-          backgroundColor={'#EFF6FF'}
+          backgroundColor={colors.interactive.selected}
           onPress={() => {
             setUserData({type: 1});
             navigation.navigate('terms');

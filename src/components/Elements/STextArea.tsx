@@ -1,7 +1,7 @@
 import React from 'react';
 import {DimensionValue, StyleSheet, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
-import {fontFamilies, SWidth} from '../../../globalStyle';
+import {colors, fontFamilies, SWidth} from '../../../globalStyle';
 import SText from './SText';
 
 type STextAreaProps = {
@@ -28,7 +28,13 @@ const STextArea = ({
       {title && (
         <View style={styles.titleContainer}>
           <SText fStyle="BmdMd" text={title} color={titleColor} />
-          {required && <SText fStyle="BmdMd" text={'*'} color={'#155DFC'} />}
+          {required && (
+            <SText
+              fStyle="BmdMd"
+              text={'*'}
+              color={colors.interactive.primary}
+            />
+          )}
         </View>
       )}
 
@@ -37,7 +43,7 @@ const STextArea = ({
         style={[styles.inputStyle, {minHeight: minHeight}]}
         multiline={true}
         placeholder={placeholder}
-        placeholderTextColor={'#A1A1A1'}
+        placeholderTextColor={colors.disabled}
         numberOfLines={6}
         maxLength={200}
         onChangeText={onChangeText}
@@ -58,7 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
 
     borderWidth: SWidth * 1.25,
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
     borderRadius: SWidth * 8,
     padding: SWidth * 12,
     textAlignVertical: 'top',

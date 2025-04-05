@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {JoinButtonProps} from '../../../utils/types/joinType';
 import SText from '../../Elements/SText';
 
@@ -14,7 +14,7 @@ const JoinButton = ({
       <SText
         fStyle="BlgSb"
         text={title}
-        color={'#404040'}
+        color={colors.secondary}
         textDecorationLine={textDecorationLine}
       />
     </Pressable>

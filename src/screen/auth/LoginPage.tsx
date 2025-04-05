@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Keyboard, Pressable, ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import SInput from '../../components/Elements/SInput';
 import FindUser from '../../components/Login/FindUser';
@@ -85,8 +85,8 @@ const LoginPage = () => {
           <View style={styles.loginButtonContainer}>
             <SButton
               title="로그인"
-              textColor={'#FFFFFF'}
-              ButtonColor={'#155DFC'}
+              textColor={colors.white}
+              ButtonColor={colors.interactive.primary}
               onPress={handleLogin}
             />
           </View>
@@ -96,7 +96,7 @@ const LoginPage = () => {
           <View style={styles.buttonContainer}>
             <SButton
               title="회원가입"
-              textColor={'#404040'}
+              textColor={colors.secondary}
               ButtonColor={'#FAFAFA'}
               onPress={() => navigation.navigate('join')}
             />

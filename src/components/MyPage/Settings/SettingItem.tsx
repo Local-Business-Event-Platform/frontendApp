@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import RightArrow24 from '../../../utils/svgs/auth/RightArrow24';
 import {SettingItemProps} from '../../../utils/types/settingType';
 import SText from '../../Elements/SText';
@@ -16,7 +16,7 @@ const SettingItem = ({
       <SText fStyle="BlgRg" text={title} />
       {icon && (
         <Pressable style={styles.iconContainer} onPress={onPress}>
-          <RightArrow24 color={'#525252'} />
+          <RightArrow24 color={colors.tertiary} />
         </Pressable>
       )}
     </View>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: SWidth * 64,
     justifyContent: 'space-between',
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
   },
 
   iconContainer: {

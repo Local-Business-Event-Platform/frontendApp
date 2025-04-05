@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SImageCard from '../Elements/SImageCard';
 import SMeterBox from '../Elements/SMeterBox';
 import SReviewBox from '../Elements/SReviewBox';
@@ -24,7 +24,11 @@ const BStoreCard = ({item, onPress}: BStoreCardProps) => {
         <View style={styles.contentTextContainer}>
           <View style={styles.rowContainer}>
             <SText fStyle="BxlSb" text={item.name} />
-            <SText fStyle="BlgMd" text={item.category} color={'#A1A1A1'} />
+            <SText
+              fStyle="BlgMd"
+              text={item.category}
+              color={colors.disabled}
+            />
           </View>
           <SReviewBox review={item.review} reviewCount={item.reviewCount} />
         </View>

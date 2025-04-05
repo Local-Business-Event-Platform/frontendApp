@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import BusinessCalendar from '../../../utils/svgs/businessPage/BusinessCalendar';
 import BusinessLocation from '../../../utils/svgs/businessPage/BusinessLocation';
@@ -83,20 +83,28 @@ const RecentEvent = () => {
                       <SText
                         fStyle="BmdMd"
                         text={event.store}
-                        color={'#404040'}
+                        color={colors.secondary}
                       />
                       <SText
                         fStyle="BmdMd"
                         text={`(${event.category})`}
-                        color={'#404040'}
+                        color={colors.secondary}
                       />
                     </View>
-                    <SText fStyle="BmdMd" text={'·'} color={'#404040'} />
-                    <SText fStyle="BmdMd" text={event.km} color={'#404040'} />
+                    <SText fStyle="BmdMd" text={'·'} color={colors.secondary} />
+                    <SText
+                      fStyle="BmdMd"
+                      text={event.km}
+                      color={colors.secondary}
+                    />
                   </View>
                   <View style={styles.rowTitleContainer}>
-                    <BusinessCalendar color={'#155DFC'} />
-                    <SText fStyle="BmdMd" text={event.date} color={'#404040'} />
+                    <BusinessCalendar color={colors.interactive.primary} />
+                    <SText
+                      fStyle="BmdMd"
+                      text={event.date}
+                      color={colors.secondary}
+                    />
                   </View>
                 </View>
               </View>

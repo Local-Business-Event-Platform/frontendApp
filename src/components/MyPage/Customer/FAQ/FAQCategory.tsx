@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import MyPageTitle from '../../MyPageTitle';
 import FAQCategoryItem from './FAQCategoryItem';
 
@@ -71,6 +71,6 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     backgroundColor: '#FAFAFA',
     borderWidth: 1,
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
   },
 });

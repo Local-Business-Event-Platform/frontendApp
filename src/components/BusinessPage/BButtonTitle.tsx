@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import BusinessDelete from '../../utils/svgs/businessPage/BusinessDelete';
 import {BTitleContainerProps} from '../../utils/types/businessType';
 import SText from '../Elements/SText';
@@ -56,6 +56,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1.25,
     borderRadius: SWidth * 8,
-    borderColor: '#404040',
+    borderColor: colors.secondary,
   },
 });

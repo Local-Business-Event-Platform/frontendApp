@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {multipleImageSelected} from '../../../service/imagePicker';
 import BusinessCamera from '../../../utils/svgs/businessPage/BusinessCamera';
 import BusinessCirclePlus from '../../../utils/svgs/businessPage/BusinessCirclePlus';
@@ -53,7 +53,11 @@ const StoreImage = ({
                 setImages: setStoreImages,
               })
             }>
-            <SText fStyle="BmdSb" text={'이미지 변경'} color={'#155DFC'} />
+            <SText
+              fStyle="BmdSb"
+              text={'이미지 변경'}
+              color={colors.interactive.primary}
+            />
             <BusinessCamera />
           </Pressable>
         </View>
@@ -64,7 +68,7 @@ const StoreImage = ({
             <SText
               fStyle="BlgSb"
               text={'이미지 등록하기 (최대 6장)'}
-              color={'#525252'}
+              color={colors.tertiary}
             />
           </View>
         </View>
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
     height: SWidth * 40,
     borderWidth: 1.25,
     borderRadius: SWidth * 8,
-    borderColor: '#155DFC',
+    borderColor: colors.interactive.primary,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: SWidth * 16,

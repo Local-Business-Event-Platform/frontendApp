@@ -1,7 +1,7 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import BusinessCalendar from '../../../../utils/svgs/businessPage/BusinessCalendar';
 import {StoreDetailEventItemProps} from '../../../../utils/types/StoreDetailType';
 import SText from '../../../Elements/SText';
@@ -14,7 +14,7 @@ const StoreDetailEventItem = ({item}: StoreDetailEventItemProps) => {
     <View style={styles.listItem}>
       <View style={styles.imgContainer}>
         <FastImage
-          source={item.img}
+          source={{uri: item.img}}
           style={styles.imgStyle}
           resizeMode={FastImage.resizeMode.cover}
         />
@@ -24,11 +24,16 @@ const StoreDetailEventItem = ({item}: StoreDetailEventItemProps) => {
       <View style={styles.itemContentContainer}>
         <SText fStyle="BxlSb" text={item.title} />
         <StoreDetailIconTitle icon={<BusinessCalendar />} gap={SWidth * 4}>
-          <SText fStyle="BmdMd" text={item.title} color={'#404040'} />
+          <SText fStyle="BmdMd" text={item.title} color={colors.secondary} />
         </StoreDetailIconTitle>
         <View style={styles.contentText}>
           {item.content.map((text, index) => (
-            <SText key={index} fStyle="BmdMd" text={text} color={'#525252'} />
+            <SText
+              key={index}
+              fStyle="BmdMd"
+              text={text}
+              color={colors.tertiary}
+            />
           ))}
         </View>
       </View>

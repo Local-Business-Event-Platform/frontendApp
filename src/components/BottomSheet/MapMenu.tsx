@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SText from '../Elements/SText';
 
 const MapMenu = () => {
@@ -19,7 +19,7 @@ const MapMenu = () => {
           style={styles.itemContainer}
           onPress={() => setMenuTitle(menu.name)}>
           <View style={styles.menuItemBox}></View>
-          <SText fStyle="BmdMd" text={menu.name} color={'#404040'} />
+          <SText fStyle="BmdMd" text={menu.name} color={colors.secondary} />
         </Pressable>
       ))}
     </View>

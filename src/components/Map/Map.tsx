@@ -6,7 +6,7 @@ import {
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 
 type MapProps = {
   cameraZoom: number;
@@ -31,7 +31,7 @@ const Map = ({
       isShowScaleBar={false}
       isTiltGesturesEnabled={false}
       isShowCompass={false}
-      isShowLocationButton={false}
+      // isShowLocationButton={false}
       isShowZoomControls={false}
       camera={{
         latitude: myLatitude,
@@ -45,7 +45,11 @@ const Map = ({
         color={'#F1425C33'}
       />
       <NaverMapMarkerOverlay
-        caption={{text: '내 위치', color: '#171717', textSize: SWidth * 12}}
+        caption={{
+          text: '내 위치',
+          color: colors.primary,
+          textSize: SWidth * 12,
+        }}
         isHideCollidedMarkers={true}
         width={SWidth * 20}
         height={SWidth * 20}
@@ -61,7 +65,7 @@ const Map = ({
           key={index}
           caption={{
             text: building.name,
-            color: '#171717',
+            color: colors.primary,
             textSize: SWidth * 12,
           }}
           isHideCollidedMarkers={true}

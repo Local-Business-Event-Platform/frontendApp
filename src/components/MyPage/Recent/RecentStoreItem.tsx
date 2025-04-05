@@ -1,7 +1,7 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import SMeterBox from '../../Elements/SMeterBox';
 import SReviewBox from '../../Elements/SReviewBox';
@@ -41,7 +41,7 @@ const RecentStoreItem = ({
           <View style={styles.titleContainer}>
             <View style={styles.rowContainer}>
               <SText fStyle="BlgSb" text={title} />
-              <SText fStyle="BmdMd" text={category} color={'#A1A1A1'} />
+              <SText fStyle="BmdMd" text={category} color={colors.disabled} />
             </View>
           </View>
           <SReviewBox review={review} reviewCount={reviewCount} />

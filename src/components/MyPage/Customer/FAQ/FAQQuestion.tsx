@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import MyPageTitle from '../../MyPageTitle';
 import FAQQuestionItem from './FAQQuestionItem';
 
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: SWidth * 64,
     borderBottomWidth: 1,
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
   },
 
   questionIconBox: {

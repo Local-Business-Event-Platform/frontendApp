@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {AlarmItemProps} from '../../../utils/types/myPage';
 import SSwitchButton from '../../Elements/SSwitchButton';
 import SText from '../../Elements/SText';
@@ -22,7 +22,7 @@ const AlarmItem = ({
         <SText fStyle="BlgMd" text={title} />
         <SSwitchButton click={click} onPress={onPress} />
       </View>
-      <SText fStyle="BmdRg" text={subTitle} color={'#525252'} />
+      <SText fStyle="BmdRg" text={subTitle} color={colors.tertiary} />
     </View>
   );
 };
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   container: {
     paddingVertical: SWidth * 20,
     gap: SWidth * 2,
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
   },
 
   rowContainer: {

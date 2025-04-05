@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {SSButtonProps} from '../../utils/types/type';
 import SText from './SText';
 
@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1.25,
-    borderColor: '#525252',
+    borderColor: colors.tertiary,
   },
 });

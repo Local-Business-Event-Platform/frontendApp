@@ -1,7 +1,7 @@
 import {NaverMapView} from '@mj-studio/react-native-naver-map';
 import React, {useState} from 'react';
 import {Pressable, ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SText from '../../components/Elements/SText';
 import AddLocation from '../../components/MyPage/MyLocation/AddLocation';
 import MyPageTitle from '../../components/MyPage/MyPageTitle';
@@ -42,17 +42,21 @@ const MyLocationPage = () => {
             <SText
               fStyle="BlgMd"
               text={'서울특별시 강남구 테헤란로 152'}
-              color={'#404040'}
+              color={colors.secondary}
             />
             <SText
               fStyle="BmdRg"
               text={'역삼동, 삼성빌딩 5층'}
-              color={'#525252'}
+              color={colors.tertiary}
             />
           </View>
         </View>
         <View style={styles.locationContainer}>
-          <SText fStyle="BlgMd" text={'선택 범위 3km'} color={'#155DFC'} />
+          <SText
+            fStyle="BlgMd"
+            text={'선택 범위 3km'}
+            color={colors.interactive.primary}
+          />
           <View style={styles.progress}>
             <View
               style={[
@@ -74,15 +78,15 @@ const MyLocationPage = () => {
                 {
                   backgroundColor:
                     location === 2000 || location === 3000
-                      ? '#155DFC'
+                      ? colors.interactive.primary
                       : '#F5F5F5',
                   borderTopLeftRadius: 4,
                   borderBottomLeftRadius: 4,
                   borderLeftWidth: 1,
                   borderColor:
                     location === 2000 || location === 3000
-                      ? '#155DFC'
-                      : '#E5E5E5',
+                      ? colors.interactive.primary
+                      : colors.interactive.secondary,
                 },
               ]}
             />
@@ -90,11 +94,15 @@ const MyLocationPage = () => {
               style={[
                 styles.barStyle,
                 {
-                  backgroundColor: location === 3000 ? '#155DFC' : '#F5F5F5',
+                  backgroundColor:
+                    location === 3000 ? colors.interactive.primary : '#F5F5F5',
                   borderTopRightRadius: 4,
                   borderBottomRightRadius: 4,
                   borderRightWidth: 1,
-                  borderColor: location === 3000 ? '#155DFC' : '#E5E5E5',
+                  borderColor:
+                    location === 3000
+                      ? colors.interactive.primary
+                      : colors.interactive.secondary,
                 },
               ]}
             />
@@ -103,20 +111,32 @@ const MyLocationPage = () => {
             <Pressable
               style={styles.buttonStyle}
               onPress={() => setLocation(1000)}>
-              <SText fStyle="BlgMd" text={'1km'} color={'#404040'} />
-              <SText fStyle="BmdMd" text={'도보 15분'} color={'#525252'} />
+              <SText fStyle="BlgMd" text={'1km'} color={colors.secondary} />
+              <SText
+                fStyle="BmdMd"
+                text={'도보 15분'}
+                color={colors.tertiary}
+              />
             </Pressable>
             <Pressable
               style={styles.buttonStyle}
               onPress={() => setLocation(2000)}>
-              <SText fStyle="BlgMd" text={'2km'} color={'#404040'} />
-              <SText fStyle="BmdMd" text={'도보 15분'} color={'#525252'} />
+              <SText fStyle="BlgMd" text={'2km'} color={colors.secondary} />
+              <SText
+                fStyle="BmdMd"
+                text={'도보 15분'}
+                color={colors.tertiary}
+              />
             </Pressable>
             <Pressable
               style={styles.buttonStyle}
               onPress={() => setLocation(3000)}>
-              <SText fStyle="BlgMd" text={'3km'} color={'#404040'} />
-              <SText fStyle="BmdMd" text={'도보 15분'} color={'#525252'} />
+              <SText fStyle="BlgMd" text={'3km'} color={colors.secondary} />
+              <SText
+                fStyle="BmdMd"
+                text={'도보 15분'}
+                color={colors.tertiary}
+              />
             </Pressable>
           </View>
         </View>
@@ -162,7 +182,7 @@ const styles = StyleSheet.create({
   locationContainer: {
     marginTop: SWidth * 24,
     borderTopWidth: 1,
-    borderTopColor: '#E5E5E5',
+    borderTopColor: colors.interactive.secondary,
     padding: SWidth * 16,
     paddingTop: SWidth * 20,
     alignItems: 'center',
@@ -187,7 +207,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#447E6',
     borderRadius: 999,
-    backgroundColor: '#155DFC',
+    backgroundColor: colors.interactive.primary,
     zIndex: 1,
   },
 

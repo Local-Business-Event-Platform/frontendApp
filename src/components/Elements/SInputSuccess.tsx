@@ -1,14 +1,14 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {SInputSuccessProps} from '../../utils/types/type';
 import SText from './SText';
 
 const SInputSuccess = ({
   title,
-  titleColor = '#525252',
+  titleColor = colors.tertiary,
   content,
-  contentColor = '#A1A1A1',
+  contentColor = colors.disabled,
 }: SInputSuccessProps) => {
   return (
     <View style={styles.container}>

@@ -1,9 +1,11 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const BusinessCamera = ({color = '#155DFC'}: SvgColorProps) => {
+const BusinessCamera = ({
+  color = colors.interactive.primary,
+}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 20}

@@ -1,15 +1,15 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import SText from '../../../Elements/SText';
 
 const StoreDetailImageText = () => {
   return (
     <View style={styles.container}>
-      <SText fStyle="BsmSb" text="NEW MENU LAUNCH EVENT" color={'#FFFFFF'} />
+      <SText fStyle="BsmSb" text="NEW MENU LAUNCH EVENT" color={colors.white} />
       <View style={styles.content}>
-        <SText fStyle="BlgSb" text="20% DISCOUNT" color={'#FFFFFF'} />
-        <SText fStyle="Hxl" text="MENU" color={'#FFFFFF'} />
+        <SText fStyle="BlgSb" text="20% DISCOUNT" color={colors.white} />
+        <SText fStyle="Hxl" text="MENU" color={colors.white} />
       </View>
     </View>
   );

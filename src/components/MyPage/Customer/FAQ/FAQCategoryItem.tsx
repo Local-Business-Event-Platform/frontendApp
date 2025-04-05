@@ -1,13 +1,13 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import {FAQCategoryItemProps} from '../../../../utils/types/myPage';
 import SText from '../../../Elements/SText';
 
 const FAQCategoryItem = ({title, onPress}: FAQCategoryItemProps) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
-      <SText fStyle="BmdMd" text={title} color={'#404040'} />
+      <SText fStyle="BmdMd" text={title} color={colors.secondary} />
     </Pressable>
   );
 };
@@ -23,6 +23,6 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     backgroundColor: '#FAFAFA',
     borderWidth: 1,
-    borderColor: '#E5E5E5',
+    borderColor: colors.interactive.secondary,
   },
 });

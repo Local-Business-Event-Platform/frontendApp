@@ -1,9 +1,9 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {SvgColorProps} from '../types/svgType';
 
-const MyPageOption = ({color = '#171717'}: SvgColorProps) => {
+const MyPageOption = ({color = colors.primary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 24}

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import SInput from '../../components/Elements/SInput';
 import SInputSuccess from '../../components/Elements/SInputSuccess';
@@ -37,7 +37,7 @@ const UserInfoPage = () => {
           <SInputSuccess
             title="아이디"
             content="abcdef12345"
-            contentColor={'#404040'}
+            contentColor={colors.secondary}
           />
           <View style={styles.gapContainer}>
             <SInput
@@ -83,9 +83,9 @@ const UserInfoPage = () => {
       <View style={styles.submitButtonContainer}>
         <SButton
           title="변경 완료"
-          textColor={'#404040'}
+          textColor={colors.secondary}
           disabled={true}
-          ButtonColor={'#E5E5E5'}
+          ButtonColor={colors.interactive.secondary}
           onPress={() => {}}
         />
       </View>

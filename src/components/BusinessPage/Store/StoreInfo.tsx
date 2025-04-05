@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet} from 'react-native';
+import {colors} from '../../../../globalStyle';
 import {BDataProps} from '../../../utils/types/businessType';
 import BButtonTitle from '../BButtonTitle';
 import BContainer from '../BContainer';
@@ -79,7 +80,7 @@ const StoreInfo = ({data}: BasicInformationProps) => {
       <BButtonTitle
         title="가게 정보"
         buttonText={data.storeName ? '수정하기' : '등록하기'}
-        buttonTextColor={storeAdd ? 'white' : '#525252'}
+        buttonTextColor={storeAdd ? 'white' : colors.tertiary}
         onClick={storeAdd}
         onPress={data.storeName ? handleUpdate : handleStoreAdd}
       />
@@ -99,10 +100,12 @@ const StoreInfo = ({data}: BasicInformationProps) => {
         onClick={storeAdd}
         title="가게 이름"
         placeholder="가게 이름"
-        color={'#525252'}
+        color={colors.tertiary}
         content={storeData.title || data.storeName || '가게 이름'}
         value={storeData.title}
-        contentColor={storeData.title || data.storeName ? '#404040' : '#A1A1A1'}
+        contentColor={
+          storeData.title || data.storeName ? colors.secondary : colors.disabled
+        }
         onChangeText={text => {
           setStoreData({
             ...storeData,
@@ -114,9 +117,11 @@ const StoreInfo = ({data}: BasicInformationProps) => {
         title="영업시간"
         content="00:00 ~ 00:00"
         contentColor={
-          storeData.time || data.storeBusinessTime ? '#404040' : '#A1A1A1'
+          storeData.time || data.storeBusinessTime
+            ? colors.secondary
+            : colors.disabled
         }
-        color={'#525252'}
+        color={colors.tertiary}
         onClick={storeAdd}
       />
       <BContentArea
@@ -128,14 +133,16 @@ const StoreInfo = ({data}: BasicInformationProps) => {
           });
         }}
         title="가게 설명"
-        color={'#525252'}
+        color={colors.tertiary}
         content={
           storeData.content ||
           data.storeContent ||
           '가게 상세 설명 (200자 내외)'
         }
         contentColor={
-          storeData.content || data.storeContent ? '#404040' : '#A1A1A1'
+          storeData.content || data.storeContent
+            ? colors.secondary
+            : colors.disabled
         }
         onClick={storeAdd}
       />

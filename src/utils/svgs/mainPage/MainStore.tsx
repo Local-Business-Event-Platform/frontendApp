@@ -1,9 +1,9 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {SvgFocusColorProps} from '../../types/svgType';
 
-const MainStore = ({focus, color = '#404040'}: SvgFocusColorProps) => {
+const MainStore = ({focus, color = colors.secondary}: SvgFocusColorProps) => {
   return (
     <Svg
       width={SWidth * 25}

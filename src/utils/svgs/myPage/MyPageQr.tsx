@@ -1,9 +1,9 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const MyPageQr = ({color = '#404040'}: SvgColorProps) => {
+const MyPageQr = ({color = colors.secondary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 24}

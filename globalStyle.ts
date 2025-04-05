@@ -1,42 +1,17 @@
 import {Dimensions} from 'react-native';
 
 export const colors = {
-  success: '#31B56F',
-  error: '#E64E20',
-  warning: '#E64E20',
-  info: '#8189A6',
-  primary: {
-    1: '#FF6D54',
-    2: '#FC846F',
-    3: '#FEA892',
-    4: '#FFEBE6',
-  },
-  secondary: {
-    1: '#6572FF',
-    2: '#DBFEEB',
-  },
+  primary: '#171717',
+  secondary: '#404040',
+  tertiary: '#525252',
   black: '#000000',
-  b900: '#222222',
-  b800: '#333333',
-  b700: '#555555',
-  b600: '#666666',
-  b500: '#777777',
-  b400: '#999999',
-  b300: '#AAAAAA',
-  b200: '#DDDDDD',
-  b100: '#F4F4F4',
   white: '#FFFFFF',
-  text: '#2C2C2E',
-  subText: '#545559',
-  btnBG: '#49494E',
-  background: '#F6F8FB',
-  background2: '#F6F7F9',
-  background3: '#FAFAFA',
-  border: '#DDDDE3',
-  border2: '#BABCC1',
-  field: '#D4D4D4',
-  disabled: '#BCBCC4',
-  disabled2: '#CCCCCC',
+  interactive: {
+    primary: '#155DFC',
+    secondary: '#E5E5E5',
+    selected: '#EFF6FF',
+  },
+  disabled: '#A1A1A1',
 };
 
 export const fontFamilies = {
@@ -58,7 +33,7 @@ export const basicDimensions = {
 
 export const SHeight = // 높이 변환 작업
   Number(
-    (Dimensions.get('screen').height * (1 / basicDimensions.height)).toFixed(1),
+    (Dimensions.get('screen').height * (1 / basicDimensions.height)).toFixed(2),
   );
 
 export const SWidth = // 가로 변환 작업

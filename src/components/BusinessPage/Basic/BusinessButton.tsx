@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import BusinessEdit from '../../../utils/svgs/businessPage/BusinessEdit';
 import {BusinessButtonProps} from '../../../utils/types/businessType';
 import SText from '../../Elements/SText';
@@ -16,8 +16,8 @@ const BusinessButton = ({
       style={[
         styles.editButton,
         {
-          borderColor: onClick ? '#155DFC' : '#525252',
-          backgroundColor: onClick ? '#155DFC' : 'white',
+          borderColor: onClick ? colors.interactive.primary : colors.tertiary,
+          backgroundColor: onClick ? colors.interactive.primary : 'white',
         },
       ]}
       onPress={onPress}>
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: SWidth * 8,
     borderWidth: 1.25,
-    borderColor: '#525252',
+    borderColor: colors.tertiary,
     borderRadius: 8,
   },
 });

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {BContentAreaProps} from '../../utils/types/businessType';
 import SText from '../Elements/SText';
 import STextArea from '../Elements/STextArea';
@@ -11,7 +11,7 @@ const BContentArea = ({
   underline,
   onClick,
   content,
-  contentColor = '#A1A1A1',
+  contentColor = colors.disabled,
   value,
   onChangeText,
 }: BContentAreaProps) => {

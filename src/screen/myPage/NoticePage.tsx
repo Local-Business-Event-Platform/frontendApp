@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import NoticeItem from '../../components/MyPage/Notice/NoticeItem';
 
 const NoticePage = () => {
@@ -45,9 +45,15 @@ const NoticePage = () => {
         <NoticeItem
           key={notice.id}
           box={notice.box}
-          backgroundColor={notice.boxTitle === '중요' ? '#EFF6FF' : '#FAFAFA'}
+          backgroundColor={
+            notice.boxTitle === '중요' ? colors.interactive.selected : '#FAFAFA'
+          }
           boxTitle={notice.boxTitle!}
-          boxColor={notice.boxTitle === '중요' ? '#155DFC' : '#404040'}
+          boxColor={
+            notice.boxTitle === '중요'
+              ? colors.interactive.primary
+              : colors.secondary
+          }
           title={notice.title}
           date={notice.date}
           content={notice.content}

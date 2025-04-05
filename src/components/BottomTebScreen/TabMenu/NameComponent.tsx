@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import SText from '../../Elements/SText';
 
 type NameComponentProps = {
@@ -14,7 +14,7 @@ const NameComponent = ({focused, name}: NameComponentProps) => {
       <SText
         fStyle="BsmMd"
         text={name}
-        color={focused ? '#1447E6' : '#404040'}
+        color={focused ? '#1447E6' : colors.secondary}
       />
     </View>
   );

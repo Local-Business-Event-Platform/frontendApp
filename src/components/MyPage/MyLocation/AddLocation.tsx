@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import BusinessPlus from '../../../utils/svgs/businessPage/BusinessPlus';
 import SText from '../../Elements/SText';
 import MyPageTitle from '../MyPageTitle';
@@ -19,7 +19,7 @@ const AddLocation = () => {
         <SText
           fStyle="BmdMd"
           text={'최대 4개까지 설정 가능'}
-          color={'#A1A1A1'}
+          color={colors.disabled}
         />
       </View>
       <View style={styles.locationContainer}>
@@ -32,8 +32,8 @@ const AddLocation = () => {
           />
         ))}
         <Pressable style={styles.addButton} onPress={() => {}}>
-          <SText fStyle="BlgSb" text={'추가하기'} color={'#A1A1A1'} />
-          <BusinessPlus color={'#A1A1A1'} />
+          <SText fStyle="BlgSb" text={'추가하기'} color={colors.disabled} />
+          <BusinessPlus color={colors.disabled} />
         </Pressable>
       </View>
     </View>
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     borderRadius: SWidth * 8,
     paddingHorizontal: SWidth * 24,
     borderStyle: 'dashed',
-    borderColor: '#A1A1A1',
-    backgroundColor: '#FFFFFF',
+    borderColor: colors.disabled,
+    backgroundColor: colors.white,
   },
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {storeDetailTabItems} from '../../../utils/listData';
 import {StoreDetailTabProps} from '../../../utils/types/StoreDetailType';
 import SText from '../../Elements/SText';
@@ -17,12 +17,15 @@ const StoreDetailTab = ({tabClicked, setTabClicked}: StoreDetailTabProps) => {
               paddingTop: tabClicked === item.id ? 1 : 0,
               backgroundColor: tabClicked === item.id ? '#FAFAFA' : 'white',
               borderBottomWidth: tabClicked === item.id ? 2 : 1,
-              borderColor: tabClicked === item.id ? '#525252' : '#E5E5E5',
+              borderColor:
+                tabClicked === item.id
+                  ? colors.tertiary
+                  : colors.interactive.secondary,
             },
           ]}
           onPress={() => setTabClicked(item.id)}>
           {item.icon}
-          <SText fStyle="BlgMd" text={item.title} color={'#404040'} />
+          <SText fStyle="BlgMd" text={item.title} color={colors.secondary} />
         </Pressable>
       ))}
     </View>

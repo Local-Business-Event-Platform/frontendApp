@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {colors, SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
@@ -33,15 +34,15 @@ const JoinBusinessPage = () => {
             <SText
               fStyle="BlgSb"
               text={'(아이콘, 이미지 들어갈 예정)'}
-              color={'#525252'}
+              color={colors.tertiary}
             />
           </View>
         </View>
       </View>
       <SButton
-        ButtonColor={'#155DFC'}
+        ButtonColor={Colors.interactive.primary}
         title="둘러보기"
-        textColor={'#FFFFFF'}
+        textColor={colors.white}
         onPress={() => {}}
       />
     </View>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
 import AppBarBackArrow from '../../../utils/svgs/AppBarBackArrow';
@@ -19,7 +19,11 @@ const StoreDetailAppBar = () => {
       </Pressable>
       <SText fStyle="BlgMd" text={title} />
       <Pressable onPress={() => setClicked(!clicked)} hitSlop={10}>
-        {clicked ? <MainFillHeart /> : <MyPageHeart color={'#155DFC'} />}
+        {clicked ? (
+          <MainFillHeart />
+        ) : (
+          <MyPageHeart color={colors.interactive.primary} />
+        )}
       </Pressable>
     </View>
   );

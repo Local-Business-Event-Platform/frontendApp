@@ -1,6 +1,6 @@
 import React from 'react';
 import {ColorValue, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import SText from '../../Elements/SText';
 
 type NoticeItemProps = {
@@ -28,7 +28,7 @@ const NoticeItem = ({
         <View style={[styles.rowTitle]}>
           {box && (
             <View style={[styles.boxStyle, {backgroundColor: boxColor}]}>
-              <SText fStyle="BmdMd" text={boxTitle} color={'#FFFFFF'} />
+              <SText fStyle="BmdMd" text={boxTitle} color={colors.white} />
             </View>
           )}
           <SText
@@ -39,14 +39,14 @@ const NoticeItem = ({
             text={title}
           />
         </View>
-        <SText fStyle="BmdRg" text={date} color={'#525252'} />
+        <SText fStyle="BmdRg" text={date} color={colors.tertiary} />
       </View>
       <SText
         flexShrink={1}
         nLine={3}
         fStyle="BmdRg"
         text={content}
-        color={'#525252'}
+        color={colors.tertiary}
       />
     </View>
   );

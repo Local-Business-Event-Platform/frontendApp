@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import BusinessCalendar from '../../utils/svgs/businessPage/BusinessCalendar';
 import BusinessCircleTime from '../../utils/svgs/businessPage/BusinessCircleTime';
 import {BContentTimeProps} from '../../utils/types/businessType';
@@ -10,7 +10,7 @@ import EventDateButton from './Event/EventDateButton';
 const BContentTime = ({
   title,
   content,
-  contentColor = '#A1A1A1',
+  contentColor = colors.disabled,
   color,
   underline,
   onClick,

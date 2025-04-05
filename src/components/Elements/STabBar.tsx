@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {STabBarProps} from '../../utils/types/type';
 import SText from './SText';
 
@@ -13,10 +13,11 @@ const STabBar = ({menuList, tabIndex, setTabIndex}: STabBarProps) => {
           style={[
             styles.rowContainer,
             {
-              backgroundColor: tabIndex === item.id ? '#DBEAFE' : '#FFFFFF',
+              backgroundColor: tabIndex === item.id ? '#DBEAFE' : colors.white,
               paddingTop: tabIndex === item.id ? 1 : 0,
               borderBottomWidth: tabIndex === item.id ? 2 : 1,
-              borderColor: tabIndex === item.id ? '#1447E6' : '#E5E5E5',
+              borderColor:
+                tabIndex === item.id ? '#1447E6' : colors.interactive.secondary,
             },
           ]}
           onPress={() => setTabIndex(item.id)}>
@@ -24,7 +25,7 @@ const STabBar = ({menuList, tabIndex, setTabIndex}: STabBarProps) => {
           <SText
             fStyle="BlgMd"
             text={item.title}
-            color={tabIndex === item.id ? '#1447E6' : '#404040'}
+            color={tabIndex === item.id ? '#1447E6' : colors.secondary}
           />
         </Pressable>
       ))}

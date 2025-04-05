@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import BusinessEditBlue from '../../../utils/svgs/businessPage/BusinessEditBlue';
 import {OnPressProps} from '../../../utils/types/businessType';
 
@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: SWidth * 8,
     borderWidth: 1.25,
-    borderColor: '#155DFC',
+    borderColor: colors.interactive.primary,
   },
 });

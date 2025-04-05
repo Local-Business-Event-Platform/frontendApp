@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import RightArrow24 from '../../utils/svgs/auth/RightArrow24';
 import SText from '../Elements/SText';
 
@@ -15,7 +15,7 @@ const ContentItem = ({icon, title, onPress}: ContentItemProps) => {
     <Pressable onPress={onPress} style={styles.container}>
       <View style={styles.rowLine}>
         {icon}
-        <SText fStyle="BlgRg" text={title} color={'#404040'} />
+        <SText fStyle="BlgRg" text={title} color={colors.secondary} />
       </View>
 
       <RightArrow24 />

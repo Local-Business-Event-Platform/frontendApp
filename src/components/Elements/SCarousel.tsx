@@ -6,7 +6,7 @@ import Carousel, {
   ICarouselInstance,
   Pagination,
 } from 'react-native-reanimated-carousel';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 
 type SCarouselProps = {
   images: string[];
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
 
   activeDotStyle: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.white,
     borderRadius: 999,
   },
 });

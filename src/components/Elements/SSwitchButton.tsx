@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 
 type SSwitchButtonProps = {
   click: boolean;
@@ -16,8 +16,10 @@ const SSwitchButton = ({click, onPress}: SSwitchButtonProps) => {
         styles.container,
         {
           alignItems: !click ? 'flex-start' : 'flex-end',
-          backgroundColor: !click ? '#FAFAFA' : '#155DFC',
-          borderColor: !click ? '#E5E5E5' : '#155DFC',
+          backgroundColor: !click ? '#FAFAFA' : colors.interactive.primary,
+          borderColor: !click
+            ? colors.interactive.secondary
+            : colors.interactive.primary,
         },
       ]}>
       <View style={styles.content} />

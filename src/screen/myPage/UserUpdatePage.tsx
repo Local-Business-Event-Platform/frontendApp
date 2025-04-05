@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import UserUpdateInput from '../../components/MyPage/UserUpdate/UserUpdateInput';
 import UserUpdateTitle from '../../components/MyPage/UserUpdate/UserUpdateTitle';
@@ -26,8 +26,8 @@ const UserUpdatePage = () => {
       <View style={styles.buttonContainer}>
         <SButton
           title="확인"
-          textColor={'#FFFFFF'}
-          ButtonColor={'#155DFC'}
+          textColor={colors.white}
+          ButtonColor={colors.interactive.primary}
           onPress={handleSubmit}
         />
       </View>

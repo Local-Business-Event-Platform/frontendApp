@@ -1,7 +1,7 @@
 import FastImage from '@d11/react-native-fast-image';
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {useModalOpen} from '../../../store/modalRoute';
 import BusinessBurger from '../../../utils/svgs/businessPage/BusinessBurger';
 import SText from '../../Elements/SText';
@@ -52,11 +52,19 @@ const StoreMenuInfo = () => {
                   <SText
                     fStyle="BmdSb"
                     text={item.category}
-                    color={'#525252'}
+                    color={colors.tertiary}
                   />
                   <View style={styles.contentGap}>
-                    <SText fStyle="BxlSb" text={item.title} color={'#404040'} />
-                    <SText fStyle="BxlSb" text={item.price} color={'#525252'} />
+                    <SText
+                      fStyle="BxlSb"
+                      text={item.title}
+                      color={colors.secondary}
+                    />
+                    <SText
+                      fStyle="BxlSb"
+                      text={item.price}
+                      color={colors.tertiary}
+                    />
                   </View>
                 </View>
               </View>

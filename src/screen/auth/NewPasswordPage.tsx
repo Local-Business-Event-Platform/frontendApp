@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SButton from '../../components/Elements/SButton';
 import SInput from '../../components/Elements/SInput';
 import SText from '../../components/Elements/SText';
@@ -58,12 +58,12 @@ const NewPasswordPage = () => {
       <View style={styles.container}>
         <View style={styles.topContainer}>
           <View style={styles.idContainer}>
-            <SText fStyle="BmdMd" text={'아이디'} color={'#525252'} />
-            <SText fStyle="BxlSb" text={'232rref1'} color={'#404040'} />
+            <SText fStyle="BmdMd" text={'아이디'} color={colors.tertiary} />
+            <SText fStyle="BxlSb" text={'232rref1'} color={colors.secondary} />
           </View>
           <SInput
             title="새 비밀번호"
-            titleColor={'#525252'}
+            titleColor={colors.tertiary}
             value={userPassword.password}
             onChangeText={text =>
               setUserPassword({...userPassword, password: text})
@@ -87,15 +87,15 @@ const NewPasswordPage = () => {
             }
             borderColor={
               msgType.password === 0
-                ? '#E5E5E5'
+                ? colors.interactive.secondary
                 : msgType.password === 1
                 ? '#E7000B'
-                : '#525252'
+                : colors.tertiary
             }
           />
           <SInput
             title="새 비밀번호 확인"
-            titleColor={'#525252'}
+            titleColor={colors.tertiary}
             value={userPassword.passwordCheck}
             onChangeText={text => {
               setUserPassword({...userPassword, passwordCheck: text});
@@ -129,18 +129,18 @@ const NewPasswordPage = () => {
             }
             borderColor={
               msgType.passwordCheck === 0
-                ? '#E5E5E5'
+                ? colors.interactive.secondary
                 : msgType.passwordCheck === 1
                 ? '#E7000B'
-                : '#525252'
+                : colors.tertiary
             }
           />
         </View>
         <View>
           <SButton
             title="비밀번호 변경"
-            ButtonColor={passwordCheck ? '#155DFC' : '#FAFAFA'}
-            textColor={passwordCheck ? 'white' : '#404040'}
+            ButtonColor={passwordCheck ? colors.interactive.primary : '#FAFAFA'}
+            textColor={passwordCheck ? 'white' : colors.secondary}
             disabled={passwordCheck}
             onPress={handleSubmit}
           />

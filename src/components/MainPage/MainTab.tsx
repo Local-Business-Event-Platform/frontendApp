@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {mainTabItems} from '../../utils/listData';
 import SText from '../Elements/SText';
 
@@ -18,10 +18,11 @@ const MainTab = ({mainTab, setMainTab}: MainTabProps) => {
           style={[
             styles.rowContainer,
             {
-              backgroundColor: mainTab === item.id ? '#DBEAFE' : '#FFFFFF',
+              backgroundColor: mainTab === item.id ? '#DBEAFE' : colors.white,
               paddingTop: mainTab === item.id ? 1 : 0,
               borderBottomWidth: mainTab === item.id ? 2 : 1,
-              borderColor: mainTab === item.id ? '#1447E6' : '#E5E5E5',
+              borderColor:
+                mainTab === item.id ? '#1447E6' : colors.interactive.secondary,
             },
           ]}
           onPress={() => setMainTab(item.id)}>
@@ -29,7 +30,7 @@ const MainTab = ({mainTab, setMainTab}: MainTabProps) => {
           <SText
             fStyle="BlgMd"
             text={item.title}
-            color={mainTab === item.id ? '#1447E6' : '#404040'}
+            color={mainTab === item.id ? '#1447E6' : colors.secondary}
           />
         </Pressable>
       ))}
