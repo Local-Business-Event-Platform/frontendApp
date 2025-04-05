@@ -21,6 +21,7 @@ const Map = ({
   myLatitude,
   myLongitude,
   myRadius,
+
   nearbyBuildings,
 }: MapProps) => {
   return (
@@ -44,7 +45,7 @@ const Map = ({
         color={'#F1425C33'}
       />
       <NaverMapMarkerOverlay
-        caption={{text: '내 위치'}}
+        caption={{text: '내 위치', color: '#171717', textSize: SWidth * 12}}
         isHideCollidedMarkers={true}
         width={SWidth * 20}
         height={SWidth * 20}
@@ -52,18 +53,26 @@ const Map = ({
         latitude={myLatitude}
         longitude={myLongitude}
         anchor={{x: 0.5, y: 0.5}}
+        isIconPerspectiveEnabled={true}
       />
 
       {nearbyBuildings.map((building, index) => (
         <NaverMapMarkerOverlay
           key={index}
-          caption={{text: building.name}}
+          caption={{
+            text: building.name,
+            color: '#171717',
+            textSize: SWidth * 12,
+          }}
           isHideCollidedMarkers={true}
           width={SWidth * 24}
           height={SWidth * 24}
           image={require('../../assets/images/marker.png')}
           latitude={building.latitude}
           longitude={building.longitude}
+          onTap={() => {
+            console.log('건물 클릭됨', building.name);
+          }}
         />
       ))}
     </NaverMapView>
