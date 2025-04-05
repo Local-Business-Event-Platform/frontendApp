@@ -2,10 +2,12 @@ import {BottomSheetScrollView} from '@gorhom/bottom-sheet';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
 import MainFilter from '../MainPage/Filter/MainFilter';
 import MainStoreItem from '../MainPage/MainStoreItem';
 
 const BottomSheetItemList = () => {
+  const navigation = useCustomNavigation();
   const data = [
     {
       id: 1,
@@ -76,7 +78,7 @@ const BottomSheetItemList = () => {
             category={item.category}
             review={item.review}
             reviewCount={item.reviewCount}
-            onPress={() => {}}
+            onPress={() => navigation.navigate('홈', {screen: 'detailPage'})}
           />
         ))}
       </BottomSheetScrollView>

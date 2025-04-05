@@ -29,8 +29,8 @@ const StoreDetailPage = () => {
       call: '02-1234-5678',
       address: '강남구 테헤란로 12길 34',
       distance: '350m',
-      x: 37.5675,
-      y: 126.9785,
+      x: 37.5585312,
+      y: 126.9366973,
     },
     events: [
       {
@@ -85,9 +85,7 @@ const StoreDetailPage = () => {
     <ScrollView overScrollMode="never" showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <SCarousel
-          images={data.img
-            .filter((img): img is string => !!img) // undefined 제거
-            .map(img => ({url: img}))}
+          images={data.img.filter((img): img is string => !!img)}
           height={SWidth * 224}
         />
         <StoreDetailContent data={data} />
