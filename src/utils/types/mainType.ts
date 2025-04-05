@@ -5,10 +5,25 @@ export type FilterButtonProps = {
 };
 
 export type MainStoreItemProps = {
-  storeImg: number;
+  storeImg: string;
   title: string;
   category: string;
   review: number;
   reviewCount: number;
   onPress: () => void;
+};
+
+export type EventItemProps = {
+  item: {
+    id: number;
+    img: string;
+    title: string;
+    store: string;
+    category: string;
+    km: string;
+    date: string;
+  };
+  clicked: boolean;
+  onPress: () => void;
+  likeOnPress?: () => void;
 };

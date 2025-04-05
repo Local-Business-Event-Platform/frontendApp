@@ -12,14 +12,14 @@ type BStoreCardProps = {
     review: number;
     reviewCount: number;
     category: string;
-    image: any;
+    image: string;
   };
   onPress?: () => void;
 };
 
 const BStoreCard = ({item, onPress}: BStoreCardProps) => {
   return (
-    <SImageCard source={item.image} onPress={onPress}>
+    <SImageCard image={item.image} onPress={onPress}>
       <View style={styles.container}>
         <View style={styles.contentTextContainer}>
           <View style={styles.rowContainer}>

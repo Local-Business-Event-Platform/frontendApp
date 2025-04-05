@@ -1,26 +1,20 @@
-import FastImage, {Source} from '@d11/react-native-fast-image';
+import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
-
-type SImageCardProps = {
-  onPress?: () => void;
-  children: React.ReactNode;
-  childrenButton?: React.ReactNode;
-  source?: number | Source | undefined;
-};
+import {SImageCardProps} from '../../utils/types/type';
 
 const SImageCard = ({
   children,
   childrenButton,
   onPress,
-  source,
+  image,
 }: SImageCardProps) => {
   return (
     <Pressable style={[styles.container]} onPress={onPress}>
       <View style={styles.imgContainer}>
         <FastImage
-          source={source}
+          source={{uri: image}}
           style={styles.imgStyle}
           resizeMode={FastImage.resizeMode.cover}
         />

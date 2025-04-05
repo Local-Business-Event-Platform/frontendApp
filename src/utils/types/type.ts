@@ -139,3 +139,16 @@ export type STabBarProps = {
   tabIndex: number;
   setTabIndex: (tabIndex: number) => void;
 };
+
+export type SImageCardProps = {
+  onPress?: () => void;
+  children: React.ReactNode;
+  childrenButton?: React.ReactNode;
+  image: string;
+};
+
+export type SImageCard2Props = {
+  image: string;
+  onPress?: () => void;
+  children: React.ReactNode;
+};

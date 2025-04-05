@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import BusinessCalendar from '../../../utils/svgs/businessPage/BusinessCalendar';
@@ -21,7 +21,9 @@ const RecentEvent = () => {
           category: '양식',
           km: '350m / 도보 5분',
           date: '2월 1일(목) ~ 2월 25일(수)',
-          image: require('../../../assets/images/background.png'),
+          image: Image.resolveAssetSource(
+            require('../../../assets/images/background.png'),
+          ).uri,
         },
       ],
     },
@@ -36,7 +38,9 @@ const RecentEvent = () => {
           category: '양식',
           km: '350m / 도보 5분',
           date: '2월 1일(목) ~ 2월 25일(수)',
-          image: require('../../../assets/images/background.png'),
+          image: Image.resolveAssetSource(
+            require('../../../assets/images/background.png'),
+          ).uri,
         },
       ],
     },
@@ -51,7 +55,9 @@ const RecentEvent = () => {
           category: '양식',
           km: '350m / 도보 5분',
           date: '2월 1일(목) ~ 2월 25일(수)',
-          image: require('../../../assets/images/background.png'),
+          image: Image.resolveAssetSource(
+            require('../../../assets/images/background.png'),
+          ).uri,
         },
       ],
     },
@@ -72,7 +78,7 @@ const RecentEvent = () => {
           {item.events.map(event => (
             <SImageCard
               key={event.id}
-              source={event.image}
+              image={event.image}
               onPress={() => navigation.navigate('홈', {screen: 'detailPage'})}>
               <View style={styles.itemContainer}>
                 <SText fStyle="BxlSb" text={event.title} />

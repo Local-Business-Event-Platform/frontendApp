@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
@@ -8,7 +8,7 @@ import EventItem from './EventItem';
 
 type EventItemType = {
   id: number;
-  img: number;
+  img: string;
   title: string;
   store: string;
   category: string;
@@ -25,7 +25,9 @@ const MainEventContent = () => {
   const list = [
     {
       id: 1,
-      img: require('../../assets/images/background.png'),
+      img: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '신메뉴 출시 기념 전 메뉴 20% 할인',
       store: '카페드파리',
       category: '양식',
@@ -34,7 +36,8 @@ const MainEventContent = () => {
     },
     {
       id: 2,
-      img: require('../../assets/images/no_image.jpg'),
+      img: Image.resolveAssetSource(require('../../assets/images/no_image.jpg'))
+        .uri,
       title: '신메뉴 출시 기념 전 메뉴 20% 할인',
       store: '카페드파리',
       category: '양식',
@@ -43,7 +46,8 @@ const MainEventContent = () => {
     },
     {
       id: 3,
-      img: require('../../assets/images/no_image.jpg'),
+      img: Image.resolveAssetSource(require('../../assets/images/no_image.jpg'))
+        .uri,
       title: '신메뉴 출시 기념 전 메뉴 20% 할인',
       store: '카페드파리',
       category: '양식',

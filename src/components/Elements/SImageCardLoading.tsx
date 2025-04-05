@@ -25,9 +25,9 @@ const SImageCardLoading = ({count}: SImageCardLoadingProps) => {
               gap: SWidth * 12,
               borderRadius: SWidth * 8,
             }}>
-            <View style={{width: '80%', height: SWidth * 24}} />
+            <View style={{width: '85%', height: SWidth * 24}} />
             <View style={{gap: SWidth * 8}}>
-              <View style={{width: '80%', height: SWidth * 20}} />
+              <View style={{width: '70%', height: SWidth * 20}} />
               <View style={{width: '80%', height: SWidth * 20}} />
             </View>
           </View>

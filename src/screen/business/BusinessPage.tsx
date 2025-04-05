@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
-
+import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import BAddButton from '../../components/BusinessPage/BAddButton';
 import BStoreCard from '../../components/BusinessPage/BStoreCard';
@@ -15,7 +14,9 @@ const BusinessPage = () => {
       review: 4.5,
       reviewCount: 32,
       category: '한식',
-      image: require('../../assets/images/no_image.jpg'),
+      image: Image.resolveAssetSource(
+        require('../../assets/images/no_image.jpg'),
+      ).uri,
     },
     {
       id: 2,
@@ -23,7 +24,9 @@ const BusinessPage = () => {
       review: 4.8,
       reviewCount: 32,
       category: '한식',
-      image: require('../../assets/images/no_image.jpg'),
+      image: Image.resolveAssetSource(
+        require('../../assets/images/no_image.jpg'),
+      ).uri,
     },
     {
       id: 3,
@@ -31,7 +34,9 @@ const BusinessPage = () => {
       review: 4.5,
       reviewCount: 32,
       category: '한식',
-      image: require('../../assets/images/no_image.jpg'),
+      image: Image.resolveAssetSource(
+        require('../../assets/images/no_image.jpg'),
+      ).uri,
     },
   ]);
   return (

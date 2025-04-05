@@ -1,15 +1,28 @@
-import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import React, {useState} from 'react';
+import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import SImageCard2Loading from '../Elements/SImageCard2Loading';
 import MainStoreItem from './MainStoreItem';
+
+type ListType = {
+  id: number;
+  storeImg: string;
+  title: string;
+  category: string;
+  review: number;
+  reviewCount: number;
+};
 
 const MainStoreContent = () => {
   const navigation = useCustomNavigation();
+  const [list, setList] = useState<ListType[]>([]);
   const data = [
     {
       id: 1,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -17,7 +30,9 @@ const MainStoreContent = () => {
     },
     {
       id: 2,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -25,7 +40,9 @@ const MainStoreContent = () => {
     },
     {
       id: 3,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -33,7 +50,9 @@ const MainStoreContent = () => {
     },
     {
       id: 4,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -41,7 +60,9 @@ const MainStoreContent = () => {
     },
     {
       id: 5,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -49,7 +70,9 @@ const MainStoreContent = () => {
     },
     {
       id: 6,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -57,7 +80,9 @@ const MainStoreContent = () => {
     },
     {
       id: 7,
-      storeImg: require('../../assets/images/background.png'),
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
       title: '카페드파리',
       category: '양식',
       review: 4.5,
@@ -68,7 +93,7 @@ const MainStoreContent = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={data}
+        data={list}
         keyExtractor={item => item.id.toString()}
         overScrollMode="never"
         showsVerticalScrollIndicator={false}
@@ -77,6 +102,7 @@ const MainStoreContent = () => {
           gap: SWidth * 16,
           paddingBottom: SWidth * 100,
         }}
+        ListEmptyComponent={() => <SImageCard2Loading count={5} />}
         renderItem={({item}) => (
           <MainStoreItem
             storeImg={item.storeImg}

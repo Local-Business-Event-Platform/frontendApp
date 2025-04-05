@@ -3,29 +3,15 @@ import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
 import BusinessCalendar from '../../utils/svgs/businessPage/BusinessCalendar';
 import BusinessLocation from '../../utils/svgs/businessPage/BusinessLocation';
+import {EventItemProps} from '../../utils/types/mainType';
 import SImageCard from '../Elements/SImageCard';
 import SText from '../Elements/SText';
 import EventLikeButton from './EventLikeButton';
 
-type EventItemProps = {
-  item: {
-    id: number;
-    img: number;
-    title: string;
-    store: string;
-    category: string;
-    km: string;
-    date: string;
-  };
-  clicked: boolean;
-  onPress: () => void;
-  likeOnPress?: () => void;
-};
-
 const EventItem = ({item, clicked, onPress, likeOnPress}: EventItemProps) => {
   return (
     <SImageCard
-      source={item.img}
+      image={item.img}
       onPress={onPress}
       childrenButton={
         <EventLikeButton click={clicked} onPress={likeOnPress} />
