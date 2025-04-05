@@ -4,6 +4,7 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import BAddButton from '../../components/BusinessPage/BAddButton';
 import BStoreCard from '../../components/BusinessPage/BStoreCard';
+import SImageCardLoading from '../../components/Elements/SImageCardLoading';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 const BusinessPage = () => {
   const navigation = useCustomNavigation();
@@ -50,7 +51,9 @@ const BusinessPage = () => {
             contentContainerStyle={{
               paddingHorizontal: SWidth * 16,
               paddingBottom: SWidth * 100,
+              gap: SWidth * 20,
             }}
+            ListEmptyComponent={() => <SImageCardLoading count={3} />}
             showsVerticalScrollIndicator={false}
             overScrollMode="never"
             data={data}

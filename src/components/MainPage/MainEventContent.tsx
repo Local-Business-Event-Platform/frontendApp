@@ -3,13 +3,26 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
+import SImageCardLoading from '../Elements/SImageCardLoading';
 import EventItem from './EventItem';
+
+type EventItemType = {
+  id: number;
+  img: number;
+  title: string;
+  store: string;
+  category: string;
+  km: string;
+  date: string;
+};
 
 const MainEventContent = () => {
   const navigation = useCustomNavigation();
   const [clicked, setClicked] = useState(false);
   const {setTitle} = useStoreData();
-  const data = [
+  const [data, setData] = useState<EventItemType[]>([]);
+
+  const list = [
     {
       id: 1,
       img: require('../../assets/images/background.png'),
@@ -49,7 +62,9 @@ const MainEventContent = () => {
         contentContainerStyle={{
           paddingHorizontal: SWidth * 16,
           paddingBottom: SWidth * 100,
+          gap: SWidth * 24,
         }}
+        ListEmptyComponent={() => <SImageCardLoading count={3} />}
         renderItem={item => (
           <EventItem
             clicked={clicked}

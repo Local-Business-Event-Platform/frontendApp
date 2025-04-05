@@ -5,7 +5,6 @@ import {SWidth} from '../../../globalStyle';
 
 type SImageCardProps = {
   onPress?: () => void;
-  cardType?: 'event' | 'store' | undefined;
   children: React.ReactNode;
   childrenButton?: React.ReactNode;
   source?: number | Source | undefined;
@@ -15,18 +14,10 @@ const SImageCard = ({
   children,
   childrenButton,
   onPress,
-  cardType,
   source,
 }: SImageCardProps) => {
-  const cardBottom = {
-    event: SWidth * 24,
-    store: SWidth * 20,
-  };
-
   return (
-    <Pressable
-      style={[styles.container, {marginBottom: cardBottom[cardType!]}]}
-      onPress={onPress}>
+    <Pressable style={[styles.container]} onPress={onPress}>
       <View style={styles.imgContainer}>
         <FastImage
           source={source}
@@ -47,7 +38,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.05)',
     overflow: 'hidden',
-
     zIndex: 10,
   },
 

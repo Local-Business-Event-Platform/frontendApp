@@ -19,7 +19,7 @@ type BStoreCardProps = {
 
 const BStoreCard = ({item, onPress}: BStoreCardProps) => {
   return (
-    <SImageCard source={item.image} onPress={onPress} cardType="store">
+    <SImageCard source={item.image} onPress={onPress}>
       <View style={styles.container}>
         <View style={styles.contentTextContainer}>
           <View style={styles.rowContainer}>

@@ -10,7 +10,7 @@ import EventLikeButton from './EventLikeButton';
 type EventItemProps = {
   item: {
     id: number;
-    img: any;
+    img: number;
     title: string;
     store: string;
     category: string;
@@ -26,7 +26,6 @@ const EventItem = ({item, clicked, onPress, likeOnPress}: EventItemProps) => {
   return (
     <SImageCard
       source={item.img}
-      cardType="event"
       onPress={onPress}
       childrenButton={
         <EventLikeButton click={clicked} onPress={likeOnPress} />
