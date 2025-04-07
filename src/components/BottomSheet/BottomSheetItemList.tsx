@@ -119,7 +119,7 @@ const BottomSheetItemList = () => {
             category={item.category}
             review={item.review}
             reviewCount={item.reviewCount}
-            onPress={() => {}}
+            onPress={() => navigation.navigate('홈', {screen: 'detailPage'})}
           />
         )}
       />
