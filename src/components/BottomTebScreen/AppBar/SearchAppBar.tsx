@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useMainSearch} from '../../../store/searchRoute';
 import BackArrow24 from '../../../utils/svgs/BackArrow24';
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: SWidth * 48,
+    backgroundColor: colors.white,
     flexDirection: 'row',
     alignItems: 'center',
     gap: SWidth * 8,

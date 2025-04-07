@@ -21,6 +21,7 @@ const SearchInput = ({
         placeholder="검색어를 입력하세요"
         placeholderTextColor={colors.text.disabled}
         onSubmitEditing={onSubmitEditing}
+        returnKeyType="done"
       />
       {
         <Pressable style={styles.iconContainer} onPress={onPress}>
