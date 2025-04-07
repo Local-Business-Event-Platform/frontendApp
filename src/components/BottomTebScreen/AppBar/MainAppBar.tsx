@@ -8,7 +8,7 @@ import Search24 from '../../../utils/svgs/mainPage/Search24';
 import SText from '../../Elements/SText';
 
 const MainAppBar = () => {
-  const navigate = useCustomNavigation();
+  const navigation = useCustomNavigation();
   return (
     <View style={styles.container}>
       <Pressable style={styles.titleContainer} onPress={() => {}}>
@@ -16,13 +16,12 @@ const MainAppBar = () => {
         <DownArrowTwo24 />
       </Pressable>
       <View style={styles.rowContainer}>
-        <Pressable onPress={() => {}}>
+        <Pressable hitSlop={5} onPress={() => navigation.navigate('search')}>
           <Search24 />
         </Pressable>
         <Pressable
-          onPress={() => {
-            navigate.navigate('notification');
-          }}>
+          hitSlop={5}
+          onPress={() => navigation.navigate('notification')}>
           <Notification24 />
         </Pressable>
       </View>

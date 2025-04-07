@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {Image, ScrollView, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../globalStyle';
-import SCarousel from '../components/Elements/SCarousel';
-import StoreDetailEvent from '../components/MainPage/StoreDetailPage/DetailEvent/StoreDetailEvent';
-import StoreDetailInfo from '../components/MainPage/StoreDetailPage/DetailInfo/StoreDetailInfo';
-import StoreDetailReview from '../components/MainPage/StoreDetailPage/DetailReview/StoreDetailReview';
-import StoreDetailContent from '../components/MainPage/StoreDetailPage/StoreDetailContent';
-import StoreDetailTab from '../components/MainPage/StoreDetailPage/StoreDetailTab';
+import {SWidth} from '../../../globalStyle';
+import SCarousel from '../../components/Elements/SCarousel';
+import StoreDetailEvent from '../../components/MainPage/StoreDetailPage/DetailEvent/StoreDetailEvent';
+import StoreDetailInfo from '../../components/MainPage/StoreDetailPage/DetailInfo/StoreDetailInfo';
+import StoreDetailReview from '../../components/MainPage/StoreDetailPage/DetailReview/StoreDetailReview';
+import StoreDetailContent from '../../components/MainPage/StoreDetailPage/StoreDetailContent';
+import StoreDetailTab from '../../components/MainPage/StoreDetailPage/StoreDetailTab';
 
 const StoreDetailPage = () => {
   const [tabClicked, setTabClicked] = useState(1);
@@ -17,10 +17,12 @@ const StoreDetailPage = () => {
     review: 4.8,
     reviewCount: 32,
     img: [
-      Image.resolveAssetSource(require('../assets/images/background.png')).uri,
-      Image.resolveAssetSource(require('../assets/images/no_image.jpg')).uri,
+      Image.resolveAssetSource(require('../../assets/images/background.png'))
+        .uri,
+      Image.resolveAssetSource(require('../../assets/images/no_image.jpg')).uri,
       ,
-      Image.resolveAssetSource(require('../assets/images/background.png')).uri,
+      Image.resolveAssetSource(require('../../assets/images/background.png'))
+        .uri,
       ,
     ],
     storeInfo: {
@@ -41,7 +43,7 @@ const StoreDetailPage = () => {
           '• 리뷰 작성시 3,000원 할인권 증정',
         ],
         img: Image.resolveAssetSource(
-          require('../assets/images/background.png'),
+          require('../../assets/images/background.png'),
         ).uri,
       },
       {
@@ -52,7 +54,7 @@ const StoreDetailPage = () => {
           '• 리뷰 작성시 3,000원 할인권 증정',
         ],
         img: Image.resolveAssetSource(
-          require('../assets/images/background.png'),
+          require('../../assets/images/background.png'),
         ).uri,
       },
     ],
@@ -60,7 +62,7 @@ const StoreDetailPage = () => {
       {
         id: 1,
         userImg: Image.resolveAssetSource(
-          require('../assets/images/no_image.jpg'),
+          require('../../assets/images/no_image.jpg'),
         ).uri,
         userName: '이서연',
         reviewStar: 4,
@@ -71,7 +73,7 @@ const StoreDetailPage = () => {
       {
         id: 2,
         userImg: Image.resolveAssetSource(
-          require('../assets/images/no_image.jpg'),
+          require('../../assets/images/no_image.jpg'),
         ).uri,
         userName: '이서연',
         reviewStar: 4,

@@ -1,8 +1,8 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {StatusBar, StyleSheet} from 'react-native';
-import MainPage from '../../screen/MainPage';
-import StoreDetailPage from '../../screen/StoreDetailPage';
+import MainPage from '../../screen/main/MainPage';
+import StoreDetailPage from '../../screen/main/StoreDetailPage';
 import MainAppBar from './AppBar/MainAppBar';
 import StoreDetailAppBar from './AppBar/StoreDetailAppBar';
 

@@ -65,7 +65,7 @@ const SInput = ({
                 },
               ]}
               placeholder={placeholder}
-              placeholderTextColor={colors.disabled}
+              placeholderTextColor={colors.text.disabled}
             />
             {textIcon !== '' && (
               <View style={styles.passwordIcon}>

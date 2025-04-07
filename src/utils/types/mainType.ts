@@ -1,4 +1,8 @@
-import {AnimatableNumericValue} from 'react-native';
+import {
+  AnimatableNumericValue,
+  NativeSyntheticEvent,
+  TextInputSubmitEditingEventData,
+} from 'react-native';
 
 export type FilterButtonProps = {
   title: string;
@@ -37,4 +41,19 @@ export type NotificationItemProps = {
   content: string;
   onPress: () => void;
   opacity: AnimatableNumericValue;
+};
+
+export type SearchInputProps = {
+  value: string;
+  onChangeText: (text: string) => void;
+  onPress: () => void;
+  onSubmitEditing: (
+    e: NativeSyntheticEvent<TextInputSubmitEditingEventData>,
+  ) => void;
+};
+
+export type KeywordItemProps = {
+  title: string;
+  onPress: () => void;
+  cancelOnPress: () => void;
 };

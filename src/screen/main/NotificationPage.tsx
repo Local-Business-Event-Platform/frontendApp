@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import {colors} from '../../globalStyle';
-import NotificationItem from '../components/MainPage/Notification/NotificationItem';
-import Home24 from '../utils/svgs/bottonTab/Home24';
-import Comment24 from '../utils/svgs/mainPage/Comment24';
-import Heart24 from '../utils/svgs/myPage/Heart24';
-import Pen24 from '../utils/svgs/storeDetailPage/Pen24';
+import {colors} from '../../../globalStyle';
+import NotificationItem from '../../components/MainPage/Notification/NotificationItem';
+import Home24 from '../../utils/svgs/bottonTab/Home24';
+import Comment24 from '../../utils/svgs/mainPage/Comment24';
+import Heart24 from '../../utils/svgs/myPage/Heart24';
+import Pen24 from '../../utils/svgs/storeDetailPage/Pen24';
 
 const NotificationPage = () => {
   const [notificationData, setNotificationData] = useState([

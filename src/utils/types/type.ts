@@ -96,7 +96,11 @@ export type SInputProps = {
   required?: boolean;
   titleColor?: ColorValue;
   value: string;
+  height?: number;
+  borderWidth?: number;
+  borderRadius?: number;
   borderColor?: ColorValue;
+  backgroundColor?: ColorValue;
   buttonTitle?: string;
   buttonOnPress?: () => void;
   ButtonTextDecorationLine?: 'underline' | 'none';

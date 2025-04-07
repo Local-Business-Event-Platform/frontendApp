@@ -9,16 +9,18 @@ import LoginPage from '../../screen/auth/LoginPage';
 import NewPasswordPage from '../../screen/auth/NewPasswordPage';
 import SuccessPage from '../../screen/auth/SuccessPage';
 import TermsOfUsePage from '../../screen/auth/TermsOfUsePage';
+import NotificationPage from '../../screen/main/NotificationPage';
+import SearchPage from '../../screen/main/SearchPage';
 import CustomerPage from '../../screen/myPage/CustomerPage';
 import MyNotificationPage from '../../screen/myPage/MyNotificationPage';
 import NoticePage from '../../screen/myPage/NoticePage';
 import SettingPage from '../../screen/myPage/SettingPage';
 import UserInfoPage from '../../screen/myPage/UserInfoPage';
 import UserUpdatePage from '../../screen/myPage/UserUpdatePage';
-import NotificationPage from '../../screen/NotificationPage';
 import {useUserData} from '../../store/userRoute';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 import JoinAppBar from './AppBar/JoinAppBar';
+import SearchAppBar from './AppBar/SearchAppBar';
 import BottomTeb from './BottomTeb';
 
 const MainStackScreen = () => {
@@ -323,6 +325,22 @@ const MainStackScreen = () => {
           headerShadowVisible: false,
         }}
         component={NotificationPage}
+      />
+      <Stack.Screen
+        name="search"
+        options={{
+          header() {
+            return <SearchAppBar />;
+          },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={SearchPage}
       />
     </Stack.Navigator>
   );
