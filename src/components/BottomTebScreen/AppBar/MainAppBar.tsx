@@ -19,7 +19,10 @@ const MainAppBar = () => {
         <Pressable onPress={() => {}}>
           <Search24 />
         </Pressable>
-        <Pressable onPress={() => {}}>
+        <Pressable
+          onPress={() => {
+            navigate.navigate('notification');
+          }}>
           <Notification24 />
         </Pressable>
       </View>

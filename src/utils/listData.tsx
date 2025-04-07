@@ -76,7 +76,12 @@ export const userMyPageList: MenuItem[] = [
     navigation: 'userUpdate',
   },
   {id: 2, icon: Map24, title: '동네 설정', navigation: 'myLocation'},
-  {id: 3, icon: CircleCheck24, title: '알림 설정', navigation: 'notification'},
+  {
+    id: 3,
+    icon: CircleCheck24,
+    title: '알림 설정',
+    navigation: 'myNotification',
+  },
   {id: 4, icon: QR24, title: 'QR 코드 스캔', navigation: ''},
   {
     id: 5,

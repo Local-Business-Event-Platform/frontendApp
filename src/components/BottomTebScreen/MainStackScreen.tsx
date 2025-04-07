@@ -10,11 +10,12 @@ import NewPasswordPage from '../../screen/auth/NewPasswordPage';
 import SuccessPage from '../../screen/auth/SuccessPage';
 import TermsOfUsePage from '../../screen/auth/TermsOfUsePage';
 import CustomerPage from '../../screen/myPage/CustomerPage';
+import MyNotificationPage from '../../screen/myPage/MyNotificationPage';
 import NoticePage from '../../screen/myPage/NoticePage';
-import NotificationPage from '../../screen/myPage/NotificationPage';
 import SettingPage from '../../screen/myPage/SettingPage';
 import UserInfoPage from '../../screen/myPage/UserInfoPage';
 import UserUpdatePage from '../../screen/myPage/UserUpdatePage';
+import NotificationPage from '../../screen/NotificationPage';
 import {useUserData} from '../../store/userRoute';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 import JoinAppBar from './AppBar/JoinAppBar';
@@ -202,22 +203,30 @@ const MainStackScreen = () => {
           header() {
             return <JoinAppBar />;
           },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
           headerShown: true,
           title: '',
           headerShadowVisible: false,
         }}
       />
       <Stack.Screen
-        name="notification"
+        name="myNotification"
         options={{
           header() {
             return <BackTitleAppBar title="알림 설정" />;
+          },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
           },
           title: '',
           headerShown: true,
           headerShadowVisible: false,
         }}
-        component={NotificationPage}
+        component={MyNotificationPage}
       />
       <Stack.Screen
         name="setting"
@@ -298,6 +307,22 @@ const MainStackScreen = () => {
           headerShadowVisible: false,
         }}
         component={UserInfoPage}
+      />
+      <Stack.Screen
+        name="notification"
+        options={{
+          header() {
+            return <BackTitleAppBar title="알림" />;
+          },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={NotificationPage}
       />
     </Stack.Navigator>
   );

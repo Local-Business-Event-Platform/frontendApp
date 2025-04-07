@@ -1,3 +1,5 @@
+import {AnimatableNumericValue} from 'react-native';
+
 export type FilterButtonProps = {
   title: string;
   onPress: () => void;
@@ -26,4 +28,13 @@ export type EventItemProps = {
   clicked: boolean;
   onPress: () => void;
   likeOnPress?: () => void;
+};
+
+export type NotificationItemProps = {
+  icon: JSX.Element;
+  title: string;
+  date: string;
+  content: string;
+  onPress: () => void;
+  opacity: AnimatableNumericValue;
 };
