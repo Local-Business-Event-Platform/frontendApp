@@ -96,7 +96,7 @@ const LoginPage = () => {
           <View style={styles.buttonContainer}>
             <SButton
               title="회원가입"
-              textColor={colors.secondary}
+              textColor={colors.text.secondary}
               ButtonColor={'#FAFAFA'}
               onPress={() => navigation.navigate('join')}
             />

@@ -1,6 +1,19 @@
 import {Dimensions} from 'react-native';
 
 export const colors = {
+  text: {
+    primary: '#171717',
+    secondary: '#404040',
+    tertiary: '#525252',
+    info: '#155DFC',
+    disabled: '#A1A1A1',
+    danger: '#E7000B',
+  },
+  bg: {
+    primary: '#171717',
+    secondary: '#404040',
+    tertiary: '#525252',
+  },
   primary: '#171717',
   secondary: '#404040',
   tertiary: '#525252',

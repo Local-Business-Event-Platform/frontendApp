@@ -5,7 +5,7 @@ import {STextProps} from '../../utils/types/type';
 
 const SText = ({
   fStyle,
-  color = colors.primary,
+  color = colors.text.primary,
   lineColor,
   nLine,
   flexShrink,

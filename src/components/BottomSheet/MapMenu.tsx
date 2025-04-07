@@ -1,9 +1,12 @@
+import {BottomSheetView} from '@gorhom/bottom-sheet';
 import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
+import {useBottomSheetTitle} from '../../store/mapRoute';
 import SText from '../Elements/SText';
 
 const MapMenu = () => {
+  const {setBottomSheetTitle} = useBottomSheetTitle();
   const [menuTitle, setMenuTitle] = useState('');
   const menuList = [
     {id: 1, name: '식당'},
@@ -12,17 +15,20 @@ const MapMenu = () => {
   ];
 
   return (
-    <View style={styles.container}>
+    <BottomSheetView style={styles.container}>
       {menuList.map(menu => (
         <Pressable
           key={menu.id}
           style={styles.itemContainer}
-          onPress={() => setMenuTitle(menu.name)}>
+          onPress={() => {
+            setBottomSheetTitle('itemList');
+            setMenuTitle(menu.name);
+          }}>
           <View style={styles.menuItemBox}></View>
           <SText fStyle="BmdMd" text={menu.name} color={colors.secondary} />
         </Pressable>
       ))}
-    </View>
+    </BottomSheetView>
   );
 };
 
@@ -30,12 +36,13 @@ export default MapMenu;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: '100%',
     paddingTop: SWidth * 35,
     paddingBottom: SWidth * 28,
     paddingLeft: SWidth * 31,
     flexDirection: 'row',
-    alignItems: 'center',
+    // alignItems: 'center',
     gap: SWidth * 28,
   },
 

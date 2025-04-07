@@ -17,8 +17,8 @@ import DetailHomeIcon from './svgs/storeDetailPage/DetailHomeIcon';
 import DetailPen from './svgs/storeDetailPage/DetailPen';
 
 export const textItems = [
-  {text: '아이디/비밀번호', color: colors.interactive.primary},
-  {text: '를 잊으셨나요?', color: colors.disabled},
+  {text: '아이디/비밀번호', color: colors.text.info},
+  {text: '를 잊으셨나요?', color: colors.text.disabled},
 ];
 
 export const checkItems = [

@@ -34,7 +34,7 @@ const Map = ({
       // isShowLocationButton={false}
       isShowZoomControls={false}
       camera={{
-        latitude: myLatitude,
+        latitude: myLatitude - 0.0045,
         longitude: myLongitude,
         zoom: cameraZoom,
       }}>

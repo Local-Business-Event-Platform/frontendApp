@@ -111,7 +111,7 @@ const SInput = ({
               text={msg}
               color={
                 msgType === 'error'
-                  ? '#E7000B'
+                  ? colors.text.danger
                   : msgType === 'success'
                   ? '#00A63E'
                   : colors.tertiary

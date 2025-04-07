@@ -1,4 +1,4 @@
-import {BottomSheetScrollView} from '@gorhom/bottom-sheet';
+import {BottomSheetFlatList} from '@gorhom/bottom-sheet';
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
@@ -69,16 +69,24 @@ const BottomSheetItemList = () => {
       review: 4.5,
       reviewCount: 100,
     },
+    {
+      id: 7,
+      storeImg: Image.resolveAssetSource(
+        require('../../assets/images/background.png'),
+      ).uri,
+      title: '카페드파리',
+      category: '양식',
+      review: 4.5,
+      reviewCount: 100,
+    },
   ];
 
   return (
     <View style={styles.container}>
       <MainFilter />
-      <BottomSheetScrollView
+      {/* <BottomSheetScrollView
         contentContainerStyle={{
-          flexGrow: 1,
           gap: SWidth * 16,
-          height: SWidth * 376,
           paddingHorizontal: SWidth * 16,
           paddingBottom: SWidth * 10,
         }}
@@ -94,14 +102,14 @@ const BottomSheetItemList = () => {
             onPress={() => navigation.navigate('홈', {screen: 'detailPage'})}
           />
         ))}
-      </BottomSheetScrollView>
-      {/* <FlatList
+      </BottomSheetScrollView> */}
+      <BottomSheetFlatList
         data={data}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           gap: SWidth * 16,
           paddingHorizontal: SWidth * 16,
-          paddingBottom: SWidth * 56,
+          paddingBottom: SWidth * 10,
         }}
         keyExtractor={item => item.id.toString()}
         renderItem={({item}) => (
@@ -114,7 +122,7 @@ const BottomSheetItemList = () => {
             onPress={() => {}}
           />
         )}
-      /> */}
+      />
     </View>
   );
 };
