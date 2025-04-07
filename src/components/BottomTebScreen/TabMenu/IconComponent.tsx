@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
-import TabCommunity from '../../../utils/svgs/bottonTab/TabCommunity';
-import TabHome from '../../../utils/svgs/bottonTab/TabHome';
-import TabMap from '../../../utils/svgs/bottonTab/TabMap';
-import TabMyPage from '../../../utils/svgs/bottonTab/TabMyPage';
-import TabStore from '../../../utils/svgs/bottonTab/TabStore';
+import Community24 from '../../../utils/svgs/bottonTab/Community24';
+import Home24 from '../../../utils/svgs/bottonTab/Home24';
+import Map24 from '../../../utils/svgs/bottonTab/Map24';
+import MyPage24 from '../../../utils/svgs/bottonTab/MyPage24';
+import Store24 from '../../../utils/svgs/bottonTab/Store24';
 
 type IconComponentProps = {
   focused: boolean;
@@ -17,31 +17,31 @@ const IconComponent = ({focused, name}: IconComponentProps) => {
     case '홈':
       return (
         <View style={styles.container}>
-          <TabHome focused={focused} />
+          <Home24 focus={focused} />
         </View>
       );
     case '지도':
       return (
         <View style={styles.container}>
-          <TabMap focused={focused} />
+          <Map24 focus={focused} />
         </View>
       );
     case '가게 관리':
       return (
         <View style={styles.container}>
-          <TabStore focused={focused} />
+          <Store24 focus={focused} />
         </View>
       );
     case '커뮤니티':
       return (
         <View style={styles.container}>
-          <TabCommunity focused={focused} />
+          <Community24 focus={focused} />
         </View>
       );
     case '마이페이지':
       return (
         <View style={styles.container}>
-          <TabMyPage focused={focused} />
+          <MyPage24 focus={focused} />
         </View>
       );
     default:

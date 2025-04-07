@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
-import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import SImageCard2 from '../../Elements/SImageCard2';
 import SMeterBox from '../../Elements/SMeterBox';
 import SReviewBox from '../../Elements/SReviewBox';
@@ -9,6 +8,7 @@ import SText from '../../Elements/SText';
 
 type RecentStoreItemProps = {
   image: string;
+  onPress: () => void;
   title: string;
   category: string;
   review: number;
@@ -17,20 +17,14 @@ type RecentStoreItemProps = {
 
 const RecentStoreItem = ({
   image,
+  onPress,
   title,
   category,
   review,
   reviewCount,
 }: RecentStoreItemProps) => {
-  const navigation = useCustomNavigation();
   return (
-    <SImageCard2
-      image={image}
-      onPress={() =>
-        navigation.navigate('홈', {
-          screen: 'detailPage',
-        })
-      }>
+    <SImageCard2 image={image} onPress={onPress}>
       <View>
         <View style={styles.titleContainer}>
           <View style={styles.rowContainer}>

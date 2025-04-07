@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
-import BusinessPlus from '../../../utils/svgs/businessPage/BusinessPlus';
+import Plus24 from '../../../utils/svgs/businessPage/Plus24';
 import SText from '../../Elements/SText';
 import MyPageTitle from '../MyPageTitle';
 import LocationAddItem from './LocationAddItem';
@@ -33,7 +33,7 @@ const AddLocation = () => {
         ))}
         <Pressable style={styles.addButton} onPress={() => {}}>
           <SText fStyle="BlgSb" text={'추가하기'} color={colors.disabled} />
-          <BusinessPlus color={colors.disabled} />
+          <Plus24 color={colors.disabled} />
         </Pressable>
       </View>
     </View>

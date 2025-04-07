@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
-import BusinessStar from '../../../utils/svgs/businessPage/BusinessStar';
+import Star20 from '../../../utils/svgs/businessPage/Star20';
 import {StoreDetailContentProps} from '../../../utils/types/StoreDetailType';
 import SText from '../../Elements/SText';
 
@@ -11,7 +11,7 @@ const StoreDetailContent = ({data}: StoreDetailContentProps) => {
       <View style={styles.titleContainer}>
         <SText fStyle="BxlSb" text={data.title} />
         <View style={styles.reviewContainer}>
-          <BusinessStar />
+          <Star20 />
           <SText fStyle="BmdSb" text={`${data.review} / 5.0`} />
           <SText fStyle="BmdSb" text={`(${data.reviewCount})`} />
         </View>

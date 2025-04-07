@@ -2,13 +2,15 @@ import React from 'react';
 import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
-import BusinessCalendar from '../../../utils/svgs/businessPage/BusinessCalendar';
-import BusinessLocation from '../../../utils/svgs/businessPage/BusinessLocation';
+import {useStoreData} from '../../../store/storeRoute';
+import Calendar24 from '../../../utils/svgs/businessPage/Calendar24';
+import Location24 from '../../../utils/svgs/businessPage/Location24';
 import SImageCard from '../../Elements/SImageCard';
 import SText from '../../Elements/SText';
 
 const RecentEvent = () => {
   const navigation = useCustomNavigation();
+  const {setTitle} = useStoreData();
   const data = [
     {
       id: 1,
@@ -79,13 +81,16 @@ const RecentEvent = () => {
             <SImageCard
               key={event.id}
               image={event.image}
-              onPress={() => navigation.navigate('홈', {screen: 'detailPage'})}>
+              onPress={() => {
+                setTitle(event.store);
+                navigation.navigate('홈', {screen: 'detailPage'});
+              }}>
               <View style={styles.itemContainer}>
                 <SText fStyle="BxlSb" text={event.title} />
                 <View style={styles.contentContainer}>
                   <View style={styles.rowContainer}>
                     <View style={styles.rowTitleContainer}>
-                      <BusinessLocation />
+                      <Location24 />
                       <SText
                         fStyle="BmdMd"
                         text={event.store}
@@ -105,7 +110,7 @@ const RecentEvent = () => {
                     />
                   </View>
                   <View style={styles.rowTitleContainer}>
-                    <BusinessCalendar color={colors.interactive.primary} />
+                    <Calendar24 color={colors.interactive.primary} />
                     <SText
                       fStyle="BmdMd"
                       text={event.date}

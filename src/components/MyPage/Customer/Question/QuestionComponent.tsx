@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
-import BusinessPlus from '../../../../utils/svgs/businessPage/BusinessPlus';
+import Plus24 from '../../../../utils/svgs/businessPage/Plus24';
 import SButton from '../../../Elements/SButton';
 import SInput from '../../../Elements/SInput';
 import SText from '../../../Elements/SText';
@@ -39,7 +39,7 @@ const QuestionComponent = () => {
         <View style={styles.fileContainer}>
           <SText fStyle="BmdMd" text={'첨부파일'} color={colors.tertiary} />
           <View style={styles.fileBox}>
-            <BusinessPlus color={colors.primary} />
+            <Plus24 color={colors.primary} />
           </View>
         </View>
       </View>

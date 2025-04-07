@@ -4,10 +4,10 @@ import {FlatList, Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
 import SText from '../../components/Elements/SText';
 import MainFilter from '../../components/MainPage/Filter/MainFilter';
-import BusinessDelete from '../../utils/svgs/businessPage/BusinessDelete';
-import MyPageFillStar from '../../utils/svgs/myPage/MyPageFillStar';
-import MyPageStar from '../../utils/svgs/myPage/MyPageStar';
-import DetailPen from '../../utils/svgs/storeDetailPage/DetailPen';
+import Delete24 from '../../utils/svgs/businessPage/Delete24';
+import FillStar20 from '../../utils/svgs/myPage/FillStar20';
+import Star20 from '../../utils/svgs/myPage/Star20';
+import Pen24 from '../../utils/svgs/storeDetailPage/Pen24';
 
 type ItemType = {
   item: {
@@ -82,10 +82,10 @@ const ReviewManagementPage = () => {
               <SText fStyle="BxlMd" text={item.date} />
               <View style={styles.rowTitle}>
                 <Pressable style={styles.iconBox} onPress={() => {}}>
-                  <DetailPen />
+                  <Pen24 />
                 </Pressable>
                 <Pressable style={styles.iconBox} onPress={() => {}}>
-                  <BusinessDelete />
+                  <Delete24 />
                 </Pressable>
               </View>
             </View>
@@ -98,9 +98,9 @@ const ReviewManagementPage = () => {
               <View style={styles.reviewContainer}>
                 {Array.from({length: 5}).map((_, index) =>
                   index < item.review ? (
-                    <MyPageFillStar key={index} />
+                    <FillStar20 key={index} />
                   ) : (
-                    <MyPageStar key={index} />
+                    <Star20 key={index} />
                   ),
                 )}
               </View>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import Check from '../../utils/svgs/auth/Check';
+import Check8 from '../../utils/svgs/auth/Check8';
 import {SCheckBoxProps} from '../../utils/types/type';
 
 const SCheckBox = ({checkValue, onPress}: SCheckBoxProps) => {
@@ -20,7 +20,7 @@ const SCheckBox = ({checkValue, onPress}: SCheckBoxProps) => {
         },
       ]}
       onPress={onPress}>
-      <Check />
+      <Check8 />
     </Pressable>
   );
 };

@@ -4,8 +4,12 @@ import {colors, SWidth} from '../../../globalStyle';
 import SSButton from '../../components/Elements/SSButton';
 import SText from '../../components/Elements/SText';
 import RecentStoreItem from '../../components/MyPage/Recent/RecentStoreItem';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {useStoreData} from '../../store/storeRoute';
 
 const ParticipationPage = () => {
+  const navigation = useCustomNavigation();
+  const {setTitle} = useStoreData();
   const [qrChecked, setQrChecked] = useState(false);
   const [reviewChecked, setReviewChecked] = useState(false);
   const data = [
@@ -85,6 +89,12 @@ const ParticipationPage = () => {
                   category={store.category}
                   review={store.review}
                   reviewCount={store.reviewCount}
+                  onPress={() => {
+                    setTitle(store.title);
+                    navigation.navigate('홈', {
+                      screen: 'detailPage',
+                    });
+                  }}
                 />
                 <View style={styles.rowContainer}>
                   <SSButton

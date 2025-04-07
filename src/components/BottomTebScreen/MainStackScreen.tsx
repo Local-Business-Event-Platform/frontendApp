@@ -1,4 +1,5 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {StatusBar} from 'react-native';
 import Address from '../../screen/auth/Address';
 import FindIdPassword from '../../screen/auth/FindIdPassword';
 import JoinIdPage from '../../screen/auth/JoinIdPage';
@@ -30,12 +31,19 @@ const MainStackScreen = () => {
         statusBarBackgroundColor: 'white',
         statusBarStyle: 'dark',
         navigationBarColor: 'white',
-        contentStyle: {backgroundColor: 'white'},
+        contentStyle: {
+          // paddingTop: StatusBar.currentHeight,
+          backgroundColor: 'white',
+        },
       }}>
       <Stack.Screen
         name="login"
         component={LoginPage}
         options={{
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
           title: '',
           headerShown: false,
           headerShadowVisible: false,
@@ -48,6 +56,10 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="아이디/비밀번호 찾기" />;
           },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -59,6 +71,10 @@ const MainStackScreen = () => {
         options={{
           header() {
             return <BackTitleAppBar title="아이디/비밀번호 찾기" />;
+          },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
           },
           title: '',
           headerShown: true,
@@ -99,6 +115,10 @@ const MainStackScreen = () => {
               />
             );
           },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -116,6 +136,10 @@ const MainStackScreen = () => {
                 }
               />
             );
+          },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
           },
           title: '',
           headerShown: true,
@@ -162,6 +186,10 @@ const MainStackScreen = () => {
         name="address"
         component={Address}
         options={{
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
           title: '',
           headerShown: false,
           headerShadowVisible: false,
@@ -197,6 +225,10 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="설정" />;
           },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -208,6 +240,10 @@ const MainStackScreen = () => {
         options={{
           header() {
             return <BackTitleAppBar title="공지사항" />;
+          },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
           },
           title: '',
           headerShown: true,
@@ -221,6 +257,10 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="고객센터" />;
           },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -233,6 +273,10 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="회원 정보 변경" />;
           },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -244,6 +288,10 @@ const MainStackScreen = () => {
         options={{
           header() {
             return <BackTitleAppBar title="회원 정보 수정" />;
+          },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
           },
           title: '',
           headerShown: true,

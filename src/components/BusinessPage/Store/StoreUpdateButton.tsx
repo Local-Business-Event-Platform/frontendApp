@@ -1,13 +1,13 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
-import BusinessEditBlue from '../../../utils/svgs/businessPage/BusinessEditBlue';
+import EditBlue24 from '../../../utils/svgs/businessPage/EditBlue24';
 import {OnPressProps} from '../../../utils/types/businessType';
 
 const StoreUpdateButton = ({onPress}: OnPressProps) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
-      <BusinessEditBlue />
+      <EditBlue24 />
     </Pressable>
   );
 };

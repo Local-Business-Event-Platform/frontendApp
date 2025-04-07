@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
-import BusinessBurger from '../../../utils/svgs/businessPage/BusinessBurger';
+import Burger24 from '../../../utils/svgs/businessPage/Burger24';
 import {TitleOnPressProps} from '../../../utils/types/businessType';
 import SText from '../../Elements/SText';
 import StoreUpdateButton from './StoreUpdateButton';
@@ -19,7 +19,7 @@ const StoreMenuCategoryItem = ({
           activeOpacity={1}
           disabled={disabled}
           onLongPress={onLongPress}>
-          <BusinessBurger />
+          <Burger24 />
         </TouchableOpacity>
         <SText fStyle="BxlSb" text={title} color={colors.secondary} />
       </View>

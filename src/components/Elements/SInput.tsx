@@ -1,11 +1,11 @@
 import React from 'react';
 import {Pressable, StyleSheet, TextInput, View} from 'react-native';
 import {colors, fontFamilies, SWidth} from '../../../globalStyle';
-import AuthCheck from '../../utils/svgs/auth/AuthCheck';
-import JoinPasswordClose from '../../utils/svgs/auth/JoinPasswordClose';
-import JoinPasswordOpen from '../../utils/svgs/auth/JoinPasswordOpen';
-import LoginError from '../../utils/svgs/auth/LoginError';
-import MapSearchIcon from '../../utils/svgs/mapPage/MapSearchIcon';
+import Check24 from '../../utils/svgs/auth/Check24';
+import Close24 from '../../utils/svgs/auth/Close24';
+import Error24 from '../../utils/svgs/auth/Error24';
+import Open24 from '../../utils/svgs/auth/Open24';
+import Search24 from '../../utils/svgs/mainPage/Search24';
 import {SInputProps} from '../../utils/types/type';
 import JoinButton from '../Join/JoinUser/JoinButton';
 import SText from './SText';
@@ -81,7 +81,7 @@ const SInput = ({
                 style={styles.passwordIcon}
                 onPress={iconOnPress}
                 hitSlop={10}>
-                {secureTextEntry ? <JoinPasswordClose /> : <JoinPasswordOpen />}
+                {secureTextEntry ? <Close24 /> : <Open24 />}
               </Pressable>
             )}
             {searchOn && (
@@ -89,7 +89,7 @@ const SInput = ({
                 style={styles.passwordIcon}
                 onPress={iconOnPress}
                 hitSlop={10}>
-                <MapSearchIcon color={searchIconColor} />
+                <Search24 color={searchIconColor} />
               </Pressable>
             )}
           </View>
@@ -104,8 +104,8 @@ const SInput = ({
 
         {msg && (
           <View style={styles.errorLow}>
-            {msgType === 'error' && <LoginError />}
-            {msgType === 'success' && <AuthCheck />}
+            {msgType === 'error' && <Error24 />}
+            {msgType === 'success' && <Check24 />}
             <SText
               fStyle="BlgMd"
               text={msg}

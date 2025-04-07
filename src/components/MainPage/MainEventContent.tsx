@@ -59,7 +59,7 @@ const MainEventContent = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={data}
+        data={list}
         overScrollMode="never"
         showsVerticalScrollIndicator={false}
         keyExtractor={item => item.id.toString()}

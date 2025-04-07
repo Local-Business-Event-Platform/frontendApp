@@ -3,8 +3,12 @@ import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import MainFilter from '../../components/MainPage/Filter/MainFilter';
 import MainStoreItem from '../../components/MainPage/MainStoreItem';
+import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {useStoreData} from '../../store/storeRoute';
 
 const InterestStorePage = () => {
+  const navigation = useCustomNavigation();
+  const {setTitle} = useStoreData();
   const data = [
     {
       id: 1,
@@ -98,7 +102,12 @@ const InterestStorePage = () => {
             category={item.category}
             review={item.review}
             reviewCount={item.reviewCount}
-            onPress={() => {}}
+            onPress={() => {
+              setTitle(item.title);
+              navigation.navigate('홈', {
+                screen: 'detailPage',
+              });
+            }}
           />
         )}
       />

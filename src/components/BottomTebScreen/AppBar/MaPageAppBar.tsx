@@ -2,8 +2,8 @@ import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
-import AppBarBackArrow from '../../../utils/svgs/AppBarBackArrow';
-import MyPageOption from '../../../utils/svgs/MyPageOption';
+import BackArrow24 from '../../../utils/svgs/BackArrow24';
+import Option24 from '../../../utils/svgs/Option24';
 import {AppBarProps} from '../../../utils/types/appBarType';
 import SText from '../../Elements/SText';
 
@@ -12,11 +12,11 @@ const MaPageAppBar = ({title}: AppBarProps) => {
   return (
     <View style={styles.container}>
       <Pressable onPress={() => navigate.goBack()}>
-        <AppBarBackArrow />
+        <BackArrow24 />
       </Pressable>
       <SText fStyle="BlgMd" text={title} />
       <Pressable onPress={() => {}}>
-        <MyPageOption />
+        <Option24 />
       </Pressable>
     </View>
   );

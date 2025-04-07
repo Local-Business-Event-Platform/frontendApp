@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import MainFillHeart from '../../utils/svgs/mainPage/MainFillHeart';
-import MyPageHeart from '../../utils/svgs/myPage/MyPageHeart';
+import FillHeart24 from '../../utils/svgs/mainPage/FillHeart24';
+import Heart24 from '../../utils/svgs/myPage/Heart24';
 import {MainStoreItemProps} from '../../utils/types/mainType';
 import SImageCard2 from '../Elements/SImageCard2';
 import SMeterBox from '../Elements/SMeterBox';
@@ -31,9 +31,9 @@ const MainStoreItem = ({
             hitSlop={10}
             onPress={() => setIsClicked(!isClicked)}>
             {isClicked ? (
-              <MainFillHeart />
+              <FillHeart24 />
             ) : (
-              <MyPageHeart color={colors.interactive.primary} />
+              <Heart24 color={colors.interactive.primary} />
             )}
           </Pressable>
         </View>

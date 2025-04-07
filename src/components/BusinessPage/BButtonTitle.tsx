@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import BusinessDelete from '../../utils/svgs/businessPage/BusinessDelete';
+import Delete24 from '../../utils/svgs/businessPage/Delete24';
 import {BTitleContainerProps} from '../../utils/types/businessType';
 import SText from '../Elements/SText';
 import BusinessButton from './Basic/BusinessButton';
@@ -27,7 +27,7 @@ const BButtonTitle = ({
         />
         {deleteButton && onClick && (
           <Pressable style={styles.deleteButton} onPress={deleteOnPress}>
-            <BusinessDelete />
+            <Delete24 />
           </Pressable>
         )}
       </View>

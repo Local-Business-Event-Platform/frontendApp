@@ -1,10 +1,14 @@
 import React from 'react';
 import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
+import useCustomNavigation from '../../../hooks/useCustomNavigation';
+import {useStoreData} from '../../../store/storeRoute';
 import SText from '../../Elements/SText';
 import RecentStoreItem from './RecentStoreItem';
 
 const RecentStore = () => {
+  const navigation = useCustomNavigation();
+  const {setTitle} = useStoreData();
   const data = [
     {
       id: 1,
@@ -81,6 +85,10 @@ const RecentStore = () => {
               category={store.category}
               review={store.review}
               reviewCount={store.reviewCount}
+              onPress={() => {
+                setTitle(store.title);
+                navigation.navigate('홈', {screen: 'detailPage'});
+              }}
             />
           ))}
         </View>

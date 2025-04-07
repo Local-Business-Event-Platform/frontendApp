@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
-import BusinessLocation from '../../../../utils/svgs/businessPage/BusinessLocation';
-import DetailCallingIcon from '../../../../utils/svgs/storeDetailPage/DetailCallingIcon';
-import DetailTimeIcon from '../../../../utils/svgs/storeDetailPage/DetailTimeIcon';
+import Location24 from '../../../../utils/svgs/businessPage/Location24';
+import Calling24 from '../../../../utils/svgs/storeDetailPage/Calling24';
+import Time24 from '../../../../utils/svgs/storeDetailPage/Time24';
 import {StoreDetailInfoProps} from '../../../../utils/types/StoreDetailType';
 import SText from '../../../Elements/SText';
 import StoreDetailIconTitle from '../StoreDetailIconTitle';
@@ -13,17 +13,17 @@ const StoreDetailInfo = ({data}: StoreDetailInfoProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.timeIconContainer}>
-        <DetailTimeIcon />
+        <Time24 />
         <View style={styles.timeContainer}>
           <SText fStyle="BlgMd" text={data.time} color={colors.secondary} />
           <SText fStyle="BlgMd" text={data.holiday} color={'#525252B3'} />
         </View>
       </View>
-      <StoreDetailIconTitle icon={<DetailCallingIcon />}>
+      <StoreDetailIconTitle icon={<Calling24 />}>
         <SText fStyle="BlgMd" text={data.call} color={colors.secondary} />
       </StoreDetailIconTitle>
       <View style={styles.addressContainer}>
-        <StoreDetailIconTitle icon={<BusinessLocation />}>
+        <StoreDetailIconTitle icon={<Location24 />}>
           <View style={styles.rowContainer}>
             <SText
               fStyle="BlgMd"

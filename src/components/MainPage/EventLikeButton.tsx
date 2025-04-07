@@ -1,18 +1,14 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import MainFillHeart from '../../utils/svgs/mainPage/MainFillHeart';
-import MyPageHeart from '../../utils/svgs/myPage/MyPageHeart';
+import FillHeart24 from '../../utils/svgs/mainPage/FillHeart24';
+import Heart24 from '../../utils/svgs/myPage/Heart24';
 import {OnPressProps} from '../../utils/types/businessType';
 
 const EventLikeButton = ({click, onPress}: OnPressProps) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
-      {click ? (
-        <MainFillHeart />
-      ) : (
-        <MyPageHeart color={colors.interactive.primary} />
-      )}
+      {click ? <FillHeart24 /> : <Heart24 color={colors.interactive.primary} />}
     </Pressable>
   );
 };

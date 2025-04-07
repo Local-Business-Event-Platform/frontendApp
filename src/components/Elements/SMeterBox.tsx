@@ -1,14 +1,14 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import BusinessLocation from '../../utils/svgs/businessPage/BusinessLocation';
+import Location24 from '../../utils/svgs/businessPage/Location24';
 import {SMeterBoxProps} from '../../utils/types/type';
 import SText from './SText';
 
 const SMeterBox = ({content}: SMeterBoxProps) => {
   return (
     <View style={styles.container}>
-      <BusinessLocation />
+      <Location24 />
       <SText fStyle="BmdMd" text={content} color={colors.secondary} />
     </View>
   );

@@ -3,9 +3,9 @@ import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
-import AppBarBackArrow from '../../../utils/svgs/AppBarBackArrow';
-import MainFillHeart from '../../../utils/svgs/mainPage/MainFillHeart';
-import MyPageHeart from '../../../utils/svgs/myPage/MyPageHeart';
+import BackArrow24 from '../../../utils/svgs/BackArrow24';
+import FillHeart24 from '../../../utils/svgs/mainPage/FillHeart24';
+import Heart24 from '../../../utils/svgs/myPage/Heart24';
 import SText from '../../Elements/SText';
 
 const StoreDetailAppBar = () => {
@@ -15,14 +15,14 @@ const StoreDetailAppBar = () => {
   return (
     <View style={styles.container}>
       <Pressable onPress={() => navigation.goBack()}>
-        <AppBarBackArrow />
+        <BackArrow24 />
       </Pressable>
       <SText fStyle="BlgMd" text={title} />
       <Pressable onPress={() => setClicked(!clicked)} hitSlop={10}>
         {clicked ? (
-          <MainFillHeart />
+          <FillHeart24 />
         ) : (
-          <MyPageHeart color={colors.interactive.primary} />
+          <Heart24 color={colors.interactive.primary} />
         )}
       </Pressable>
     </View>

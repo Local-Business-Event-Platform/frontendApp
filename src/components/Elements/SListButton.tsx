@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import BusinessDownArrow from '../../utils/svgs/businessPage/BusinessDownArrow';
+import DownArrow24 from '../../utils/svgs/businessPage/DownArrow24';
 import {SListButtonProps} from '../../utils/types/type';
 import SText from './SText';
 
@@ -9,7 +9,7 @@ const SListButton = ({title, onPress}: SListButtonProps) => {
   return (
     <Pressable style={styles.listButton} onPress={onPress}>
       <SText fStyle="BlgMd" text={title} color={colors.disabled} />
-      <BusinessDownArrow />
+      <DownArrow24 />
     </Pressable>
   );
 };

@@ -2,9 +2,9 @@ import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
-import MainDownArrow from '../../../utils/svgs/mainPage/MainDownArrow';
-import MainNotification from '../../../utils/svgs/mainPage/MainNotification';
-import MainSearchIcon from '../../../utils/svgs/mainPage/MainSearchIcon';
+import DownArrowTwo24 from '../../../utils/svgs/mainPage/DownArrowTwo24';
+import Notification24 from '../../../utils/svgs/mainPage/Notification24';
+import Search24 from '../../../utils/svgs/mainPage/Search24';
 import SText from '../../Elements/SText';
 
 const MainAppBar = () => {
@@ -13,14 +13,14 @@ const MainAppBar = () => {
     <View style={styles.container}>
       <Pressable style={styles.titleContainer} onPress={() => {}}>
         <SText fStyle="Hsm" text={'성수동'} />
-        <MainDownArrow />
+        <DownArrowTwo24 />
       </Pressable>
       <View style={styles.rowContainer}>
         <Pressable onPress={() => {}}>
-          <MainSearchIcon />
+          <Search24 />
         </Pressable>
         <Pressable onPress={() => {}}>
-          <MainNotification />
+          <Notification24 />
         </Pressable>
       </View>
     </View>

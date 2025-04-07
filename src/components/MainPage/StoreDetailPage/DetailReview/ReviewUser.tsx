@@ -2,8 +2,8 @@ import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../../globalStyle';
-import DetailReviewStar from '../../../../utils/svgs/storeDetailPage/DetailReviewStar';
-import DetailReviewStarFill from '../../../../utils/svgs/storeDetailPage/DetailReviewStarFill';
+import FillStar16 from '../../../../utils/svgs/storeDetailPage/FillStar16';
+import Star16 from '../../../../utils/svgs/storeDetailPage/Star16';
 import SText from '../../../Elements/SText';
 
 type ReviewUserProps = {
@@ -25,9 +25,9 @@ const ReviewUser = ({img, userName, reviewStar}: ReviewUserProps) => {
         <View style={styles.reviewContainer}>
           {Array.from({length: 5}).map((_, index) =>
             index < reviewStar ? (
-              <DetailReviewStarFill key={index} />
+              <FillStar16 key={index} />
             ) : (
-              <DetailReviewStar key={index} />
+              <Star16 key={index} />
             ),
           )}
         </View>

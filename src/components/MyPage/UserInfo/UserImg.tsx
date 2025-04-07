@@ -4,7 +4,7 @@ import {Pressable, StyleSheet, View} from 'react-native';
 
 import {SWidth} from '../../../../globalStyle';
 import {imageSelected} from '../../../service/imagePicker';
-import MyPagePen from '../../../utils/svgs/myPage/MyPagePen';
+import Pen16 from '../../../utils/svgs/myPage/Pen16';
 import {UserImgProps} from '../../../utils/types/myPage';
 
 const UserImg = ({source, setUserImg}: UserImgProps) => {
@@ -26,7 +26,7 @@ const UserImg = ({source, setUserImg}: UserImgProps) => {
           resizeMode={FastImage.resizeMode.cover}
         />
         <View style={styles.imgUpdateIcon}>
-          <MyPagePen />
+          <Pen16 />
         </View>
       </Pressable>
     </View>

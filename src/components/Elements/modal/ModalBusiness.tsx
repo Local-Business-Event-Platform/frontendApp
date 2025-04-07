@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
-import BusinessCirclePlus from '../../../utils/svgs/businessPage/BusinessCirclePlus';
+import CirclePlus24 from '../../../utils/svgs/businessPage/CirclePlus24';
 import {OnPressProps} from '../../../utils/types/businessType';
 import SButton from '../SButton';
 import SInput from '../SInput';
@@ -12,7 +12,7 @@ const ModalBusiness = ({onPress}: OnPressProps) => {
   return (
     <>
       <View style={styles.imageContainer}>
-        <BusinessCirclePlus />
+        <CirclePlus24 />
         <SText
           fStyle="BlgSb"
           text={'이미지 등록하기'}

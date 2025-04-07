@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
-import BusinessEdit from '../../../utils/svgs/businessPage/BusinessEdit';
+import Edit24 from '../../../utils/svgs/businessPage/Edit24';
 import {BusinessButtonProps} from '../../../utils/types/businessType';
 import SText from '../../Elements/SText';
 
@@ -22,7 +22,7 @@ const BusinessButton = ({
       ]}
       onPress={onPress}>
       <SText fStyle="BmdSb" text={buttonText} color={buttonTextColor} />
-      <BusinessEdit onClick={onClick} />
+      <Edit24 onClick={onClick} />
     </Pressable>
   );
 };

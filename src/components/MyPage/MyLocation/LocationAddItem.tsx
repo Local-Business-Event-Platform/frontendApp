@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
-import MyPageMoreIcon from '../../../utils/svgs/myPage/MyPageMoreIcon';
+import More24 from '../../../utils/svgs/myPage/More24';
 import {LocationAddItemProps} from '../../../utils/types/myPage';
 import SText from '../../Elements/SText';
 
@@ -21,7 +21,7 @@ const LocationAddItem = ({isClicked, title, onPress}: LocationAddItemProps) => {
         text={title}
         color={isClicked ? colors.interactive.primary : colors.secondary}
       />
-      <MyPageMoreIcon
+      <More24
         color={isClicked ? colors.interactive.primary : colors.secondary}
       />
     </Pressable>

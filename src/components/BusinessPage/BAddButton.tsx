@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import BusinessPlus from '../../utils/svgs/businessPage/BusinessPlus';
+import Plus24 from '../../utils/svgs/businessPage/Plus24';
 import {TitleOnPressProps} from '../../utils/types/businessType';
 import SText from '../Elements/SText';
 
@@ -14,7 +14,7 @@ const BAddButton = ({
     <Pressable
       style={[styles.container, {marginTop: marginTop}]}
       onPress={onPress}>
-      <BusinessPlus />
+      <Plus24 />
       <SText fStyle="BlgSb" text={title} color={colors.tertiary} />
     </Pressable>
   );

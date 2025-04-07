@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import BusinessCalendar from '../../utils/svgs/businessPage/BusinessCalendar';
-import BusinessLocation from '../../utils/svgs/businessPage/BusinessLocation';
+import Calendar24 from '../../utils/svgs/businessPage/Calendar24';
+import Location24 from '../../utils/svgs/businessPage/Location24';
 import {EventItemProps} from '../../utils/types/mainType';
 import SImageCard from '../Elements/SImageCard';
 import SText from '../Elements/SText';
@@ -21,7 +21,7 @@ const EventItem = ({item, clicked, onPress, likeOnPress}: EventItemProps) => {
         <View style={styles.contentContainer}>
           <View style={styles.rowContainer}>
             <View style={styles.rowTitleContainer}>
-              <BusinessLocation />
+              <Location24 />
               <SText
                 fStyle="BmdMd"
                 text={item.store}
@@ -37,7 +37,7 @@ const EventItem = ({item, clicked, onPress, likeOnPress}: EventItemProps) => {
             <SText fStyle="BmdMd" text={item.km} color={colors.secondary} />
           </View>
           <View style={styles.rowTitleContainer}>
-            <BusinessCalendar color={colors.interactive.primary} />
+            <Calendar24 color={colors.interactive.primary} />
             <SText fStyle="BmdMd" text={item.date} color={colors.secondary} />
           </View>
         </View>

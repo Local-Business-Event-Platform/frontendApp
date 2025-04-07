@@ -1,8 +1,8 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, fontFamilies, SWidth} from '../../../../globalStyle';
-import BusinessCircleCheck from '../../../utils/svgs/businessPage/BusinessCircleCheck';
-import BusinessDelete from '../../../utils/svgs/businessPage/BusinessDelete';
+import CircleCheck24 from '../../../utils/svgs/businessPage/CircleCheck24';
+import Delete24 from '../../../utils/svgs/businessPage/Delete24';
 import {StoreCategoryInputProps} from '../../../utils/types/businessType';
 import SInput from '../../Elements/SInput';
 
@@ -27,7 +27,7 @@ const StoreCategoryInput = ({
           {backgroundColor: colors.interactive.primary},
         ]}
         onPress={addOnPress}>
-        <BusinessCircleCheck />
+        <CircleCheck24 />
       </Pressable>
       <Pressable
         style={[
@@ -35,7 +35,7 @@ const StoreCategoryInput = ({
           {backgroundColor: colors.interactive.secondary},
         ]}
         onPress={deleteOnPress}>
-        <BusinessDelete />
+        <Delete24 />
       </Pressable>
     </View>
   );

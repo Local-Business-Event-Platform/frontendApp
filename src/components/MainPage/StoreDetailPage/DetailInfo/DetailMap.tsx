@@ -5,7 +5,7 @@ import {
 import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
-import DetailMapArrow from '../../../../utils/svgs/storeDetailPage/DetailMapArrow';
+import MapArrow24 from '../../../../utils/svgs/storeDetailPage/MapArrow24';
 import {DetailMapProps} from '../../../../utils/types/StoreDetailType';
 
 const DetailMap = ({x, y}: DetailMapProps) => {
@@ -46,7 +46,7 @@ const DetailMap = ({x, y}: DetailMapProps) => {
         />
       </NaverMapView>
       <Pressable style={styles.mapArrow} onPress={() => {}}>
-        <DetailMapArrow />
+        <MapArrow24 />
       </Pressable>
     </View>
   );

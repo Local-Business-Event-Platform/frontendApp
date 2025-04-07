@@ -1,6 +1,6 @@
 import {ColorValue} from 'react-native';
 
 export type TabProps = {
-  focused?: boolean;
+  focus?: boolean;
   color?: ColorValue;
 };

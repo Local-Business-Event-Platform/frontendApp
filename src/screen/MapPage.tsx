@@ -68,6 +68,7 @@ const MapPage = () => {
             onChangeText={text => setSearch(text)}
             borderColor={colors.tertiary}
             searchOn={true}
+            searchIconColor={colors.disabled}
             iconOnPress={() => {
               console.log('검색 아이콘 클릭됨');
             }}

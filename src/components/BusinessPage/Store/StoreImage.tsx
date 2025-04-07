@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import {multipleImageSelected} from '../../../service/imagePicker';
-import BusinessCamera from '../../../utils/svgs/businessPage/BusinessCamera';
-import BusinessCirclePlus from '../../../utils/svgs/businessPage/BusinessCirclePlus';
+import Camera20 from '../../../utils/svgs/businessPage/Camera20';
+import CirclePlus24 from '../../../utils/svgs/businessPage/CirclePlus24';
 import SCarousel from '../../Elements/SCarousel';
 import SText from '../../Elements/SText';
 
@@ -58,13 +58,13 @@ const StoreImage = ({
               text={'이미지 변경'}
               color={colors.interactive.primary}
             />
-            <BusinessCamera />
+            <Camera20 />
           </Pressable>
         </View>
       ) : (
         <View style={styles.imageContainer}>
           <View style={styles.rowLine}>
-            <BusinessCirclePlus />
+            <CirclePlus24 />
             <SText
               fStyle="BlgSb"
               text={'이미지 등록하기 (최대 6장)'}

@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import {useModalOpen} from '../../../store/modalRoute';
-import BusinessBurger from '../../../utils/svgs/businessPage/BusinessBurger';
+import Burger24 from '../../../utils/svgs/businessPage/Burger24';
 import SText from '../../Elements/SText';
 import BAddButton from '../BAddButton';
 import BContainer from '../BContainer';
@@ -41,7 +41,7 @@ const StoreMenuInfo = () => {
         <View style={styles.listContainer}>
           {menuList.map(item => (
             <View key={item.id} style={styles.rowContainer}>
-              <BusinessBurger />
+              <Burger24 />
               <View style={styles.rowLine}>
                 <FastImage
                   source={item.img}

@@ -2,7 +2,7 @@ import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
-import BusinessCalendar from '../../../../utils/svgs/businessPage/BusinessCalendar';
+import Calendar24 from '../../../../utils/svgs/businessPage/Calendar24';
 import {StoreDetailEventItemProps} from '../../../../utils/types/StoreDetailType';
 import SText from '../../../Elements/SText';
 import StoreDetailIconTitle from '../StoreDetailIconTitle';
@@ -23,7 +23,7 @@ const StoreDetailEventItem = ({item}: StoreDetailEventItemProps) => {
       </View>
       <View style={styles.itemContentContainer}>
         <SText fStyle="BxlSb" text={item.title} />
-        <StoreDetailIconTitle icon={<BusinessCalendar />} gap={SWidth * 4}>
+        <StoreDetailIconTitle icon={<Calendar24 />} gap={SWidth * 4}>
           <SText fStyle="BmdMd" text={item.title} color={colors.secondary} />
         </StoreDetailIconTitle>
         <View style={styles.contentText}>

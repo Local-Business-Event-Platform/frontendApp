@@ -3,11 +3,13 @@ import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {useStoreData} from '../../store/storeRoute';
 import MainFilter from '../MainPage/Filter/MainFilter';
 import MainStoreItem from '../MainPage/MainStoreItem';
 
 const BottomSheetItemList = () => {
   const navigation = useCustomNavigation();
+  const {setTitle} = useStoreData();
   const data = [
     {
       id: 1,
@@ -119,7 +121,10 @@ const BottomSheetItemList = () => {
             category={item.category}
             review={item.review}
             reviewCount={item.reviewCount}
-            onPress={() => navigation.navigate('홈', {screen: 'detailPage'})}
+            onPress={() => {
+              setTitle(item.title);
+              navigation.navigate('홈', {screen: 'detailPage'});
+            }}
           />
         )}
       />
