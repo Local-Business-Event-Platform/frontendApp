@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {FlatList, Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import SFlatList from '../Elements/SFlatList';
 import SImageCard2Loading from '../Elements/SImageCard2Loading';
 import MainStoreItem from './MainStoreItem';
 
@@ -92,18 +93,12 @@ const MainStoreContent = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
+      <SFlatList
         data={list}
-        keyExtractor={item => item.id.toString()}
-        overScrollMode="never"
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          paddingHorizontal: SWidth * 16,
-          gap: SWidth * 16,
-          paddingBottom: SWidth * 100,
-        }}
-        ListEmptyComponent={() => <SImageCard2Loading count={4} />}
-        renderItem={({item}) => (
+        gap={SWidth * 16}
+        paddingBottom={SWidth * 100}
+        skeleton={<SImageCard2Loading count={4} />}
+        dataItem={({item}) => (
           <MainStoreItem
             storeImg={item.storeImg}
             title={item.title}

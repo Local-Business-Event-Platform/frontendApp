@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {FlatList, Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
+import SFlatList from '../Elements/SFlatList';
 import SImageCardLoading from '../Elements/SImageCardLoading';
 import EventItem from './EventItem';
 
@@ -58,24 +59,18 @@ const MainEventContent = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
+      <SFlatList
         data={list}
-        overScrollMode="never"
-        showsVerticalScrollIndicator={false}
-        keyExtractor={item => item.id.toString()}
-        contentContainerStyle={{
-          paddingHorizontal: SWidth * 16,
-          paddingBottom: SWidth * 100,
-          gap: SWidth * 24,
-        }}
-        ListEmptyComponent={() => <SImageCardLoading count={3} />}
-        renderItem={item => (
+        skeleton={<SImageCardLoading count={3} />}
+        paddingBottom={SWidth * 100}
+        gap={SWidth * 24}
+        dataItem={({item}) => (
           <EventItem
             clicked={clicked}
-            item={item.item}
+            item={item}
             onPress={() => {
-              setTitle(item.item.store);
-              navigation.navigate('detailPage', {item: item.item});
+              setTitle(item.store);
+              navigation.navigate('detailPage', {item: item});
             }}
             likeOnPress={() => setClicked(!clicked)}
           />
