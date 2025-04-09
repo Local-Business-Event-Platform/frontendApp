@@ -1,5 +1,5 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {StatusBar} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Address from '../../screen/auth/Address';
 import FindIdPassword from '../../screen/auth/FindIdPassword';
 import JoinIdPage from '../../screen/auth/JoinIdPage';
@@ -23,10 +23,12 @@ import BackTitleAppBar from './AppBar/BackTitleAppBar';
 import JoinAppBar from './AppBar/JoinAppBar';
 import SearchAppBar from './AppBar/SearchAppBar';
 import BottomTeb from './BottomTeb';
-
 const MainStackScreen = () => {
   const Stack = createNativeStackNavigator();
   const {userData} = useUserData();
+  const insets = useSafeAreaInsets();
+  console.log(insets.top);
+
   return (
     <Stack.Navigator
       initialRouteName="bottomTeb"
@@ -36,7 +38,7 @@ const MainStackScreen = () => {
         statusBarStyle: 'dark',
         navigationBarColor: 'white',
         contentStyle: {
-          // paddingTop: StatusBar.currentHeight,
+          paddingTop: insets.top,
           backgroundColor: 'white',
         },
       }}>
@@ -44,10 +46,6 @@ const MainStackScreen = () => {
         name="login"
         component={LoginPage}
         options={{
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
           title: '',
           headerShown: false,
           headerShadowVisible: false,
@@ -60,10 +58,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="아이디/비밀번호 찾기" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -76,10 +71,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="아이디/비밀번호 찾기" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -89,6 +81,9 @@ const MainStackScreen = () => {
         name="bottomTeb"
         component={BottomTeb}
         options={{
+          contentStyle: {
+            backgroundColor: 'white',
+          },
           title: '',
           headerShown: false,
           headerShadowVisible: false,
@@ -119,10 +114,7 @@ const MainStackScreen = () => {
               />
             );
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -141,10 +133,7 @@ const MainStackScreen = () => {
               />
             );
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -190,10 +179,6 @@ const MainStackScreen = () => {
         name="address"
         component={Address}
         options={{
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
           title: '',
           headerShown: false,
           headerShadowVisible: false,
@@ -206,10 +191,7 @@ const MainStackScreen = () => {
           header() {
             return <JoinAppBar />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           headerShown: true,
           title: '',
           headerShadowVisible: false,
@@ -221,10 +203,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="알림 설정" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -237,10 +216,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="설정" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -253,10 +229,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="공지사항" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -269,10 +242,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="고객센터" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -285,10 +255,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="회원 정보 변경" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -301,10 +268,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="회원 정보 수정" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -317,10 +281,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="차단 사용자 관리" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -333,10 +294,7 @@ const MainStackScreen = () => {
           header() {
             return <BackTitleAppBar title="알림" />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
@@ -349,10 +307,7 @@ const MainStackScreen = () => {
           header() {
             return <SearchAppBar />;
           },
-          contentStyle: {
-            paddingTop: StatusBar.currentHeight,
-            backgroundColor: 'white',
-          },
+
           title: '',
           headerShown: true,
           headerShadowVisible: false,
