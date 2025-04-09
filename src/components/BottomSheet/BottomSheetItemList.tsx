@@ -86,25 +86,6 @@ const BottomSheetItemList = () => {
   return (
     <View style={styles.container}>
       <MainFilter />
-      {/* <BottomSheetScrollView
-        contentContainerStyle={{
-          gap: SWidth * 16,
-          paddingHorizontal: SWidth * 16,
-          paddingBottom: SWidth * 10,
-        }}
-        showsVerticalScrollIndicator={false}>
-        {data.map(item => (
-          <MainStoreItem
-            key={item.id}
-            storeImg={item.storeImg}
-            title={item.title}
-            category={item.category}
-            review={item.review}
-            reviewCount={item.reviewCount}
-            onPress={() => navigation.navigate('홈', {screen: 'detailPage'})}
-          />
-        ))}
-      </BottomSheetScrollView> */}
       <BottomSheetFlatList
         data={data}
         showsVerticalScrollIndicator={false}

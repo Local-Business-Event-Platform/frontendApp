@@ -1,17 +1,19 @@
 import Geolocation from '@react-native-community/geolocation';
 import {getDistance} from 'geolib';
 import React, {useEffect, useState} from 'react';
-import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../globalStyle';
 import SInput from '../components/Elements/SInput';
 import Map from '../components/Map/Map';
+import {useBottomSheetTitle} from '../store/mapRoute';
 
 const MapPage = () => {
   const [myLocation, setMyLocation] = useState({
     latitude: 0,
     longitude: 0,
   });
-  const [search, setSearch] = useState('');
+  const {category, setCategory} = useBottomSheetTitle();
+
   const buildings = [
     {name: '나주식당', latitude: 37.5564503, longitude: 126.9371086},
     {name: '소담식당', latitude: 37.5574369, longitude: 126.9380307},
@@ -60,12 +62,12 @@ const MapPage = () => {
 
   console.log('nearbyBuildings', myLocation);
   return (
-    <Pressable style={styles.container} onPress={Keyboard.dismiss}>
+    <View style={styles.container}>
       <View style={styles.searchBarContainer}>
         <View style={styles.searchBar}>
           <SInput
-            value={search}
-            onChangeText={text => setSearch(text)}
+            value={category}
+            onChangeText={text => setCategory(text)}
             borderColor={colors.tertiary}
             searchOn={true}
             searchIconColor={colors.disabled}
@@ -82,7 +84,7 @@ const MapPage = () => {
         cameraZoom={14}
         nearbyBuildings={nearbyBuildings}
       />
-    </Pressable>
+    </View>
   );
 };
 

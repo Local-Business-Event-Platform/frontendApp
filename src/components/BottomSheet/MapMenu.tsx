@@ -1,13 +1,13 @@
 import {BottomSheetView} from '@gorhom/bottom-sheet';
-import React, {useState} from 'react';
+import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
 import {useBottomSheetTitle} from '../../store/mapRoute';
 import SText from '../Elements/SText';
 
 const MapMenu = () => {
-  const {setBottomSheetTitle} = useBottomSheetTitle();
-  const [menuTitle, setMenuTitle] = useState('');
+  const {setCategory, setBottomSheetTitle} = useBottomSheetTitle();
+
   const menuList = [
     {id: 1, name: '식당'},
     {id: 2, name: '병원'},
@@ -22,7 +22,7 @@ const MapMenu = () => {
           style={styles.itemContainer}
           onPress={() => {
             setBottomSheetTitle('itemList');
-            setMenuTitle(menu.name);
+            setCategory(menu.name);
           }}>
           <View style={styles.menuItemBox}></View>
           <SText fStyle="BmdMd" text={menu.name} color={colors.secondary} />

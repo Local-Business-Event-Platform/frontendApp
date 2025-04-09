@@ -7,6 +7,7 @@ import React from 'react';
 import {Keyboard, Pressable, StyleSheet} from 'react-native';
 
 import {colors, SWidth} from '../../../globalStyle';
+import {useBottomSheetTitle} from '../../store/mapRoute';
 
 type MapProps = {
   cameraZoom: number;
@@ -24,6 +25,7 @@ const Map = ({
 
   nearbyBuildings,
 }: MapProps) => {
+  const {setBottomSheetTitle} = useBottomSheetTitle();
   return (
     <Pressable onPress={Keyboard.dismiss}>
       <NaverMapView
@@ -34,7 +36,10 @@ const Map = ({
         isShowCompass={false}
         // isShowLocationButton={false}
         isShowZoomControls={false}
-        onTapMap={Keyboard.dismiss}
+        onTapMap={() => {
+          setBottomSheetTitle('menuSelect');
+          Keyboard.dismiss();
+        }}
         camera={{
           latitude: myLatitude - 0.0045,
           longitude: myLongitude,
