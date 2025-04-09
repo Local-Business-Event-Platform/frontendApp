@@ -1,5 +1,5 @@
 import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
-import React, {useEffect, useMemo, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {StyleSheet} from 'react-native';
 
 import {colors, SWidth} from '../../../globalStyle';
@@ -11,16 +11,6 @@ import MapMenu from './MapMenu';
 const SBottomSheet = () => {
   const bottomRef = useRef<BottomSheetModal>(null);
   const {bottomSheetTitle} = useBottomSheetTitle();
-  const snapPoints = useMemo(() => {
-    switch (bottomSheetTitle) {
-      case 'menuSelect':
-        return ['20%'];
-      case 'itemList':
-        return [SWidth * 376];
-      default:
-        return ['20%'];
-    }
-  }, [bottomSheetTitle]);
 
   const bottomScreen = () => {
     switch (bottomSheetTitle) {
@@ -28,12 +18,8 @@ const SBottomSheet = () => {
         return <MapMenu />;
       case 'itemList':
         return <BottomSheetItemList />;
-      default:
-        return null;
     }
   };
-
-  console.log('bottomSheetTitle', bottomSheetTitle);
 
   useEffect(() => {
     if (bottomRef.current) {
@@ -44,8 +30,10 @@ const SBottomSheet = () => {
     <BottomSheetModalProvider>
       <BottomSheetModal
         ref={bottomRef}
-        snapPoints={snapPoints}
-        enableDynamicSizing={bottomSheetTitle === 'menuSelect' ? true : false}
+        enableDynamicSizing={bottomSheetTitle === 'menuSelect'}
+        snapPoints={
+          bottomSheetTitle === 'menuSelect' ? undefined : [SWidth * 376]
+        }
         enableDismissOnClose={false}
         enablePanDownToClose={false}
         enableContentPanningGesture={false}

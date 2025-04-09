@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {SkeletonProps} from '../../../utils/types/type';
 
 const SImageCardLoading = ({count}: SkeletonProps) => {
@@ -12,6 +12,7 @@ const SImageCardLoading = ({count}: SkeletonProps) => {
         boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.05)',
         borderRadius: SWidth * 8,
         overflow: 'hidden',
+        backgroundColor: colors.white,
       }}>
       <SkeletonPlaceholder>
         <>

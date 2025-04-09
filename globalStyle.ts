@@ -1,4 +1,4 @@
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 
 export const colors = {
   text: {
@@ -6,6 +6,7 @@ export const colors = {
     secondary: '#404040',
     tertiary: '#525252',
     info: '#155DFC',
+    warning:'#FFB800',
     disabled: '#A1A1A1',
     danger: '#E7000B',
   },

@@ -14,7 +14,7 @@ const SearchAppBar = () => {
     console.log(title);
     setSearch(true);
   };
-
+  console.log('title', title);
   return (
     <View style={styles.container}>
       <Pressable hitSlop={10} onPress={() => navigate.goBack()}>
@@ -26,12 +26,8 @@ const SearchAppBar = () => {
           onChangeText={text => setTitle(text)}
           onSubmitEditing={handleSubmit}
           onPress={() => {
-            if (title === '') {
-              null;
-            } else {
-              setTitle('');
-              setSearch(false);
-            }
+            setTitle('');
+            setSearch(false);
           }}
         />
       </View>

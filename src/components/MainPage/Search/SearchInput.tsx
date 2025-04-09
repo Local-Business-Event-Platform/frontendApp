@@ -62,5 +62,6 @@ const styles = StyleSheet.create({
   iconContainer: {
     position: 'absolute',
     right: SWidth * 16,
+    backgroundColor: colors.bg.tertiary,
   },
 });

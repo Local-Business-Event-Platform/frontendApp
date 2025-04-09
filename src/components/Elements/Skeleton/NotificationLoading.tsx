@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {SkeletonProps} from '../../../utils/types/type';
 
 const NotificationLoading = ({count}: SkeletonProps) => {
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: SWidth * 24,
     paddingVertical: SWidth * 20,
+    backgroundColor: colors.white,
     gap: SWidth * 8,
   },
 });

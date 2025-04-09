@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {SkeletonProps} from '../../../utils/types/type';
 
 const EventItemLoading = ({count}: SkeletonProps) => {
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
   container: {
     width: SWidth * 304,
     borderRadius: SWidth * 8,
+    backgroundColor: colors.white,
     overflow: 'hidden',
     boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.05)',
   },
