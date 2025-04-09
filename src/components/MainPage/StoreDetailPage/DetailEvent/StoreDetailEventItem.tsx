@@ -22,7 +22,13 @@ const StoreDetailEventItem = ({item}: StoreDetailEventItemProps) => {
         <StoreDetailImageText />
       </View>
       <View style={styles.itemContentContainer}>
-        <SText fStyle="BxlSb" text={item.title} />
+        <SText
+          flexShrink={1}
+          nLine={2}
+          lineHeight={SWidth * 28}
+          fStyle="BxlSb"
+          text={item.title}
+        />
         <StoreDetailIconTitle icon={<Calendar24 />} gap={SWidth * 4}>
           <SText fStyle="BmdMd" text={item.title} color={colors.secondary} />
         </StoreDetailIconTitle>

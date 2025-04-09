@@ -1,12 +1,21 @@
 import React, {useState} from 'react';
-import {FlatList, Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import SSButton from '../../components/Elements/SSButton';
+import SFlatList from '../../components/Elements/SFlatList';
 import SText from '../../components/Elements/SText';
+import PButton from '../../components/MyPage/Participation/PButton';
 import RecentStoreItem from '../../components/MyPage/Recent/RecentStoreItem';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
 
+type StoreType = {
+  id: number;
+  image: string;
+  title: string;
+  category: string;
+  review: number;
+  reviewCount: number;
+};
 const ParticipationPage = () => {
   const navigation = useCustomNavigation();
   const {setTitle} = useStoreData();
@@ -19,7 +28,7 @@ const ParticipationPage = () => {
       store: [
         {
           id: 1,
-          source: Image.resolveAssetSource(
+          image: Image.resolveAssetSource(
             require('../../assets/images/background.png'),
           ).uri,
           title: '스토어1',
@@ -29,7 +38,7 @@ const ParticipationPage = () => {
         },
         {
           id: 2,
-          source: Image.resolveAssetSource(
+          image: Image.resolveAssetSource(
             require('../../assets/images/background.png'),
           ).uri,
           title: '스토어2',
@@ -45,7 +54,7 @@ const ParticipationPage = () => {
       store: [
         {
           id: 1,
-          source: Image.resolveAssetSource(
+          image: Image.resolveAssetSource(
             require('../../assets/images/background.png'),
           ).uri,
           title: '스토어3',
@@ -55,7 +64,7 @@ const ParticipationPage = () => {
         },
         {
           id: 2,
-          source: Image.resolveAssetSource(
+          image: Image.resolveAssetSource(
             require('../../assets/images/background.png'),
           ).uri,
           title: '스토어4',
@@ -68,23 +77,18 @@ const ParticipationPage = () => {
   ];
   return (
     <View style={styles.container}>
-      <FlatList
-        overScrollMode="never"
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          paddingHorizontal: SWidth * 16,
-          paddingBottom: SWidth * 100,
-          gap: SWidth * 32,
-        }}
+      <SFlatList
         data={data}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => (
+        gap={SWidth * 32}
+        paddingBottom={SWidth * 100}
+        skeleton={<View />}
+        dataItem={({item}) => (
           <View style={styles.contentGap}>
-            <SText fStyle="BxlMd" text={item.date} color={'#000000'} />
-            {item.store.map(store => (
+            <SText fStyle="BxlMd" text={item.date} color={colors.black} />
+            {item.store.map((store: StoreType) => (
               <View key={store.id} style={styles.contentGap}>
                 <RecentStoreItem
-                  image={store.source}
+                  image={store.image}
                   title={store.title}
                   category={store.category}
                   review={store.review}
@@ -97,30 +101,16 @@ const ParticipationPage = () => {
                   }}
                 />
                 <View style={styles.rowContainer}>
-                  <SSButton
-                    title={qrChecked ? '25.01.13 확인 완료' : 'QR코드 확인'}
-                    textColor={qrChecked ? '#8c8c8c' : colors.tertiary}
-                    ButtonColor={
-                      qrChecked ? colors.interactive.secondary : colors.white
-                    }
-                    borderColor={
-                      qrChecked ? colors.interactive.secondary : colors.tertiary
-                    }
+                  <PButton
+                    checked={qrChecked}
+                    title="QR코드 확인"
+                    newTitle="25.01.13 확인 완료"
                     onPress={() => setQrChecked(!qrChecked)}
                   />
-                  <SSButton
-                    title={reviewChecked ? '후기 적성 완료' : '후기 작성하기'}
-                    textColor={reviewChecked ? '#8c8c8c' : colors.tertiary}
-                    ButtonColor={
-                      reviewChecked
-                        ? colors.interactive.secondary
-                        : colors.white
-                    }
-                    borderColor={
-                      reviewChecked
-                        ? colors.interactive.secondary
-                        : colors.tertiary
-                    }
+                  <PButton
+                    checked={reviewChecked}
+                    title="후기 작성하기"
+                    newTitle="후기 적성 완료"
                     onPress={() => setReviewChecked(!reviewChecked)}
                   />
                 </View>

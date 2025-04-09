@@ -1,13 +1,10 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
-import {SWidth} from '../../../globalStyle';
+import {SWidth} from '../../../../globalStyle';
+import {SkeletonProps} from '../../../utils/types/type';
 
-type SImageCard2LoadingProps = {
-  count: number;
-};
-
-const SImageCard2Loading = ({count}: SImageCard2LoadingProps) => {
+const SImageCard2Loading = ({count}: SkeletonProps) => {
   return Array.from({length: count}).map((_, index) => (
     <View
       key={index}

@@ -1,10 +1,20 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
+import SFlatList from '../../Elements/SFlatList';
 import SText from '../../Elements/SText';
 import RecentStoreItem from './RecentStoreItem';
+
+type StoreType = {
+  id: number;
+  image: string;
+  title: string;
+  category: string;
+  review: number;
+  reviewCount: number;
+};
 
 const RecentStore = () => {
   const navigation = useCustomNavigation();
@@ -65,19 +75,15 @@ const RecentStore = () => {
   ];
 
   return (
-    <FlatList
-      overScrollMode="never"
-      contentContainerStyle={{
-        paddingHorizontal: SWidth * 16,
-        gap: SWidth * 40,
-        paddingBottom: SWidth * 100,
-      }}
+    <SFlatList
       data={data}
-      keyExtractor={item => item.id.toString()}
-      renderItem={({item}) => (
+      gap={SWidth * 40}
+      paddingBottom={SWidth * 100}
+      skeleton={<View />}
+      dataItem={({item}) => (
         <View style={styles.container}>
           <SText fStyle="BxlMd" text={item.date} color={'#000000'} />
-          {item.store.map(store => (
+          {item.store.map((store: StoreType) => (
             <RecentStoreItem
               key={store.id}
               title={store.title}

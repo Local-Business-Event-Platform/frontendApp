@@ -4,7 +4,7 @@ import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
 import SFlatList from '../Elements/SFlatList';
-import SImageCardLoading from '../Elements/SImageCardLoading';
+import SImageCardLoading from '../Elements/Skeleton/SImageCardLoading';
 import EventItem from './EventItem';
 
 type EventItemType = {

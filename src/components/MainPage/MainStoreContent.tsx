@@ -3,7 +3,7 @@ import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import SFlatList from '../Elements/SFlatList';
-import SImageCard2Loading from '../Elements/SImageCard2Loading';
+import SImageCard2Loading from '../Elements/Skeleton/SImageCard2Loading';
 import MainStoreItem from './MainStoreItem';
 
 type ListType = {

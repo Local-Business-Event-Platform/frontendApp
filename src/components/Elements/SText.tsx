@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
   },
   BxlHeight: {
     height: SWidth * 28,
+
     justifyContent: 'center',
   },
   BlgHeight: {

@@ -13,9 +13,7 @@ const NotificationItem = ({
   opacity,
 }: NotificationItemProps) => {
   return (
-    <Pressable
-      style={[styles.itemContainer, {opacity: opacity}]}
-      onPress={onPress}>
+    <Pressable style={[styles.container, {opacity: opacity}]} onPress={onPress}>
       {icon}
       <View style={styles.textContainer}>
         <View style={styles.titleContainer}>
@@ -38,7 +36,7 @@ const NotificationItem = ({
 export default NotificationItem;
 
 const styles = StyleSheet.create({
-  itemContainer: {
+  container: {
     paddingHorizontal: SWidth * 24,
     paddingVertical: SWidth * 20,
     flexDirection: 'row',

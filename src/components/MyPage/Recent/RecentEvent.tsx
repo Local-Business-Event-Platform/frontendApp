@@ -1,12 +1,24 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
 import Calendar24 from '../../../utils/svgs/businessPage/Calendar24';
 import Location24 from '../../../utils/svgs/businessPage/Location24';
+import SFlatList from '../../Elements/SFlatList';
 import SImageCard from '../../Elements/SImageCard';
+import SImageCardLoading from '../../Elements/Skeleton/SImageCardLoading';
 import SText from '../../Elements/SText';
+
+type EventType = {
+  id: number;
+  title: string;
+  store: string;
+  category: string;
+  km: string;
+  date: string;
+  image: string;
+};
 
 const RecentEvent = () => {
   const navigation = useCustomNavigation();
@@ -65,19 +77,15 @@ const RecentEvent = () => {
     },
   ];
   return (
-    <FlatList
-      overScrollMode="never"
-      contentContainerStyle={{
-        paddingHorizontal: SWidth * 16,
-        gap: SWidth * 40,
-        paddingBottom: SWidth * 100,
-      }}
+    <SFlatList
       data={data}
-      keyExtractor={item => item.id.toString()}
-      renderItem={({item}) => (
+      gap={SWidth * 40}
+      paddingBottom={SWidth * 100}
+      skeleton={<SImageCardLoading count={3} />}
+      dataItem={({item}) => (
         <View style={styles.container}>
           <SText fStyle="BxlMd" text={item.date} color={'#000000'} />
-          {item.events.map(event => (
+          {item.events.map((event: EventType) => (
             <SImageCard
               key={event.id}
               image={event.image}

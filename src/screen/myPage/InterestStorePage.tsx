@@ -1,6 +1,7 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
+import SFlatList from '../../components/Elements/SFlatList';
 import MainFilter from '../../components/MainPage/Filter/MainFilter';
 import MainStoreItem from '../../components/MainPage/MainStoreItem';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
@@ -85,17 +86,12 @@ const InterestStorePage = () => {
   return (
     <View style={styles.container}>
       <MainFilter search={false} />
-      <FlatList
+      <SFlatList
         data={data}
-        keyExtractor={item => item.id.toString()}
-        overScrollMode="never"
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          paddingHorizontal: SWidth * 16,
-          gap: SWidth * 16,
-          paddingBottom: SWidth * 150,
-        }}
-        renderItem={({item}) => (
+        gap={SWidth * 16}
+        paddingBottom={SWidth * 150}
+        skeleton={<View />}
+        dataItem={({item}) => (
           <MainStoreItem
             storeImg={item.storeImg}
             title={item.title}

@@ -156,3 +156,7 @@ export type SImageCard2Props = {
   onPress?: () => void;
   children: React.ReactNode;
 };
+
+export type SkeletonProps = {
+  count: number;
+};

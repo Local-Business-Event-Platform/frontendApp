@@ -1,6 +1,7 @@
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
-import {colors, SWidth} from '../../../../../globalStyle';
+import {StyleSheet, View} from 'react-native';
+import {SWidth} from '../../../../../globalStyle';
+import SFlatList from '../../../Elements/SFlatList';
 import MyPageTitle from '../../MyPageTitle';
 import FAQCategoryItem from './FAQCategoryItem';
 
@@ -31,14 +32,13 @@ const FAQCategory = () => {
   return (
     <View style={styles.container}>
       <MyPageTitle title="카테고리" />
-      <FlatList
+      <SFlatList
         data={itemList}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        overScrollMode="never"
-        contentContainerStyle={styles.itemContainer}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => (
+        gap={SWidth * 8}
+        paddingHorizontal={0}
+        horizontal={true}
+        skeleton={<View />}
+        dataItem={({item}) => (
           <FAQCategoryItem
             key={item.id}
             title={item.title}
@@ -57,20 +57,5 @@ const styles = StyleSheet.create({
     marginTop: SWidth * 28,
     gap: SWidth * 12,
     paddingHorizontal: SWidth * 24,
-  },
-
-  itemContainer: {
-    gap: SWidth * 8,
-  },
-
-  itemBox: {
-    height: SWidth * 36,
-    paddingHorizontal: SWidth * 12,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 999,
-    backgroundColor: '#FAFAFA',
-    borderWidth: 1,
-    borderColor: colors.interactive.secondary,
   },
 });

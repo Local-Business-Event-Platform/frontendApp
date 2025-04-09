@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {colors} from '../../../globalStyle';
+import SFlatList from '../../components/Elements/SFlatList';
+import NotificationLoading from '../../components/Elements/Skeleton/NotificationLoading';
 import NotificationItem from '../../components/MainPage/Notification/NotificationItem';
 import Home24 from '../../utils/svgs/bottonTab/Home24';
 import Comment24 from '../../utils/svgs/mainPage/Comment24';
@@ -8,6 +10,8 @@ import Heart24 from '../../utils/svgs/myPage/Heart24';
 import Pen24 from '../../utils/svgs/storeDetailPage/Pen24';
 
 const NotificationPage = () => {
+  const list = [];
+
   const [notificationData, setNotificationData] = useState([
     {
       id: 1,
@@ -55,12 +59,10 @@ const NotificationPage = () => {
   console.log('NotificationPage', notificationData);
   return (
     <View style={styles.container}>
-      <FlatList
-        overScrollMode="never"
-        showsVerticalScrollIndicator={false}
+      <SFlatList
         data={notificationData}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => (
+        skeleton={<NotificationLoading count={4} />}
+        dataItem={({item}) => (
           <NotificationItem
             icon={renderIcon(item.title)!}
             title={item.title}

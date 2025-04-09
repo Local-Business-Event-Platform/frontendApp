@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {FlatList, Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import BAddButton from '../../components/BusinessPage/BAddButton';
 import BStoreCard from '../../components/BusinessPage/BStoreCard';
-import SImageCardLoading from '../../components/Elements/SImageCardLoading';
+import SFlatList from '../../components/Elements/SFlatList';
+import SImageCardLoading from '../../components/Elements/Skeleton/SImageCardLoading';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 const BusinessPage = () => {
   const navigation = useCustomNavigation();
@@ -52,18 +53,12 @@ const BusinessPage = () => {
       </View>
       {data && (
         <View style={styles.listContainer}>
-          <FlatList
-            contentContainerStyle={{
-              paddingHorizontal: SWidth * 16,
-              paddingBottom: SWidth * 100,
-              gap: SWidth * 20,
-            }}
-            ListEmptyComponent={() => <SImageCardLoading count={3} />}
-            showsVerticalScrollIndicator={false}
-            overScrollMode="never"
+          <SFlatList
             data={data}
-            keyExtractor={item => item.id.toString()}
-            renderItem={({item}) => (
+            paddingBottom={SWidth * 100}
+            gap={SWidth * 20}
+            skeleton={<SImageCardLoading count={3} />}
+            dataItem={({item}) => (
               <BStoreCard
                 item={item}
                 onPress={() => {

@@ -1,23 +1,22 @@
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../../globalStyle';
 import {StoreDetailEventProps} from '../../../../utils/types/StoreDetailType';
+import SFlatList from '../../../Elements/SFlatList';
+import EventItemLoading from '../../../Elements/Skeleton/EventItemLoading';
 import StoreDetailEventItem from './StoreDetailEventItem';
 
 const StoreDetailEvent = ({data}: StoreDetailEventProps) => {
   return (
     <View style={styles.container}>
-      <FlatList
+      <SFlatList
         data={data}
+        gap={SWidth * 16}
+        paddingHorizontal={SWidth * 24}
+        paddingBottom={SWidth * 24}
         horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{
-          gap: SWidth * 16,
-          paddingHorizontal: SWidth * 24,
-          paddingBottom: SWidth * 24,
-        }}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => <StoreDetailEventItem item={item} />}
+        skeleton={<EventItemLoading count={3} />}
+        dataItem={({item}) => <StoreDetailEventItem item={item} />}
       />
     </View>
   );

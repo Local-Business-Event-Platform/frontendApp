@@ -1,13 +1,18 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
+import SFlatList from '../../Elements/SFlatList';
+import SImageCard2Loading from '../../Elements/Skeleton/SImageCard2Loading';
 import MainStoreItem from '../MainStoreItem';
 
 const SearchList = () => {
   const navigation = useCustomNavigation();
   const {setTitle} = useStoreData();
+
+  const list = [];
+
   const data = [
     {
       id: 1,
@@ -83,17 +88,12 @@ const SearchList = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
+      <SFlatList
         data={data}
-        keyExtractor={item => item.id.toString()}
-        overScrollMode="never"
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          paddingHorizontal: SWidth * 16,
-          gap: SWidth * 16,
-          paddingBottom: SWidth * 50,
-        }}
-        renderItem={({item}) => (
+        gap={SWidth * 16}
+        paddingBottom={SWidth * 50}
+        skeleton={<SImageCard2Loading count={4} />}
+        dataItem={({item}) => (
           <MainStoreItem
             storeImg={item.storeImg}
             title={item.title}

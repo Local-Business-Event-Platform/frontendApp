@@ -35,28 +35,28 @@ const StoreDetailPage = () => {
       y: 126.9366973,
     },
     events: [
-      {
-        id: 1,
-        title: '신메뉴 출시 기념 전 메뉴 20% 할인',
-        content: [
-          '• 신메뉴 주문시 전 메뉴 20% 할인',
-          '• 리뷰 작성시 3,000원 할인권 증정',
-        ],
-        img: Image.resolveAssetSource(
-          require('../../assets/images/background.png'),
-        ).uri,
-      },
-      {
-        id: 2,
-        title: '신메뉴 출시 기념 전 메뉴 20% 할인',
-        content: [
-          '• 신메뉴 주문시 전 메뉴 20% 할인',
-          '• 리뷰 작성시 3,000원 할인권 증정',
-        ],
-        img: Image.resolveAssetSource(
-          require('../../assets/images/background.png'),
-        ).uri,
-      },
+      // {
+      //   id: 1,
+      //   title: '신메뉴 출시 기념 전 메뉴 20% 할인',
+      //   content: [
+      //     '• 신메뉴 주문시 전 메뉴 20% 할인',
+      //     '• 리뷰 작성시 3,000원 할인권 증정',
+      //   ],
+      //   img: Image.resolveAssetSource(
+      //     require('../../assets/images/background.png'),
+      //   ).uri,
+      // },
+      // {
+      //   id: 2,
+      //   title: '신메뉴 출시 기념 전 메뉴 20% 할인',
+      //   content: [
+      //     '• 신메뉴 주문시 전 메뉴 20% 할인',
+      //     '• 리뷰 작성시 3,000원 할인권 증정',
+      //   ],
+      //   img: Image.resolveAssetSource(
+      //     require('../../assets/images/background.png'),
+      //   ).uri,
+      // },
     ],
     reviews: [
       {

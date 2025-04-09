@@ -1,7 +1,8 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
-import {FlatList, Pressable, StyleSheet, View} from 'react-native';
+import {Image, Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
+import SFlatList from '../../components/Elements/SFlatList';
 import SText from '../../components/Elements/SText';
 import MainFilter from '../../components/MainPage/Filter/MainFilter';
 import Delete24 from '../../utils/svgs/businessPage/Delete24';
@@ -30,8 +31,11 @@ const ReviewManagementPage = () => {
       content:
         '음식이 정말 맛있고, 분위기도 좋았어요. 특히 직원분들이 친절하셔서 더욱 좋았습니다. 다음에 또 방문하고 싶네요!',
       images: [
-        require('../../assets/images/background.png'),
-        require('../../assets/images/no_image.jpg'),
+        Image.resolveAssetSource(require('../../assets/images/background.png'))
+          .uri,
+        Image.resolveAssetSource(require('../../assets/images/no_image.jpg'))
+          .uri,
+        ,
       ],
     },
     {
@@ -42,8 +46,12 @@ const ReviewManagementPage = () => {
       content:
         '음식이 정말 맛있고, 분위기도 좋았어요. 특히 직원분들이 친절하셔서 더욱 좋았습니다. 다음에 또 방문하고 싶네요!',
       images: [
-        require('../../assets/images/background.png'),
-        require('../../assets/images/no_image.jpg'),
+        Image.resolveAssetSource(require('../../assets/images/background.png'))
+          .uri,
+        ,
+        Image.resolveAssetSource(require('../../assets/images/no_image.jpg'))
+          .uri,
+        ,
       ],
     },
     {
@@ -54,8 +62,12 @@ const ReviewManagementPage = () => {
       content:
         '음식이 정말 맛있고, 분위기도 좋았어요. 특히 직원분들이 친절하셔서 더욱 좋았습니다. 다음에 또 방문하고 싶네요!',
       images: [
-        require('../../assets/images/background.png'),
-        require('../../assets/images/no_image.jpg'),
+        Image.resolveAssetSource(require('../../assets/images/background.png'))
+          .uri,
+        ,
+        Image.resolveAssetSource(require('../../assets/images/no_image.jpg'))
+          .uri,
+        ,
       ],
     },
   ];
@@ -63,16 +75,12 @@ const ReviewManagementPage = () => {
   return (
     <View style={styles.container}>
       <MainFilter search={false} />
-      <FlatList
-        overScrollMode="never"
-        showsVerticalScrollIndicator={false}
+      <SFlatList
         data={data}
-        contentContainerStyle={{
-          paddingHorizontal: SWidth * 24,
-          paddingBottom: SWidth * 100,
-        }}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item, index}) => (
+        paddingHorizontal={SWidth * 24}
+        paddingBottom={SWidth * 100}
+        skeleton={<View />}
+        dataItem={({item, index}) => (
           <View
             style={[
               styles.itemContainer,
@@ -112,11 +120,11 @@ const ReviewManagementPage = () => {
               text={item.content}
             />
             <View style={styles.rowTitle}>
-              {item.images.map((image, index) => (
+              {item.images.map((image: string, index: number) => (
                 <FastImage
                   key={index}
                   style={styles.imgStyle}
-                  source={image}
+                  source={{uri: image}}
                   resizeMode={FastImage.resizeMode.cover}
                 />
               ))}

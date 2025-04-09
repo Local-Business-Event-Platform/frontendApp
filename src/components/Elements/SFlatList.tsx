@@ -5,6 +5,7 @@ import {SWidth} from '../../../globalStyle';
 type SFlatListProps = {
   data: any[];
   gap?: number;
+  paddingHorizontal?: number;
   paddingBottom?: number;
   skeleton: React.ReactNode;
   dataItem: ListRenderItem<any>;
@@ -14,6 +15,7 @@ type SFlatListProps = {
 const SFlatList = ({
   data,
   gap,
+  paddingHorizontal = SWidth * 16,
   paddingBottom,
   skeleton,
   horizontal,
@@ -25,9 +27,10 @@ const SFlatList = ({
       overScrollMode="never"
       horizontal={horizontal}
       showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
       keyExtractor={item => item.id.toString()}
       contentContainerStyle={{
-        paddingHorizontal: SWidth * 16,
+        paddingHorizontal: paddingHorizontal,
         paddingBottom: paddingBottom,
         gap: gap,
       }}
