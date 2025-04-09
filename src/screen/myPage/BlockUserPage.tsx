@@ -1,10 +1,8 @@
-import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import {colors, SWidth} from '../../../globalStyle';
-import SButton40 from '../../components/Elements/SButton40';
+import {SWidth} from '../../../globalStyle';
 import SFlatList from '../../components/Elements/SFlatList';
-import SText from '../../components/Elements/SText';
+import BlockItem from '../../components/MyPage/BlockUser/BlockItem';
 
 const BlockUserPage = () => {
   const data = [
@@ -49,34 +47,13 @@ const BlockUserPage = () => {
         skeleton={<View />}
         paddingHorizontal={SWidth * 24}
         dataItem={({item, index}) => (
-          <View
-            style={[
-              styles.itemContainer,
-              {borderBottomWidth: index === data.length - 1 ? 0 : 1},
-            ]}>
-            <View style={styles.imageContainer}>
-              <FastImage
-                style={styles.imageStyle}
-                source={{uri: item.userImage}}
-                resizeMode={FastImage.resizeMode.cover}
-              />
-              <View style={styles.textContainer}>
-                <SText fStyle="BlgSb" text={item.name} color={colors.black} />
-                <SText
-                  fStyle="BmdRg"
-                  text={item.address}
-                  color={colors.text.secondary}
-                />
-              </View>
-            </View>
-            <SButton40
-              title="차단 해제"
-              textColor={colors.text.secondary}
-              ButtonColor={colors.interactive.secondary}
-              // icon={<Pen24 />}
-              onPress={() => {}}
-            />
-          </View>
+          <BlockItem
+            bottomWidth={index === data.length - 1 ? 0 : 1}
+            image={item.userImage}
+            name={item.name}
+            address={item.address}
+            onPress={() => {}}
+          />
         )}
       />
     </View>
@@ -89,30 +66,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: SWidth * 16,
-  },
-
-  itemContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: SWidth * 16,
-    paddingVertical: SWidth * 24,
-    paddingHorizontal: SWidth * 8,
-    borderColor: '#A1A1A11A',
-  },
-
-  imageContainer: {
-    flexDirection: 'row',
-    gap: SWidth * 16,
-  },
-
-  imageStyle: {
-    width: SWidth * 48,
-    height: SWidth * 48,
-    borderRadius: 999,
-  },
-
-  textContainer: {
-    gap: SWidth * 4,
   },
 });
