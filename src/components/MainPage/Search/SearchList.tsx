@@ -102,7 +102,7 @@ const SearchList = () => {
             reviewCount={item.reviewCount}
             onPress={() => {
               setTitle(item.title);
-              navigation.navigate('bottomTeb', {
+              navigation.navigate('bottomTab', {
                 screen: '홈',
                 params: {
                   screen: 'detailPage',

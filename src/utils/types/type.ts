@@ -1,5 +1,18 @@
 import {ColorValue} from 'react-native';
 
+export type StackOptionType = {
+  headerShown: boolean;
+  screen?:
+    | 'join'
+    | 'search'
+    | 'main'
+    | 'detail'
+    | 'business'
+    | 'store'
+    | undefined;
+  title?: string;
+};
+
 export type SButtonProps = {
   onPress: () => void;
   disabled?: boolean;

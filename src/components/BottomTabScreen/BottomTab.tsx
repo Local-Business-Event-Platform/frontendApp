@@ -14,7 +14,7 @@ import NameComponent from './TabMenu/NameComponent';
 
 const tabHeight = SWidth * 58;
 
-const BottomTeb = () => {
+const BottomTab = () => {
   const Tab = createBottomTabNavigator();
   const {userData} = useUserData();
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
@@ -87,7 +87,7 @@ const BottomTeb = () => {
   );
 };
 
-export default BottomTeb;
+export default BottomTab;
 
 const styles = StyleSheet.create({
   shadow: {

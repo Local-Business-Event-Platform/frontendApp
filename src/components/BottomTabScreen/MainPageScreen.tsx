@@ -1,48 +1,57 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {StatusBar, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import MainPage from '../../screen/main/MainPage';
 import StoreDetailPage from '../../screen/main/StoreDetailPage';
+import {StackOptionType} from '../../utils/types/type';
 import MainAppBar from './AppBar/MainAppBar';
 import StoreDetailAppBar from './AppBar/StoreDetailAppBar';
 
 const MainPageScreen = () => {
   const Stack = createNativeStackNavigator();
+  const insets = useSafeAreaInsets();
+
+  const options = ({
+    headerShown,
+    screen = undefined,
+    title = '',
+  }: StackOptionType) => ({
+    header() {
+      return screen === 'main' ? (
+        <MainAppBar />
+      ) : screen === 'detail' ? (
+        <StoreDetailAppBar />
+      ) : null;
+    },
+    title: '',
+    headerShown: headerShown,
+    headerShadowVisible: false,
+  });
+
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
         statusBarTranslucent: true,
         contentStyle: {
-          paddingTop: StatusBar.currentHeight,
+          paddingTop: insets.top,
           backgroundColor: 'white',
         },
       }}
       initialRouteName="mainPage">
       <Stack.Screen
         name="mainPage"
-        options={{
-          header() {
-            return <MainAppBar />;
-          },
-          title: '',
-          headerShown: true,
-          headerShadowVisible: false,
-        }}
         component={MainPage}
+        options={options({headerShown: true, screen: 'main'})}
       />
       <Stack.Screen
         name="detailPage"
+        component={StoreDetailPage}
         options={{
           animation: 'fade_from_bottom',
-          header() {
-            return <StoreDetailAppBar />;
-          },
-          title: '',
-          headerShown: true,
-          headerShadowVisible: false,
+          ...options({headerShown: true, screen: 'detail'}),
         }}
-        component={StoreDetailPage}
       />
     </Stack.Navigator>
   );

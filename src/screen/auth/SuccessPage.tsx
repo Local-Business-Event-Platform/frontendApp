@@ -25,7 +25,7 @@ const SuccessPage = () => {
             onPress={() =>
               navigation.reset({
                 index: 0,
-                routes: [{name: 'bottomTeb'}],
+                routes: [{name: 'bottomTab'}],
               })
             }
           />
