@@ -101,8 +101,23 @@ export const storeMyPageList: MenuItem[] = [
     title: '회원 정보 수정',
     navigation: 'userUpdate',
   },
-  {id: 2, icon: Map24, title: '동네 설정', navigation: ''},
-  {id: 3, icon: CircleCheck24, title: '알림 설정', navigation: ''},
+  {id: 2, icon: Map24, title: '차단 사용자 관리', navigation: 'block'},
+  {
+    id: 3,
+    icon: CircleCheck24,
+    title: '알림 설정',
+    navigation: 'myNotification',
+  },
+  {id: 4, icon: QR24, title: 'QR 코드 스캔', navigation: ''},
+  {
+    id: 5,
+    icon: Option24,
+    title: '설정',
+    marginTop: true,
+    navigation: 'setting',
+  },
+  {id: 6, icon: Notice24, title: '공지사항', navigation: 'notice'},
+  {id: 7, icon: Help24, title: '고객센터', navigation: 'customer'},
 ];
 
 export const myPageUserDataList = [

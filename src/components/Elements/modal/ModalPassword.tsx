@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import {OnPressProps} from '../../../utils/types/businessType';
-import SButton from '../SButton';
+import SButton56 from '../SButton56';
 import SText from '../SText';
 
 const ModalPassword = ({onPress}: OnPressProps) => {
@@ -18,7 +18,7 @@ const ModalPassword = ({onPress}: OnPressProps) => {
         color={colors.secondary}
       />
       <View style={{width: '100%', height: SWidth * 56}}>
-        <SButton
+        <SButton56
           title="확인"
           textColor={'white'}
           onPress={onPress!}

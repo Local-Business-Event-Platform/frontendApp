@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Keyboard, Pressable, ScrollView, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import SButton from '../../components/Elements/SButton';
+import SButton56 from '../../components/Elements/SButton56';
 import SInput from '../../components/Elements/SInput';
 import FindUser from '../../components/Login/FindUser';
 import Logo from '../../components/Login/Logo';
@@ -83,7 +83,7 @@ const LoginPage = () => {
             />
           </View>
           <View style={styles.loginButtonContainer}>
-            <SButton
+            <SButton56
               title="로그인"
               textColor={colors.white}
               ButtonColor={colors.interactive.primary}
@@ -94,7 +94,7 @@ const LoginPage = () => {
         <View style={styles.bottomContainer}>
           <FindUser onPress={() => navigation.navigate('find')} />
           <View style={styles.buttonContainer}>
-            <SButton
+            <SButton56
               title="회원가입"
               textColor={colors.text.secondary}
               ButtonColor={'#FAFAFA'}

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Keyboard, Pressable, ScrollView, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import SButton from '../../components/Elements/SButton';
+import SButton56 from '../../components/Elements/SButton56';
 import SInput from '../../components/Elements/SInput';
 import JoinTitle from '../../components/Join/JoinTitle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
@@ -52,7 +52,7 @@ const JoinIdPage = () => {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <SButton
+          <SButton56
             ButtonColor={colors.interactive.primary}
             title="완료"
             textColor={colors.white}

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import SButton from '../../components/Elements/SButton';
+import SButton56 from '../../components/Elements/SButton56';
 import SInput from '../../components/Elements/SInput';
 import SText from '../../components/Elements/SText';
 import {useModalOpen} from '../../store/modalRoute';
@@ -137,7 +137,7 @@ const NewPasswordPage = () => {
           />
         </View>
         <View>
-          <SButton
+          <SButton56
             title="비밀번호 변경"
             ButtonColor={passwordCheck ? colors.interactive.primary : '#FAFAFA'}
             textColor={passwordCheck ? 'white' : colors.secondary}

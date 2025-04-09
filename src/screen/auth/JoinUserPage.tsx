@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {colors, SWidth} from '../../../globalStyle';
-import SButton from '../../components/Elements/SButton';
+import SButton56 from '../../components/Elements/SButton56';
 import SInput from '../../components/Elements/SInput';
 import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
@@ -100,7 +100,7 @@ const JoinUserPage = () => {
             </View>
           </View>
           <View style={styles.buttonContainer}>
-            <SButton
+            <SButton56
               ButtonColor={colors.interactive.primary}
               title="아이디, 비밀번호 입력하기"
               textColor={colors.white}

@@ -11,6 +11,7 @@ import SuccessPage from '../../screen/auth/SuccessPage';
 import TermsOfUsePage from '../../screen/auth/TermsOfUsePage';
 import NotificationPage from '../../screen/main/NotificationPage';
 import SearchPage from '../../screen/main/SearchPage';
+import BlockUserPage from '../../screen/myPage/BlockUserPage';
 import CustomerPage from '../../screen/myPage/CustomerPage';
 import MyNotificationPage from '../../screen/myPage/MyNotificationPage';
 import NoticePage from '../../screen/myPage/NoticePage';
@@ -309,6 +310,22 @@ const MainStackScreen = () => {
           headerShadowVisible: false,
         }}
         component={UserInfoPage}
+      />
+      <Stack.Screen
+        name="block"
+        options={{
+          header() {
+            return <BackTitleAppBar title="차단 사용자 관리" />;
+          },
+          contentStyle: {
+            paddingTop: StatusBar.currentHeight,
+            backgroundColor: 'white',
+          },
+          title: '',
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
+        component={BlockUserPage}
       />
       <Stack.Screen
         name="notification"

@@ -4,31 +4,35 @@ import {SWidth} from '../../../globalStyle';
 import {SButtonProps} from '../../utils/types/type';
 import SText from './SText';
 
-const SButton = ({
+const SButton40 = ({
   onPress,
   disabled,
   ButtonColor,
   title,
   textColor,
+  icon,
 }: SButtonProps) => {
   return (
     <Pressable
       onPress={onPress}
       disabled={disabled}
-      style={[styles.buttonStyle, {backgroundColor: ButtonColor}]}>
-      <SText fStyle="BlgSb" text={title} color={textColor} />
+      style={[styles.container, {backgroundColor: ButtonColor}]}>
+      <SText fStyle="BmdSb" text={title} color={textColor} />
+      {icon}
     </Pressable>
   );
 };
 
-export default SButton;
+export default SButton40;
 
 const styles = StyleSheet.create({
-  buttonStyle: {
-    flex: 1,
-    height: SWidth * 56,
+  container: {
+    height: SWidth * 40,
     borderRadius: SWidth * 8,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: SWidth * 16,
+    flexDirection: 'row',
+    gap: SWidth * 8,
   },
 });

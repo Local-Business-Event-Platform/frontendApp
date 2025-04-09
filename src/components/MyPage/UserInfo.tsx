@@ -5,7 +5,17 @@ import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {myPageUserDataList} from '../../utils/listData';
 import SText from '../Elements/SText';
-const UserInfo = () => {
+
+type UserInfoProps = {
+  userInfo: {
+    userNickname: string;
+    userName: string;
+    userImage: string;
+    userType: string;
+  };
+};
+
+const UserInfo = ({userInfo}: UserInfoProps) => {
   const navigation = useCustomNavigation();
   const data: Record<string, number> = {
     '최근 조회': 8,
@@ -27,17 +37,19 @@ const UserInfo = () => {
           <SText fStyle="BlgRg" text={'이름'} />
         </View>
       </View>
-      <View style={styles.rowContainer}>
-        {myPageUserDataList.map(item => (
-          <Pressable
-            key={item.id}
-            style={styles.contentStyle}
-            onPress={() => navigation.navigate(item.onPress)}>
-            <SText fStyle="BxlSb" text={data[item.title]} />
-            <SText fStyle="BmdRg" text={item.title} />
-          </Pressable>
-        ))}
-      </View>
+      {userInfo.userType === 'user' && (
+        <View style={styles.rowContainer}>
+          {myPageUserDataList.map(item => (
+            <Pressable
+              key={item.id}
+              style={styles.contentStyle}
+              onPress={() => navigation.navigate(item.onPress)}>
+              <SText fStyle="BxlSb" text={data[item.title]} />
+              <SText fStyle="BmdRg" text={item.title} />
+            </Pressable>
+          ))}
+        </View>
+      )}
     </View>
   );
 };

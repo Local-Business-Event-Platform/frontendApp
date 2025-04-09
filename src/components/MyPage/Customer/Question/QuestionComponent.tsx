@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
 import Plus24 from '../../../../utils/svgs/businessPage/Plus24';
-import SButton from '../../../Elements/SButton';
+import SButton56 from '../../../Elements/SButton56';
 import SInput from '../../../Elements/SInput';
 import SText from '../../../Elements/SText';
 import STextArea from '../../../Elements/STextArea';
@@ -44,7 +44,7 @@ const QuestionComponent = () => {
         </View>
       </View>
       <View style={styles.buttonBox}>
-        <SButton
+        <SButton56
           title="문의하기"
           textColor={colors.secondary}
           ButtonColor={colors.interactive.secondary}

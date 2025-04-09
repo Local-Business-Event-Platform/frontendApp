@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import SButton from '../../components/Elements/SButton';
+import SButton56 from '../../components/Elements/SButton56';
 import JoinTitle from '../../components/Join/JoinTitle';
 import JoinSuccessSubTitle from '../../components/Join/Success/JoinSuccessSubTitle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
@@ -18,7 +18,7 @@ const SuccessPage = () => {
           <JoinSuccessSubTitle userType={userData.type} />
         </View>
         <View style={styles.buttonContainer}>
-          <SButton
+          <SButton56
             ButtonColor={colors.interactive.primary}
             title="둘러보기"
             textColor={colors.white}

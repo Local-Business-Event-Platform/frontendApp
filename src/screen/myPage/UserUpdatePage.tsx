@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import SButton from '../../components/Elements/SButton';
+import SButton56 from '../../components/Elements/SButton56';
 import UserUpdateInput from '../../components/MyPage/UserUpdate/UserUpdateInput';
 import UserUpdateTitle from '../../components/MyPage/UserUpdate/UserUpdateTitle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
@@ -24,7 +24,7 @@ const UserUpdatePage = () => {
         />
       </View>
       <View style={styles.buttonContainer}>
-        <SButton
+        <SButton56
           title="확인"
           textColor={colors.white}
           ButtonColor={colors.interactive.primary}

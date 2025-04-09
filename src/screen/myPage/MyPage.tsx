@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import ContentItem from '../../components/MyPage/ContentItem';
 import UserInfo from '../../components/MyPage/UserInfo';
@@ -7,17 +7,36 @@ import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {storeMyPageList, userMyPageList} from '../../utils/listData';
 
 const MyPage = () => {
-  const userType = 'user';
-  const menuList = userType === 'user' ? userMyPageList : storeMyPageList;
+  const data = {
+    userNickname: '닉네임',
+    userName: '이름',
+    userImage: Image.resolveAssetSource(
+      require('../../assets/images/myPageImage.png'),
+    ).uri,
+    userType: 'store',
+  };
+
+  const myPageList = (userType: string) => {
+    switch (userType) {
+      case 'user':
+        return userMyPageList;
+      case 'store':
+        return storeMyPageList;
+    }
+  };
+
   const navigation = useCustomNavigation();
   return (
     <ScrollView
       style={styles.container}
       overScrollMode="never"
-      contentContainerStyle={{paddingBottom: SWidth * 40}}>
-      <UserInfo />
+      contentContainerStyle={{
+        paddingBottom: SWidth * 40,
+        gap: data.userType === 'user' ? SWidth * 36 : SWidth * 24,
+      }}>
+      <UserInfo userInfo={data} />
       <View style={styles.contentContainer}>
-        {menuList.map(item => (
+        {myPageList(data.userType)?.map(item => (
           <View
             key={item.id}
             style={item.marginTop ? {marginTop: SWidth * 8} : undefined}>
@@ -42,7 +61,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: SWidth * 24,
   },
   contentContainer: {
-    marginTop: SWidth * 40,
     backgroundColor: '#A1A1A11A',
   },
 });

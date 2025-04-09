@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
-import SButton from '../../components/Elements/SButton';
+import SButton56 from '../../components/Elements/SButton56';
 import SInput from '../../components/Elements/SInput';
 import SInputSuccess from '../../components/Elements/SInputSuccess';
 import UserImg from '../../components/MyPage/UserInfo/UserImg';
@@ -81,7 +81,7 @@ const UserInfoPage = () => {
         </UserInfoContainer>
       </View>
       <View style={styles.submitButtonContainer}>
-        <SButton
+        <SButton56
           title="변경 완료"
           textColor={colors.secondary}
           disabled={true}

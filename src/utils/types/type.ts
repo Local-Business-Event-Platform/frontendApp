@@ -6,6 +6,7 @@ export type SButtonProps = {
   ButtonColor: ColorValue;
   title: string;
   textColor: ColorValue;
+  icon?: JSX.Element;
 };
 
 export type SSButtonProps = {

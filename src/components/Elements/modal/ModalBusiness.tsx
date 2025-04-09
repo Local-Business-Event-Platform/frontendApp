@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import CirclePlus24 from '../../../utils/svgs/businessPage/CirclePlus24';
 import {OnPressProps} from '../../../utils/types/businessType';
-import SButton from '../SButton';
+import SButton56 from '../SButton56';
 import SInput from '../SInput';
 import SListButton from '../SListButton';
 import SText from '../SText';
@@ -40,13 +40,13 @@ const ModalBusiness = ({onPress}: OnPressProps) => {
         />
       </View>
       <View style={styles.rowLine}>
-        <SButton
+        <SButton56
           title="닫기"
           textColor={colors.secondary}
           ButtonColor={'#FAFAFA'}
           onPress={onPress!}
         />
-        <SButton
+        <SButton56
           title="메뉴 수정하기"
           textColor={'white'}
           ButtonColor={colors.interactive.primary}
