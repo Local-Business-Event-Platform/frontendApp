@@ -6,9 +6,11 @@ import Data56 from '../../../utils/svgs/modal/Data56';
 import Logout56 from '../../../utils/svgs/modal/Logout56';
 import Warning56 from '../../../utils/svgs/modal/Warning56';
 import {OnPressProps} from '../../../utils/types/businessType';
+import SButton56 from '../SButton56';
 import SText from '../SText';
 
 const ModalSetting = ({content, onPress}: OnPressProps) => {
+  const modalData = settingsModalList.find(item => item.type === content);
   const modalIcon = () => {
     switch (content) {
       case '로그아웃':
@@ -20,45 +22,32 @@ const ModalSetting = ({content, onPress}: OnPressProps) => {
     }
   };
 
-  const modalTitle = () => {
-    switch (content) {
-      case '로그아웃':
-        return (
-          <View style={styles.textContainer}>
-            <SText fStyle="BxlSb" text={settingsModalList[0].title} />
-            <View style={{alignItems: 'center'}}>
-              <SText fStyle="BlgRg" text={settingsModalList[0].content} />
-              <SText fStyle="BlgRg" text={settingsModalList[0].content2} />
-            </View>
-          </View>
-        );
-      case '탈퇴':
-        return (
-          <View style={styles.textContainer}>
-            <SText fStyle="BxlSb" text={settingsModalList[1].title} />
-            <View style={{alignItems: 'center'}}>
-              <SText fStyle="BlgRg" text={settingsModalList[1].content} />
-              <SText fStyle="BlgRg" text={settingsModalList[1].content2} />
-            </View>
-          </View>
-        );
-      case '데이터':
-        return (
-          <View style={styles.textContainer}>
-            <SText fStyle="BxlSb" text={settingsModalList[2].title} />
-            <View style={{alignItems: 'center'}}>
-              <SText fStyle="BlgRg" text={settingsModalList[2].content} />
-              <SText fStyle="BlgRg" text={settingsModalList[2].content2} />
-            </View>
-          </View>
-        );
-    }
-  };
-
   return (
     <Pressable style={styles.container} onPress={onPress}>
       {modalIcon()}
-      {modalTitle()}
+      <View style={styles.textContainer}>
+        <SText fStyle="BxlSb" text={modalData!.title!} />
+        <View style={{alignItems: 'center'}}>
+          <SText fStyle="BlgRg" text={modalData!.content!} />
+          <SText fStyle="BlgRg" text={modalData!.content2} />
+        </View>
+      </View>
+      <View style={{width: '100%', gap: SWidth * 8}}>
+        <SButton56
+          flex={false}
+          title="ddd"
+          textColor={'black'}
+          ButtonColor={'red'}
+          onPress={() => {}}
+        />
+        <SButton56
+          flex={false}
+          title="ddd"
+          textColor={'black'}
+          ButtonColor={'red'}
+          onPress={() => {}}
+        />
+      </View>
     </Pressable>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, TextInput, View} from 'react-native';
-import {colors, fontFamilies, SWidth} from '../../../globalStyle';
+import {colors, fontFamilies, fontSizes, SWidth} from '../../../globalStyle';
 import Check24 from '../../utils/svgs/auth/Check24';
 import Close24 from '../../utils/svgs/auth/Close24';
 import Error24 from '../../utils/svgs/auth/Error24';
@@ -144,10 +144,12 @@ const styles = StyleSheet.create({
   inputStyle: {
     borderWidth: SWidth * 1.25,
     borderRadius: SWidth * 8,
+    paddingTop: 0,
+    paddingBottom: 0,
     backgroundColor: 'white',
     height: SWidth * 48,
     paddingHorizontal: SWidth * 12,
-    fontSize: SWidth * 16,
+    fontSize: fontSizes(SWidth * 16),
     fontFamily: fontFamilies.pretendardMedium,
   },
 

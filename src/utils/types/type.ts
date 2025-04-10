@@ -14,6 +14,7 @@ export type StackOptionType = {
 };
 
 export type SButtonProps = {
+  flex?: boolean;
   onPress: () => void;
   disabled?: boolean;
   ButtonColor: ColorValue;

@@ -4,6 +4,7 @@ import Config from 'react-native-config';
 import {SWidth} from '../../../globalStyle';
 import SettingItem from '../../components/MyPage/Settings/SettingItem';
 import {useModalOpen} from '../../store/modalRoute';
+import {settingTypes} from '../../utils/listData';
 const SettingPage = () => {
   const {setModalTitle, setContent, setModalOpen} = useModalOpen();
   const settingList = [
@@ -21,7 +22,7 @@ const SettingPage = () => {
       icon: false,
       onPress: () => {
         setModalTitle('setting');
-        setContent('탈퇴');
+        setContent(settingTypes.WARNING);
         setModalOpen(true);
       },
     },
@@ -31,7 +32,7 @@ const SettingPage = () => {
       icon: false,
       onPress: () => {
         setModalTitle('setting');
-        setContent('로그아웃');
+        setContent(settingTypes.LOGOUT);
         setModalOpen(true);
       },
     },
@@ -41,7 +42,7 @@ const SettingPage = () => {
       icon: false,
       onPress: () => {
         setModalTitle('setting');
-        setContent('데이터');
+        setContent(settingTypes.DATA);
         setModalOpen(true);
       },
     },
