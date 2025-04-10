@@ -120,5 +120,6 @@ export type StoreCategoryInputProps = {
 
 export type OnPressProps = {
   click?: boolean;
+  content?: string;
   onPress?: () => void;
 };

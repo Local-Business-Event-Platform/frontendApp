@@ -1,4 +1,4 @@
-import { Dimensions } from 'react-native';
+import {Dimensions, PixelRatio} from 'react-native';
 
 export const colors = {
   text: {
@@ -6,7 +6,7 @@ export const colors = {
     secondary: '#404040',
     tertiary: '#525252',
     info: '#155DFC',
-    warning:'#FFB800',
+    warning: '#FFB800',
     disabled: '#A1A1A1',
     danger: '#E7000B',
   },
@@ -43,6 +43,10 @@ export const fontFamilies = {
 export const basicDimensions = {
   height: 874,
   width: 402,
+};
+
+export const fontSizes = (size: number) => {
+  return size / PixelRatio.getFontScale();
 };
 
 export const SHeight = // 높이 변환 작업

@@ -7,7 +7,7 @@ import Star16 from '../../../../utils/svgs/storeDetailPage/Star16';
 import SText from '../../../Elements/SText';
 
 type ReviewUserProps = {
-  img: number;
+  img: string;
   userName: string;
   reviewStar: number;
 };
@@ -17,7 +17,7 @@ const ReviewUser = ({img, userName, reviewStar}: ReviewUserProps) => {
     <View style={styles.userRow}>
       <FastImage
         style={styles.userImg}
-        source={img}
+        source={{uri: img}}
         resizeMode={FastImage.resizeMode.cover}
       />
       <View style={styles.userNameContainer}>

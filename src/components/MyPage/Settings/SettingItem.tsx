@@ -12,14 +12,16 @@ const SettingItem = ({
   onPress,
 }: SettingItemProps) => {
   return (
-    <View style={[styles.container, {borderBottomWidth: borderBottomWidth}]}>
+    <Pressable
+      style={[styles.container, {borderBottomWidth: borderBottomWidth}]}
+      onPress={onPress}>
       <SText fStyle="BlgRg" text={title} />
       {icon && (
-        <Pressable style={styles.iconContainer} onPress={onPress}>
+        <View style={styles.iconContainer}>
           <RightArrow24 color={colors.tertiary} />
-        </Pressable>
+        </View>
       )}
-    </View>
+    </Pressable>
   );
 };
 

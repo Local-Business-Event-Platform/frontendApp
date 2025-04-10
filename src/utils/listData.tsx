@@ -142,3 +142,24 @@ export const myPageUserDataList = [
     onPress: 'interestStore',
   },
 ];
+
+export const settingsModalList = [
+  {
+    id: 1,
+    title: '로그아웃 하시겠어요?',
+    content: '로그아웃하면 이용이 중단돼요.',
+    content2: '다시 로그인하면 이어서 이용할 수 있어요.',
+  },
+  {
+    id: 2,
+    title: '정말 탈퇴하시겠어요?',
+    content: '탈퇴하면 계정과 모든 정보가 삭제돼요.',
+    content2: '다시 복구할 수 없으니 신중히 결정해주세요.',
+  },
+  {
+    id: 3,
+    title: '캐시 데이터를 삭제하시겠어요?',
+    content: '앱에 저장된 캐시가 삭제돼요.',
+    content2: '저장되지 않은 데이터는 복구할 수 없어요.',
+  },
+];

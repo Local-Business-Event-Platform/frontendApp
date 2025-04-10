@@ -1,23 +1,41 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {useModalOpen} from '../../store/modalRoute';
 import ModalBusiness from './modal/ModalBusiness';
 import ModalPassword from './modal/ModalPassword';
+import ModalSetting from './modal/ModalSetting';
 
 const SModal = () => {
-  const {modalTitle, setModalOpen} = useModalOpen();
+  const {modalTitle, content, setModalOpen} = useModalOpen();
   const modalList = () => {
     switch (modalTitle) {
       case 'business':
         return <ModalBusiness onPress={() => setModalOpen(false)} />;
       case 'password':
         return <ModalPassword onPress={() => setModalOpen(false)} />;
+      case 'setting':
+        return (
+          <ModalSetting content={content} onPress={() => setModalOpen(false)} />
+        );
     }
   };
   return (
-    <View style={styles.container}>
-      <View style={styles.contentContainer}>{modalList()}</View>
+    <View
+      style={[
+        styles.container,
+        {
+          paddingHorizontal:
+            modalTitle === 'setting' ? SWidth * 36 : SWidth * 29,
+        },
+      ]}>
+      <View
+        style={[
+          styles.contentContainer,
+          {padding: modalTitle === 'setting' ? SWidth * 20 : SWidth * 16},
+        ]}>
+        {modalList()}
+      </View>
     </View>
   );
 };
@@ -33,15 +51,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#40404099',
-    paddingHorizontal: SWidth * 29,
   },
 
   contentContainer: {
     paddingTop: SWidth * 24,
-    padding: SWidth * 16,
     gap: SWidth * 24,
     width: '100%',
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     borderRadius: SWidth * 8,
   },
 });

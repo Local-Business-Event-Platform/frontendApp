@@ -8,7 +8,7 @@ import ReviewUser from './ReviewUser';
 type StoreReviewItemProps = {
   item: {
     id: number;
-    userImg: any;
+    userImg: string;
     userName: string;
     reviewStar: number;
     reviewDate: string;

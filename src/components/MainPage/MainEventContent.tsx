@@ -62,7 +62,7 @@ const MainEventContent = () => {
       <SFlatList
         data={list}
         skeleton={<SImageCardLoading count={3} />}
-        paddingBottom={SWidth * 100}
+        paddingBottom={SWidth * 150}
         gap={SWidth * 24}
         dataItem={({item}) => (
           <EventItem
