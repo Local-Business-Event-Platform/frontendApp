@@ -40,21 +40,15 @@ export const fontFamilies = {
   pretendardThin: 'Pretendard-Thin',
 } as const;
 
-export const basicDimensions = {
-  height: 874,
-  width: 402,
+const BASE_WIDTH = 402;
+const BASE_HEIGHT = 874;
+
+const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
+// ✅ 가로, 세로 스케일
+export const SWidth = SCREEN_WIDTH / BASE_WIDTH;
+export const SHeight = SCREEN_HEIGHT / BASE_HEIGHT;
+
+// ✅ 폰트 스케일 (접근성 무시)
+export const normalizeFont = (size: number) => {
+  return (SWidth * size) / PixelRatio.getFontScale();
 };
-
-export const fontSizes = (size: number) => {
-  return size / PixelRatio.getFontScale();
-};
-
-export const SHeight = // 높이 변환 작업
-  Number(
-    (Dimensions.get('screen').height * (1 / basicDimensions.height)).toFixed(2),
-  );
-
-export const SWidth = // 가로 변환 작업
-  Number(
-    (Dimensions.get('screen').width * (1 / basicDimensions.width)).toFixed(2),
-  );

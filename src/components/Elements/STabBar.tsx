@@ -13,19 +13,25 @@ const STabBar = ({menuList, tabIndex, setTabIndex}: STabBarProps) => {
           style={[
             styles.rowContainer,
             {
-              backgroundColor: tabIndex === item.id ? '#DBEAFE' : colors.white,
+              backgroundColor: tabIndex === item.id ? '#EFF6FF' : colors.white,
               paddingTop: tabIndex === item.id ? 1 : 0,
               borderBottomWidth: tabIndex === item.id ? 2 : 1,
               borderColor:
-                tabIndex === item.id ? '#1447E6' : colors.interactive.secondary,
+                tabIndex === item.id
+                  ? colors.interactive.primary
+                  : colors.interactive.secondary,
             },
           ]}
           onPress={() => setTabIndex(item.id)}>
-          <item.icon focus={tabIndex} />
+          <item.icon focus={tabIndex} newColor={colors.interactive.primary} />
           <SText
             fStyle="BlgMd"
             text={item.title}
-            color={tabIndex === item.id ? '#1447E6' : colors.secondary}
+            color={
+              tabIndex === item.id
+                ? colors.interactive.primary
+                : colors.secondary
+            }
           />
         </Pressable>
       ))}

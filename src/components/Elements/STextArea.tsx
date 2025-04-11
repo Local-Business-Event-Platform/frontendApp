@@ -1,7 +1,12 @@
 import React from 'react';
 import {DimensionValue, StyleSheet, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
-import {colors, fontFamilies, fontSizes, SWidth} from '../../../globalStyle';
+import {
+  colors,
+  fontFamilies,
+  normalizeFont,
+  SWidth,
+} from '../../../globalStyle';
 import SText from './SText';
 
 type STextAreaProps = {
@@ -67,7 +72,7 @@ const styles = StyleSheet.create({
     borderRadius: SWidth * 8,
     padding: SWidth * 12,
     textAlignVertical: 'top',
-    fontSize: fontSizes(SWidth * 16),
+    fontSize: normalizeFont(16),
     lineHeight: SWidth * 20,
     fontFamily: fontFamilies.pretendardMedium,
   },

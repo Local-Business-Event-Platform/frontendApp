@@ -152,7 +152,13 @@ export type STabBarProps = {
   menuList: {
     id: number;
     title: string;
-    icon: ({focus}: {focus: number}) => React.JSX.Element;
+    icon: ({
+      focus,
+      newColor,
+    }: {
+      focus: number;
+      newColor?: ColorValue;
+    }) => React.JSX.Element;
   }[];
 
   tabIndex: number;

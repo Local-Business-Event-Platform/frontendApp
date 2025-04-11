@@ -6,5 +6,6 @@ export type SvgColorProps = {
 
 export type SvgFocusColorProps = {
   focus?: number | boolean;
+  newColor?: ColorValue;
   color?: ColorValue;
 };

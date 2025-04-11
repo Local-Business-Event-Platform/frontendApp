@@ -1,6 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {colors, fontFamilies, fontSizes, SWidth} from '../../../globalStyle';
+import {
+  colors,
+  fontFamilies,
+  normalizeFont,
+  SWidth,
+} from '../../../globalStyle';
 import {STextProps} from '../../utils/types/type';
 
 const SText = ({
@@ -135,106 +140,106 @@ const styles = StyleSheet.create({
 
   H4xlFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 60),
-    lineHeight: fontSizes(SWidth * 60),
+    fontSize: normalizeFont(60),
+    lineHeight: normalizeFont(60),
     letterSpacing: -0.2,
     includeFontPadding: false,
   },
   H3xlFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 48),
-    lineHeight: fontSizes(SWidth * 48),
+    fontSize: normalizeFont(48),
+    lineHeight: normalizeFont(48),
     letterSpacing: -0.2,
     includeFontPadding: false,
   },
   H2xlFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 40),
+    fontSize: normalizeFont(40),
     letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HxlFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 36),
+    fontSize: normalizeFont(36),
     letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HlgFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 28),
+    fontSize: normalizeFont(28),
     letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HmdFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 24),
+    fontSize: normalizeFont(24),
     letterSpacing: -0.2,
     includeFontPadding: false,
   },
   HsmFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 20),
+    fontSize: normalizeFont(20),
     letterSpacing: -0.2,
     includeFontPadding: false,
   },
   BxlSbFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 18),
+    fontSize: normalizeFont(18),
     includeFontPadding: false,
   },
   BxlMdFontSize: {
     fontFamily: fontFamilies.pretendardMedium,
-    fontSize: fontSizes(SWidth * 18),
+    fontSize: normalizeFont(18),
     includeFontPadding: false,
   },
   BxlRgFontSize: {
     fontFamily: fontFamilies.pretendardRegular,
-    fontSize: fontSizes(SWidth * 18),
+    fontSize: normalizeFont(18),
     includeFontPadding: false,
   },
   BlgSbFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 16),
+    fontSize: normalizeFont(16),
     includeFontPadding: false,
   },
   BlgMdFontSize: {
     fontFamily: fontFamilies.pretendardMedium,
-    fontSize: fontSizes(SWidth * 16),
+    fontSize: normalizeFont(16),
     includeFontPadding: false,
   },
   BlgRgFontSize: {
     fontFamily: fontFamilies.pretendardRegular,
-    fontSize: fontSizes(SWidth * 16),
+    fontSize: normalizeFont(16),
     includeFontPadding: false,
   },
   BmdSbFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 14),
+    fontSize: normalizeFont(14),
     includeFontPadding: false,
   },
   BmdMdFontSize: {
     fontFamily: fontFamilies.pretendardMedium,
-    fontSize: fontSizes(SWidth * 14),
+    fontSize: normalizeFont(14),
     includeFontPadding: false,
   },
   BmdRgFontSize: {
     fontFamily: fontFamilies.pretendardRegular,
-    fontSize: fontSizes(SWidth * 14),
+    fontSize: normalizeFont(14),
     includeFontPadding: false,
   },
   BsmSbFontSize: {
     fontFamily: fontFamilies.pretendardSemiBold,
-    fontSize: fontSizes(SWidth * 12),
+    fontSize: normalizeFont(12),
     includeFontPadding: false,
   },
   BsmMdFontSize: {
     fontFamily: fontFamilies.pretendardMedium,
-    fontSize: fontSizes(SWidth * 12),
+    fontSize: normalizeFont(12),
     includeFontPadding: false,
   },
   BsmRgFontSize: {
     fontFamily: fontFamilies.pretendardRegular,
-    fontSize: fontSizes(SWidth * 12),
+    fontSize: normalizeFont(12),
     includeFontPadding: false,
   },
 });

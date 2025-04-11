@@ -1,5 +1,5 @@
-import React from 'react';
-import {Pressable, StyleSheet, View} from 'react-native';
+import React, {useEffect, useRef} from 'react';
+import {Animated, Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
 
 type SSwitchButtonProps = {
@@ -8,6 +8,16 @@ type SSwitchButtonProps = {
 };
 
 const SSwitchButton = ({click, onPress}: SSwitchButtonProps) => {
+  const translateX = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(translateX, {
+      toValue: click ? SWidth * 18 : 0, // 움직일 거리
+      duration: 50,
+      useNativeDriver: true,
+    }).start();
+  }, [click]);
+
   return (
     <Pressable
       onPress={onPress}
@@ -15,14 +25,20 @@ const SSwitchButton = ({click, onPress}: SSwitchButtonProps) => {
       style={[
         styles.container,
         {
-          alignItems: !click ? 'flex-start' : 'flex-end',
           backgroundColor: !click ? '#FAFAFA' : colors.interactive.primary,
           borderColor: !click
             ? colors.interactive.secondary
             : colors.interactive.primary,
         },
       ]}>
-      <View style={styles.content} />
+      <Animated.View
+        style={[
+          styles.content,
+          {
+            transform: [{translateX}],
+          },
+        ]}
+      />
     </Pressable>
   );
 };

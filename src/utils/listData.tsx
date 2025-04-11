@@ -1,3 +1,4 @@
+import {ColorValue} from 'react-native';
 import {colors} from '../../globalStyle';
 import Home24 from './svgs/bottonTab/Home24';
 import Store24 from './svgs/bottonTab/Store24';
@@ -35,12 +36,16 @@ export const mainTabItems = [
   {
     id: 1,
     title: '이벤트',
-    icon: ({focus}: {focus: number}) => <Gift24 focus={focus} />,
+    icon: ({focus, newColor}: {focus: number; newColor?: ColorValue}) => (
+      <Gift24 focus={focus} newColor={newColor} />
+    ),
   },
   {
     id: 2,
     title: '가게',
-    icon: ({focus}: {focus: number}) => <Store24 focus={focus} />,
+    icon: ({focus, newColor}: {focus: number; newColor?: ColorValue}) => (
+      <Store24 focus={focus} newColor={newColor} />
+    ),
   },
 ];
 
