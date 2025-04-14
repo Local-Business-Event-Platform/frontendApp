@@ -4,7 +4,7 @@ import {colors, SWidth} from '../../../globalStyle';
 import {useModalOpen} from '../../store/modalRoute';
 import ModalBusiness from './modal/ModalBusiness';
 import ModalPassword from './modal/ModalPassword';
-import ModalSetting from './modal/ModalSetting';
+import ModalSetting from './modal/settingModal/ModalSetting';
 
 const SModal = () => {
   const {modalTitle, content, setModalOpen} = useModalOpen();

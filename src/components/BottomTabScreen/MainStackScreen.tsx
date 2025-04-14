@@ -18,6 +18,7 @@ import NoticePage from '../../screen/myPage/NoticePage';
 import SettingPage from '../../screen/myPage/SettingPage';
 import UserInfoPage from '../../screen/myPage/UserInfoPage';
 import UserUpdatePage from '../../screen/myPage/UserUpdatePage';
+import SplashScreen from '../../screen/SplashScreen';
 import {useUserData} from '../../store/userRoute';
 import {StackOptionType} from '../../utils/types/type';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
@@ -51,7 +52,7 @@ const MainStackScreen = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName={'bottomTab'}
+      initialRouteName={'splash'}
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: 'white',
@@ -62,6 +63,11 @@ const MainStackScreen = () => {
           backgroundColor: 'white',
         },
       }}>
+      <Stack.Screen
+        name="splash"
+        component={SplashScreen}
+        options={options({headerShown: false})}
+      />
       <Stack.Screen
         name="login"
         component={LoginPage}

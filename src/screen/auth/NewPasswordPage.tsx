@@ -58,8 +58,16 @@ const NewPasswordPage = () => {
       <View style={styles.container}>
         <View style={styles.topContainer}>
           <View style={styles.idContainer}>
-            <SText fStyle="BmdMd" text={'아이디'} color={colors.tertiary} />
-            <SText fStyle="BxlSb" text={'232rref1'} color={colors.secondary} />
+            <SText
+              fStyle="BmdMd"
+              text={'아이디'}
+              color={colors.text.tertiary}
+            />
+            <SText
+              fStyle="BxlSb"
+              text={'232rref1'}
+              color={colors.text.secondary}
+            />
           </View>
           <SInput
             title="새 비밀번호"

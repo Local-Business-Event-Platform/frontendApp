@@ -8,7 +8,7 @@ import Logo from '../../components/Login/Logo';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 const LoginPage = () => {
   const navigation = useCustomNavigation();
-  const [passwordOpen, setPasswordOpen] = useState(false);
+  const [passwordOpen, setPasswordOpen] = useState(true);
   const [errorMsg, setErrorMsg] = useState({
     id: '',
     password: '',
@@ -97,7 +97,7 @@ const LoginPage = () => {
             <SButton56
               title="회원가입"
               textColor={colors.text.secondary}
-              ButtonColor={'#FAFAFA'}
+              ButtonColor={colors.bg.interactive.secondary}
               onPress={() => navigation.navigate('join')}
             />
           </View>
@@ -113,21 +113,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    paddingHorizontal: SWidth * 16,
+    paddingTop: SWidth * 32,
+    paddingHorizontal: SWidth * 24,
     paddingBottom: SWidth * 16,
     justifyContent: 'space-between',
     alignItems: 'center',
   },
 
   topContainer: {
-    marginTop: SWidth * 54,
-    paddingHorizontal: SWidth * 8,
     width: '100%',
   },
 
   inputContainer: {
-    marginTop: SWidth * 42,
-    gap: SWidth * 32,
+    marginTop: SWidth * 44,
+    gap: SWidth * 24,
   },
 
   loginButtonContainer: {
@@ -138,7 +137,8 @@ const styles = StyleSheet.create({
   bottomContainer: {
     width: '100%',
     alignItems: 'center',
-    gap: SWidth * 24,
+    paddingHorizontal: SWidth * 8,
+    gap: SWidth * 12,
   },
 
   buttonContainer: {

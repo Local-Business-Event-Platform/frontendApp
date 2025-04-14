@@ -14,6 +14,9 @@ export const colors = {
     primary: '#171717',
     secondary: '#404040',
     tertiary: '#F5F5F5',
+    interactive: {
+      secondary: '#FAFAFA',
+    },
   },
   primary: '#171717',
   secondary: '#404040',

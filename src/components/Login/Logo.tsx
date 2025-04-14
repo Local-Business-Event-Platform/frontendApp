@@ -1,12 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {StyleSheet, View} from 'react-native';
+import {colors, SWidth} from '../../../globalStyle';
+import SText from '../Elements/SText';
 
 const Logo = () => {
   return (
     <View style={styles.container}>
       <View style={styles.logoStyle}>
-        <Text>로고</Text>
+        <SText fStyle="BlgSb" text={'로고'} color={colors.text.disabled} />
       </View>
     </View>
   );

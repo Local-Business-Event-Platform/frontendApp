@@ -152,6 +152,7 @@ export const settingTypes = {
   LOGOUT: '로그아웃',
   WARNING: '탈퇴',
   DATA: '데이터',
+  LOGIN: 'login',
 };
 
 export const settingsModalList = [
@@ -175,5 +176,12 @@ export const settingsModalList = [
     title: '캐시 데이터를 삭제하시겠어요?',
     content: '앱에 저장된 캐시가 삭제돼요.',
     content2: '저장되지 않은 데이터는 복구할 수 없어요.',
+  },
+  {
+    type: settingTypes.LOGIN,
+    id: 4,
+    title: '로그인이 필요해요',
+    content: '로그인이 필요한 기능이에요. 지금 로그인하고',
+    content2: '필요한 기능을 사용해보세요.',
   },
 ];

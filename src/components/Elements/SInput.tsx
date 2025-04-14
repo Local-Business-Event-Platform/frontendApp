@@ -23,6 +23,7 @@ const SInput = ({
   buttonTitle,
   borderColor = colors.interactive.secondary,
   buttonOnPress,
+  buttonDisabled,
   ButtonTextDecorationLine,
   maxLength,
   onChangeText,
@@ -102,6 +103,7 @@ const SInput = ({
             <JoinButton
               title={buttonTitle}
               buttonOnPress={buttonOnPress}
+              disabled={buttonDisabled}
               textDecorationLine={ButtonTextDecorationLine}
             />
           )}

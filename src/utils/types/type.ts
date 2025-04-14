@@ -118,6 +118,7 @@ export type SInputProps = {
   backgroundColor?: ColorValue;
   buttonTitle?: string;
   buttonOnPress?: () => void;
+  buttonDisabled?: boolean;
   ButtonTextDecorationLine?: 'underline' | 'none';
   maxLength?: number;
   onChangeText: (text: string) => void;

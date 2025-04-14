@@ -14,6 +14,7 @@ export type JoinSelectedButtonProps = {
 export type JoinButtonProps = {
   title: string;
   buttonOnPress?: () => void;
+  disabled?: boolean;
   textDecorationLine?: 'underline' | 'none';
 };
 

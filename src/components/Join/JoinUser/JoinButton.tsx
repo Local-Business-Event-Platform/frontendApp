@@ -7,10 +7,14 @@ import SText from '../../Elements/SText';
 const JoinButton = ({
   title,
   buttonOnPress,
+  disabled,
   textDecorationLine,
 }: JoinButtonProps) => {
   return (
-    <Pressable style={styles.buttonContainer} onPress={buttonOnPress}>
+    <Pressable
+      style={styles.buttonContainer}
+      disabled={disabled}
+      onPress={buttonOnPress}>
       <SText
         fStyle="BlgSb"
         text={title}
