@@ -95,7 +95,6 @@ export type BusinessButtonProps = {
 
 export type TitleOnPressProps = {
   title: string;
-  marginTop?: number;
   onLongPress?: () => void;
   disabled?: boolean;
   onPress: () => void;
@@ -122,4 +121,12 @@ export type OnPressProps = {
   click?: boolean;
   content?: string;
   onPress?: () => void;
+};
+
+export type StoreMenuInfoItemProps = {
+  image: string;
+  category: string;
+  title: string;
+  price: number;
+  onPress: () => void;
 };

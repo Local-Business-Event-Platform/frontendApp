@@ -80,7 +80,11 @@ const StoreInfo = ({data}: BasicInformationProps) => {
       <BButtonTitle
         title="가게 정보"
         buttonText={data.storeName ? '수정하기' : '등록하기'}
-        buttonTextColor={storeAdd ? 'white' : colors.tertiary}
+        buttonTextColor={
+          storeAdd
+            ? colors.text.interactive.inverse
+            : colors.text.interactive.secondary
+        }
         onClick={storeAdd}
         onPress={data.storeName ? handleUpdate : handleStoreAdd}
       />
@@ -99,12 +103,14 @@ const StoreInfo = ({data}: BasicInformationProps) => {
       <BContentText
         onClick={storeAdd}
         title="가게 이름"
+        color={colors.text.tertiary}
         placeholder="가게 이름"
-        color={colors.tertiary}
         content={storeData.title || data.storeName || '가게 이름'}
         value={storeData.title}
         contentColor={
-          storeData.title || data.storeName ? colors.secondary : colors.disabled
+          storeData.title || data.storeName
+            ? colors.text.secondary
+            : colors.text.disabled
         }
         onChangeText={text => {
           setStoreData({
@@ -115,13 +121,13 @@ const StoreInfo = ({data}: BasicInformationProps) => {
       />
       <BContentTime
         title="영업시간"
+        color={colors.text.tertiary}
         content="00:00 ~ 00:00"
         contentColor={
           storeData.time || data.storeBusinessTime
-            ? colors.secondary
-            : colors.disabled
+            ? colors.text.secondary
+            : colors.text.disabled
         }
-        color={colors.tertiary}
         onClick={storeAdd}
       />
       <BContentArea
@@ -133,7 +139,7 @@ const StoreInfo = ({data}: BasicInformationProps) => {
           });
         }}
         title="가게 설명"
-        color={colors.tertiary}
+        color={colors.text.tertiary}
         content={
           storeData.content ||
           data.storeContent ||
@@ -141,8 +147,8 @@ const StoreInfo = ({data}: BasicInformationProps) => {
         }
         contentColor={
           storeData.content || data.storeContent
-            ? colors.secondary
-            : colors.disabled
+            ? colors.text.secondary
+            : colors.text.disabled
         }
         onClick={storeAdd}
       />

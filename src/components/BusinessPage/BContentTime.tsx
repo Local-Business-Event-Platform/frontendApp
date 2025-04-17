@@ -55,7 +55,6 @@ export default BContentTime;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 24,
     gap: SWidth * 8,
   },
 

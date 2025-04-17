@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: SWidth * 8,
     borderWidth: 1.25,
-    borderColor: colors.interactive.primary,
+    borderColor: colors.border.interactive.primary,
   },
 });

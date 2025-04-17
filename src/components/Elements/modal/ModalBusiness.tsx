@@ -16,7 +16,7 @@ const ModalBusiness = ({onPress}: OnPressProps) => {
         <SText
           fStyle="BlgSb"
           text={'이미지 등록하기'}
-          color={colors.tertiary}
+          color={colors.text.interactive.secondary}
         />
       </View>
       <View style={styles.inputContainer}>
@@ -27,13 +27,14 @@ const ModalBusiness = ({onPress}: OnPressProps) => {
         <SInput
           value=""
           title="메뉴명"
+          titleColor={colors.text.secondary}
           placeholder="메뉴명"
           onChangeText={() => {}}
         />
         <SInput
-          iconOn
           value=""
           title="가격"
+          titleColor={colors.text.secondary}
           textIcon="원"
           keyboardType="numeric"
           onChangeText={() => {}}
@@ -42,14 +43,14 @@ const ModalBusiness = ({onPress}: OnPressProps) => {
       <View style={styles.rowLine}>
         <SButton56
           title="닫기"
-          textColor={colors.secondary}
-          ButtonColor={'#FAFAFA'}
+          textColor={colors.icon.secondary}
+          ButtonColor={colors.bg.interactive.secondary}
           onPress={onPress!}
         />
         <SButton56
           title="메뉴 수정하기"
-          textColor={'white'}
-          ButtonColor={colors.interactive.primary}
+          textColor={colors.text.interactive.inverse}
+          ButtonColor={colors.bg.interactive.primary}
           onPress={() => {}}
         />
       </View>
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     gap: SWidth * 8,
     height: SWidth * 160,
     borderRadius: SWidth * 8,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: colors.bg.tertiary,
   },
 
   inputContainer: {

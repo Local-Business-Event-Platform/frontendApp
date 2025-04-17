@@ -31,14 +31,18 @@ const BusinessInfo = ({data}: BasicInformationProps) => {
       <BButtonTitle
         title="사업자 정보"
         buttonText={data.storeCEO ? '수정하기' : '등록하기'}
-        buttonTextColor={buttonClick ? 'white' : colors.tertiary}
+        buttonTextColor={
+          buttonClick
+            ? colors.text.interactive.inverse
+            : colors.text.interactive.secondary
+        }
         onClick={buttonClick}
         onPress={handleButton}
       />
       <BContentButtonText
         onClick={buttonClick}
         title="사업자 등록번호"
-        color={colors.tertiary}
+        color={colors.text.tertiary}
         content={
           storeData.StoreInfoNumber
             ? storeData.StoreInfoNumber
@@ -46,7 +50,9 @@ const BusinessInfo = ({data}: BasicInformationProps) => {
             ? data.storeInfoNumber
             : '000-00-00000'
         }
-        contentColor={data.storeInfoNumber ? colors.secondary : colors.disabled}
+        contentColor={
+          data.storeInfoNumber ? colors.text.secondary : colors.text.disabled
+        }
         onChangeText={text =>
           setStoreData({...storeData, StoreInfoNumber: text})
         }
@@ -57,7 +63,7 @@ const BusinessInfo = ({data}: BasicInformationProps) => {
         onClick={buttonClick}
         title="대표자명"
         placeholder="대표자명 입력"
-        color={colors.tertiary}
+        color={colors.text.tertiary}
         content={
           storeData.StoreCEO
             ? storeData.StoreCEO
@@ -65,7 +71,9 @@ const BusinessInfo = ({data}: BasicInformationProps) => {
             ? data.storeCEO
             : '대표자'
         }
-        contentColor={data.storeCEO ? colors.secondary : colors.disabled}
+        contentColor={
+          data.storeCEO ? colors.text.secondary : colors.text.disabled
+        }
         value={storeData.StoreCEO}
         onChangeText={text => setStoreData({...storeData, StoreCEO: text})}
       />

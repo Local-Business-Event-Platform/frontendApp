@@ -1,9 +1,11 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const CircleCheck24 = ({color = 'white'}: SvgColorProps) => {
+const CircleCheck24 = ({
+  color = colors.text.interactive.inverse,
+}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 24}

@@ -5,17 +5,15 @@ import Plus24 from '../../utils/svgs/businessPage/Plus24';
 import {TitleOnPressProps} from '../../utils/types/businessType';
 import SText from '../Elements/SText';
 
-const BAddButton = ({
-  title,
-  marginTop = SWidth * 24,
-  onPress,
-}: TitleOnPressProps) => {
+const BAddButton = ({title, onPress}: TitleOnPressProps) => {
   return (
-    <Pressable
-      style={[styles.container, {marginTop: marginTop}]}
-      onPress={onPress}>
+    <Pressable style={[styles.container]} onPress={onPress}>
       <Plus24 />
-      <SText fStyle="BlgSb" text={title} color={colors.tertiary} />
+      <SText
+        fStyle="BlgSb"
+        text={title}
+        color={colors.text.interactive.secondary}
+      />
     </Pressable>
   );
 };
@@ -32,6 +30,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: SWidth * 8,
     borderStyle: 'dashed',
-    borderColor: colors.disabled,
+    borderColor: colors.border.primary,
   },
 });

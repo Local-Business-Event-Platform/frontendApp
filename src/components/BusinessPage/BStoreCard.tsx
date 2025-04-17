@@ -5,6 +5,7 @@ import SImageCard from '../Elements/SImageCard';
 import SMeterBox from '../Elements/SMeterBox';
 import SReviewBox from '../Elements/SReviewBox';
 import SText from '../Elements/SText';
+import BEditButton from './BEditButton';
 type BStoreCardProps = {
   item: {
     id: number;
@@ -19,7 +20,10 @@ type BStoreCardProps = {
 
 const BStoreCard = ({item, onPress}: BStoreCardProps) => {
   return (
-    <SImageCard image={item.image} onPress={onPress}>
+    <SImageCard
+      image={item.image}
+      onPress={onPress}
+      childrenButton={<BEditButton />}>
       <View style={styles.container}>
         <View style={styles.contentTextContainer}>
           <View style={styles.rowContainer}>
@@ -27,7 +31,7 @@ const BStoreCard = ({item, onPress}: BStoreCardProps) => {
             <SText
               fStyle="BlgMd"
               text={item.category}
-              color={colors.disabled}
+              color={colors.text.disabled}
             />
           </View>
           <SReviewBox review={item.review} reviewCount={item.reviewCount} />

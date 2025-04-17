@@ -56,6 +56,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1.25,
     borderRadius: SWidth * 8,
-    borderColor: colors.secondary,
+    borderColor: colors.border.interactive.secondaryHovered,
   },
 });

@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    paddingHorizontal: SWidth * 17,
+    paddingHorizontal: SWidth * 16,
   },
 });

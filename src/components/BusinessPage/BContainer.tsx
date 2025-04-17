@@ -12,9 +12,10 @@ const styles = StyleSheet.create({
   container: {
     marginTop: SWidth * 24,
     borderWidth: 1,
-    borderColor: colors.interactive.secondary,
+    borderColor: colors.border.secondary,
     borderRadius: 8,
     padding: SWidth * 16,
     paddingBottom: SWidth * 24,
+    gap: SWidth * 24,
   },
 });

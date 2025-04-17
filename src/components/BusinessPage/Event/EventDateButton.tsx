@@ -7,7 +7,7 @@ import SText from '../../Elements/SText';
 const EventDateButton = ({title, icon, onPress}: EventDateButtonProps) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
-      <SText fStyle="BlgMd" text={title} color={colors.disabled} />
+      <SText fStyle="BlgMd" text={title} color={colors.text.disabled} />
       {icon}
     </Pressable>
   );

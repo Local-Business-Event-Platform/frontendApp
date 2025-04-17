@@ -25,7 +25,7 @@ const BContentAddress = ({
         lineColor={color}
       />
       {onClick ? (
-        <View style={styles.addressContainer}>
+        <View style={styles.container}>
           <SInput
             value={''}
             onChangeText={() => {}}
@@ -54,11 +54,6 @@ export default BContentAddress;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 24,
-    gap: SWidth * 8,
-  },
-
-  addressContainer: {
     gap: SWidth * 8,
   },
 });

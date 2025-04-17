@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {colors, fontFamilies, SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import CircleCheck24 from '../../../utils/svgs/businessPage/CircleCheck24';
 import Delete24 from '../../../utils/svgs/businessPage/Delete24';
 import {StoreCategoryInputProps} from '../../../utils/types/businessType';
@@ -24,7 +24,7 @@ const StoreCategoryInput = ({
       <Pressable
         style={[
           styles.iconContainer,
-          {backgroundColor: colors.interactive.primary},
+          {backgroundColor: colors.bg.interactive.primary},
         ]}
         onPress={addOnPress}>
         <CircleCheck24 />
@@ -32,7 +32,7 @@ const StoreCategoryInput = ({
       <Pressable
         style={[
           styles.iconContainer,
-          {backgroundColor: colors.interactive.secondary},
+          {backgroundColor: colors.bg.interactive.secondaryHovered},
         ]}
         onPress={deleteOnPress}>
         <Delete24 />
@@ -60,7 +60,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: SWidth * 8,
-    fontFamily: fontFamilies.pretendardMedium,
-    fontSize: SWidth * 16,
   },
 });

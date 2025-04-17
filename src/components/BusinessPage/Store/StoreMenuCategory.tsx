@@ -91,7 +91,6 @@ export default StoreMenuCategory;
 
 const styles = StyleSheet.create({
   categories: {
-    marginTop: SWidth * 24,
     gap: SWidth * 12,
   },
 

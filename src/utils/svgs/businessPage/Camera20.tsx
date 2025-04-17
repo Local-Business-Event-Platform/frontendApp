@@ -3,7 +3,7 @@ import Svg, {Path} from 'react-native-svg';
 import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const Camera20 = ({color = colors.interactive.primary}: SvgColorProps) => {
+const Camera20 = ({color = colors.icon.interactive.primary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 20}

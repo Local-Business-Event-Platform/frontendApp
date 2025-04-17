@@ -14,16 +14,27 @@ const StoreInfoTab = ({isClicked, setIsClicked}: StoreInfoTabProps) => {
           style={[
             styles.tabItem,
             {
-              backgroundColor: isClicked === index ? '#DBEAFE' : 'white',
-              borderBottomWidth: 2,
-              borderBottomColor: isClicked === index ? '#1447E6' : 'white',
+              paddingTop: isClicked === index ? 1 : 0,
+              backgroundColor:
+                isClicked === index
+                  ? colors.bg.interactive.selected
+                  : colors.bg.primary,
+              borderBottomWidth: isClicked === index ? 2 : 1,
+              borderBottomColor:
+                isClicked === index
+                  ? colors.border.interactive.primary
+                  : colors.border.secondary,
             },
           ]}
           onPress={() => setIsClicked(index)}>
           <SText
             fStyle="BlgMd"
             text={menu}
-            color={isClicked === index ? '#1447E6' : colors.secondary}
+            color={
+              isClicked === index
+                ? colors.text.interactive.selected
+                : colors.text.secondary
+            }
           />
         </Pressable>
       ))}

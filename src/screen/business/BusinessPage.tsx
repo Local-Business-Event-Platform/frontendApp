@@ -16,7 +16,7 @@ const BusinessPage = () => {
       reviewCount: 32,
       category: '한식',
       image: Image.resolveAssetSource(
-        require('../../assets/images/no_image.jpg'),
+        require('../../assets/images/background.png'),
       ).uri,
     },
     {
@@ -26,7 +26,7 @@ const BusinessPage = () => {
       reviewCount: 32,
       category: '한식',
       image: Image.resolveAssetSource(
-        require('../../assets/images/no_image.jpg'),
+        require('../../assets/images/background.png'),
       ).uri,
     },
     {
@@ -44,7 +44,6 @@ const BusinessPage = () => {
     <View style={styles.container}>
       <View style={{paddingHorizontal: SWidth * 16}}>
         <BAddButton
-          marginTop={SWidth * 16}
           title="가게 추가하기"
           onPress={() => {
             navigation.navigate('storeInfo');
@@ -52,22 +51,20 @@ const BusinessPage = () => {
         />
       </View>
       {data && (
-        <View style={styles.listContainer}>
-          <SFlatList
-            data={data}
-            paddingBottom={SWidth * 100}
-            gap={SWidth * 20}
-            skeleton={<SImageCardLoading count={3} />}
-            dataItem={({item}) => (
-              <BStoreCard
-                item={item}
-                onPress={() => {
-                  navigation.navigate('storeInfo', {data: item});
-                }}
-              />
-            )}
-          />
-        </View>
+        <SFlatList
+          data={data}
+          paddingBottom={SWidth * 100}
+          gap={SWidth * 20}
+          skeleton={<SImageCardLoading count={3} />}
+          dataItem={({item}) => (
+            <BStoreCard
+              item={item}
+              onPress={() => {
+                navigation.navigate('storeInfo', {data: item});
+              }}
+            />
+          )}
+        />
       )}
     </View>
   );
@@ -79,9 +76,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: 'relative',
-  },
-
-  listContainer: {
-    marginTop: SWidth * 24,
+    paddingTop: SWidth * 16,
+    gap: SWidth * 24,
   },
 });

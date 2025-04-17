@@ -44,7 +44,6 @@ export default BContentList;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 24,
     gap: SWidth * 8,
   },
 });

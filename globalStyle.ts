@@ -32,10 +32,12 @@ export const colors = {
     },
   },
   border: {
+    primary: '#A1A1A1',
     interactive: {
       primary: '#155DFC',
       secondary: '#525252',
       danger: '#E7000B',
+      secondaryHovered: '#404040',
     },
     secondary: '#E5E5E5',
   },

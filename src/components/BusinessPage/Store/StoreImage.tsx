@@ -80,9 +80,7 @@ const StoreImage = ({
 export default StoreImage;
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: SWidth * 24,
-  },
+  container: {},
 
   imageContainer: {
     width: '100%',
@@ -111,7 +109,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: SWidth * 16,
-    backgroundColor: '#FFFFFFE6',
+    backgroundColor: `${colors.bg.primary}E6`,
     gap: SWidth * 8,
   },
 

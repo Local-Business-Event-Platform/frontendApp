@@ -53,7 +53,7 @@ const SCarousel = ({
           data={images}
           dotStyle={styles.dotStyle}
           activeDotStyle={styles.activeDotStyle}
-          containerStyle={{gap: SWidth * 8, marginBottom: SWidth * 16}}
+          containerStyle={{gap: SWidth * 8, marginBottom: SWidth * 8}}
           onPress={onPressPagination}
         />
       </View>
@@ -75,6 +75,8 @@ const styles = StyleSheet.create({
   },
 
   dotStyle: {
+    width: SWidth * 8,
+    height: SWidth * 8,
     backgroundColor: '#FFFFFFA6',
     borderRadius: 999,
   },

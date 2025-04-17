@@ -45,7 +45,7 @@ const BContentArea = ({
         <SText
           nLine={10}
           flexShrink={1}
-          lineHeight={SWidth * 24}
+          lineHeight={SWidth * 28}
           fStyle="BxlSb"
           text={content}
           color={contentColor}
@@ -59,7 +59,6 @@ export default BContentArea;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 24,
     gap: SWidth * 8,
   },
 

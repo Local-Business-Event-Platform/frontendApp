@@ -51,6 +51,13 @@ export const screenNames = {
   STORE_INFO: 'storeInfo',
 };
 
+export const modalNames = {
+  BUSINESS: 'business',
+  PASSWORD: 'password',
+  SETTING: 'setting',
+  DETAIL_PAGE: 'detailPage',
+};
+
 export const textItems = [
   {text: '아이디/비밀번호', color: colors.text.info},
   {text: '를 잊으셨나요?', color: colors.text.disabled},

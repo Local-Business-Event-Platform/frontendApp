@@ -79,7 +79,7 @@ const SInput = ({
                 <SText
                   fStyle="BlgMd"
                   text={textIcon!}
-                  color={colors.disabled}
+                  color={colors.text.disabled}
                 />
               </View>
             )}
