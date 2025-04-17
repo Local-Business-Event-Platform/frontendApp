@@ -109,7 +109,7 @@ const FindIdPassword = () => {
             }}
             borderColor={
               authCheck === 0 || authCheck === 1
-                ? colors.interactive.secondary
+                ? colors.border.secondary
                 : authCheck === 2
                 ? colors.tertiary
                 : colors.text.danger

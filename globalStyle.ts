@@ -16,7 +16,15 @@ export const colors = {
     tertiary: '#F5F5F5',
     interactive: {
       secondary: '#FAFAFA',
+      primary: '#155DFC',
     },
+  },
+  border: {
+    interactive: {
+      secondary: '#525252',
+      danger: '#E7000B',
+    },
+    secondary: '#E5E5E5',
   },
   primary: '#171717',
   secondary: '#404040',
@@ -25,7 +33,7 @@ export const colors = {
   white: '#FFFFFF',
   interactive: {
     primary: '#155DFC',
-    secondary: '#E5E5E5',
+    secondary: '#525252',
     selected: '#EFF6FF',
   },
   disabled: '#A1A1A1',

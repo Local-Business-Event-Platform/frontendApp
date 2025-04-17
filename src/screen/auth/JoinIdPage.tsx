@@ -12,9 +12,52 @@ const JoinIdPage = () => {
   const {userData, setUserData} = useUserData();
   const [passwordChecked, setPasswordChecked] = useState('');
   const [iconClicked, setIconClicked] = useState([true, true]);
-
+  const passwordRegex =
+    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,15}$/;
   const handleSubmit = async () => {
     navigation.navigate('success');
+  };
+
+  const passwordMagCheck = () => {
+    if (userData.password === '') {
+      return 'undefined';
+    } else if (passwordRegex.test(userData.password)) {
+      return 'success';
+    } else {
+      return 'error';
+    }
+  };
+
+  const passwordCheckMsg = () => {
+    if (passwordChecked === '') {
+      return 'undefined';
+    } else if (userData.password === passwordChecked) {
+      return 'success';
+    } else {
+      return 'error';
+    }
+  };
+
+  const handlePassword = () => {
+    if (passwordRegex.test(userData.password)) {
+      return '';
+    } else if (
+      userData.password !== '' &&
+      !passwordRegex.test(userData.password)
+    ) {
+      return '영문/숫자/특수문자 조합 8~15자';
+    }
+  };
+
+  const handlePasswordCheck = () => {
+    if (passwordChecked !== '' && passwordChecked === userData.password) {
+      return '비밀번호가 일치합니다';
+    } else if (
+      passwordChecked !== '' &&
+      passwordChecked !== userData.password
+    ) {
+      return '비밀번호가 일치하지 않습니다';
+    }
   };
 
   return (
@@ -24,11 +67,31 @@ const JoinIdPage = () => {
           <JoinTitle title1="아이디와 비밀번호를" title2="입력해 주세요." />
           <View style={styles.inputContainer}>
             <SInput
+              value={userData.nickname}
+              title="닉네임"
+              titleColor={colors.text.tertiary}
+              onChangeText={value =>
+                setUserData({...userData, nickname: value})
+              }
+              placeholder="닉네임 4~12자"
+              borderColor={
+                !userData.nickname
+                  ? colors.border.secondary
+                  : colors.interactive.secondary
+              }
+            />
+            <SInput
               value={userData.id}
               title="아이디"
-              onChangeText={text => setUserData({...userData, id: text})}
+              titleColor={colors.text.tertiary}
+              onChangeText={value => setUserData({...userData, id: value})}
               placeholder="영문/숫자 조합 4~12자"
               buttonTitle="중복 확인"
+              borderColor={
+                !userData.id
+                  ? colors.border.secondary
+                  : colors.interactive.secondary
+              }
               buttonOnPress={() => {}}
             />
             <SInput
@@ -37,8 +100,20 @@ const JoinIdPage = () => {
               iconOnPress={() => setIconClicked(prev => [!prev[0], prev[1]])}
               value={userData.password}
               title="비밀번호"
-              onChangeText={text => setUserData({...userData, password: text})}
+              titleColor={colors.text.tertiary}
+              onChangeText={value =>
+                setUserData({...userData, password: value})
+              }
               placeholder="영문/숫자/특수문자 모두 조합 8~15자"
+              msg={handlePassword()}
+              msgType={passwordMagCheck()}
+              borderColor={
+                passwordMagCheck() === 'undefined'
+                  ? colors.border.secondary
+                  : passwordMagCheck() === 'error'
+                  ? colors.text.danger
+                  : colors.tertiary
+              }
             />
             <SInput
               iconOn
@@ -46,8 +121,18 @@ const JoinIdPage = () => {
               iconOnPress={() => setIconClicked(prev => [prev[0], !prev[1]])}
               value={passwordChecked}
               title="비밀번호 확인"
-              onChangeText={text => setPasswordChecked(text)}
+              titleColor={colors.text.tertiary}
+              onChangeText={value => setPasswordChecked(value)}
               placeholder="비밀번호 재입력"
+              msg={handlePasswordCheck()}
+              msgType={passwordCheckMsg()}
+              borderColor={
+                passwordCheckMsg() === 'undefined'
+                  ? colors.border.secondary
+                  : passwordCheckMsg() === 'error'
+                  ? colors.text.danger
+                  : colors.tertiary
+              }
             />
           </View>
         </View>
@@ -76,9 +161,10 @@ const styles = StyleSheet.create({
 
   topContainer: {
     paddingHorizontal: SWidth * 8,
+    gap: SWidth * 56,
   },
+
   inputContainer: {
-    marginTop: SWidth * 40,
     gap: SWidth * 32,
   },
 

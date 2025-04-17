@@ -15,7 +15,11 @@ const Address = () => {
     <View style={styles.container}>
       <Postcode
         onError={() => {}}
-        style={{width: '100%', height: '100%'}}
+        style={styles.addressStyle}
+        jsOptions={{
+          hideEngBtn: true,
+          hideMapBtn: true,
+        }}
         onSelected={text => {
           setUserData({
             zonecode: text.zonecode,
@@ -34,5 +38,10 @@ export default Address;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+
+  addressStyle: {
+    width: '100%',
+    height: '100%',
   },
 });

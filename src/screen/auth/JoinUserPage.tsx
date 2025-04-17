@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -18,6 +18,24 @@ import {useUserData} from '../../store/userRoute';
 const JoinUserPage = () => {
   const navigation = useCustomNavigation();
   const {userData, setUserData} = useUserData();
+  const authNumber = '123123';
+  const [authCheck, setAuthCheck] = useState<number>(0);
+  const [authNumberCheck, setAuthNumberCheck] = useState('');
+  const handleSendAuth = () => {
+    if (authCheck === 1) {
+      return '인증번호가 일치합니다';
+    } else if (authCheck === 2) {
+      return '인증번호가 불일치합니다';
+    }
+  };
+
+  const handleSendAuthNumber = () => {
+    if (authNumber === authNumberCheck) {
+      setAuthCheck(1);
+    } else if (authNumber !== authNumberCheck) {
+      setAuthCheck(2);
+    }
+  };
 
   const handleNextPage = () => {
     if (
@@ -25,7 +43,8 @@ const JoinUserPage = () => {
       userData.phone === '' ||
       userData.zonecode === null ||
       userData.address === '' ||
-      userData.detailAddress === ''
+      userData.detailAddress === '' ||
+      authCheck !== 1
     ) {
       console.log('모든 정보를 입력해주세요.');
       return;
@@ -53,46 +72,96 @@ const JoinUserPage = () => {
               <SInput
                 value={userData.name}
                 title="이름"
-                onChangeText={text => setUserData({...userData, name: text})}
+                titleColor={colors.text.tertiary}
+                onChangeText={value => setUserData({...userData, name: value})}
                 placeholder="실명 입력"
+                borderColor={
+                  userData.name === ''
+                    ? colors.border.secondary
+                    : colors.border.interactive.secondary
+                }
               />
-              <View style={styles.phoneInputContainer}>
+              <View style={styles.gapContainer}>
                 <SInput
                   value={userData.phone}
                   title="휴대폰번호"
+                  titleColor={colors.text.tertiary}
                   keyboardType="numeric"
-                  onChangeText={text => setUserData({...userData, phone: text})}
+                  onChangeText={value =>
+                    setUserData({...userData, phone: value})
+                  }
                   placeholder="´-´없이 번호만 입력"
+                  borderColor={
+                    userData.phone === ''
+                      ? colors.border.secondary
+                      : colors.border.interactive.secondary
+                  }
                   buttonTitle="인증번호 전송"
                   buttonOnPress={() => {}}
                 />
                 <SInput
-                  value=""
-                  onChangeText={() => {}}
+                  value={authNumberCheck}
+                  onChangeText={value => {
+                    setAuthCheck(0);
+                    setAuthNumberCheck(value);
+                  }}
+                  keyboardType="numeric"
                   buttonTitle="확인"
-                  buttonOnPress={() => {}}
+                  placeholder="인증번호 6자리 입력"
+                  msg={handleSendAuth()}
+                  msgType={
+                    authCheck === 0
+                      ? 'undefined'
+                      : authCheck === 1
+                      ? 'success'
+                      : 'error'
+                  }
+                  borderColor={
+                    authCheck === 0
+                      ? colors.border.secondary
+                      : authCheck === 1
+                      ? colors.border.interactive.secondary
+                      : colors.border.interactive.danger
+                  }
+                  buttonOnPress={handleSendAuthNumber}
                 />
               </View>
-              <View style={styles.addressInputContainer}>
+              <View style={styles.gapContainer}>
                 <SText fStyle="BmdMd" text={'주소'} />
                 <SInput
                   value={userData.zonecode?.toString()!}
                   onChangeText={() => {}}
                   editable={false}
                   buttonTitle="우편번호 검색"
+                  titleColor={colors.text.tertiary}
+                  borderColor={
+                    userData.zonecode
+                      ? colors.border.interactive.secondary
+                      : colors.border.secondary
+                  }
                   buttonOnPress={() => navigation.navigate('address')}
                 />
                 <SInput
                   value={`${userData.address} ${userData.buildingName}`}
                   onChangeText={() => {}}
+                  borderColor={
+                    userData.address
+                      ? colors.border.interactive.secondary
+                      : colors.border.secondary
+                  }
                   editable={false}
                 />
                 <SInput
                   value={userData.detailAddress}
-                  onChangeText={text =>
+                  borderColor={
+                    userData.detailAddress
+                      ? colors.border.interactive.secondary
+                      : colors.border.secondary
+                  }
+                  onChangeText={value =>
                     setUserData({
                       ...userData,
-                      detailAddress: text,
+                      detailAddress: value,
                     })
                   }
                 />
@@ -125,21 +194,17 @@ const styles = StyleSheet.create({
 
   topContainer: {
     paddingHorizontal: SWidth * 8,
+    gap: SWidth * 48,
   },
 
   inputContainer: {
-    marginTop: SWidth * 40,
+    gap: SWidth * 32,
   },
 
-  phoneInputContainer: {
-    marginTop: SWidth * 32,
+  gapContainer: {
     gap: SWidth * 8,
   },
 
-  addressInputContainer: {
-    marginTop: SWidth * 32,
-    gap: SWidth * 8,
-  },
   buttonContainer: {
     height: SWidth * 56,
   },

@@ -21,7 +21,7 @@ const SInput = ({
   titleColor,
   value,
   buttonTitle,
-  borderColor = colors.interactive.secondary,
+  borderColor = colors.border.secondary,
   buttonOnPress,
   buttonDisabled,
   ButtonTextDecorationLine,

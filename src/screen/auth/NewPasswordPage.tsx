@@ -107,7 +107,7 @@ const NewPasswordPage = () => {
             msgType={passwordMagCheck()}
             borderColor={
               passwordMagCheck() === 'undefined'
-                ? colors.interactive.secondary
+                ? colors.border.secondary
                 : passwordMagCheck() === 'error'
                 ? colors.text.danger
                 : colors.tertiary
@@ -133,7 +133,7 @@ const NewPasswordPage = () => {
             msgType={passwordCheckMsg()}
             borderColor={
               passwordCheckMsg() === 'undefined'
-                ? colors.interactive.secondary
+                ? colors.border.secondary
                 : passwordCheckMsg() === 'error'
                 ? colors.text.danger
                 : colors.tertiary

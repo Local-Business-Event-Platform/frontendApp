@@ -5,30 +5,33 @@ import {JoinSuccessSubTitleProps} from '../../../utils/types/joinType';
 import SText from '../../Elements/SText';
 
 const JoinSuccessSubTitle = ({userType}: JoinSuccessSubTitleProps) => {
+  console.log('userType', userType);
   return (
     <View style={{gap: userType === 1 ? SWidth * 77 : SWidth * 53}}>
-      <SText
-        nLine={2}
-        flexShrink={1}
-        lineHeight={SWidth * 20}
-        fStyle="BlgRg"
-        text={
-          userType === 1
-            ? '놓치기 아까운 우리 동네 이벤트, 지금 확인하세요!'
-            : '우리 가게를 알릴 기회,'
-        }
-      />
-      {userType === 2 && (
-        <>
-          <SText
-            nLine={2}
-            flexShrink={1}
-            lineHeight={SWidth * 20}
-            fStyle="BlgRg"
-            text={'가게를 등록하고 첫 이벤트를 등록해보세요!'}
-          />
-        </>
-      )}
+      <View>
+        <SText
+          nLine={2}
+          flexShrink={1}
+          lineHeight={SWidth * 24}
+          fStyle="BlgRg"
+          text={
+            userType === 1
+              ? '놓치기 아까운 우리 동네 이벤트, 지금 확인하세요!'
+              : '우리 가게를 알릴 기회,'
+          }
+        />
+        {userType === 2 && (
+          <>
+            <SText
+              nLine={2}
+              flexShrink={1}
+              lineHeight={SWidth * 24}
+              fStyle="BlgRg"
+              text={'가게를 등록하고 첫 이벤트를 등록해보세요!'}
+            />
+          </>
+        )}
+      </View>
       <View style={styles.iconImage}>
         <SText
           fStyle="BlgSb"

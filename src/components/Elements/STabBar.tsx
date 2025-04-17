@@ -19,7 +19,7 @@ const STabBar = ({menuList, tabIndex, setTabIndex}: STabBarProps) => {
               borderColor:
                 tabIndex === item.id
                   ? colors.interactive.primary
-                  : colors.interactive.secondary,
+                  : colors.border.secondary,
             },
           ]}
           onPress={() => setTabIndex(item.id)}>

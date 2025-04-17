@@ -25,10 +25,12 @@ const SSwitchButton = ({click, onPress}: SSwitchButtonProps) => {
       style={[
         styles.container,
         {
-          backgroundColor: !click ? '#FAFAFA' : colors.interactive.primary,
+          backgroundColor: !click
+            ? colors.bg.interactive.secondary
+            : colors.bg.interactive.primary,
           borderColor: !click
-            ? colors.interactive.secondary
-            : colors.interactive.primary,
+            ? colors.border.secondary
+            : colors.bg.interactive.primary,
         },
       ]}>
       <Animated.View
