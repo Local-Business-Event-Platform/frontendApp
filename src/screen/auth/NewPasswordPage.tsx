@@ -109,8 +109,8 @@ const NewPasswordPage = () => {
               passwordMagCheck() === 'undefined'
                 ? colors.border.secondary
                 : passwordMagCheck() === 'error'
-                ? colors.text.danger
-                : colors.tertiary
+                ? colors.border.interactive.danger
+                : colors.border.interactive.secondary
             }
           />
           <SInput
@@ -135,8 +135,8 @@ const NewPasswordPage = () => {
               passwordCheckMsg() === 'undefined'
                 ? colors.border.secondary
                 : passwordCheckMsg() === 'error'
-                ? colors.text.danger
-                : colors.tertiary
+                ? colors.border.interactive.danger
+                : colors.border.interactive.secondary
             }
           />
         </View>
@@ -144,14 +144,16 @@ const NewPasswordPage = () => {
           <SButton56
             title="비밀번호 변경"
             ButtonColor={
+              userPassword.password !== '' &&
               userPassword.password === userPassword.passwordCheck
-                ? colors.interactive.primary
-                : '#FAFAFA'
+                ? colors.bg.interactive.primary
+                : colors.bg.interactive.secondary
             }
             textColor={
+              userPassword.password !== '' &&
               userPassword.password === userPassword.passwordCheck
                 ? 'white'
-                : colors.secondary
+                : colors.icon.secondary
             }
             disabled={
               userPassword.password === userPassword.passwordCheck

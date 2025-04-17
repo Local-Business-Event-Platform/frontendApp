@@ -20,12 +20,12 @@ const ModalPassword = ({setModalOpen}: ModalPasswordProps) => {
       <SText
         fStyle="BlgMd"
         text={'비밀번호가 성공적으로 변경되었습니다.'}
-        color={colors.secondary}
+        color={colors.text.secondary}
       />
       <View style={{width: '100%', height: SWidth * 56}}>
         <SButton56
           title="확인"
-          textColor={'white'}
+          textColor={colors.text.interactive.inverse}
           onPress={() => {
             navigation.reset({
               index: 0,
@@ -33,7 +33,7 @@ const ModalPassword = ({setModalOpen}: ModalPasswordProps) => {
             });
             setModalOpen(false);
           }}
-          ButtonColor={colors.interactive.primary}
+          ButtonColor={colors.bg.interactive.primary}
         />
       </View>
     </View>

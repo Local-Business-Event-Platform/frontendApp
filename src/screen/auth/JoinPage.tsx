@@ -13,7 +13,7 @@ const JoinPage = () => {
       <View style={styles.selectBoxContainer}>
         <JoinSelectedButton
           title="사용자 회원가입"
-          backgroundColor={colors.interactive.selected}
+          backgroundColor={colors.bg.infoSubtle}
           onPress={() => {
             setUserData({type: 1});
             navigation.navigate('terms');
@@ -21,7 +21,7 @@ const JoinPage = () => {
         />
         <JoinSelectedButton
           title="소상공인 회원가입"
-          backgroundColor={'#F5F5F5'}
+          backgroundColor={colors.bg.tertiary}
           onPress={() => {
             setUserData({type: 2});
             navigation.navigate('terms');

@@ -19,9 +19,9 @@ const SuccessPage = () => {
         </View>
         <View style={styles.buttonContainer}>
           <SButton56
-            ButtonColor={colors.interactive.primary}
+            ButtonColor={colors.bg.brand}
             title="둘러보기"
-            textColor={colors.white}
+            textColor={colors.text.interactive.inverse}
             onPress={() =>
               navigation.reset({
                 index: 0,

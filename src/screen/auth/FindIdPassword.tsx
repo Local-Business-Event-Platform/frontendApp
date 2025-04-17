@@ -90,18 +90,28 @@ const FindIdPassword = () => {
         <View style={styles.topContainer}>
           <SInput
             title="휴대폰 번호"
-            titleColor={colors.tertiary}
+            titleColor={colors.text.tertiary}
             value={userData.phone}
             keyboardType="numeric"
             msg={phoneAuth ? '인증번호가 전송되었습니다.' : ''}
             onChangeText={text => setUserData({...userData, phone: text})}
             placeholder={'´-´없이 번호만 입력'}
-            buttonTitle="인증번호 전송"
+            borderColor={
+              userData.phone
+                ? colors.border.interactive.secondary
+                : colors.border.secondary
+            }
+            buttonTitle={phoneAuth ? '재전송 (3:00)' : '인증번호 전송'}
+            buttonBackgroundColor={
+              phoneAuth
+                ? colors.bg.interactive.secondaryHovered
+                : colors.bg.interactive.secondary
+            }
             buttonOnPress={handlePhone}
           />
           <SInput
             title="인증번호"
-            titleColor={colors.tertiary}
+            titleColor={colors.text.tertiary}
             value={userData.authNumber}
             onChangeText={text => {
               setAuthCheck(0);
@@ -111,8 +121,8 @@ const FindIdPassword = () => {
               authCheck === 0 || authCheck === 1
                 ? colors.border.secondary
                 : authCheck === 2
-                ? colors.tertiary
-                : colors.text.danger
+                ? colors.border.interactive.secondary
+                : colors.border.interactive.danger
             }
             placeholder={'인증번호 6자리 입력'}
             buttonTitle="확인"
@@ -124,6 +134,11 @@ const FindIdPassword = () => {
                 : authCheck === 2
                 ? 'success'
                 : 'error'
+            }
+            buttonBackgroundColor={
+              authCheck !== 0
+                ? colors.bg.interactive.secondaryHovered
+                : colors.bg.interactive.secondary
             }
             buttonOnPress={handleSendAuthNumber}
           />

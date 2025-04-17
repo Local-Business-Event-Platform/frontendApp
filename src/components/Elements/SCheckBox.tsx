@@ -12,11 +12,11 @@ const SCheckBox = ({checkValue, onPress}: SCheckBoxProps) => {
         styles.container,
         {
           borderColor: checkValue
-            ? colors.interactive.primary
-            : colors.tertiary,
+            ? colors.bg.interactive.primary
+            : colors.border.interactive.secondary,
           backgroundColor: checkValue
-            ? colors.interactive.primary
-            : colors.white,
+            ? colors.bg.interactive.primary
+            : colors.bg.interactive.secondary,
         },
       ]}
       onPress={onPress}>

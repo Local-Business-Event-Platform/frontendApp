@@ -24,6 +24,7 @@ const SInput = ({
   borderColor = colors.border.secondary,
   buttonOnPress,
   buttonDisabled,
+  buttonBackgroundColor = colors.bg.interactive.secondary,
   ButtonTextDecorationLine,
   maxLength,
   onChangeText,
@@ -104,6 +105,7 @@ const SInput = ({
               title={buttonTitle}
               buttonOnPress={buttonOnPress}
               disabled={buttonDisabled}
+              backgroundColor={buttonBackgroundColor}
               textDecorationLine={ButtonTextDecorationLine}
             />
           )}
@@ -120,7 +122,7 @@ const SInput = ({
                 msgType === 'error'
                   ? colors.text.danger
                   : msgType === 'success'
-                  ? '#00A63E'
+                  ? colors.text.success
                   : colors.tertiary
               }
             />

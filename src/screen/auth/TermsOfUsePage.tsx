@@ -38,7 +38,7 @@ const TermsOfUsePage = () => {
       </View>
       <View style={styles.buttonContainer}>
         <SButton56
-          ButtonColor={colors.interactive.primary}
+          ButtonColor={colors.bg.interactive.primary}
           title="동의하고 본인 인증하기"
           textColor={colors.white}
           onPress={handleCheck}

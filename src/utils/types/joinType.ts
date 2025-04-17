@@ -15,6 +15,7 @@ export type JoinButtonProps = {
   title: string;
   buttonOnPress?: () => void;
   disabled?: boolean;
+  backgroundColor?: ColorValue;
   textDecorationLine?: 'underline' | 'none';
 };
 

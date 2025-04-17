@@ -29,12 +29,12 @@ const SCheckText = ({
             text={title}
             color={main ? colors.text.primary : colors.text.secondary}
           />
-          {main && <DownArrow24 color={colors.primary} />}
+          {main && <DownArrow24 color={colors.icon.primary} />}
         </View>
       </View>
       {arrow && (
         <Pressable onPress={arrowOnPress}>
-          <RightArrow24 />
+          <RightArrow24 color={colors.icon.primary} />
         </Pressable>
       )}
     </View>

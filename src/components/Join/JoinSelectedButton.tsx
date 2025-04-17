@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
   boxStyle: {
     width: '100%',
     height: SWidth * 248,
-    paddingTop: SWidth * 24,
     borderRadius: SWidth * 12,
     alignItems: 'center',
+    justifyContent: 'center',
   },
 });

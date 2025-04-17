@@ -8,11 +8,12 @@ const JoinButton = ({
   title,
   buttonOnPress,
   disabled,
+  backgroundColor,
   textDecorationLine,
 }: JoinButtonProps) => {
   return (
     <Pressable
-      style={styles.buttonContainer}
+      style={[styles.buttonContainer, {backgroundColor: backgroundColor}]}
       disabled={disabled}
       onPress={buttonOnPress}>
       <SText
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     height: SWidth * 48,
     paddingVertical: SWidth * 14,
     paddingHorizontal: SWidth * 24,
-    backgroundColor: '#FAFAFA',
+
     borderRadius: SWidth * 8,
   },
 });

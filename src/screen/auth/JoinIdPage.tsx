@@ -77,7 +77,7 @@ const JoinIdPage = () => {
               borderColor={
                 !userData.nickname
                   ? colors.border.secondary
-                  : colors.interactive.secondary
+                  : colors.border.interactive.secondary
               }
             />
             <SInput
@@ -90,7 +90,7 @@ const JoinIdPage = () => {
               borderColor={
                 !userData.id
                   ? colors.border.secondary
-                  : colors.interactive.secondary
+                  : colors.border.interactive.secondary
               }
               buttonOnPress={() => {}}
             />
@@ -111,8 +111,8 @@ const JoinIdPage = () => {
                 passwordMagCheck() === 'undefined'
                   ? colors.border.secondary
                   : passwordMagCheck() === 'error'
-                  ? colors.text.danger
-                  : colors.tertiary
+                  ? colors.border.interactive.danger
+                  : colors.border.interactive.secondary
               }
             />
             <SInput
@@ -130,15 +130,15 @@ const JoinIdPage = () => {
                 passwordCheckMsg() === 'undefined'
                   ? colors.border.secondary
                   : passwordCheckMsg() === 'error'
-                  ? colors.text.danger
-                  : colors.tertiary
+                  ? colors.border.interactive.danger
+                  : colors.border.interactive.secondary
               }
             />
           </View>
         </View>
         <View style={styles.buttonContainer}>
           <SButton56
-            ButtonColor={colors.interactive.primary}
+            ButtonColor={colors.bg.brand}
             title="완료"
             textColor={colors.white}
             onPress={handleSubmit}

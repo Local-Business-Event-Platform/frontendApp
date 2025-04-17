@@ -19,22 +19,12 @@ const LoginPage = () => {
   });
 
   const handleLogin = () => {
-    switch (true) {
-      case userData.id === '':
-        setErrorMsg({
-          ...errorMsg,
-          id: '아이디를 입력해주세요.',
-        });
-        break;
-      case userData.password === '':
-        setErrorMsg({
-          ...errorMsg,
-          password: '비밀번호를 입력해주세요.',
-        });
-        break;
-      default:
-        console.log('로그인 성공');
-        break;
+    if (!userData.id || !userData.password) {
+      setErrorMsg({
+        id: userData.id ? '' : '아이디가 일치하지 않습니다.',
+        password: userData.password ? '' : '영문/숫자/특수문자 조합 8~15자리',
+      });
+      return;
     }
   };
 
@@ -46,6 +36,7 @@ const LoginPage = () => {
           <View style={styles.inputContainer}>
             <SInput
               title="아이디"
+              titleColor={colors.text.tertiary}
               maxLength={20}
               msg={errorMsg.id}
               msgType="error"
@@ -60,9 +51,15 @@ const LoginPage = () => {
                   id: '',
                 });
               }}
+              borderColor={
+                userData.id
+                  ? colors.border.interactive.secondary
+                  : colors.border.secondary
+              }
             />
             <SInput
               title="비밀번호"
+              titleColor={colors.text.tertiary}
               maxLength={20}
               iconOn={true}
               iconOnPress={() => setPasswordOpen(!passwordOpen)}
@@ -80,13 +77,18 @@ const LoginPage = () => {
                   password: '',
                 });
               }}
+              borderColor={
+                userData.password
+                  ? colors.border.interactive.secondary
+                  : colors.border.secondary
+              }
             />
           </View>
           <View style={styles.loginButtonContainer}>
             <SButton56
               title="로그인"
-              textColor={colors.white}
-              ButtonColor={colors.interactive.primary}
+              textColor={colors.text.interactive.inverse}
+              ButtonColor={colors.bg.interactive.primary}
               onPress={handleLogin}
             />
           </View>
@@ -96,7 +98,7 @@ const LoginPage = () => {
           <View style={styles.buttonContainer}>
             <SButton56
               title="회원가입"
-              textColor={colors.text.secondary}
+              textColor={colors.icon.secondary}
               ButtonColor={colors.bg.interactive.secondary}
               onPress={() => navigation.navigate('join')}
             />

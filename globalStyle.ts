@@ -8,23 +8,36 @@ export const colors = {
     info: '#155DFC',
     warning: '#FFB800',
     disabled: '#A1A1A1',
+    success: '#00A63E',
     danger: '#E7000B',
+    interactive: {
+      inverse: '#FFFFFF',
+    },
   },
   bg: {
-    primary: '#171717',
+    primary: '#FFFFFF',
     secondary: '#404040',
     tertiary: '#F5F5F5',
+    brand: '#155DFC',
+    infoSubtle: '#EFF6FF',
     interactive: {
-      secondary: '#FAFAFA',
       primary: '#155DFC',
+      selected: '#EFF6FF',
+      secondary: '#FAFAFA',
+      secondaryHovered: '#E5E5E5',
     },
   },
   border: {
     interactive: {
+      primary: '#155DFC',
       secondary: '#525252',
       danger: '#E7000B',
     },
     secondary: '#E5E5E5',
+  },
+  icon: {
+    primary: '#171717',
+    secondary: '#404040',
   },
   primary: '#171717',
   secondary: '#404040',

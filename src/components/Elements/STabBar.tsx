@@ -13,12 +13,15 @@ const STabBar = ({menuList, tabIndex, setTabIndex}: STabBarProps) => {
           style={[
             styles.rowContainer,
             {
-              backgroundColor: tabIndex === item.id ? '#EFF6FF' : colors.white,
+              backgroundColor:
+                tabIndex === item.id
+                  ? colors.bg.interactive.selected
+                  : colors.bg.primary,
               paddingTop: tabIndex === item.id ? 1 : 0,
               borderBottomWidth: tabIndex === item.id ? 2 : 1,
               borderColor:
                 tabIndex === item.id
-                  ? colors.interactive.primary
+                  ? colors.border.interactive.primary
                   : colors.border.secondary,
             },
           ]}

@@ -52,7 +52,7 @@ const MainStackScreen = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName={'splash'}
+      initialRouteName={'login'}
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: 'white',

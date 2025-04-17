@@ -170,7 +170,7 @@ const JoinUserPage = () => {
           </View>
           <View style={styles.buttonContainer}>
             <SButton56
-              ButtonColor={colors.interactive.primary}
+              ButtonColor={colors.bg.brand}
               title="아이디, 비밀번호 입력하기"
               textColor={colors.white}
               onPress={handleNextPage}
