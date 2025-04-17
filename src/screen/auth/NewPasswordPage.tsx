@@ -16,41 +16,58 @@ const NewPasswordPage = () => {
     password: true,
     passwordCheck: true,
   });
+  const passwordRegex =
+    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,15}$/;
 
-  const [msgType, setMsgType] = useState({
-    password: 0,
-    passwordCheck: 0,
-  });
   const [passwordCheck, setPasswordCheck] = useState(false);
-  const handleMsg = (type: string) => {
-    if (type === 'password') {
-      switch (msgType.password) {
-        case 0:
-          return '';
-        case 1:
-          return '영문/숫자/특수문자 조합 8~15자';
-      }
-    } else if (type === 'passwordCheck') {
-      switch (msgType.passwordCheck) {
-        case 0:
-          return '';
-        case 1:
-          return '비밀번호를 일치하지 않습니다';
-        case 2:
-          return '비밀번호가 일치합니다';
-      }
+
+  const passwordMagCheck = () => {
+    if (userPassword.password === '') {
+      return 'undefined';
+    } else if (passwordRegex.test(userPassword.password)) {
+      return 'success';
+    } else {
+      return 'error';
+    }
+  };
+
+  const passwordCheckMsg = () => {
+    if (userPassword.passwordCheck === '') {
+      return 'undefined';
+    } else if (userPassword.passwordCheck === userPassword.password) {
+      return 'success';
+    } else {
+      return 'error';
+    }
+  };
+
+  const handlePassword = () => {
+    if (passwordRegex.test(userPassword.password)) {
+      return '';
+    } else if (
+      userPassword.password !== '' &&
+      !passwordRegex.test(userPassword.password)
+    ) {
+      return '영문/숫자/특수문자 조합 8~15자';
+    }
+  };
+
+  const handlePasswordCheck = () => {
+    if (
+      userPassword.password !== '' &&
+      userPassword.passwordCheck === userPassword.password
+    ) {
+      return '비밀번호가 일치합니다';
+    } else if (
+      userPassword.passwordCheck !== '' &&
+      userPassword.passwordCheck !== userPassword.password
+    ) {
+      return '비밀번호가 일치하지 않습니다';
     }
   };
 
   const handleSubmit = () => {
-    if (userPassword.password === '') {
-      setMsgType(prev => ({...prev, password: 1}));
-    } else {
-      setMsgType(prev => ({...prev, password: 0}));
-
-      setModalTitle('password');
-      setModalOpen(true);
-    }
+    console.log('비밀번호 변경');
   };
 
   return (
@@ -85,19 +102,13 @@ const NewPasswordPage = () => {
             }
             secureTextEntry={passwordOpen.password}
             placeholder={'영문/숫자/특수문자 모두 조합 8~15자'}
-            msg={handleMsg('password')}
-            msgType={
-              msgType.password === 0
-                ? 'undefined'
-                : msgType.password === 1
-                ? 'error'
-                : 'success'
-            }
+            msg={handlePassword()}
+            msgType={passwordMagCheck()}
             borderColor={
-              msgType.password === 0
+              passwordMagCheck() === 'undefined'
                 ? colors.interactive.secondary
-                : msgType.password === 1
-                ? '#E7000B'
+                : passwordMagCheck() === 'error'
+                ? colors.text.danger
                 : colors.tertiary
             }
           />
@@ -107,16 +118,6 @@ const NewPasswordPage = () => {
             value={userPassword.passwordCheck}
             onChangeText={text => {
               setUserPassword({...userPassword, passwordCheck: text});
-              // if (text === '') {
-              //   setMsgType(prev => ({...prev, passwordCheck: 0}));
-              //   setPasswordCheck(false);
-              // } else if (text === userPassword.password) {
-              //   setMsgType(prev => ({...prev, passwordCheck: 2}));
-              //   setPasswordCheck(true);
-              // } else {
-              //   setMsgType(prev => ({...prev, passwordCheck: 1}));
-              //   setPasswordCheck(false);
-              // }
             }}
             iconOn={true}
             iconOnPress={() =>
@@ -127,19 +128,13 @@ const NewPasswordPage = () => {
             }
             secureTextEntry={passwordOpen.passwordCheck}
             placeholder={'비밀번호 재입력'}
-            msg={handleMsg('passwordCheck')}
-            msgType={
-              msgType.passwordCheck === 0
-                ? 'undefined'
-                : msgType.passwordCheck === 1
-                ? 'error'
-                : 'success'
-            }
+            msg={handlePasswordCheck()}
+            msgType={passwordCheckMsg()}
             borderColor={
-              msgType.passwordCheck === 0
+              passwordCheckMsg() === 'undefined'
                 ? colors.interactive.secondary
-                : msgType.passwordCheck === 1
-                ? '#E7000B'
+                : passwordCheckMsg() === 'error'
+                ? colors.text.danger
                 : colors.tertiary
             }
           />
@@ -147,9 +142,21 @@ const NewPasswordPage = () => {
         <View>
           <SButton56
             title="비밀번호 변경"
-            ButtonColor={passwordCheck ? colors.interactive.primary : '#FAFAFA'}
-            textColor={passwordCheck ? 'white' : colors.secondary}
-            disabled={passwordCheck}
+            ButtonColor={
+              userPassword.password === userPassword.passwordCheck
+                ? colors.interactive.primary
+                : '#FAFAFA'
+            }
+            textColor={
+              userPassword.password === userPassword.passwordCheck
+                ? 'white'
+                : colors.secondary
+            }
+            disabled={
+              userPassword.password === userPassword.passwordCheck
+                ? false
+                : true
+            }
             onPress={handleSubmit}
           />
         </View>
