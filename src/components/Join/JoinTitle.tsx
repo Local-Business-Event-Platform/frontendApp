@@ -17,6 +17,6 @@ export default JoinTitle;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 42,
+    paddingTop: SWidth * 32,
   },
 });

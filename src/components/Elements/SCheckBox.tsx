@@ -7,7 +7,7 @@ import {SCheckBoxProps} from '../../utils/types/type';
 const SCheckBox = ({checkValue, onPress}: SCheckBoxProps) => {
   return (
     <Pressable
-      hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}
+      hitSlop={10}
       style={[
         styles.container,
         {

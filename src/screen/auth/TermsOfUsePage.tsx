@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
 
   topContainer: {
     paddingHorizontal: SWidth * 8,
+    gap: SWidth * 48,
   },
 
   buttonContainer: {

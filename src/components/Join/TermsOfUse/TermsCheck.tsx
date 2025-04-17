@@ -33,6 +33,7 @@ const TermsCheck = ({
   return (
     <View style={styles.container}>
       <SCheckText
+        main
         checkValue={isChecked}
         fStyle="BlgSb"
         title="약관에 모두 동의합니다. (선택 동의 포함)"
@@ -60,8 +61,9 @@ export default TermsCheck;
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    marginTop: SWidth * 40,
+    gap: SWidth * 22,
   },
+
   rowLine: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -70,7 +72,6 @@ const styles = StyleSheet.create({
   },
 
   checkContainer: {
-    marginTop: SWidth * 24,
     paddingLeft: SWidth * 24,
     gap: SWidth * 12,
   },

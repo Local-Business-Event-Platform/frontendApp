@@ -1,7 +1,8 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import RightArrow24 from '../../utils/svgs/auth/RightArrow24';
+import DownArrow24 from '../../utils/svgs/businessPage/DownArrow24';
 import {SCheckTextProps} from '../../utils/types/type';
 import SCheckBox from './SCheckBox';
 import SText from './SText';
@@ -12,19 +13,24 @@ const SCheckText = ({
   arrowOnPress,
   fStyle,
   title,
+  main,
   arrow,
 }: SCheckTextProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.rowLine}>
         <SCheckBox checkValue={checkValue} onPress={onPress} />
-        <SText
-          nLine={1}
-          flexShrink={1}
-          lineHeight={fStyle === 'BmdRg' ? SWidth * 16 : SWidth * 20}
-          fStyle={fStyle}
-          text={title}
-        />
+        <View style={styles.titleContainer}>
+          <SText
+            nLine={1}
+            flexShrink={1}
+            lineHeight={fStyle === 'BmdRg' ? SWidth * 20 : SWidth * 24}
+            fStyle={fStyle}
+            text={title}
+            color={main ? colors.text.primary : colors.text.secondary}
+          />
+          {main && <DownArrow24 color={colors.primary} />}
+        </View>
       </View>
       {arrow && (
         <Pressable onPress={arrowOnPress}>
@@ -43,6 +49,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+
+  titleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SWidth * 4,
   },
 
   rowLine: {

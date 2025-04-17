@@ -82,6 +82,7 @@ export type SCheckTextProps = {
   checkValue: boolean;
   onPress: () => void;
   arrowOnPress?: () => void;
+  main?: boolean;
   fStyle:
     | 'H4xl'
     | 'H3xl'

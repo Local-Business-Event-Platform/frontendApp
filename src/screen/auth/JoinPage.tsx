@@ -37,15 +37,12 @@ export default JoinPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    paddingTop: SWidth * 79,
     paddingHorizontal: SWidth * 24,
-    paddingBottom: SWidth * 32,
   },
 
   selectBoxContainer: {
     width: '100%',
-    marginTop: SWidth * 85,
     gap: SWidth * 24,
   },
 });
