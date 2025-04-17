@@ -20,9 +20,9 @@ const StoreDetailAppBar = () => {
       <SText fStyle="BlgMd" text={title} />
       <Pressable onPress={() => setClicked(!clicked)} hitSlop={10}>
         {clicked ? (
-          <FillHeart24 />
+          <FillHeart24 color={colors.icon.interactive.primary} />
         ) : (
-          <Heart24 color={colors.interactive.primary} />
+          <Heart24 color={colors.icon.interactive.primary} />
         )}
       </Pressable>
     </View>

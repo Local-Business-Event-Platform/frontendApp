@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
-import Star20 from '../../../utils/svgs/businessPage/Star20';
 import {StoreDetailContentProps} from '../../../utils/types/StoreDetailType';
+import SReviewBox from '../../Elements/SReviewBox';
 import SText from '../../Elements/SText';
 
 const StoreDetailContent = ({data}: StoreDetailContentProps) => {
@@ -10,14 +10,14 @@ const StoreDetailContent = ({data}: StoreDetailContentProps) => {
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <SText fStyle="BxlSb" text={data.title} />
-        <View style={styles.reviewContainer}>
-          <Star20 />
-          <SText fStyle="BmdSb" text={`${data.review} / 5.0`} />
-          <SText fStyle="BmdSb" text={`(${data.reviewCount})`} />
-        </View>
+        <SReviewBox
+          review={data.review}
+          reviewCount={data.reviewCount}
+          gap={SWidth * 2}
+        />
       </View>
       <SText
-        lineHeight={SWidth * 20}
+        lineHeight={SWidth * 24}
         flexShrink={1}
         nLine={100}
         fStyle="BlgRg"
@@ -37,15 +37,5 @@ const styles = StyleSheet.create({
 
   titleContainer: {
     gap: SWidth * 8,
-  },
-
-  reviewContainer: {
-    backgroundColor: '#FEFCE8',
-    flexDirection: 'row',
-    paddingHorizontal: SWidth * 4,
-    paddingVertical: SWidth * 2,
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-    gap: SWidth * 4,
   },
 });

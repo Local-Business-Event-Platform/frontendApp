@@ -24,13 +24,17 @@ const StoreDetailEventItem = ({item}: StoreDetailEventItemProps) => {
       <View style={styles.itemContentContainer}>
         <SText
           flexShrink={1}
-          nLine={2}
+          nLine={3}
           lineHeight={SWidth * 28}
           fStyle="BxlSb"
           text={item.title}
         />
         <StoreDetailIconTitle icon={<Calendar24 />} gap={SWidth * 4}>
-          <SText fStyle="BmdMd" text={item.title} color={colors.secondary} />
+          <SText
+            fStyle="BmdMd"
+            text={item.title}
+            color={colors.text.secondary}
+          />
         </StoreDetailIconTitle>
         <View style={styles.contentText}>
           {item.content.map((text, index) => (
@@ -38,7 +42,7 @@ const StoreDetailEventItem = ({item}: StoreDetailEventItemProps) => {
               key={index}
               fStyle="BmdMd"
               text={text}
-              color={colors.tertiary}
+              color={colors.text.tertiary}
             />
           ))}
         </View>

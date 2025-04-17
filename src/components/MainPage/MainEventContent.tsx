@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
@@ -58,32 +58,26 @@ const MainEventContent = () => {
   ];
 
   return (
-    <View style={styles.container}>
-      <SFlatList
-        data={list}
-        skeleton={<SImageCardLoading count={3} />}
-        paddingBottom={SWidth * 150}
-        gap={SWidth * 24}
-        dataItem={({item}) => (
-          <EventItem
-            clicked={clicked}
-            item={item}
-            onPress={() => {
-              setTitle(item.store);
-              navigation.navigate('detailPage', {item: item});
-            }}
-            likeOnPress={() => setClicked(!clicked)}
-          />
-        )}
-      />
-    </View>
+    <SFlatList
+      data={list}
+      skeleton={<SImageCardLoading count={3} />}
+      paddingBottom={SWidth * 150}
+      gap={SWidth * 24}
+      dataItem={({item}) => (
+        <EventItem
+          clicked={clicked}
+          item={item}
+          onPress={() => {
+            setTitle(item.store);
+            navigation.navigate('detailPage', {item: item});
+          }}
+          likeOnPress={() => setClicked(!clicked)}
+        />
+      )}
+    />
   );
 };
 
 export default MainEventContent;
 
-const styles = StyleSheet.create({
-  container: {
-    marginTop: SWidth * 24,
-  },
-});
+const styles = StyleSheet.create({});

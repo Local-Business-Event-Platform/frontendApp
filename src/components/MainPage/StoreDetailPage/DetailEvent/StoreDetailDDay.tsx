@@ -7,7 +7,11 @@ import SText from '../../../Elements/SText';
 const StoreDetailDDay = ({title}: BOnlyTitleProps) => {
   return (
     <View style={styles.container}>
-      <SText fStyle="BlgSb" text={title} color={'white'} />
+      <SText
+        fStyle="BlgSb"
+        text={title}
+        color={colors.text.interactive.inverse}
+      />
     </View>
   );
 };
@@ -20,8 +24,8 @@ const styles = StyleSheet.create({
     top: SWidth * 8,
     right: SWidth * 8,
     borderRadius: 999,
-    height: SWidth * 28,
-    backgroundColor: colors.interactive.primary,
+    height: SWidth * 32,
+    backgroundColor: colors.bg.interactive.primary,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: SWidth * 16,

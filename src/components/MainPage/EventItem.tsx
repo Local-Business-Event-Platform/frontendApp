@@ -19,26 +19,34 @@ const EventItem = ({item, clicked, onPress, likeOnPress}: EventItemProps) => {
       <View style={styles.container}>
         <SText fStyle="BxlSb" text={item.title} />
         <View style={styles.contentContainer}>
-          <View style={styles.rowContainer}>
-            <View style={styles.rowTitleContainer}>
+          <View style={[styles.rowContainer, {gap: SWidth * 8}]}>
+            <View style={[styles.rowContainer, {gap: SWidth * 4}]}>
               <Location24 />
               <SText
                 fStyle="BmdMd"
                 text={item.store}
-                color={colors.secondary}
+                color={colors.text.secondary}
               />
               <SText
                 fStyle="BmdMd"
                 text={`(${item.category})`}
-                color={colors.secondary}
+                color={colors.text.secondary}
               />
             </View>
             <SText fStyle="BmdMd" text={'·'} color={colors.secondary} />
-            <SText fStyle="BmdMd" text={item.km} color={colors.secondary} />
+            <SText
+              fStyle="BmdMd"
+              text={item.km}
+              color={colors.text.secondary}
+            />
           </View>
-          <View style={styles.rowTitleContainer}>
-            <Calendar24 color={colors.interactive.primary} />
-            <SText fStyle="BmdMd" text={item.date} color={colors.secondary} />
+          <View style={[styles.rowContainer, {gap: SWidth * 4}]}>
+            <Calendar24 color={colors.icon.interactive.primary} />
+            <SText
+              fStyle="BmdMd"
+              text={item.date}
+              color={colors.text.secondary}
+            />
           </View>
         </View>
       </View>
@@ -57,15 +65,8 @@ const styles = StyleSheet.create({
     gap: SWidth * 4,
   },
 
-  rowTitleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SWidth * 4,
-  },
-
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: SWidth * 8,
   },
 });

@@ -12,28 +12,42 @@ import DetailMap from './DetailMap';
 const StoreDetailInfo = ({data}: StoreDetailInfoProps) => {
   return (
     <View style={styles.container}>
-      <View style={styles.timeIconContainer}>
-        <Time24 />
-        <View style={styles.timeContainer}>
-          <SText fStyle="BlgMd" text={data.time} color={colors.secondary} />
-          <SText fStyle="BlgMd" text={data.holiday} color={'#525252B3'} />
+      <View style={{gap: 0}}>
+        <View style={styles.timeIconContainer}>
+          <Time24 />
+          <View style={styles.timeContainer}>
+            <SText
+              fStyle="BlgMd"
+              text={data.time}
+              color={colors.text.secondary}
+            />
+            <SText
+              fStyle="BlgMd"
+              text={data.holiday}
+              color={`${colors.text.tertiary}B3`}
+            />
+          </View>
         </View>
+        <StoreDetailIconTitle icon={<Calling24 />}>
+          <SText
+            fStyle="BlgMd"
+            text={data.call}
+            color={colors.text.secondary}
+          />
+        </StoreDetailIconTitle>
       </View>
-      <StoreDetailIconTitle icon={<Calling24 />}>
-        <SText fStyle="BlgMd" text={data.call} color={colors.secondary} />
-      </StoreDetailIconTitle>
       <View style={styles.addressContainer}>
         <StoreDetailIconTitle icon={<Location24 />}>
           <View style={styles.rowContainer}>
             <SText
               fStyle="BlgMd"
               text={data.address}
-              color={colors.secondary}
+              color={colors.text.secondary}
             />
             <SText
               fStyle="BlgMd"
               text={data.distance}
-              color={colors.disabled}
+              color={colors.text.disabled}
             />
           </View>
         </StoreDetailIconTitle>

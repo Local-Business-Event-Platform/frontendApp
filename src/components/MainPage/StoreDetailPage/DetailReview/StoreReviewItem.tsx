@@ -39,12 +39,12 @@ const styles = StyleSheet.create({
   container: {
     paddingVertical: SWidth * 24,
     gap: SWidth * 16,
-    borderColor: colors.interactive.secondary,
+    borderColor: colors.border.secondary,
   },
 
   userContainer: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'space-between',
   },
 });

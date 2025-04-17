@@ -24,16 +24,20 @@ const MainStoreItem = ({
         <View style={styles.titleContainer}>
           <View style={styles.rowContainer}>
             <SText fStyle="BlgSb" text={title} />
-            <SText fStyle="BmdMd" text={category} color={colors.disabled} />
+            <SText
+              fStyle="BmdMd"
+              text={category}
+              color={colors.text.disabled}
+            />
           </View>
           <Pressable
             style={styles.iconBox}
             hitSlop={10}
             onPress={() => setIsClicked(!isClicked)}>
             {isClicked ? (
-              <FillHeart24 />
+              <FillHeart24 color={colors.icon.interactive.primary} />
             ) : (
-              <Heart24 color={colors.interactive.primary} />
+              <Heart24 color={colors.icon.interactive.primary} />
             )}
           </Pressable>
         </View>
@@ -66,8 +70,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  titleReviewContainer: {},
-
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -79,15 +81,5 @@ const styles = StyleSheet.create({
     height: SWidth * 32,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-
-  reviewContainer: {
-    backgroundColor: '#FEFCE8',
-    flexDirection: 'row',
-    paddingHorizontal: SWidth * 4,
-    paddingVertical: SWidth * 2,
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-    gap: SWidth * 4,
   },
 });

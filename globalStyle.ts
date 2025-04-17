@@ -11,6 +11,9 @@ export const colors = {
     success: '#00A63E',
     danger: '#E7000B',
     interactive: {
+      primaryHovered: '#1447E6',
+      secondary: '#525252',
+      selected: '#155DFC',
       inverse: '#FFFFFF',
     },
   },
@@ -19,6 +22,7 @@ export const colors = {
     secondary: '#404040',
     tertiary: '#F5F5F5',
     brand: '#155DFC',
+    warningSubtle: '#FEFCE8',
     infoSubtle: '#EFF6FF',
     interactive: {
       primary: '#155DFC',
@@ -38,6 +42,12 @@ export const colors = {
   icon: {
     primary: '#171717',
     secondary: '#404040',
+    info02: '#FDC700',
+    interactive: {
+      primary: '#155DFC',
+      primaryHovered: '#1447E6',
+      secondary: '#525252',
+    },
   },
   primary: '#171717',
   secondary: '#404040',

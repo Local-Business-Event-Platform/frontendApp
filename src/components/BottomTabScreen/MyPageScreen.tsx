@@ -7,6 +7,7 @@ import MyPage from '../../screen/myPage/MyPage';
 import ParticipationPage from '../../screen/myPage/ParticipationPage';
 import RecentPage from '../../screen/myPage/RecentPage';
 import ReviewManagementPage from '../../screen/myPage/ReviewManagementPage';
+import {screenNames} from '../../utils/listData';
 import {StackOptionType} from '../../utils/types/type';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 
@@ -32,34 +33,34 @@ const MyPageScreen = () => {
           backgroundColor: 'white',
         },
       }}
-      initialRouteName="myPage">
+      initialRouteName={screenNames.MY_PAGE}>
       <Stack.Screen
-        name="myPage"
+        name={screenNames.MY_PAGE}
         component={MyPage}
         options={options({headerShown: true, title: '마이 페이지'})}
       />
       <Stack.Screen
-        name="myLocation"
+        name={screenNames.MY_LOCATION}
         component={MyLocationPage}
         options={options({headerShown: true, title: '동네 설정'})}
       />
       <Stack.Screen
-        name="recent"
+        name={screenNames.RECENT}
         component={RecentPage}
         options={options({headerShown: true, title: '최근 조회'})}
       />
       <Stack.Screen
-        name="participation"
+        name={screenNames.PARTICIPATION}
         component={ParticipationPage}
         options={options({headerShown: true, title: '참여 기록'})}
       />
       <Stack.Screen
-        name="reviewManagement"
+        name={screenNames.REVIEW_MANAGEMENT}
         component={ReviewManagementPage}
         options={options({headerShown: true, title: '리뷰 관리'})}
       />
       <Stack.Screen
-        name="interestStore"
+        name={screenNames.INTEREST_STORE}
         component={InterestStorePage}
         options={options({headerShown: true, title: '관심 가게'})}
       />

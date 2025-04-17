@@ -14,7 +14,9 @@ const NameComponent = ({focused, name}: NameComponentProps) => {
       <SText
         fStyle="BsmMd"
         text={name}
-        color={focused ? '#1447E6' : colors.secondary}
+        color={
+          focused ? colors.text.interactive.primaryHovered : colors.secondary
+        }
       />
     </View>
   );

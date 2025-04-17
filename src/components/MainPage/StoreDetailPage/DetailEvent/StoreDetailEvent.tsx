@@ -14,7 +14,7 @@ const StoreDetailEvent = ({data}: StoreDetailEventProps) => {
         gap={SWidth * 16}
         paddingHorizontal={SWidth * 24}
         paddingBottom={SWidth * 24}
-        horizontal={true}
+        horizontal
         skeleton={<EventItemLoading count={3} />}
         dataItem={({item}) => <StoreDetailEventItem item={item} />}
       />

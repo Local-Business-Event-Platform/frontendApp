@@ -16,6 +16,41 @@ import Question24 from './svgs/myPage/Question24';
 import Option24 from './svgs/Option24';
 import Pen24 from './svgs/storeDetailPage/Pen24';
 
+export const screenNames = {
+  SPLASH: 'splash',
+  LOGIN: 'login',
+  FIND: 'find',
+  PASSWORD: 'password',
+  BOTTOM_TAB: 'bottomTab',
+  TERMS: 'terms',
+  JOIN_USER: 'joinUser',
+  JOIN_ID: 'joinId',
+  SUCCESS: 'success',
+  ADDRESS: 'address',
+  JOIN: 'join',
+  MY_NOTIFICATION: 'myNotification',
+  SETTING: 'setting',
+  NOTICE: 'notice',
+  CUSTOMER: 'customer',
+  USER_UPDATE: 'userUpdate',
+  USER_INFO: 'userInfo',
+  BLOCK: 'block',
+  NOTIFICATION: 'notification',
+  SEARCH: 'search',
+  MAIN_PAGE: 'mainPage',
+  DETAIL_PAGE: 'detailPage',
+  MAP_PAGE: 'mapPage',
+  MY_PAGE: 'myPage',
+  MY_LOCATION: 'myLocation',
+  RECENT: 'recent',
+  PARTICIPATION: 'participation',
+  REVIEW_MANAGEMENT: 'reviewManagement',
+  INTEREST_STORE: 'interestStore',
+  COMMUNITY: 'community',
+  BUSINESS_PAGE: 'businessPage',
+  STORE_INFO: 'storeInfo',
+};
+
 export const textItems = [
   {text: '아이디/비밀번호', color: colors.text.info},
   {text: '를 잊으셨나요?', color: colors.text.disabled},
@@ -60,8 +95,16 @@ export const mainFilterItems = [
 ];
 
 export const storeDetailTabItems = [
-  {id: 1, title: '가게 정보', icon: <Gift24 color={colors.tertiary} />},
-  {id: 2, title: '이벤트', icon: <Home24 color={colors.tertiary} />},
+  {
+    id: 1,
+    title: '가게 정보',
+    icon: <Gift24 color={colors.text.interactive.secondary} />,
+  },
+  {
+    id: 2,
+    title: '이벤트',
+    icon: <Home24 color={colors.text.interactive.secondary} />,
+  },
   {id: 3, title: '후기', icon: <Pen24 />},
 ];
 

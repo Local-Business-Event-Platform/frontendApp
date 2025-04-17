@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
+import {colors} from '../../../../../globalStyle';
 import SText from '../../../Elements/SText';
 
 type ReviewDateProps = {
@@ -7,7 +8,13 @@ type ReviewDateProps = {
 };
 
 const ReviewDate = ({reviewDate}: ReviewDateProps) => {
-  return <SText fStyle="BsmRg" text={reviewDate} color={'#525252E6'} />;
+  return (
+    <SText
+      fStyle="BsmRg"
+      text={reviewDate}
+      color={`${colors.text.tertiary}E6`}
+    />
+  );
 };
 
 export default ReviewDate;

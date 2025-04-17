@@ -33,7 +33,11 @@ const MainFilter = ({search = true}: MainFilterProps) => {
               setonClicked(!onClicked);
             }}
           />
-          <SText fStyle="BmdMd" text={'내 주변'} color={colors.secondary} />
+          <SText
+            fStyle="BmdMd"
+            text={'내 주변'}
+            color={colors.text.secondary}
+          />
         </View>
       )}
     </View>

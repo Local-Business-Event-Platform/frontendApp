@@ -9,7 +9,7 @@ const SMeterBox = ({content}: SMeterBoxProps) => {
   return (
     <View style={styles.container}>
       <Location24 />
-      <SText fStyle="BmdMd" text={content} color={colors.secondary} />
+      <SText fStyle="BmdMd" text={content} color={colors.text.secondary} />
     </View>
   );
 };

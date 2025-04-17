@@ -8,7 +8,11 @@ import {OnPressProps} from '../../utils/types/businessType';
 const EventLikeButton = ({click, onPress}: OnPressProps) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
-      {click ? <FillHeart24 /> : <Heart24 color={colors.interactive.primary} />}
+      {click ? (
+        <FillHeart24 />
+      ) : (
+        <Heart24 color={colors.icon.interactive.primaryHovered} />
+      )}
     </Pressable>
   );
 };

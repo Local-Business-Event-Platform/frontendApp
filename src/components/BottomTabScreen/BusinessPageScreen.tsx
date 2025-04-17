@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import BusinessPage from '../../screen/business/BusinessPage';
 import StoreInfoPage from '../../screen/business/StoreInfoPage';
+import {screenNames} from '../../utils/listData';
 import {StackOptionType} from '../../utils/types/type';
 import JoinAppBar from './AppBar/JoinAppBar';
 import OnlyTitleAppBar from './AppBar/OnlyTitleAppBar';
@@ -39,9 +40,9 @@ const BusinessPageScreen = () => {
           backgroundColor: 'white',
         },
       }}
-      initialRouteName="businessPage">
+      initialRouteName={screenNames.BUSINESS_PAGE}>
       <Stack.Screen
-        name="businessPage"
+        name={screenNames.BUSINESS_PAGE}
         component={BusinessPage}
         options={options({
           headerShown: true,
@@ -50,7 +51,7 @@ const BusinessPageScreen = () => {
         })}
       />
       <Stack.Screen
-        name="storeInfo"
+        name={screenNames.STORE_INFO}
         component={StoreInfoPage}
         options={options({headerShown: true, screen: 'store'})}
       />

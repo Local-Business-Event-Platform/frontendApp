@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import MainPage from '../../screen/main/MainPage';
 import StoreDetailPage from '../../screen/main/StoreDetailPage';
+import {screenNames} from '../../utils/listData';
 import {StackOptionType} from '../../utils/types/type';
 import MainAppBar from './AppBar/MainAppBar';
 import StoreDetailAppBar from './AppBar/StoreDetailAppBar';
@@ -39,14 +40,14 @@ const MainPageScreen = () => {
           backgroundColor: 'white',
         },
       }}
-      initialRouteName="mainPage">
+      initialRouteName={screenNames.MAIN_PAGE}>
       <Stack.Screen
-        name="mainPage"
+        name={screenNames.MAIN_PAGE}
         component={MainPage}
         options={options({headerShown: true, screen: 'main'})}
       />
       <Stack.Screen
-        name="detailPage"
+        name={screenNames.DETAIL_PAGE}
         component={StoreDetailPage}
         options={{
           animation: 'fade_from_bottom',

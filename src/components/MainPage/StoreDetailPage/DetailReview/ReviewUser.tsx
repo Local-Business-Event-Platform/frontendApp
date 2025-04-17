@@ -1,7 +1,7 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../../globalStyle';
+import {colors, SWidth} from '../../../../../globalStyle';
 import FillStar16 from '../../../../utils/svgs/storeDetailPage/FillStar16';
 import Star16 from '../../../../utils/svgs/storeDetailPage/Star16';
 import SText from '../../../Elements/SText';
@@ -60,8 +60,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: SWidth * 4,
-    paddingVertical: SWidth * 2,
-    backgroundColor: '#FEFCE8',
-    alignSelf: 'flex-start',
+    backgroundColor: colors.bg.warningSubtle,
   },
 });

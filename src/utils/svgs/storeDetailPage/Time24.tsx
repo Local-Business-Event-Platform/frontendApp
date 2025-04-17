@@ -3,7 +3,7 @@ import Svg, {Path} from 'react-native-svg';
 import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const Time24 = ({color = colors.interactive.primary}: SvgColorProps) => {
+const Time24 = ({color = colors.icon.interactive.primary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 24}

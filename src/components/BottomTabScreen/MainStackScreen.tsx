@@ -20,6 +20,7 @@ import UserInfoPage from '../../screen/myPage/UserInfoPage';
 import UserUpdatePage from '../../screen/myPage/UserUpdatePage';
 import SplashScreen from '../../screen/SplashScreen';
 import {useUserData} from '../../store/userRoute';
+import {screenNames} from '../../utils/listData';
 import {StackOptionType} from '../../utils/types/type';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 import JoinAppBar from './AppBar/JoinAppBar';
@@ -52,7 +53,7 @@ const MainStackScreen = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName={'login'}
+      initialRouteName={screenNames.BOTTOM_TAB}
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: 'white',
@@ -64,27 +65,27 @@ const MainStackScreen = () => {
         },
       }}>
       <Stack.Screen
-        name="splash"
+        name={screenNames.SPLASH}
         component={SplashScreen}
         options={options({headerShown: false})}
       />
       <Stack.Screen
-        name="login"
+        name={screenNames.LOGIN}
         component={LoginPage}
         options={options({headerShown: false})}
       />
       <Stack.Screen
-        name="find"
+        name={screenNames.FIND}
         component={FindIdPassword}
         options={options({headerShown: true, title: '아이디/비밀번호 찾기'})}
       />
       <Stack.Screen
-        name="password"
+        name={screenNames.PASSWORD}
         component={NewPasswordPage}
         options={options({headerShown: true, title: '아이디/비밀번호 찾기'})}
       />
       <Stack.Screen
-        name="bottomTab"
+        name={screenNames.BOTTOM_TAB}
         component={BottomTab}
         options={{
           contentStyle: {
@@ -108,7 +109,7 @@ const MainStackScreen = () => {
         }}
       /> */}
       <Stack.Screen
-        name="terms"
+        name={screenNames.TERMS}
         component={TermsOfUsePage}
         options={options({
           headerShown: true,
@@ -116,7 +117,7 @@ const MainStackScreen = () => {
         })}
       />
       <Stack.Screen
-        name="joinUser"
+        name={screenNames.JOIN_USER}
         component={JoinUserPage}
         options={options({
           headerShown: true,
@@ -124,7 +125,7 @@ const MainStackScreen = () => {
         })}
       />
       <Stack.Screen
-        name="joinId"
+        name={screenNames.JOIN_ID}
         component={JoinIdPage}
         options={options({
           headerShown: true,
@@ -132,7 +133,7 @@ const MainStackScreen = () => {
         })}
       />
       <Stack.Screen
-        name="success"
+        name={screenNames.SUCCESS}
         component={SuccessPage}
         options={options({
           headerShown: true,
@@ -140,57 +141,57 @@ const MainStackScreen = () => {
         })}
       />
       <Stack.Screen
-        name="address"
+        name={screenNames.ADDRESS}
         component={Address}
         options={options({headerShown: false})}
       />
       <Stack.Screen
-        name="join"
+        name={screenNames.JOIN}
         component={JoinPage}
         options={options({headerShown: true, screen: 'join'})}
       />
       <Stack.Screen
-        name="myNotification"
+        name={screenNames.MY_NOTIFICATION}
         component={MyNotificationPage}
         options={options({headerShown: true, title: '알림 설정'})}
       />
       <Stack.Screen
-        name="setting"
+        name={screenNames.SETTING}
         component={SettingPage}
         options={options({headerShown: true, title: '설정'})}
       />
       <Stack.Screen
-        name="notice"
+        name={screenNames.NOTICE}
         component={NoticePage}
         options={options({headerShown: true, title: '공지사항'})}
       />
       <Stack.Screen
-        name="customer"
+        name={screenNames.CUSTOMER}
         component={CustomerPage}
         options={options({headerShown: true, title: '고객센터'})}
       />
       <Stack.Screen
-        name="userUpdate"
+        name={screenNames.USER_UPDATE}
         component={UserUpdatePage}
         options={options({headerShown: true, title: '회원 정보 변경'})}
       />
       <Stack.Screen
-        name="userInfo"
+        name={screenNames.USER_INFO}
         component={UserInfoPage}
         options={options({headerShown: true, title: '회원 정보 수정'})}
       />
       <Stack.Screen
-        name="block"
+        name={screenNames.BLOCK}
         component={BlockUserPage}
         options={options({headerShown: true, title: '차단 사용자 관리'})}
       />
       <Stack.Screen
-        name="notification"
+        name={screenNames.NOTIFICATION}
         component={NotificationPage}
         options={options({headerShown: true, title: '알림'})}
       />
       <Stack.Screen
-        name="search"
+        name={screenNames.SEARCH}
         component={SearchPage}
         options={options({headerShown: true, screen: 'search'})}
       />

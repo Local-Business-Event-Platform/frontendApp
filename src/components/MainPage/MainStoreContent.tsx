@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import SFlatList from '../Elements/SFlatList';
@@ -92,31 +92,25 @@ const MainStoreContent = () => {
   ];
 
   return (
-    <View style={styles.container}>
-      <SFlatList
-        data={list}
-        gap={SWidth * 16}
-        paddingBottom={SWidth * 100}
-        skeleton={<SImageCard2Loading count={4} />}
-        dataItem={({item}) => (
-          <MainStoreItem
-            storeImg={item.storeImg}
-            title={item.title}
-            category={item.category}
-            review={item.review}
-            reviewCount={item.reviewCount}
-            onPress={() => navigation.navigate('detailPage')}
-          />
-        )}
-      />
-    </View>
+    <SFlatList
+      data={data}
+      gap={SWidth * 16}
+      paddingBottom={SWidth * 100}
+      skeleton={<SImageCard2Loading count={4} />}
+      dataItem={({item}) => (
+        <MainStoreItem
+          storeImg={item.storeImg}
+          title={item.title}
+          category={item.category}
+          review={item.review}
+          reviewCount={item.reviewCount}
+          onPress={() => navigation.navigate('detailPage')}
+        />
+      )}
+    />
   );
 };
 
 export default MainStoreContent;
 
-const styles = StyleSheet.create({
-  container: {
-    marginTop: SWidth * 24,
-  },
-});
+const styles = StyleSheet.create({});

@@ -15,17 +15,24 @@ const StoreDetailTab = ({tabClicked, setTabClicked}: StoreDetailTabProps) => {
             styles.tabItem,
             {
               paddingTop: tabClicked === item.id ? 1 : 0,
-              backgroundColor: tabClicked === item.id ? '#FAFAFA' : 'white',
+              backgroundColor:
+                tabClicked === item.id
+                  ? colors.bg.interactive.secondary
+                  : colors.bg.primary,
               borderBottomWidth: tabClicked === item.id ? 2 : 1,
               borderColor:
                 tabClicked === item.id
-                  ? colors.tertiary
-                  : colors.interactive.secondary,
+                  ? colors.border.interactive.secondary
+                  : colors.border.secondary,
             },
           ]}
           onPress={() => setTabClicked(item.id)}>
           {item.icon}
-          <SText fStyle="BlgMd" text={item.title} color={colors.secondary} />
+          <SText
+            fStyle="BlgMd"
+            text={item.title}
+            color={colors.text.secondary}
+          />
         </Pressable>
       ))}
     </View>

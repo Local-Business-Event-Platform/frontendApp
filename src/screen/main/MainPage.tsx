@@ -34,5 +34,6 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingVertical: SWidth * 24,
+    gap: SWidth * 24,
   },
 });

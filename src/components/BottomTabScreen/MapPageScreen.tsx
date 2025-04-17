@@ -1,6 +1,7 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import MapPage from '../../screen/MapPage';
+import {screenNames} from '../../utils/listData';
 import SBottomSheet from '../BottomSheet/SBottomSheet';
 
 const MapPageScreen = () => {
@@ -17,9 +18,9 @@ const MapPageScreen = () => {
             backgroundColor: 'white',
           },
         }}
-        initialRouteName="mapPage">
+        initialRouteName={screenNames.MAP_PAGE}>
         <Stack.Screen
-          name="mapPage"
+          name={screenNames.MAP_PAGE}
           options={{
             title: '',
 

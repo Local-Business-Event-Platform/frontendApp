@@ -3,7 +3,7 @@ import Svg, {Path} from 'react-native-svg';
 import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const Pen24 = ({color = colors.tertiary}: SvgColorProps) => {
+const Pen24 = ({color = colors.text.interactive.secondary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 25}

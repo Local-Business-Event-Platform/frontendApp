@@ -3,6 +3,7 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import CommunityPage from '../../screen/CommunityPage';
+import {screenNames} from '../../utils/listData';
 
 const CommunityScreen = () => {
   const Stack = createNativeStackNavigator();
@@ -17,9 +18,9 @@ const CommunityScreen = () => {
           backgroundColor: 'white',
         },
       }}
-      initialRouteName="community">
+      initialRouteName={screenNames.COMMUNITY}>
       <Stack.Screen
-        name="community"
+        name={screenNames.COMMUNITY}
         options={{
           title: '',
           headerShown: false,

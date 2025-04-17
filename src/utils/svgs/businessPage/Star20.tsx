@@ -1,9 +1,9 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const Star20 = ({color = '#FDC700'}: SvgColorProps) => {
+const Star20 = ({color = colors.icon.info02}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 20}

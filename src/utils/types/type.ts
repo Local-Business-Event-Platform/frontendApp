@@ -145,6 +145,7 @@ export type SListButtonProps = {
 export type SReviewBoxProps = {
   review: number;
   reviewCount: number;
+  gap?: number;
 };
 
 export type SMeterBoxProps = {

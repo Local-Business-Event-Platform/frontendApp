@@ -26,14 +26,17 @@ const STabBar = ({menuList, tabIndex, setTabIndex}: STabBarProps) => {
             },
           ]}
           onPress={() => setTabIndex(item.id)}>
-          <item.icon focus={tabIndex} newColor={colors.interactive.primary} />
+          <item.icon
+            focus={tabIndex}
+            newColor={colors.text.interactive.selected}
+          />
           <SText
             fStyle="BlgMd"
             text={item.title}
             color={
               tabIndex === item.id
-                ? colors.interactive.primary
-                : colors.secondary
+                ? colors.text.interactive.selected
+                : colors.text.secondary
             }
           />
         </Pressable>
