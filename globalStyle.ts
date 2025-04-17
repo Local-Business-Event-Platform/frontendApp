@@ -43,6 +43,7 @@ export const colors = {
     primary: '#171717',
     secondary: '#404040',
     info02: '#FDC700',
+    disabled: '#A1A1A1',
     interactive: {
       primary: '#155DFC',
       primaryHovered: '#1447E6',

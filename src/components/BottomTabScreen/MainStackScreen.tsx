@@ -19,6 +19,7 @@ import SettingPage from '../../screen/myPage/SettingPage';
 import UserInfoPage from '../../screen/myPage/UserInfoPage';
 import UserUpdatePage from '../../screen/myPage/UserUpdatePage';
 import SplashScreen from '../../screen/SplashScreen';
+import {useModalOpen} from '../../store/modalRoute';
 import {useUserData} from '../../store/userRoute';
 import {screenNames} from '../../utils/listData';
 import {StackOptionType} from '../../utils/types/type';
@@ -31,7 +32,7 @@ const MainStackScreen = () => {
   const Stack = createNativeStackNavigator();
   const {userData} = useUserData();
   const insets = useSafeAreaInsets();
-
+  const {modalOpen} = useModalOpen();
   const options = ({
     headerShown,
     screen = undefined,
@@ -56,7 +57,8 @@ const MainStackScreen = () => {
       initialRouteName={screenNames.BOTTOM_TAB}
       screenOptions={{
         headerShown: false,
-        statusBarBackgroundColor: 'white',
+        statusBarBackgroundColor: modalOpen ? 'transparent' : 'white',
+        navigationBarHidden: modalOpen ? true : false,
         statusBarStyle: 'dark',
         navigationBarColor: 'white',
         contentStyle: {

@@ -3,7 +3,7 @@ import Svg, {Path} from 'react-native-svg';
 import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const CancelX24 = ({color = colors.text.disabled}: SvgColorProps) => {
+const CancelX24 = ({color = colors.icon.disabled}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 24}

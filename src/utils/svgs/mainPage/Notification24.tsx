@@ -1,6 +1,6 @@
 import React from 'react';
 import Svg, {Circle, ClipPath, Defs, G, Path, Rect} from 'react-native-svg';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 
 const Notification24 = () => {
   return (
@@ -28,7 +28,7 @@ const Notification24 = () => {
           cx="12"
           cy="4"
           r="1"
-          fill="#171717"
+          fill={colors.icon.primary}
           stroke="#292929"
           strokeWidth="1.5"
         />

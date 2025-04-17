@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {colors} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import SFlatList from '../../components/Elements/SFlatList';
 import NotificationLoading from '../../components/Elements/Skeleton/NotificationLoading';
 import NotificationItem from '../../components/MainPage/Notification/NotificationItem';
@@ -38,8 +38,7 @@ const NotificationPage = () => {
       id: 4,
       title: '관심가게',
       date: '2일 전',
-      content:
-        '카페 모카모카모카빈에서 새로운 이벤트를 등록했어요. 지금 확인해보세요.',
+      content: '카페 모카빈에서 새로운 이벤트를 등록했어요.',
       check: false,
     },
   ]);
@@ -47,28 +46,30 @@ const NotificationPage = () => {
   const renderIcon = (title: string) => {
     switch (title) {
       case '후기':
-        return <Pen24 color={colors.interactive.primary} />;
+        return <Pen24 color={colors.icon.interactive.primary} />;
       case '대글':
         return <Comment24 />;
       case '좋아요':
-        return <Heart24 color={colors.interactive.primary} />;
+        return <Heart24 color={colors.icon.interactive.primary} />;
       case '관심가게':
-        return <Home24 color={colors.interactive.primary} />;
+        return <Home24 color={colors.icon.interactive.primary} />;
     }
   };
-  console.log('NotificationPage', notificationData);
+
   return (
     <View style={styles.container}>
       <SFlatList
         data={notificationData}
+        paddingHorizontal={SWidth * 12}
         skeleton={<NotificationLoading count={4} />}
+        gap={SWidth * 4}
         dataItem={({item}) => (
           <NotificationItem
             icon={renderIcon(item.title)!}
             title={item.title}
             date={item.date}
             content={item.content}
-            opacity={item.check ? 0.3 : 1}
+            opacity={item.check ? 0.4 : 1}
             onPress={() => {
               setNotificationData(prev =>
                 prev.map(checked =>

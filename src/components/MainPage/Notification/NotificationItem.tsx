@@ -17,16 +17,16 @@ const NotificationItem = ({
       {icon}
       <View style={styles.textContainer}>
         <View style={styles.titleContainer}>
-          <SText fStyle="BmdSb" text={title} color={colors.disabled} />
+          <SText fStyle="BmdSb" text={title} />
           <SText fStyle="BmdMd" text={date} color={colors.text.disabled} />
         </View>
         <SText
           flexShrink={1}
-          lineHeight={SWidth * 24}
+          lineHeight={SWidth * 20}
           nLine={10}
-          fStyle="BlgRg"
+          fStyle="BmdRg"
           text={content}
-          color={colors.black}
+          color={colors.text.tertiary}
         />
       </View>
     </Pressable>
@@ -37,7 +37,7 @@ export default NotificationItem;
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: SWidth * 24,
+    paddingHorizontal: SWidth * 16,
     paddingVertical: SWidth * 20,
     flexDirection: 'row',
     gap: SWidth * 8,
@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
 
   textContainer: {
     flex: 1,
-    gap: SWidth * 4,
   },
 
   titleContainer: {

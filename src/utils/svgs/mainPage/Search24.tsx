@@ -3,7 +3,7 @@ import Svg, {Path} from 'react-native-svg';
 import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const Search24 = ({color = colors.primary}: SvgColorProps) => {
+const Search24 = ({color = colors.icon.primary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 24}

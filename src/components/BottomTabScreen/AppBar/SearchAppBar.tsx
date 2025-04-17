@@ -23,7 +23,7 @@ const SearchAppBar = () => {
       <View style={styles.inputContainer}>
         <SearchInput
           value={title}
-          onChangeText={text => setTitle(text)}
+          onChangeText={value => setTitle(value)}
           onSubmitEditing={handleSubmit}
           onPress={() => {
             setTitle('');

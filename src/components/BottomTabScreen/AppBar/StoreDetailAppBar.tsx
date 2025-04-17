@@ -17,7 +17,7 @@ const StoreDetailAppBar = () => {
       <Pressable onPress={() => navigation.goBack()}>
         <BackArrow24 />
       </Pressable>
-      <SText fStyle="BlgMd" text={title} />
+      <SText fStyle="BlgMd" text={title} color={colors.text.secondary} />
       <Pressable onPress={() => setClicked(!clicked)} hitSlop={10}>
         {clicked ? (
           <FillHeart24 color={colors.icon.interactive.primary} />

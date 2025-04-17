@@ -1,6 +1,8 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
+import {useModalOpen} from '../../../../store/modalRoute';
+import More24 from '../../../../utils/svgs/myPage/More24';
 import ReviewContent from './ReviewContent';
 import ReviewDate from './ReviewDate';
 import ReviewUser from './ReviewUser';
@@ -18,6 +20,7 @@ type StoreReviewItemProps = {
 };
 
 const StoreReviewItem = ({item, lastItem}: StoreReviewItemProps) => {
+  const {setModalTitle, setModalOpen, setId} = useModalOpen();
   return (
     <View style={[styles.container, !lastItem && {borderBottomWidth: 1}]}>
       <View style={styles.userContainer}>
@@ -26,7 +29,20 @@ const StoreReviewItem = ({item, lastItem}: StoreReviewItemProps) => {
           userName={item.userName}
           reviewStar={item.reviewStar}
         />
-        <ReviewDate reviewDate={item.reviewDate} />
+        <View style={styles.dateContainer}>
+          <ReviewDate reviewDate={item.reviewDate} />
+          {
+            <Pressable
+              style={styles.iconBox}
+              onPress={() => {
+                setId(item.id);
+                setModalTitle('detailPage');
+                setModalOpen(true);
+              }}>
+              <More24 />
+            </Pressable>
+          }
+        </View>
       </View>
       <ReviewContent content={item.reviewContent} />
     </View>
@@ -46,5 +62,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+
+  dateContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: SWidth * 4,
+  },
+
+  iconBox: {
+    width: SWidth * 40,
+    height: SWidth * 40,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

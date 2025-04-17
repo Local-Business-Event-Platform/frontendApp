@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import CancelX24 from '../../../utils/svgs/mainPage/CancelX24';
 import History24 from '../../../utils/svgs/myPage/History24';
 import {KeywordItemProps} from '../../../utils/types/mainType';
@@ -10,7 +10,7 @@ const KeywordItem = ({title, onPress, cancelOnPress}: KeywordItemProps) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
       <View style={styles.titleContainer}>
-        <History24 color={'#525252'} />
+        <History24 color={colors.icon.interactive.secondary} />
         <SText fStyle="BlgRg" text={title} />
       </View>
       <Pressable hitSlop={10} onPress={cancelOnPress}>

@@ -31,7 +31,7 @@ const SearchInput = ({
       {
         <Pressable style={styles.iconContainer} onPress={onPress}>
           {value === '' ? (
-            <Search24 color={colors.text.primary} />
+            <Search24 color={colors.icon.primary} />
           ) : (
             <Cancel24 />
           )}

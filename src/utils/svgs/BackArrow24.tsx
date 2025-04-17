@@ -3,7 +3,7 @@ import Svg, {Path} from 'react-native-svg';
 import {colors, SWidth} from '../../../globalStyle';
 import {SvgColorProps} from '../types/svgType';
 
-const BackArrow24 = ({color = colors.primary}: SvgColorProps) => {
+const BackArrow24 = ({color = colors.icon.primary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 25}
