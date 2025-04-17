@@ -26,8 +26,8 @@ const UserUpdatePage = () => {
       <View style={styles.buttonContainer}>
         <SButton56
           title="확인"
-          textColor={colors.white}
-          ButtonColor={colors.interactive.primary}
+          textColor={colors.text.interactive.inverse}
+          ButtonColor={colors.bg.interactive.primary}
           onPress={handleSubmit}
         />
       </View>

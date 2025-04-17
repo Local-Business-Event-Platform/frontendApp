@@ -15,12 +15,13 @@ const UserUpdateInput = ({
     <View style={styles.container}>
       <SInputSuccess
         title="아이디"
+        titleColor={colors.text.tertiary}
         content={userId}
-        contentColor={colors.secondary}
+        contentColor={colors.text.secondary}
       />
       <SInput
         title="비밀번호 확인"
-        titleColor={colors.tertiary}
+        titleColor={colors.text.tertiary}
         value={value}
         onChangeText={onChangeText}
         placeholder="비밀번호 재입력"
@@ -37,9 +38,5 @@ export default UserUpdateInput;
 const styles = StyleSheet.create({
   container: {
     gap: SWidth * 32,
-  },
-
-  idContainer: {
-    gap: SWidth * 8,
   },
 });

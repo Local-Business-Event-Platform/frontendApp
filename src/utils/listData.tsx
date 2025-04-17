@@ -128,14 +128,14 @@ export const userMyPageList: MenuItem[] = [
     id: 1,
     icon: CircleUser24,
     title: '회원 정보 수정',
-    navigation: 'userUpdate',
+    navigation: screenNames.USER_UPDATE,
   },
-  {id: 2, icon: Map24, title: '동네 설정', navigation: 'myLocation'},
+  {id: 2, icon: Map24, title: '동네 설정', navigation: screenNames.MY_LOCATION},
   {
     id: 3,
     icon: CircleCheck24,
     title: '알림 설정',
-    navigation: 'myNotification',
+    navigation: screenNames.MY_NOTIFICATION,
   },
   {id: 4, icon: QR24, title: 'QR 코드 스캔', navigation: ''},
   {
@@ -143,10 +143,10 @@ export const userMyPageList: MenuItem[] = [
     icon: Option24,
     title: '설정',
     marginTop: true,
-    navigation: 'setting',
+    navigation: screenNames.SETTING,
   },
-  {id: 6, icon: Notice24, title: '공지사항', navigation: 'notice'},
-  {id: 7, icon: Help24, title: '고객센터', navigation: 'customer'},
+  {id: 6, icon: Notice24, title: '공지사항', navigation: screenNames.NOTICE},
+  {id: 7, icon: Help24, title: '고객센터', navigation: screenNames.CUSTOMER},
 ];
 
 export const storeMyPageList: MenuItem[] = [
@@ -154,14 +154,19 @@ export const storeMyPageList: MenuItem[] = [
     id: 1,
     icon: CircleUser24,
     title: '회원 정보 수정',
-    navigation: 'userUpdate',
+    navigation: screenNames.USER_UPDATE,
   },
-  {id: 2, icon: Map24, title: '차단 사용자 관리', navigation: 'block'},
+  {
+    id: 2,
+    icon: Map24,
+    title: '차단 사용자 관리',
+    navigation: screenNames.BLOCK,
+  },
   {
     id: 3,
     icon: CircleCheck24,
     title: '알림 설정',
-    navigation: 'myNotification',
+    navigation: screenNames.MY_NOTIFICATION,
   },
   {id: 4, icon: QR24, title: 'QR 코드 스캔', navigation: ''},
   {
@@ -169,32 +174,32 @@ export const storeMyPageList: MenuItem[] = [
     icon: Option24,
     title: '설정',
     marginTop: true,
-    navigation: 'setting',
+    navigation: screenNames.SETTING,
   },
-  {id: 6, icon: Notice24, title: '공지사항', navigation: 'notice'},
-  {id: 7, icon: Help24, title: '고객센터', navigation: 'customer'},
+  {id: 6, icon: Notice24, title: '공지사항', navigation: screenNames.NOTICE},
+  {id: 7, icon: Help24, title: '고객센터', navigation: screenNames.CUSTOMER},
 ];
 
 export const myPageUserDataList = [
   {
     id: 1,
     title: '최근 조회',
-    onPress: 'recent',
+    onPress: screenNames.RECENT,
   },
   {
     id: 2,
     title: '참여 기록',
-    onPress: 'participation',
+    onPress: screenNames.PARTICIPATION,
   },
   {
     id: 3,
     title: '리뷰 관리',
-    onPress: 'reviewManagement',
+    onPress: screenNames.REVIEW_MANAGEMENT,
   },
   {
     id: 4,
     title: '관심 가게',
-    onPress: 'interestStore',
+    onPress: screenNames.INTEREST_STORE,
   },
 ];
 

@@ -15,7 +15,7 @@ const ContentItem = ({icon, title, onPress}: ContentItemProps) => {
     <Pressable onPress={onPress} style={styles.container}>
       <View style={styles.rowLine}>
         {icon}
-        <SText fStyle="BlgRg" text={title} color={colors.secondary} />
+        <SText fStyle="BlgRg" text={title} color={colors.text.secondary} />
       </View>
 
       <RightArrow24 />

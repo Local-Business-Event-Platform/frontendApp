@@ -19,7 +19,7 @@ export const colors = {
   },
   bg: {
     primary: '#FFFFFF',
-    secondary: '#404040',
+    secondary: '#FAFAFA',
     tertiary: '#F5F5F5',
     brand: '#155DFC',
     warningSubtle: '#FEFCE8',

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import SText from '../../Elements/SText';
 
 const UserUpdateTitle = () => {
@@ -13,6 +13,7 @@ const UserUpdateTitle = () => {
         lineHeight={SWidth * 24}
         fStyle="BlgRg"
         text="안전한 회원 정보 수정을 위해 비밀번호를 확인해주세요"
+        color={colors.text.secondary}
       />
     </View>
   );

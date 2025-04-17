@@ -3,7 +3,7 @@ import Svg, {Path} from 'react-native-svg';
 import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const Pen16 = ({color = colors.secondary}: SvgColorProps) => {
+const Pen16 = ({color = colors.icon.secondary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 16}
