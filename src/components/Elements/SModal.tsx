@@ -13,7 +13,7 @@ const SModal = () => {
       case 'business':
         return <ModalBusiness onPress={() => setModalOpen(false)} />;
       case 'password':
-        return <ModalPassword onPress={() => setModalOpen(false)} />;
+        return <ModalPassword setModalOpen={setModalOpen} />;
       case 'setting':
         return (
           <ModalSetting content={content} onPress={() => setModalOpen(false)} />

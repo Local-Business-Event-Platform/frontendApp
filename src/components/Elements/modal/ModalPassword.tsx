@@ -1,11 +1,16 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
-import {OnPressProps} from '../../../utils/types/businessType';
+import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import SButton56 from '../SButton56';
 import SText from '../SText';
 
-const ModalPassword = ({onPress}: OnPressProps) => {
+type ModalPasswordProps = {
+  setModalOpen: (newModalOpen: boolean) => void;
+};
+
+const ModalPassword = ({setModalOpen}: ModalPasswordProps) => {
+  const navigation = useCustomNavigation();
   return (
     <View style={styles.container}>
       <SText fStyle="Hsm" text={'비밀번호 변경 완료'} />
@@ -21,7 +26,13 @@ const ModalPassword = ({onPress}: OnPressProps) => {
         <SButton56
           title="확인"
           textColor={'white'}
-          onPress={onPress!}
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{name: 'login'}],
+            });
+            setModalOpen(false);
+          }}
           ButtonColor={colors.interactive.primary}
         />
       </View>

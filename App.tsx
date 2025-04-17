@@ -23,12 +23,12 @@ function App() {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{flex: 1}}>
-        <ReactQueryProvider>
-          <NavigationContainer>
+        <NavigationContainer>
+          <ReactQueryProvider>
             <MainStackScreen />
-          </NavigationContainer>
-        </ReactQueryProvider>
-        {modalOpen && <SModal />}
+          </ReactQueryProvider>
+          {modalOpen && <SModal />}
+        </NavigationContainer>
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );

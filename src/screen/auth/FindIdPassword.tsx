@@ -112,7 +112,7 @@ const FindIdPassword = () => {
                 ? colors.interactive.secondary
                 : authCheck === 2
                 ? colors.tertiary
-                : '#E7000B'
+                : colors.text.danger
             }
             placeholder={'인증번호 6자리 입력'}
             buttonTitle="확인"
@@ -132,6 +132,7 @@ const FindIdPassword = () => {
           <SButton56
             title="다음"
             ButtonColor={colors.interactive.primary}
+            disabled={authCheck === 2 ? false : true}
             textColor={'white'}
             onPress={() => navigation.navigate('password')}
           />

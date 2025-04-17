@@ -67,7 +67,8 @@ const NewPasswordPage = () => {
   };
 
   const handleSubmit = () => {
-    console.log('비밀번호 변경');
+    setModalOpen(true);
+    setModalTitle('password');
   };
 
   return (
