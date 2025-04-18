@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {screenNames} from '../../utils/listData';
 import {BContentAddressProps} from '../../utils/types/businessType';
 import SInput from '../Elements/SInput';
 import SText from '../Elements/SText';
@@ -31,7 +32,7 @@ const BContentAddress = ({
             onChangeText={() => {}}
             editable={false}
             buttonTitle="우편번호 검색"
-            buttonOnPress={() => navigation.navigate('address')}
+            buttonOnPress={() => navigation.navigate(screenNames.ADDRESS)}
           />
           <SInput value={''} onChangeText={() => {}} editable={false} />
           <SInput value={''} onChangeText={text => {}} />

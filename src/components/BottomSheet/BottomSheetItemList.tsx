@@ -4,6 +4,7 @@ import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
+import {screenNames} from '../../utils/listData';
 import MainFilter from '../MainPage/Filter/MainFilter';
 import MainStoreItem from '../MainPage/MainStoreItem';
 
@@ -104,7 +105,7 @@ const BottomSheetItemList = () => {
             reviewCount={item.reviewCount}
             onPress={() => {
               setTitle(item.title);
-              navigation.navigate('홈', {screen: 'detailPage'});
+              navigation.navigate('홈', {screen: screenNames.DETAIL_PAGE});
             }}
           />
         )}

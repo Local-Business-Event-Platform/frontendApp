@@ -4,6 +4,7 @@ import {colors, SWidth} from '../../../globalStyle';
 import JoinSelectedButton from '../../components/Join/JoinSelectedButton';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
+import {screenNames} from '../../utils/listData';
 
 const JoinPage = () => {
   const navigation = useCustomNavigation();
@@ -16,7 +17,7 @@ const JoinPage = () => {
           backgroundColor={colors.bg.infoSubtle}
           onPress={() => {
             setUserData({type: 1});
-            navigation.navigate('terms');
+            navigation.navigate(screenNames.TERMS);
           }}
         />
         <JoinSelectedButton
@@ -24,7 +25,7 @@ const JoinPage = () => {
           backgroundColor={colors.bg.tertiary}
           onPress={() => {
             setUserData({type: 2});
-            navigation.navigate('terms');
+            navigation.navigate(screenNames.TERMS);
           }}
         />
       </View>

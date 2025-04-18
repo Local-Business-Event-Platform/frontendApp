@@ -6,6 +6,7 @@ import SInput from '../../components/Elements/SInput';
 import FindUser from '../../components/Login/FindUser';
 import Logo from '../../components/Login/Logo';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {screenNames} from '../../utils/listData';
 const LoginPage = () => {
   const navigation = useCustomNavigation();
   const [passwordOpen, setPasswordOpen] = useState(true);
@@ -94,13 +95,13 @@ const LoginPage = () => {
           </View>
         </View>
         <View style={styles.bottomContainer}>
-          <FindUser onPress={() => navigation.navigate('find')} />
+          <FindUser onPress={() => navigation.navigate(screenNames.FIND)} />
           <View style={styles.buttonContainer}>
             <SButton56
               title="회원가입"
               textColor={colors.icon.secondary}
               ButtonColor={colors.bg.interactive.secondary}
-              onPress={() => navigation.navigate('join')}
+              onPress={() => navigation.navigate(screenNames.JOIN)}
             />
           </View>
         </View>

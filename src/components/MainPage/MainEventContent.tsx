@@ -3,6 +3,7 @@ import {Image, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
+import {screenNames} from '../../utils/listData';
 import SFlatList from '../Elements/SFlatList';
 import SImageCardLoading from '../Elements/Skeleton/SImageCardLoading';
 import EventItem from './EventItem';
@@ -69,7 +70,7 @@ const MainEventContent = () => {
           item={item}
           onPress={() => {
             setTitle(item.store);
-            navigation.navigate('detailPage', {item: item});
+            navigation.navigate(screenNames.DETAIL_PAGE, {item: item});
           }}
           likeOnPress={() => setClicked(!clicked)}
         />

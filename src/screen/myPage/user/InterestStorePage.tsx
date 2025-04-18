@@ -6,6 +6,7 @@ import MainFilter from '../../../components/MainPage/Filter/MainFilter';
 import MainStoreItem from '../../../components/MainPage/MainStoreItem';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
+import {screenNames} from '../../../utils/listData';
 
 const InterestStorePage = () => {
   const navigation = useCustomNavigation();
@@ -101,7 +102,7 @@ const InterestStorePage = () => {
             onPress={() => {
               setTitle(item.title);
               navigation.navigate('홈', {
-                screen: 'detailPage',
+                screen: screenNames.DETAIL_PAGE,
               });
             }}
           />

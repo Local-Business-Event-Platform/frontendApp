@@ -5,6 +5,7 @@ import SButton56 from '../../components/Elements/SButton56';
 import JoinTitle from '../../components/Join/JoinTitle';
 import TermsCheck from '../../components/Join/TermsOfUse/TermsCheck';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {screenNames} from '../../utils/listData';
 
 const TermsOfUsePage = () => {
   const navigation = useCustomNavigation();
@@ -18,7 +19,7 @@ const TermsOfUsePage = () => {
 
   const handleCheck = () => {
     if (checkList.check1 && checkList.check2) {
-      navigation.navigate('joinUser');
+      navigation.navigate(screenNames.JOIN_USER);
     } else {
       console.log('약관에 모두 동의해주세요');
     }

@@ -1,3 +1,5 @@
+import {ColorValue} from 'react-native';
+
 export type MyPageTitleProps = {
   title: string;
 };
@@ -25,6 +27,17 @@ export type AlarmItemProps = {
   click: boolean;
   onPress: () => void;
   borderWidth?: number;
+};
+
+export type NoticeBoxProps = {
+  boxColor: ColorValue;
+  boxBorderColor: ColorValue;
+  boxTitle: string;
+};
+
+export type NoticeDetailWarningProps = {
+  icon: React.JSX.Element;
+  content: string;
 };
 
 export type FAQComponentProps = {

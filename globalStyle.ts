@@ -52,6 +52,7 @@ export const colors = {
   icon: {
     primary: '#171717',
     secondary: '#404040',
+    info01: '#1447E6',
     info02: '#FDC700',
     disabled: '#A1A1A1',
     danger: '#C10007',

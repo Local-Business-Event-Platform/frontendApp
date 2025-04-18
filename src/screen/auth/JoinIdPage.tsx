@@ -6,6 +6,7 @@ import SInput from '../../components/Elements/SInput';
 import JoinTitle from '../../components/Join/JoinTitle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
+import {screenNames} from '../../utils/listData';
 
 const JoinIdPage = () => {
   const navigation = useCustomNavigation();
@@ -15,7 +16,7 @@ const JoinIdPage = () => {
   const passwordRegex =
     /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,15}$/;
   const handleSubmit = async () => {
-    navigation.navigate('success');
+    navigation.navigate(screenNames.SUCCESS);
   };
 
   const passwordMagCheck = () => {

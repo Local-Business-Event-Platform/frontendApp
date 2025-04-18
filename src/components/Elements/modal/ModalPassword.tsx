@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
+import {screenNames} from '../../../utils/listData';
 import SButton56 from '../SButton56';
 import SText from '../SText';
 
@@ -29,7 +30,7 @@ const ModalPassword = ({setModalOpen}: ModalPasswordProps) => {
           onPress={() => {
             navigation.reset({
               index: 0,
-              routes: [{name: 'login'}],
+              routes: [{name: screenNames.LOGIN}],
             });
             setModalOpen(false);
           }}
@@ -44,6 +45,8 @@ export default ModalPassword;
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: SWidth * 24,
+    padding: SWidth * 16,
     justifyContent: 'center',
     alignItems: 'center',
     gap: SWidth * 24,

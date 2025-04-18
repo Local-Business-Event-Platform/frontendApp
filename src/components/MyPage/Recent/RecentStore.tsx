@@ -3,6 +3,7 @@ import {Image, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
+import {screenNames} from '../../../utils/listData';
 import SFlatList from '../../Elements/SFlatList';
 import SText from '../../Elements/SText';
 import RecentStoreItem from './RecentStoreItem';
@@ -93,7 +94,7 @@ const RecentStore = () => {
               reviewCount={store.reviewCount}
               onPress={() => {
                 setTitle(store.title);
-                navigation.navigate('홈', {screen: 'detailPage'});
+                navigation.navigate('홈', {screen: screenNames.DETAIL_PAGE});
               }}
             />
           ))}

@@ -3,6 +3,7 @@ import {Image, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
+import {screenNames} from '../../../utils/listData';
 import Calendar24 from '../../../utils/svgs/businessPage/Calendar24';
 import Location24 from '../../../utils/svgs/businessPage/Location24';
 import SFlatList from '../../Elements/SFlatList';
@@ -92,7 +93,7 @@ const RecentEvent = () => {
               image={event.image}
               onPress={() => {
                 setTitle(event.store);
-                navigation.navigate('홈', {screen: 'detailPage'});
+                navigation.navigate('홈', {screen: screenNames.DETAIL_PAGE});
               }}>
               <View style={styles.itemContainer}>
                 <SText fStyle="BxlSb" text={event.title} />

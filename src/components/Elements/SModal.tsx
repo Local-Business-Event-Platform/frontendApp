@@ -4,6 +4,7 @@ import {colors, SWidth} from '../../../globalStyle';
 import {useModalOpen} from '../../store/modalRoute';
 import {modalNames} from '../../utils/listData';
 import ModalDetailPage from './modal/detailModal/ModalDetailPage';
+import ModalBlock from './modal/ModalBlock';
 import ModalBusiness from './modal/ModalBusiness';
 import ModalPassword from './modal/ModalPassword';
 import ModalSetting from './modal/settingModal/ModalSetting';
@@ -20,6 +21,10 @@ const SModal = () => {
         return (
           <ModalSetting content={content} onPress={() => setModalOpen(false)} />
         );
+      case modalNames.DETAIL_PAGE:
+        return <ModalDetailPage setModalOpen={setModalOpen} id={id} />;
+      case modalNames.BLOCK:
+        return <ModalBlock setModalOpen={setModalOpen} id={id} />;
     }
   };
   return (
@@ -39,22 +44,7 @@ const SModal = () => {
               : SWidth * 29,
         },
       ]}>
-      {modalTitle === modalNames.DETAIL_PAGE ? (
-        <ModalDetailPage setModalOpen={setModalOpen} id={id} />
-      ) : (
-        <View
-          style={[
-            styles.contentContainer,
-            {
-              padding:
-                modalTitle === modalNames.SETTING ? SWidth * 20 : SWidth * 16,
-              gap:
-                modalTitle === modalNames.BUSINESS ? SWidth * 12 : SWidth * 24,
-            },
-          ]}>
-          {modalList()}
-        </View>
-      )}
+      <View style={styles.contentContainer}>{modalList()}</View>
     </View>
   );
 };
@@ -72,8 +62,6 @@ const styles = StyleSheet.create({
   },
 
   contentContainer: {
-    paddingTop: SWidth * 24,
-
     width: '100%',
     backgroundColor: colors.white,
     borderRadius: SWidth * 8,

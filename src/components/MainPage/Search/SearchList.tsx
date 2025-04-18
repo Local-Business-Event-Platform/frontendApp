@@ -3,6 +3,7 @@ import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
+import {screenNames} from '../../../utils/listData';
 import SFlatList from '../../Elements/SFlatList';
 import SImageCard2Loading from '../../Elements/Skeleton/SImageCard2Loading';
 import MainStoreItem from '../MainStoreItem';
@@ -105,7 +106,7 @@ const SearchList = () => {
               navigation.navigate('bottomTab', {
                 screen: '홈',
                 params: {
-                  screen: 'detailPage',
+                  screen: screenNames.DETAIL_PAGE,
                 },
               });
             }}

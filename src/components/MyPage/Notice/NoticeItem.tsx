@@ -1,9 +1,13 @@
 import React from 'react';
-import {ColorValue, StyleSheet, View} from 'react-native';
+import {ColorValue, Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
+import useCustomNavigation from '../../../hooks/useCustomNavigation';
+import {screenNames} from '../../../utils/listData';
 import SText from '../../Elements/SText';
+import NoticeBox from './NoticeBox';
 
 type NoticeItemProps = {
+  noticeId: number;
   box?: boolean;
   backgroundColor: ColorValue;
   boxColor: ColorValue;
@@ -15,6 +19,7 @@ type NoticeItemProps = {
 };
 
 const NoticeItem = ({
+  noticeId,
   box,
   backgroundColor,
   boxColor,
@@ -24,18 +29,23 @@ const NoticeItem = ({
   date,
   content,
 }: NoticeItemProps) => {
+  const navigation = useCustomNavigation();
   return (
-    <View style={[styles.container, {backgroundColor: backgroundColor}]}>
+    <Pressable
+      style={[styles.container, {backgroundColor: backgroundColor}]}
+      onPress={() =>
+        navigation.navigate(screenNames.NOTICE_DETAIL, {
+          noticeId: noticeId,
+        })
+      }>
       <View style={styles.rowContainer}>
         <View style={[styles.rowTitle]}>
           {box && (
-            <View
-              style={[
-                styles.boxStyle,
-                {backgroundColor: boxColor, borderColor: boxBorderColor},
-              ]}>
-              <SText fStyle="BmdMd" text={boxTitle} color={colors.white} />
-            </View>
+            <NoticeBox
+              boxTitle={boxTitle}
+              boxColor={boxColor}
+              boxBorderColor={boxBorderColor}
+            />
           )}
           <SText
             flexShrink={1}
@@ -54,7 +64,7 @@ const NoticeItem = ({
         text={content}
         color={colors.text.tertiary}
       />
-    </View>
+    </Pressable>
   );
 };
 

@@ -6,6 +6,7 @@ import BStoreCard from '../../components/BusinessPage/BStoreCard';
 import SFlatList from '../../components/Elements/SFlatList';
 import SImageCardLoading from '../../components/Elements/Skeleton/SImageCardLoading';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {screenNames} from '../../utils/listData';
 const BusinessPage = () => {
   const navigation = useCustomNavigation();
   const [data, setData] = useState([
@@ -46,7 +47,7 @@ const BusinessPage = () => {
         <BAddButton
           title="가게 추가하기"
           onPress={() => {
-            navigation.navigate('storeInfo');
+            navigation.navigate(screenNames.STORE_INFO);
           }}
         />
       </View>
@@ -60,7 +61,7 @@ const BusinessPage = () => {
             <BStoreCard
               item={item}
               onPress={() => {
-                navigation.navigate('storeInfo', {data: item});
+                navigation.navigate(screenNames.STORE_INFO, {data: item});
               }}
             />
           )}

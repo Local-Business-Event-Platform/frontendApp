@@ -13,7 +13,7 @@ const MyPage = () => {
     userImage: Image.resolveAssetSource(
       require('../../assets/images/myPageImage.png'),
     ).uri,
-    userType: 'user',
+    userType: 'store',
   };
 
   const myPageList = (userType: string) => {

@@ -43,6 +43,8 @@ export default ModalSetting;
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: SWidth * 24,
+    padding: SWidth * 20,
     alignItems: 'center',
     gap: SWidth * 28,
   },

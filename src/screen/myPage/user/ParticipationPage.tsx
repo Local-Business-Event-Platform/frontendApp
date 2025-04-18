@@ -7,6 +7,7 @@ import PButton from '../../../components/MyPage/Participation/PButton';
 import RecentStoreItem from '../../../components/MyPage/Recent/RecentStoreItem';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
+import {screenNames} from '../../../utils/listData';
 
 type StoreType = {
   id: number;
@@ -96,7 +97,7 @@ const ParticipationPage = () => {
                   onPress={() => {
                     setTitle(store.title);
                     navigation.navigate('홈', {
-                      screen: 'detailPage',
+                      screen: screenNames.DETAIL_PAGE,
                     });
                   }}
                 />

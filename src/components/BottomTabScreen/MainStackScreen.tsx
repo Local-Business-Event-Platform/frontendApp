@@ -15,7 +15,9 @@ import BlockUserPage from '../../screen/myPage/BlockUserPage';
 import CustomerPage from '../../screen/myPage/CustomerPage';
 import MyLocationMapPage from '../../screen/myPage/location/MyLocationMapPage';
 import MyNotificationPage from '../../screen/myPage/MyNotificationPage';
-import NoticePage from '../../screen/myPage/NoticePage';
+
+import NoticeDetailPage from '../../screen/myPage/notice/NoticeDetailPage';
+import NoticePage from '../../screen/myPage/notice/NoticePage';
 import SettingPage from '../../screen/myPage/SettingPage';
 import UserInfoPage from '../../screen/myPage/userUpdate/UserInfoPage';
 import UserUpdatePage from '../../screen/myPage/userUpdate/UserUpdatePage';
@@ -166,6 +168,11 @@ const MainStackScreen = () => {
       <Stack.Screen
         name={screenNames.NOTICE}
         component={NoticePage}
+        options={options({headerShown: true, title: '공지사항'})}
+      />
+      <Stack.Screen
+        name={screenNames.NOTICE_DETAIL}
+        component={NoticeDetailPage}
         options={options({headerShown: true, title: '공지사항'})}
       />
       <Stack.Screen

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {screenNames} from '../../utils/listData';
 import SFlatList from '../Elements/SFlatList';
 import SImageCard2Loading from '../Elements/Skeleton/SImageCard2Loading';
 import MainStoreItem from './MainStoreItem';
@@ -104,7 +105,7 @@ const MainStoreContent = () => {
           category={item.category}
           review={item.review}
           reviewCount={item.reviewCount}
-          onPress={() => navigation.navigate('detailPage')}
+          onPress={() => navigation.navigate(screenNames.DETAIL_PAGE)}
         />
       )}
     />

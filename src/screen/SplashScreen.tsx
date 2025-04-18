@@ -3,12 +3,13 @@ import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../globalStyle';
 import SText from '../components/Elements/SText';
 import useCustomNavigation from '../hooks/useCustomNavigation';
+import {screenNames} from '../utils/listData';
 
 const SplashScreen = () => {
   const navigation = useCustomNavigation();
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('login');
+      navigation.navigate(screenNames.LOGIN);
     }, 3000);
   }, []);
 

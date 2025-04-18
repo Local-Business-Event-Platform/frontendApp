@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {colors, SWidth} from '../../../globalStyle';
-import NoticeItem from '../../components/MyPage/Notice/NoticeItem';
+import {colors, SWidth} from '../../../../globalStyle';
+import NoticeItem from '../../../components/MyPage/Notice/NoticeItem';
 
 const NoticePage = () => {
   const noticeList = [
@@ -44,6 +44,7 @@ const NoticePage = () => {
       {noticeList.map(notice => (
         <NoticeItem
           key={notice.id}
+          noticeId={notice.id}
           box={notice.box}
           backgroundColor={
             notice.boxTitle === '중요'

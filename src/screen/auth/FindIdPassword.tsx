@@ -4,6 +4,7 @@ import {colors, SWidth} from '../../../globalStyle';
 import SButton56 from '../../components/Elements/SButton56';
 import SInput from '../../components/Elements/SInput';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
+import {screenNames} from '../../utils/listData';
 
 const FindIdPassword = () => {
   const navigation = useCustomNavigation();
@@ -149,7 +150,7 @@ const FindIdPassword = () => {
             ButtonColor={colors.interactive.primary}
             disabled={authCheck === 2 ? false : true}
             textColor={'white'}
-            onPress={() => navigation.navigate('password')}
+            onPress={() => navigation.navigate(screenNames.PASSWORD)}
           />
         </View>
       </View>

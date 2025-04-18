@@ -2,6 +2,7 @@ import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
+import {screenNames} from '../../../utils/listData';
 import DownArrowTwo24 from '../../../utils/svgs/mainPage/DownArrowTwo24';
 import Notification24 from '../../../utils/svgs/mainPage/Notification24';
 import Search24 from '../../../utils/svgs/mainPage/Search24';
@@ -16,12 +17,14 @@ const MainAppBar = () => {
         <DownArrowTwo24 />
       </Pressable>
       <View style={styles.rowContainer}>
-        <Pressable hitSlop={5} onPress={() => navigation.navigate('search')}>
+        <Pressable
+          hitSlop={5}
+          onPress={() => navigation.navigate(screenNames.SEARCH)}>
           <Search24 />
         </Pressable>
         <Pressable
           hitSlop={5}
-          onPress={() => navigation.navigate('notification')}>
+          onPress={() => navigation.navigate(screenNames.NOTIFICATION)}>
           <Notification24 />
         </Pressable>
       </View>

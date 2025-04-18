@@ -8,6 +8,7 @@ import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useMyLocation} from '../../../store/mapRoute';
+import {screenNames} from '../../../utils/listData';
 import SMapButton from '../../Elements/SMapButton';
 
 type LocationMapProps = {
@@ -53,7 +54,7 @@ const LocationSetting = ({radius}: LocationMapProps) => {
       </NaverMapView>
       <SMapButton
         onPress={() => {
-          navigation.navigate('myLocationMap', {
+          navigation.navigate(screenNames.My_LOCATION_MAP, {
             latitude: myLocation.latitude,
             longitude: myLocation.longitude,
           });

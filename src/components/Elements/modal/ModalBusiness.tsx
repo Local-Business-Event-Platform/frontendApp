@@ -10,7 +10,7 @@ import SText from '../SText';
 
 const ModalBusiness = ({onPress}: OnPressProps) => {
   return (
-    <>
+    <View style={styles.container}>
       <View style={styles.imageContainer}>
         <CirclePlus24 />
         <SText
@@ -43,28 +43,33 @@ const ModalBusiness = ({onPress}: OnPressProps) => {
           keyboardType="numeric"
           onChangeText={() => {}}
         />
+        <View style={styles.rowLine}>
+          <SButton56
+            title="닫기"
+            textColor={colors.icon.secondary}
+            ButtonColor={colors.bg.interactive.secondary}
+            onPress={onPress!}
+          />
+          <SButton56
+            title="메뉴 수정하기"
+            textColor={colors.text.interactive.inverse}
+            ButtonColor={colors.bg.interactive.primary}
+            onPress={() => {}}
+          />
+        </View>
       </View>
-      <View style={styles.rowLine}>
-        <SButton56
-          title="닫기"
-          textColor={colors.icon.secondary}
-          ButtonColor={colors.bg.interactive.secondary}
-          onPress={onPress!}
-        />
-        <SButton56
-          title="메뉴 수정하기"
-          textColor={colors.text.interactive.inverse}
-          ButtonColor={colors.bg.interactive.primary}
-          onPress={() => {}}
-        />
-      </View>
-    </>
+    </View>
   );
 };
 
 export default ModalBusiness;
 
 const styles = StyleSheet.create({
+  container: {
+    paddingTop: SWidth * 24,
+    padding: SWidth * 16,
+    gap: SWidth * 24,
+  },
   imageContainer: {
     width: '100%',
     flexDirection: 'row',

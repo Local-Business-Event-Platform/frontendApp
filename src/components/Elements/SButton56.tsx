@@ -29,7 +29,6 @@ export default SButton56;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     height: SWidth * 56,
     borderRadius: SWidth * 8,
     alignItems: 'center',

@@ -14,6 +14,7 @@ import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
+import {screenNames} from '../../utils/listData';
 
 const JoinUserPage = () => {
   const navigation = useCustomNavigation();
@@ -49,7 +50,7 @@ const JoinUserPage = () => {
       console.log('모든 정보를 입력해주세요.');
       return;
     } else {
-      navigation.navigate('joinId');
+      navigation.navigate(screenNames.JOIN_ID);
     }
   };
 
@@ -139,7 +140,7 @@ const JoinUserPage = () => {
                       ? colors.border.interactive.secondary
                       : colors.border.secondary
                   }
-                  buttonOnPress={() => navigation.navigate('address')}
+                  buttonOnPress={() => navigation.navigate(screenNames.ADDRESS)}
                 />
                 <SInput
                   value={`${userData.address} ${userData.buildingName}`}
