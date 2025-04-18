@@ -1,12 +1,12 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import InterestStorePage from '../../screen/myPage/InterestStorePage';
-import MyLocationPage from '../../screen/myPage/MyLocationPage';
+import ReviewManagementPage from '../../scre../../screen/myPage/user/ReviewManagementPage';
+import MyLocationPage from '../../screen/myPage/location/MyLocationPage';
 import MyPage from '../../screen/myPage/MyPage';
-import ParticipationPage from '../../screen/myPage/ParticipationPage';
-import RecentPage from '../../screen/myPage/RecentPage';
-import ReviewManagementPage from '../../screen/myPage/ReviewManagementPage';
+import InterestStorePage from '../../screen/myPage/user/InterestStorePage';
+import ParticipationPage from '../../screen/myPage/user/ParticipationPage';
+import RecentPage from '../../screen/myPage/user/RecentPage';
 import {screenNames} from '../../utils/listData';
 import {StackOptionType} from '../../utils/types/type';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
@@ -44,6 +44,7 @@ const MyPageScreen = () => {
         component={MyLocationPage}
         options={options({headerShown: true, title: '동네 설정'})}
       />
+
       <Stack.Screen
         name={screenNames.RECENT}
         component={RecentPage}

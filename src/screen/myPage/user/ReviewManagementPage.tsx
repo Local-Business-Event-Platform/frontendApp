@@ -1,14 +1,14 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {Image, Pressable, StyleSheet, View} from 'react-native';
-import {colors, SWidth} from '../../../globalStyle';
-import SFlatList from '../../components/Elements/SFlatList';
-import SText from '../../components/Elements/SText';
-import MainFilter from '../../components/MainPage/Filter/MainFilter';
-import Delete24 from '../../utils/svgs/businessPage/Delete24';
-import FillStar20 from '../../utils/svgs/myPage/FillStar20';
-import Star20 from '../../utils/svgs/myPage/Star20';
-import Pen24 from '../../utils/svgs/storeDetailPage/Pen24';
+import {colors, SWidth} from '../../../../globalStyle';
+import SFlatList from '../../../components/Elements/SFlatList';
+import SText from '../../../components/Elements/SText';
+import MainFilter from '../../../components/MainPage/Filter/MainFilter';
+import Delete24 from '../../../utils/svgs/businessPage/Delete24';
+import FillStar20 from '../../../utils/svgs/myPage/FillStar20';
+import Star20 from '../../../utils/svgs/myPage/Star20';
+import Pen24 from '../../../utils/svgs/storeDetailPage/Pen24';
 
 type ItemType = {
   item: {
@@ -31,9 +31,10 @@ const ReviewManagementPage = () => {
       content:
         '음식이 정말 맛있고, 분위기도 좋았어요. 특히 직원분들이 친절하셔서 더욱 좋았습니다. 다음에 또 방문하고 싶네요!',
       images: [
-        Image.resolveAssetSource(require('../../assets/images/background.png'))
-          .uri,
-        Image.resolveAssetSource(require('../../assets/images/no_image.jpg'))
+        Image.resolveAssetSource(
+          require('../../../assets/images/background.png'),
+        ).uri,
+        Image.resolveAssetSource(require('../../../assets/images/no_image.jpg'))
           .uri,
         ,
       ],
@@ -46,10 +47,11 @@ const ReviewManagementPage = () => {
       content:
         '음식이 정말 맛있고, 분위기도 좋았어요. 특히 직원분들이 친절하셔서 더욱 좋았습니다. 다음에 또 방문하고 싶네요!',
       images: [
-        Image.resolveAssetSource(require('../../assets/images/background.png'))
-          .uri,
+        Image.resolveAssetSource(
+          require('../../../assets/images/background.png'),
+        ).uri,
         ,
-        Image.resolveAssetSource(require('../../assets/images/no_image.jpg'))
+        Image.resolveAssetSource(require('../../../assets/images/no_image.jpg'))
           .uri,
         ,
       ],
@@ -62,10 +64,11 @@ const ReviewManagementPage = () => {
       content:
         '음식이 정말 맛있고, 분위기도 좋았어요. 특히 직원분들이 친절하셔서 더욱 좋았습니다. 다음에 또 방문하고 싶네요!',
       images: [
-        Image.resolveAssetSource(require('../../assets/images/background.png'))
-          .uri,
+        Image.resolveAssetSource(
+          require('../../../assets/images/background.png'),
+        ).uri,
         ,
-        Image.resolveAssetSource(require('../../assets/images/no_image.jpg'))
+        Image.resolveAssetSource(require('../../../assets/images/no_image.jpg'))
           .uri,
         ,
       ],

@@ -1,11 +1,11 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
-import SFlatList from '../../components/Elements/SFlatList';
-import MainFilter from '../../components/MainPage/Filter/MainFilter';
-import MainStoreItem from '../../components/MainPage/MainStoreItem';
-import useCustomNavigation from '../../hooks/useCustomNavigation';
-import {useStoreData} from '../../store/storeRoute';
+import {SWidth} from '../../../../globalStyle';
+import SFlatList from '../../../components/Elements/SFlatList';
+import MainFilter from '../../../components/MainPage/Filter/MainFilter';
+import MainStoreItem from '../../../components/MainPage/MainStoreItem';
+import useCustomNavigation from '../../../hooks/useCustomNavigation';
+import {useStoreData} from '../../../store/storeRoute';
 
 const InterestStorePage = () => {
   const navigation = useCustomNavigation();
@@ -14,7 +14,7 @@ const InterestStorePage = () => {
     {
       id: 1,
       storeImg: Image.resolveAssetSource(
-        require('../../assets/images/background.png'),
+        require('../../../assets/images/background.png'),
       ).uri,
       title: '카페드파리',
       category: '양식',
@@ -24,7 +24,7 @@ const InterestStorePage = () => {
     {
       id: 2,
       storeImg: Image.resolveAssetSource(
-        require('../../assets/images/background.png'),
+        require('../../../assets/images/background.png'),
       ).uri,
       title: '카페드파리',
       category: '양식',
@@ -34,7 +34,7 @@ const InterestStorePage = () => {
     {
       id: 3,
       storeImg: Image.resolveAssetSource(
-        require('../../assets/images/background.png'),
+        require('../../../assets/images/background.png'),
       ).uri,
       title: '카페드파리',
       category: '양식',
@@ -44,7 +44,7 @@ const InterestStorePage = () => {
     {
       id: 4,
       storeImg: Image.resolveAssetSource(
-        require('../../assets/images/background.png'),
+        require('../../../assets/images/background.png'),
       ).uri,
       title: '카페드파리',
       category: '양식',
@@ -54,7 +54,7 @@ const InterestStorePage = () => {
     {
       id: 5,
       storeImg: Image.resolveAssetSource(
-        require('../../assets/images/background.png'),
+        require('../../../assets/images/background.png'),
       ).uri,
       title: '카페드파리',
       category: '양식',
@@ -64,7 +64,7 @@ const InterestStorePage = () => {
     {
       id: 6,
       storeImg: Image.resolveAssetSource(
-        require('../../assets/images/background.png'),
+        require('../../../assets/images/background.png'),
       ).uri,
       title: '카페드파리',
       category: '양식',
@@ -74,7 +74,7 @@ const InterestStorePage = () => {
     {
       id: 7,
       storeImg: Image.resolveAssetSource(
-        require('../../assets/images/background.png'),
+        require('../../../assets/images/background.png'),
       ).uri,
       title: '카페드파리',
       category: '양식',

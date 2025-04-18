@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {colors, SWidth} from '../../../globalStyle';
-import SButton56 from '../../components/Elements/SButton56';
-import SInput from '../../components/Elements/SInput';
-import SInputSuccess from '../../components/Elements/SInputSuccess';
-import UserImg from '../../components/MyPage/UserInfo/UserImg';
-import UserInfoContainer from '../../components/MyPage/UserInfo/UserInfoContainer';
-import UserInfoUser from '../../components/MyPage/UserInfo/UserInfoUser';
+import {colors, SWidth} from '../../../../globalStyle';
+import SButton56 from '../../../components/Elements/SButton56';
+import SInput from '../../../components/Elements/SInput';
+import SInputSuccess from '../../../components/Elements/SInputSuccess';
+import UserImg from '../../../components/MyPage/UserInfo/UserImg';
+import UserInfoContainer from '../../../components/MyPage/UserInfo/UserInfoContainer';
+import UserInfoUser from '../../../components/MyPage/UserInfo/UserInfoUser';
 
 const UserInfoPage = () => {
   const [userImg, setUserImg] = useState({
@@ -23,7 +23,7 @@ const UserInfoPage = () => {
         source={
           userImg.url
             ? {uri: userImg.url}
-            : require('../../assets/images/no_image.jpg')
+            : require('../../../assets/images/no_image.jpg')
         }
         setUserImg={setUserImg}
       />

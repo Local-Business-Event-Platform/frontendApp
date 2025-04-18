@@ -41,7 +41,7 @@ const Map = ({
           Keyboard.dismiss();
         }}
         camera={{
-          latitude: myLatitude - 0.0045,
+          latitude: myLatitude - 0.004,
           longitude: myLongitude,
           zoom: cameraZoom,
         }}>

@@ -5,11 +5,11 @@ import {colors, SWidth} from '../../../../globalStyle';
 import SText from '../../Elements/SText';
 
 type MyLocationSliderProps = {
-  location: number;
-  setLocation: React.Dispatch<React.SetStateAction<number>>;
+  radius: number;
+  setRadius: (radius: number) => void;
 };
 
-const MyLocationSlider = ({location, setLocation}: MyLocationSliderProps) => {
+const MyLocationSlider = ({radius, setRadius}: MyLocationSliderProps) => {
   const locationTextList = [
     {id: 1, title: '1km', content: '도보 15분'},
     {id: 2, title: '2km', content: '도보 30분'},
@@ -21,7 +21,7 @@ const MyLocationSlider = ({location, setLocation}: MyLocationSliderProps) => {
       <View style={{alignItems: 'center'}}>
         <SText
           fStyle="BlgSb"
-          text={`선택 범위 ${location / 1000}km`}
+          text={`선택 범위 ${radius / 1000}km`}
           color={colors.text.interactive.primary}
         />
       </View>
@@ -31,9 +31,9 @@ const MyLocationSlider = ({location, setLocation}: MyLocationSliderProps) => {
         }}>
         {/* <TrackBackground location={location} /> */}
         <Slider
-          value={location}
+          value={radius}
           containerStyle={styles.sliderContainer}
-          onValueChange={value => setLocation(value[0])}
+          onValueChange={value => setRadius(value[0])}
           renderTrackMarkComponent={() => null}
           minimumValue={1000}
           maximumValue={3000}
@@ -67,11 +67,10 @@ export default MyLocationSlider;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 24,
     paddingTop: SWidth * 20,
     paddingHorizontal: SWidth * 16,
-    borderTopWidth: 1,
-    borderColor: colors.border.secondary,
+    // borderTopWidth: 1,
+    // borderColor: colors.border.secondary,
   },
 
   sliderContainer: {

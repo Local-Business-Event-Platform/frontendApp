@@ -6,22 +6,25 @@ import SText from '../../Elements/SText';
 import MyPageTitle from '../MyPageTitle';
 import LocationAddItem from './LocationAddItem';
 
-const AddLocation = () => {
-  const list = [
-    {id: 1, title: '역삼동', isClicked: true},
-    {id: 2, title: '삼성동', isClicked: false},
-    {id: 3, title: '신사동', isClicked: false},
-  ];
-  const [locationList, setLocationList] = useState(list);
+type LocationType = {
+  list: {
+    id: number;
+    title: string;
+    latitude: number;
+    longitude: number;
+  }[];
+  setMyLocation: (latitude: number, longitude: number) => void;
+};
+
+const AddLocation = ({list, setMyLocation}: LocationType) => {
+  const [address, setAddress] = useState(0);
 
   const handlePress = (id: number) => {
-    setLocationList(prev =>
-      prev.map(item =>
-        item.id === id
-          ? {...item, isClicked: true}
-          : {...item, isClicked: false},
-      ),
-    );
+    setAddress(id);
+    const selected = list.find(item => item.id === id);
+    if (selected) {
+      setMyLocation(selected.latitude, selected.longitude);
+    }
   };
 
   return (
@@ -35,11 +38,11 @@ const AddLocation = () => {
         />
       </View>
       <View style={styles.locationContainer}>
-        {locationList.map(item => (
+        {list.map((item, index) => (
           <LocationAddItem
             key={item.id}
             title={item.title}
-            isClicked={item.isClicked}
+            isClicked={address === index + 1}
             onPress={() => handlePress(item.id)}
           />
         ))}

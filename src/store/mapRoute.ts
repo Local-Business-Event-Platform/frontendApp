@@ -12,6 +12,8 @@ type MyLocationType = {
     latitude: number;
     longitude: number;
   };
+  radius: number;
+  setRadius: (radius: number) => void;
   setMyLocation: (latitude: number, longitude: number) => void;
 };
 
@@ -27,6 +29,8 @@ export const useMyLocation = create<MyLocationType>(set => ({
     latitude: 0,
     longitude: 0,
   },
+  radius: 1000,
+  setRadius: (radius: number) => set({radius}),
   setMyLocation: (latitude: number, longitude: number) =>
     set({myLocation: {latitude, longitude}}),
 }));

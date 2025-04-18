@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
-import STabBar from '../../components/Elements/STabBar';
-import RecentEvent from '../../components/MyPage/Recent/RecentEvent';
-import RecentStore from '../../components/MyPage/Recent/RecentStore';
-import {mainTabItems} from '../../utils/listData';
+import {SWidth} from '../../../../globalStyle';
+import STabBar from '../../../components/Elements/STabBar';
+import RecentEvent from '../../../components/MyPage/Recent/RecentEvent';
+import RecentStore from '../../../components/MyPage/Recent/RecentStore';
+import {mainTabItems} from '../../../utils/listData';
 
 const RecentPage = () => {
   const [tabClicked, setTabClicked] = useState(1);

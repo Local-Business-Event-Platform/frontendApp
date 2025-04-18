@@ -42,6 +42,7 @@ export const screenNames = {
   MAP_PAGE: 'mapPage',
   MY_PAGE: 'myPage',
   MY_LOCATION: 'myLocation',
+  My_LOCATION_MAP: 'myLocationMap',
   RECENT: 'recent',
   PARTICIPATION: 'participation',
   REVIEW_MANAGEMENT: 'reviewManagement',

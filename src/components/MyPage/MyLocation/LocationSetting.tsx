@@ -6,21 +6,25 @@ import {
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../globalStyle';
+import useCustomNavigation from '../../../hooks/useCustomNavigation';
+import {useMyLocation} from '../../../store/mapRoute';
+import SMapButton from '../../Elements/SMapButton';
 
 type LocationMapProps = {
-  latitude: number;
-  longitude: number;
   radius: number;
 };
 
-const LocationMap = ({latitude, longitude, radius}: LocationMapProps) => {
+const LocationSetting = ({radius}: LocationMapProps) => {
+  const navigation = useCustomNavigation();
+  const {myLocation} = useMyLocation();
+  console.log('myLocation', myLocation, radius);
   return (
     <View style={styles.container}>
       <NaverMapView
         style={styles.mapStyle}
         camera={{
-          latitude: latitude - 0.002,
-          longitude: longitude,
+          latitude: myLocation.latitude,
+          longitude: myLocation.longitude,
           zoom: 15,
         }}
         isRotateGesturesEnabled={false}
@@ -31,8 +35,8 @@ const LocationMap = ({latitude, longitude, radius}: LocationMapProps) => {
         isShowZoomControls={false}
         onInitialized={() => console.log('dd')}>
         <NaverMapCircleOverlay
-          latitude={latitude}
-          longitude={longitude}
+          latitude={myLocation.latitude}
+          longitude={myLocation.longitude}
           radius={radius}
           color={'#F1425C33'}
         />
@@ -41,24 +45,33 @@ const LocationMap = ({latitude, longitude, radius}: LocationMapProps) => {
           width={SWidth * 20}
           height={SWidth * 20}
           image={require('../../../assets/images/MapMyIcon.png')}
-          latitude={latitude}
-          longitude={longitude}
+          latitude={myLocation.latitude}
+          longitude={myLocation.longitude}
           anchor={{x: 0.5, y: 0.5}}
           isIconPerspectiveEnabled={true}
         />
       </NaverMapView>
+      <SMapButton
+        onPress={() => {
+          navigation.navigate('myLocationMap', {
+            latitude: myLocation.latitude,
+            longitude: myLocation.longitude,
+          });
+        }}
+      />
     </View>
   );
 };
 
-export default LocationMap;
+export default LocationSetting;
 
 const styles = StyleSheet.create({
   container: {
+    position: 'relative',
     borderRadius: SWidth * 8,
     overflow: 'hidden',
     width: '100%',
-    height: '100%',
+    height: SWidth * 180,
   },
 
   mapStyle: {

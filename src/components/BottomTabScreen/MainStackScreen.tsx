@@ -13,11 +13,12 @@ import NotificationPage from '../../screen/main/NotificationPage';
 import SearchPage from '../../screen/main/SearchPage';
 import BlockUserPage from '../../screen/myPage/BlockUserPage';
 import CustomerPage from '../../screen/myPage/CustomerPage';
+import MyLocationMapPage from '../../screen/myPage/location/MyLocationMapPage';
 import MyNotificationPage from '../../screen/myPage/MyNotificationPage';
 import NoticePage from '../../screen/myPage/NoticePage';
 import SettingPage from '../../screen/myPage/SettingPage';
-import UserInfoPage from '../../screen/myPage/UserInfoPage';
-import UserUpdatePage from '../../screen/myPage/UserUpdatePage';
+import UserInfoPage from '../../screen/myPage/userUpdate/UserInfoPage';
+import UserUpdatePage from '../../screen/myPage/userUpdate/UserUpdatePage';
 import SplashScreen from '../../screen/SplashScreen';
 import {useModalOpen} from '../../store/modalRoute';
 import {useUserData} from '../../store/userRoute';
@@ -196,6 +197,14 @@ const MainStackScreen = () => {
         name={screenNames.SEARCH}
         component={SearchPage}
         options={options({headerShown: true, screen: 'search'})}
+      />
+      <Stack.Screen
+        name={screenNames.My_LOCATION_MAP}
+        component={MyLocationMapPage}
+        options={{
+          ...options({headerShown: true, title: '동네 설정'}),
+          animation: 'slide_from_bottom',
+        }}
       />
     </Stack.Navigator>
   );
