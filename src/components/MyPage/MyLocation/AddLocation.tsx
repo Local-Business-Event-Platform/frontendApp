@@ -17,7 +17,7 @@ type LocationType = {
 };
 
 const AddLocation = ({list, setMyLocation}: LocationType) => {
-  const [address, setAddress] = useState(0);
+  const [address, setAddress] = useState(1);
 
   const handlePress = (id: number) => {
     setAddress(id);
