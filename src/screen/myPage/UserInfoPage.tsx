@@ -36,13 +36,22 @@ const UserInfoPage = () => {
         <UserInfoContainer title="로그인 정보">
           <SInputSuccess
             title="아이디"
+            titleColor={colors.text.tertiary}
             content="abcdef12345"
-            contentColor={colors.secondary}
+            contentColor={colors.text.secondary}
+          />
+          <SInput
+            value=""
+            title="닉네임"
+            titleColor={colors.text.tertiary}
+            editable={false}
+            onChangeText={() => {}}
           />
           <View style={styles.gapContainer}>
             <SInput
               value=""
               title="비밀번호"
+              titleColor={colors.text.tertiary}
               secureTextEntry={true}
               onChangeText={() => {}}
               buttonTitle="비밀번호 변경"
@@ -71,6 +80,7 @@ const UserInfoPage = () => {
             <SInput
               value=""
               title="주소"
+              titleColor={colors.text.tertiary}
               onChangeText={() => {}}
               buttonTitle="우편번호 검색"
               buttonOnPress={() => {}}
@@ -83,9 +93,9 @@ const UserInfoPage = () => {
       <View style={styles.submitButtonContainer}>
         <SButton56
           title="변경 완료"
-          textColor={colors.secondary}
+          textColor={colors.icon.secondary}
           disabled={true}
-          ButtonColor={colors.interactive.secondary}
+          ButtonColor={colors.bg.interactive.secondaryHovered}
           onPress={() => {}}
         />
       </View>

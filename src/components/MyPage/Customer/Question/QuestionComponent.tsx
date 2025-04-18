@@ -14,7 +14,7 @@ const QuestionComponent = () => {
         <SInput
           required
           title="카테고리"
-          titleColor="#525252"
+          titleColor={colors.text.tertiary}
           value=""
           onChangeText={() => {}}
           placeholder="카테고리를 선택해주세요"
@@ -22,15 +22,17 @@ const QuestionComponent = () => {
         <SInput
           required
           title="제목"
-          titleColor="#525252"
+          titleColor={colors.text.tertiary}
           value=""
           onChangeText={() => {}}
           placeholder="문의 제목을 입력해주세요"
         />
         <STextArea
           title="내용"
-          titleColor="#525252"
+          titleColor={colors.text.tertiary}
           required
+          textCount
+          maxLength={500}
           value=""
           onChangeText={() => {}}
           minHeight={SWidth * 212}
@@ -39,15 +41,27 @@ const QuestionComponent = () => {
         <View style={styles.fileContainer}>
           <SText fStyle="BmdMd" text={'첨부파일'} color={colors.tertiary} />
           <View style={styles.fileBox}>
-            <Plus24 color={colors.primary} />
+            <Plus24 color={colors.icon.primary} />
+          </View>
+          <View>
+            <SText
+              fStyle="BsmRg"
+              text={'· 파일당 최대 10M까지 등록할 수 있습니다.'}
+              color={colors.text.tertiary}
+            />
+            <SText
+              fStyle="BsmRg"
+              text={'· 첨부파일은 최대 2개까지 등록 가능합니다.'}
+              color={colors.text.tertiary}
+            />
           </View>
         </View>
       </View>
       <View style={styles.buttonBox}>
         <SButton56
           title="문의하기"
-          textColor={colors.secondary}
-          ButtonColor={colors.interactive.secondary}
+          textColor={colors.text.tertiary}
+          ButtonColor={colors.bg.interactive.secondaryHovered}
           onPress={() => {}}
         />
       </View>
@@ -67,11 +81,11 @@ const styles = StyleSheet.create({
 
   inputContainer: {
     paddingHorizontal: SWidth * 8,
-    gap: SWidth * 32,
+    gap: SWidth * 24,
   },
 
   fileContainer: {
-    gap: SWidth * 8,
+    gap: SWidth * 12,
   },
 
   fileBox: {
@@ -80,12 +94,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: colors.interactive.secondary,
-    backgroundColor: '#F5F5F5',
+    borderColor: colors.border.secondary,
+    backgroundColor: colors.bg.tertiary,
   },
 
   buttonBox: {
     height: SWidth * 56,
-    marginBottom: SWidth * 16,
+    marginVertical: SWidth * 16,
   },
 });

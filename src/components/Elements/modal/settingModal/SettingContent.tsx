@@ -25,9 +25,9 @@ const SettingContent = ({
     switch (type) {
       case '로그아웃':
       case '데이터':
-        return colors.interactive.primary;
+        return colors.bg.interactive.primary;
       case '탈퇴':
-        return '#FEF2F2';
+        return colors.bg.interactive.subtle;
     }
   };
 
@@ -49,7 +49,7 @@ const SettingContent = ({
       case '로그아웃':
       case '데이터':
       case 'login':
-        return colors.white;
+        return colors.text.interactive.inverse;
       case '탈퇴':
         return colors.text.danger;
     }
@@ -87,7 +87,7 @@ const SettingContent = ({
         <SButton56
           flex={false}
           title={closeText()!}
-          textColor={colors.text.secondary}
+          textColor={colors.icon.secondary}
           ButtonColor={'#FAFAFA'}
           onPress={closeOnPress}
         />

@@ -11,6 +11,7 @@ export const colors = {
     success: '#00A63E',
     danger: '#E7000B',
     interactive: {
+      primary: '#155DFC',
       primaryHovered: '#1447E6',
       secondary: '#525252',
       selected: '#155DFC',
@@ -24,20 +25,26 @@ export const colors = {
     brand: '#155DFC',
     warningSubtle: '#FEFCE8',
     infoSubtle: '#EFF6FF',
+    dangerSubtle: '#FEF2F2',
+    inverseBold: '#404040',
     interactive: {
       primary: '#155DFC',
       selected: '#EFF6FF',
       secondary: '#FAFAFA',
       secondaryHovered: '#E5E5E5',
+      subtle: '#FEF2F2',
     },
   },
   border: {
     primary: '#A1A1A1',
+    focusRing: '#155DFC',
     interactive: {
       primary: '#155DFC',
+      primaryHovered: '#1447E6',
       secondary: '#525252',
-      danger: '#E7000B',
+      secondaryPressed: '#262626',
       secondaryHovered: '#404040',
+      danger: '#E7000B',
     },
     secondary: '#E5E5E5',
   },
@@ -46,6 +53,7 @@ export const colors = {
     secondary: '#404040',
     info02: '#FDC700',
     disabled: '#A1A1A1',
+    danger: '#C10007',
     interactive: {
       primary: '#155DFC',
       primaryHovered: '#1447E6',
@@ -63,7 +71,7 @@ export const colors = {
     selected: '#EFF6FF',
   },
   disabled: '#A1A1A1',
-};
+} as const;
 
 export const fontFamilies = {
   pretendardBlack: 'Pretendard-Black',
@@ -77,8 +85,8 @@ export const fontFamilies = {
   pretendardThin: 'Pretendard-Thin',
 } as const;
 
-const BASE_WIDTH = 402;
-const BASE_HEIGHT = 874;
+const BASE_WIDTH = 402 as const;
+const BASE_HEIGHT = 874 as const;
 
 const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
 // ✅ 가로, 세로 스케일

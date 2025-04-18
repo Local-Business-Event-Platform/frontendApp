@@ -11,19 +11,21 @@ const UserInfoUser = ({userName, userPhone, onPress}: UserInfoProps) => {
     <UserInfoContainer title="회원 정보">
       <SInputSuccess
         title="이름"
+        titleColor={colors.text.tertiary}
         content={userName}
-        contentColor={colors.secondary}
+        contentColor={colors.text.secondary}
       />
       <SInputSuccess
         title="휴대폰 번호"
+        titleColor={colors.text.tertiary}
         content={userPhone}
-        contentColor={colors.secondary}
+        contentColor={colors.text.secondary}
       />
       <Pressable style={styles.buttonStyle} onPress={onPress}>
         <SText
           fStyle="BmdSb"
           text={'본인 인증으로 정보 수정하기'}
-          color={colors.interactive.primary}
+          color={colors.text.interactive.primary}
         />
       </Pressable>
     </UserInfoContainer>
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
     height: SWidth * 40,
     borderWidth: 1.25,
     borderRadius: SWidth * 8,
-    borderColor: colors.interactive.primary,
+    borderColor: colors.border.interactive.primary,
     alignItems: 'center',
     justifyContent: 'center',
   },

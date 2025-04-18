@@ -35,8 +35,9 @@ const BlockItem = ({
       </View>
       <SButton40
         title="차단 해제"
-        textColor={colors.text.secondary}
-        ButtonColor={colors.interactive.secondary}
+        textColor={colors.text.interactive.secondary}
+        borderWidth={1.25}
+        ButtonColor={colors.white}
         // icon={<Pen24 />}
         onPress={onPress}
       />
@@ -52,9 +53,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: SWidth * 16,
-    paddingVertical: SWidth * 24,
+    paddingVertical: SWidth * 20,
     paddingHorizontal: SWidth * 8,
-    borderColor: '#A1A1A11A',
+    borderColor: colors.border.secondary,
   },
 
   imageContainer: {
@@ -69,6 +70,6 @@ const styles = StyleSheet.create({
   },
 
   textContainer: {
-    gap: SWidth * 4,
+    gap: SWidth * 2,
   },
 });

@@ -49,7 +49,7 @@ const SInput = ({
             <SText
               fStyle="BmdMd"
               text={'*'}
-              color={colors.interactive.primary}
+              color={colors.text.interactive.primary}
             />
           )}
         </View>

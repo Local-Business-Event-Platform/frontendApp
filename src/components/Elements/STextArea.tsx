@@ -15,6 +15,8 @@ type STextAreaProps = {
   titleColor?: string;
   value: string;
   minHeight?: DimensionValue;
+  maxLength?: number;
+  textCount?: boolean;
   placeholder: string;
   onChangeText?: (text: string) => void;
 };
@@ -25,6 +27,8 @@ const STextArea = ({
   titleColor,
   value,
   minHeight = SWidth * 104,
+  maxLength = 200,
+  textCount = false,
   placeholder,
   onChangeText,
 }: STextAreaProps) => {
@@ -32,25 +36,37 @@ const STextArea = ({
     <View style={styles.container}>
       {title && (
         <View style={styles.titleContainer}>
-          <SText fStyle="BmdMd" text={title} color={titleColor} />
-          {required && (
-            <SText
-              fStyle="BmdMd"
-              text={'*'}
-              color={colors.interactive.primary}
-            />
+          <View style={styles.requiredContainer}>
+            <SText fStyle="BmdMd" text={title} color={titleColor} />
+            {required && (
+              <SText
+                fStyle="BmdMd"
+                text={'*'}
+                color={colors.text.interactive.primary}
+              />
+            )}
+          </View>
+          {textCount && (
+            <View style={styles.countContainer}>
+              <SText
+                fStyle="BmdMd"
+                text={`${value.length}`}
+                color={colors.text.tertiary}
+              />
+              <SText fStyle="BmdMd" text={'/'} color={colors.text.tertiary} />
+              <SText fStyle="BmdMd" text={`${maxLength}`} />
+            </View>
           )}
         </View>
       )}
-
       <TextInput
         value={value}
         style={[styles.inputStyle, {minHeight: minHeight}]}
         multiline={true}
         placeholder={placeholder}
-        placeholderTextColor={colors.disabled}
+        placeholderTextColor={colors.text.disabled}
         numberOfLines={6}
-        maxLength={200}
+        maxLength={maxLength}
         onChangeText={onChangeText}
       />
     </View>
@@ -68,7 +84,7 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'flex-start',
     borderWidth: SWidth * 1.25,
-    borderColor: colors.interactive.secondary,
+    borderColor: colors.border.secondary,
     borderRadius: SWidth * 8,
     padding: SWidth * 12,
     textAlignVertical: 'top',
@@ -79,6 +95,18 @@ const styles = StyleSheet.create({
 
   titleContainer: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  requiredContainer: {
+    flexDirection: 'row',
+    gap: SWidth * 4,
+  },
+
+  countContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     gap: SWidth * 4,
   },
 });

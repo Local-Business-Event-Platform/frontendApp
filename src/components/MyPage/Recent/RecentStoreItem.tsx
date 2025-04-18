@@ -29,7 +29,11 @@ const RecentStoreItem = ({
         <View style={styles.titleContainer}>
           <View style={styles.rowContainer}>
             <SText fStyle="BlgSb" text={title} />
-            <SText fStyle="BmdMd" text={category} color={colors.disabled} />
+            <SText
+              fStyle="BmdMd"
+              text={category}
+              color={colors.text.disabled}
+            />
           </View>
         </View>
         <SReviewBox review={review} reviewCount={reviewCount} />

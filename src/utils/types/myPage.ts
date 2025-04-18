@@ -64,3 +64,8 @@ export type UserInfoProps = {
   userPhone: string;
   onPress: () => void;
 };
+
+export type UserTypeProps = {
+  isAllClicked: boolean;
+  userType: 'user' | 'store';
+};

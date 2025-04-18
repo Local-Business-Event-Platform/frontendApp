@@ -18,7 +18,7 @@ const SettingItem = ({
       <SText fStyle="BlgRg" text={title} />
       {icon && (
         <View style={styles.iconContainer}>
-          <RightArrow24 color={colors.tertiary} />
+          <RightArrow24 color={colors.icon.interactive.secondary} />
         </View>
       )}
     </Pressable>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: SWidth * 64,
     justifyContent: 'space-between',
-    borderColor: colors.interactive.secondary,
+    borderColor: colors.border.secondary,
   },
 
   iconContainer: {

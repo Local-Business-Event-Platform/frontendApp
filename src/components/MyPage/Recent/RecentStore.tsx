@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
 import SFlatList from '../../Elements/SFlatList';
@@ -82,7 +82,7 @@ const RecentStore = () => {
       skeleton={<View />}
       dataItem={({item}) => (
         <View style={styles.container}>
-          <SText fStyle="BxlMd" text={item.date} color={'#000000'} />
+          <SText fStyle="BxlMd" text={item.date} color={colors.black} />
           {item.store.map((store: StoreType) => (
             <RecentStoreItem
               key={store.id}

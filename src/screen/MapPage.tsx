@@ -1,17 +1,14 @@
-import Geolocation from '@react-native-community/geolocation';
 import {getDistance} from 'geolib';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../globalStyle';
 import SInput from '../components/Elements/SInput';
 import Map from '../components/Map/Map';
-import {useBottomSheetTitle} from '../store/mapRoute';
+import {useBottomSheetTitle, useMyLocation} from '../store/mapRoute';
 
 const MapPage = () => {
-  const [myLocation, setMyLocation] = useState({
-    latitude: 0,
-    longitude: 0,
-  });
+  const {myLocation} = useMyLocation();
+
   const {category, setCategory} = useBottomSheetTitle();
 
   const buildings = [
@@ -29,36 +26,6 @@ const MapPage = () => {
     );
     return distance <= 300; // 1km = 1000m
   });
-
-  const getLocation = async () => {
-    try {
-      Geolocation.getCurrentPosition(
-        position => {
-          console.log('위치 추적 중:', position);
-          setMyLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          });
-        },
-        error => {
-          console.log('에러:', error);
-        },
-        // {
-        //   enableHighAccuracy: false, // true이면 GPS 안 잡힐 수 있음
-        //   distanceFilter: 0, // 움직이지 않아도 추적되게
-        //   interval: 3000, // 밀리초 단위
-        //   fastestInterval: 2000, // 안드로이드 전용
-        //   useSignificantChanges: false, // iOS용
-        // },
-      );
-    } catch (error) {
-      console.error('위치 정보 가져오기 중 오류 발생:', error);
-    }
-  };
-
-  useEffect(() => {
-    getLocation();
-  }, []);
 
   console.log('nearbyBuildings', myLocation);
   return (

@@ -8,19 +8,22 @@ import {customerTabItems} from '../../utils/listData';
 const CustomerPage = () => {
   const [MenuNumber, setMenuNumber] = useState(1);
   return (
-    <ScrollView contentContainerStyle={{flexGrow: 1}}>
-      <Pressable style={styles.container} onPress={Keyboard.dismiss}>
-        <STabBar
-          menuList={customerTabItems}
-          tabIndex={MenuNumber}
-          setTabIndex={setMenuNumber}
-        />
+    <Pressable style={styles.container} onPress={Keyboard.dismiss}>
+      <STabBar
+        menuList={customerTabItems}
+        tabIndex={MenuNumber}
+        setTabIndex={setMenuNumber}
+      />
+      <ScrollView
+        contentContainerStyle={{flexGrow: 1}}
+        showsVerticalScrollIndicator={false}
+        overScrollMode="never">
         {MenuNumber === 1 && (
           <FAQComponent searchValue="" searchOnchange={() => {}} />
         )}
         {MenuNumber === 2 && <QuestionComponent />}
-      </Pressable>
-    </ScrollView>
+      </ScrollView>
+    </Pressable>
   );
 };
 

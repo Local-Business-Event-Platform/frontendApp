@@ -49,14 +49,15 @@ export const screenNames = {
   COMMUNITY: 'community',
   BUSINESS_PAGE: 'businessPage',
   STORE_INFO: 'storeInfo',
-};
+} as const;
 
 export const modalNames = {
   BUSINESS: 'business',
   PASSWORD: 'password',
   SETTING: 'setting',
   DETAIL_PAGE: 'detailPage',
-};
+  BLOCK: 'block',
+} as const;
 
 export const textItems = [
   {text: '아이디/비밀번호', color: colors.text.info},
@@ -238,5 +239,82 @@ export const settingsModalList = [
     title: '로그인이 필요해요',
     content: '로그인이 필요한 기능이에요. 지금 로그인하고',
     content2: '필요한 기능을 사용해보세요.',
+  },
+];
+
+export const userServiceList = [
+  {
+    id: 1,
+    title: '관심 가게 소식',
+    subTitle: '새로운 소식 업데이트',
+    click: false,
+  },
+  {
+    id: 2,
+    title: '추천 이벤트',
+    subTitle: '새로운 소식 업데이트',
+    click: false,
+    border: true,
+  },
+  {
+    id: 3,
+    title: '공지사항',
+    subTitle: '서비스 업데이트 및 공지',
+    click: false,
+  },
+];
+
+export const userActivityList = [
+  {
+    id: 1,
+    title: '댓글',
+    subTitle: '내 게시물의 새 댓글',
+    click: false,
+  },
+  {
+    id: 2,
+    title: '좋아요',
+    subTitle: '내 게시물의 좋아요',
+    click: false,
+    border: true,
+  },
+];
+export const storeActivityList = [
+  {
+    id: 1,
+    title: '가게',
+    subTitle: '내 가게 찜',
+    click: false,
+    border: true,
+  },
+  {
+    id: 2,
+    title: '이벤트',
+    subTitle: '내 이벤트 찜',
+    click: false,
+    border: true,
+  },
+  {
+    id: 3,
+    title: '댓글',
+    subTitle: '내 게시물의 새 댓글',
+    click: false,
+  },
+  {
+    id: 4,
+    title: '좋아요',
+    subTitle: '내 게시물의 좋아요',
+    click: false,
+    border: true,
+  },
+];
+
+export const storeServiceList = [
+  {
+    id: 1,
+    title: '공지사항',
+    subTitle: '서비스 업데이트 및 공지',
+    click: false,
+    border: false,
   },
 ];

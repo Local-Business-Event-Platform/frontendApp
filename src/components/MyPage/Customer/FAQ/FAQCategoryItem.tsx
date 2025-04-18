@@ -7,7 +7,7 @@ import SText from '../../../Elements/SText';
 const FAQCategoryItem = ({title, onPress}: FAQCategoryItemProps) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
-      <SText fStyle="BmdMd" text={title} color={colors.secondary} />
+      <SText fStyle="BmdMd" text={title} color={colors.text.secondary} />
     </Pressable>
   );
 };
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 999,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: colors.bg.interactive.secondary,
     borderWidth: 1,
-    borderColor: colors.interactive.secondary,
+    borderColor: colors.border.secondary,
   },
 });

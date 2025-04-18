@@ -101,7 +101,7 @@ const ReviewManagementPage = () => {
               <SText
                 fStyle="BlgSb"
                 text={item.store}
-                color={colors.secondary}
+                color={colors.text.secondary}
               />
               <View style={styles.reviewContainer}>
                 {Array.from({length: 5}).map((_, index) =>
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     paddingTop: SWidth * 20,
     paddingBottom: SWidth * 28,
     gap: SWidth * 12,
-    borderColor: colors.interactive.secondary,
+    borderColor: colors.border.secondary,
   },
 
   rowContainer: {
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     borderRadius: SWidth * 8,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#FAFAFA',
+    backgroundColor: colors.bg.interactive.secondary,
   },
 
   reviewContainer: {
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: SWidth * 4,
     paddingVertical: SWidth * 2,
-    backgroundColor: '#FEFCE8',
+    backgroundColor: colors.bg.warningSubtle,
   },
 
   imgStyle: {

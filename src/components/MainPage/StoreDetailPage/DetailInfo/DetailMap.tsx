@@ -3,10 +3,10 @@ import {
   NaverMapView,
 } from '@mj-studio/react-native-naver-map';
 import React, {useState} from 'react';
-import {Pressable, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
-import MapArrow24 from '../../../../utils/svgs/storeDetailPage/MapArrow24';
 import {DetailMapProps} from '../../../../utils/types/StoreDetailType';
+import SMapButton from '../../../Elements/SMapButton';
 
 const DetailMap = ({x, y}: DetailMapProps) => {
   const [zoom, setZoom] = useState(16);
@@ -45,9 +45,7 @@ const DetailMap = ({x, y}: DetailMapProps) => {
           isIconPerspectiveEnabled={true}
         />
       </NaverMapView>
-      <Pressable style={styles.mapArrow} onPress={() => {}}>
-        <MapArrow24 />
-      </Pressable>
+      <SMapButton onPress={() => {}} />
     </View>
   );
 };
@@ -66,19 +64,5 @@ const styles = StyleSheet.create({
   mapSize: {
     width: '100%',
     height: '100%',
-  },
-
-  mapArrow: {
-    position: 'absolute',
-    width: SWidth * 40,
-    height: SWidth * 40,
-    borderRadius: SWidth * 8,
-    backgroundColor: colors.bg.interactive.secondary,
-    alignItems: 'center',
-    justifyContent: 'center',
-    bottom: SWidth * 16,
-    right: SWidth * 16,
-    zIndex: 10,
-    boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.25)',
   },
 });

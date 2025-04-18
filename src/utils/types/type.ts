@@ -17,7 +17,8 @@ export type SButtonProps = {
   flex?: boolean;
   onPress: () => void;
   disabled?: boolean;
-  ButtonColor: ColorValue;
+  borderWidth?: number;
+  ButtonColor?: ColorValue;
   title: string;
   textColor: ColorValue;
   icon?: JSX.Element;

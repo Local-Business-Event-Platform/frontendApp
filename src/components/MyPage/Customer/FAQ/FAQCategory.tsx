@@ -54,7 +54,6 @@ export default FAQCategory;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 28,
     gap: SWidth * 12,
     paddingHorizontal: SWidth * 24,
   },

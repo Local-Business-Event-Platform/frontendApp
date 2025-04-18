@@ -6,7 +6,7 @@ import AllButton from '../../components/MyPage/MyNotification/AllButton';
 import ServiceButtons from '../../components/MyPage/MyNotification/ServiceButtons';
 
 const MyNotificationPage = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isAllClicked, setIsAllClicked] = useState(false);
   return (
     <ScrollView
       style={styles.container}
@@ -14,11 +14,11 @@ const MyNotificationPage = () => {
       showsVerticalScrollIndicator={false}>
       <View style={styles.contentContainer}>
         <AllButton
-          allClick={isClicked}
-          allOnPress={() => setIsClicked(!isClicked)}
+          allClick={isAllClicked}
+          allOnPress={() => setIsAllClicked(!isAllClicked)}
         />
-        <ServiceButtons />
-        <ActivityButtons />
+        <ServiceButtons userType="store" isAllClicked={isAllClicked} />
+        <ActivityButtons userType="store" isAllClicked={isAllClicked} />
       </View>
     </ScrollView>
   );
@@ -29,10 +29,9 @@ export default MyNotificationPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: SWidth * 33,
     paddingHorizontal: SWidth * 24,
   },
 
-  contentContainer: {
-    marginTop: SWidth * 33,
-  },
+  contentContainer: {},
 });

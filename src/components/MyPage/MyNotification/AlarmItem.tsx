@@ -22,7 +22,7 @@ const AlarmItem = ({
         <SText fStyle="BlgMd" text={title} />
         <SSwitchButton click={click} onPress={onPress} />
       </View>
-      <SText fStyle="BmdRg" text={subTitle} color={colors.tertiary} />
+      <SText fStyle="BmdRg" text={subTitle} color={colors.text.tertiary} />
     </View>
   );
 };
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   container: {
     paddingVertical: SWidth * 20,
     gap: SWidth * 2,
-    borderColor: colors.interactive.secondary,
+    borderColor: colors.border.secondary,
   },
 
   rowContainer: {

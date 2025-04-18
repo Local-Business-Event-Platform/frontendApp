@@ -7,6 +7,7 @@ type NoticeItemProps = {
   box?: boolean;
   backgroundColor: ColorValue;
   boxColor: ColorValue;
+  boxBorderColor: ColorValue;
   boxTitle: string;
   title: string;
   date: string;
@@ -17,6 +18,7 @@ const NoticeItem = ({
   box,
   backgroundColor,
   boxColor,
+  boxBorderColor,
   boxTitle,
   title,
   date,
@@ -27,7 +29,11 @@ const NoticeItem = ({
       <View style={styles.rowContainer}>
         <View style={[styles.rowTitle]}>
           {box && (
-            <View style={[styles.boxStyle, {backgroundColor: boxColor}]}>
+            <View
+              style={[
+                styles.boxStyle,
+                {backgroundColor: boxColor, borderColor: boxBorderColor},
+              ]}>
               <SText fStyle="BmdMd" text={boxTitle} color={colors.white} />
             </View>
           )}
@@ -39,14 +45,14 @@ const NoticeItem = ({
             text={title}
           />
         </View>
-        <SText fStyle="BmdRg" text={date} color={colors.tertiary} />
+        <SText fStyle="BmdRg" text={date} color={colors.text.tertiary} />
       </View>
       <SText
         flexShrink={1}
         nLine={3}
         fStyle="BmdRg"
         text={content}
-        color={colors.tertiary}
+        color={colors.text.tertiary}
       />
     </View>
   );
@@ -82,5 +88,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 999,
+    borderWidth: 1,
   },
 });

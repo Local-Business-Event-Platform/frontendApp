@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import Plus24 from '../../../utils/svgs/businessPage/Plus24';
@@ -7,19 +7,31 @@ import MyPageTitle from '../MyPageTitle';
 import LocationAddItem from './LocationAddItem';
 
 const AddLocation = () => {
-  const locationList = [
+  const list = [
     {id: 1, title: '역삼동', isClicked: true},
     {id: 2, title: '삼성동', isClicked: false},
     {id: 3, title: '신사동', isClicked: false},
   ];
+  const [locationList, setLocationList] = useState(list);
+
+  const handlePress = (id: number) => {
+    setLocationList(prev =>
+      prev.map(item =>
+        item.id === id
+          ? {...item, isClicked: true}
+          : {...item, isClicked: false},
+      ),
+    );
+  };
+
   return (
     <View style={styles.container}>
-      <View style={[styles.lowContainer, {height: SWidth * 32}]}>
+      <View style={[styles.lowContainer, {height: SWidth * 36}]}>
         <MyPageTitle title="등록한 동네" />
         <SText
           fStyle="BmdMd"
           text={'최대 4개까지 설정 가능'}
-          color={colors.disabled}
+          color={colors.text.disabled}
         />
       </View>
       <View style={styles.locationContainer}>
@@ -28,7 +40,7 @@ const AddLocation = () => {
             key={item.id}
             title={item.title}
             isClicked={item.isClicked}
-            onPress={() => {}}
+            onPress={() => handlePress(item.id)}
           />
         ))}
         <Pressable style={styles.addButton} onPress={() => {}}>

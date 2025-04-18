@@ -46,13 +46,20 @@ const NoticePage = () => {
           key={notice.id}
           box={notice.box}
           backgroundColor={
-            notice.boxTitle === '중요' ? colors.interactive.selected : '#FAFAFA'
+            notice.boxTitle === '중요'
+              ? colors.bg.interactive.selected
+              : colors.bg.secondary
           }
           boxTitle={notice.boxTitle!}
           boxColor={
             notice.boxTitle === '중요'
-              ? colors.interactive.primary
-              : colors.secondary
+              ? colors.bg.interactive.primary
+              : colors.bg.inverseBold
+          }
+          boxBorderColor={
+            notice.boxTitle === '중요'
+              ? colors.border.focusRing
+              : colors.border.interactive.secondaryPressed
           }
           title={notice.title}
           date={notice.date}

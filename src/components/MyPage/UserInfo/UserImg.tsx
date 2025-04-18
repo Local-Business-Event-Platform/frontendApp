@@ -2,7 +2,7 @@ import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {imageSelected} from '../../../service/imagePicker';
 import Pen16 from '../../../utils/svgs/myPage/Pen16';
 import {UserImgProps} from '../../../utils/types/myPage';
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5F5F5',
+    backgroundColor: colors.bg.tertiary,
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.12)',
   },
 });

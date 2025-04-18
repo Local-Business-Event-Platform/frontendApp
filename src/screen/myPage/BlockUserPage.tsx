@@ -2,9 +2,12 @@ import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import SFlatList from '../../components/Elements/SFlatList';
+import SText from '../../components/Elements/SText';
 import BlockItem from '../../components/MyPage/BlockUser/BlockItem';
+import {useModalOpen} from '../../store/modalRoute';
 
 const BlockUserPage = () => {
+  const {setModalOpen, setModalTitle, setId} = useModalOpen();
   const data = [
     {
       id: 1,
@@ -42,6 +45,9 @@ const BlockUserPage = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.textContainer}>
+        <SText fStyle="Hsm" text={`총 ${data.length}명`} />
+      </View>
       <SFlatList
         data={data}
         skeleton={<View />}
@@ -52,7 +58,11 @@ const BlockUserPage = () => {
             image={item.userImage}
             name={item.name}
             address={item.address}
-            onPress={() => {}}
+            onPress={() => {
+              setId(item.id);
+              setModalTitle('block');
+              setModalOpen(true);
+            }}
           />
         )}
       />
@@ -66,5 +76,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: SWidth * 16,
+    gap: SWidth * 8,
+  },
+
+  textContainer: {
+    paddingHorizontal: SWidth * 24,
   },
 });

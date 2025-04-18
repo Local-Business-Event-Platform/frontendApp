@@ -9,6 +9,7 @@ import SFlatList from '../../Elements/SFlatList';
 import SImageCard from '../../Elements/SImageCard';
 import SImageCardLoading from '../../Elements/Skeleton/SImageCardLoading';
 import SText from '../../Elements/SText';
+import StoreItemIconTitle from './StoreItemIconTitle';
 
 type EventType = {
   id: number;
@@ -84,7 +85,7 @@ const RecentEvent = () => {
       skeleton={<SImageCardLoading count={3} />}
       dataItem={({item}) => (
         <View style={styles.container}>
-          <SText fStyle="BxlMd" text={item.date} color={'#000000'} />
+          <SText fStyle="BxlMd" text={item.date} color={colors.black} />
           {item.events.map((event: EventType) => (
             <SImageCard
               key={event.id}
@@ -96,35 +97,16 @@ const RecentEvent = () => {
               <View style={styles.itemContainer}>
                 <SText fStyle="BxlSb" text={event.title} />
                 <View style={styles.contentContainer}>
-                  <View style={styles.rowContainer}>
-                    <View style={styles.rowTitleContainer}>
-                      <Location24 />
-                      <SText
-                        fStyle="BmdMd"
-                        text={event.store}
-                        color={colors.secondary}
-                      />
-                      <SText
-                        fStyle="BmdMd"
-                        text={`(${event.category})`}
-                        color={colors.secondary}
-                      />
-                    </View>
-                    <SText fStyle="BmdMd" text={'·'} color={colors.secondary} />
-                    <SText
-                      fStyle="BmdMd"
-                      text={event.km}
-                      color={colors.secondary}
-                    />
-                  </View>
-                  <View style={styles.rowTitleContainer}>
-                    <Calendar24 color={colors.interactive.primary} />
-                    <SText
-                      fStyle="BmdMd"
-                      text={event.date}
-                      color={colors.secondary}
-                    />
-                  </View>
+                  <StoreItemIconTitle
+                    icon={<Location24 />}
+                    title={event.store}
+                    category={event.category}
+                    km={event.km}
+                  />
+                  <StoreItemIconTitle
+                    icon={<Calendar24 color={colors.interactive.primary} />}
+                    title={event.date}
+                  />
                 </View>
               </View>
             </SImageCard>
@@ -148,17 +130,5 @@ const styles = StyleSheet.create({
 
   contentContainer: {
     gap: SWidth * 4,
-  },
-
-  rowTitleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SWidth * 4,
-  },
-
-  rowContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SWidth * 8,
   },
 });

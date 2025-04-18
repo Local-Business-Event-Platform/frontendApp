@@ -10,7 +10,7 @@ const FAQQuestionItem = ({title, onPress}: FAQQuestionItemProps) => {
     <Pressable style={styles.container} onPress={onPress}>
       <SText fStyle="BlgRg" text={title} />
       <View style={styles.questionIconBox}>
-        <DownArrowTwo24 color={colors.tertiary} />
+        <DownArrowTwo24 color={colors.icon.interactive.secondary} />
       </View>
     </Pressable>
   );
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: SWidth * 64,
     borderBottomWidth: 1,
-    borderColor: colors.interactive.secondary,
+    borderColor: colors.border.secondary,
   },
 
   questionIconBox: {

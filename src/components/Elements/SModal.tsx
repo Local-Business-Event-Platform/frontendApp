@@ -32,7 +32,7 @@ const SModal = () => {
           paddingBottom:
             modalTitle === modalNames.DETAIL_PAGE ? SWidth * 32 : 0,
           paddingHorizontal:
-            modalTitle === modalNames.SETTING
+            modalTitle === modalNames.SETTING || modalTitle === modalNames.BLOCK
               ? SWidth * 36
               : modalTitle === modalNames.DETAIL_PAGE
               ? SWidth * 16

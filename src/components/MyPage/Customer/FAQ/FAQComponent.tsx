@@ -9,16 +9,18 @@ import FAQQuestion from './FAQQuestion';
 const FAQComponent = ({searchValue, searchOnchange}: FAQComponentProps) => {
   return (
     <View style={styles.container}>
-      <View style={styles.searchContainer}>
-        <SInput
-          value={searchValue}
-          onChangeText={searchOnchange}
-          searchOn
-          searchIconColor={colors.tertiary}
-          placeholder="궁금한 내용을 검색해보세요"
-        />
+      <View style={{gap: SWidth * 28}}>
+        <FAQCategory />
+        <View style={styles.searchContainer}>
+          <SInput
+            value={searchValue}
+            onChangeText={searchOnchange}
+            searchOn
+            searchIconColor={colors.icon.interactive.secondary}
+            placeholder="궁금한 내용을 검색해보세요"
+          />
+        </View>
       </View>
-      <FAQCategory />
       <FAQQuestion />
     </View>
   );

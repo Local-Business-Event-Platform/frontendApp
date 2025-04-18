@@ -33,15 +33,13 @@ const FAQQuestion = () => {
       <View style={styles.titleBox}>
         <MyPageTitle title="자주 묻는 질문" />
       </View>
-      <View style={styles.questionItemContainer}>
-        {itemList.map(item => (
-          <FAQQuestionItem
-            key={item.id}
-            title={item.title}
-            onPress={item.onPress}
-          />
-        ))}
-      </View>
+      {itemList.map(item => (
+        <FAQQuestionItem
+          key={item.id}
+          title={item.title}
+          onPress={item.onPress}
+        />
+      ))}
     </View>
   );
 };
@@ -52,17 +50,14 @@ const styles = StyleSheet.create({
   container: {
     marginTop: SWidth * 64,
     paddingHorizontal: SWidth * 24,
+    gap: SWidth * 4,
   },
 
   titleBox: {
-    height: SWidth * 32,
+    height: SWidth * 36,
     justifyContent: 'center',
     borderBottomWidth: 1.5,
     borderColor: '#000000',
-  },
-
-  questionItemContainer: {
-    marginTop: SWidth * 4,
   },
 
   questionItemBox: {

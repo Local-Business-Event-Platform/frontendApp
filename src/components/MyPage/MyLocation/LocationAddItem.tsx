@@ -11,18 +11,26 @@ const LocationAddItem = ({isClicked, title, onPress}: LocationAddItemProps) => {
       style={[
         styles.container,
         {
-          borderColor: isClicked ? colors.interactive.primary : '#FAFAFA',
-          backgroundColor: isClicked ? colors.white : '#FAFAFA',
+          borderColor: isClicked
+            ? colors.border.interactive.primary
+            : colors.bg.interactive.secondary,
+          backgroundColor: isClicked
+            ? colors.white
+            : colors.bg.interactive.secondary,
         },
       ]}
       onPress={onPress}>
       <SText
         fStyle="BlgSb"
         text={title}
-        color={isClicked ? colors.interactive.primary : colors.secondary}
+        color={
+          isClicked ? colors.text.interactive.primary : colors.icon.secondary
+        }
       />
       <More24
-        color={isClicked ? colors.interactive.primary : colors.secondary}
+        color={
+          isClicked ? colors.icon.interactive.primary : colors.icon.secondary
+        }
       />
     </Pressable>
   );

@@ -20,44 +20,16 @@ const MyLocationSlider = ({location, setLocation}: MyLocationSliderProps) => {
     <View style={styles.container}>
       <View style={{alignItems: 'center'}}>
         <SText
-          fStyle="BlgMd"
+          fStyle="BlgSb"
           text={`선택 범위 ${location / 1000}km`}
-          color={colors.interactive.primary}
+          color={colors.text.interactive.primary}
         />
       </View>
       <View
         style={{
           position: 'relative',
         }}>
-        <View
-          style={{
-            flex: 1,
-            position: 'absolute',
-            bottom: SWidth * 6.5,
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}>
-          <View
-            style={{
-              flex: 1,
-              height: SWidth * 12,
-              borderTopLeftRadius: SWidth * 4,
-              borderBottomLeftRadius: SWidth * 4,
-              borderWidth: 1,
-              borderColor: location <= 1000 ? '#E5E5E5' : '#1447E6',
-            }}
-          />
-          <View
-            style={{
-              flex: 1,
-              height: SWidth * 12,
-              borderTopRightRadius: SWidth * 4,
-              borderBottomRightRadius: SWidth * 4,
-              borderWidth: 1,
-              borderColor: location <= 2000 ? '#E5E5E5' : '#1447E6',
-            }}
-          />
-        </View>
+        {/* <TrackBackground location={location} /> */}
         <Slider
           value={location}
           containerStyle={styles.sliderContainer}
@@ -74,8 +46,16 @@ const MyLocationSlider = ({location, setLocation}: MyLocationSliderProps) => {
       <View style={styles.buttonContainer}>
         {locationTextList.map(item => (
           <View key={item.id} style={styles.buttonStyle}>
-            <SText fStyle="BlgMd" text={item.title} color={colors.secondary} />
-            <SText fStyle="BmdMd" text={item.content} color={colors.tertiary} />
+            <SText
+              fStyle="BlgMd"
+              text={item.title}
+              color={colors.text.secondary}
+            />
+            <SText
+              fStyle="BmdMd"
+              text={item.content}
+              color={colors.text.tertiary}
+            />
           </View>
         ))}
       </View>
@@ -91,7 +71,7 @@ const styles = StyleSheet.create({
     paddingTop: SWidth * 20,
     paddingHorizontal: SWidth * 16,
     borderTopWidth: 1,
-    borderColor: '#E5E5E5',
+    borderColor: colors.border.secondary,
   },
 
   sliderContainer: {
@@ -103,7 +83,7 @@ const styles = StyleSheet.create({
     width: SWidth * 24,
     height: SWidth * 24,
     borderWidth: 1,
-    borderColor: '#1447E6',
+    borderColor: colors.border.interactive.primaryHovered,
     borderRadius: 999,
     backgroundColor: colors.interactive.primary,
     zIndex: 2,
@@ -111,10 +91,10 @@ const styles = StyleSheet.create({
 
   trackStyle: {
     width: '100%',
-    height: SWidth * 11,
-    backgroundColor: '#F5F5F5',
-    // borderWidth: 1,
-    // borderColor: '#E5E5E5',
+    height: SWidth * 12,
+    backgroundColor: colors.bg.tertiary,
+    borderWidth: 1,
+    borderColor: colors.border.secondary,
     borderRadius: SWidth * 4,
   },
 
