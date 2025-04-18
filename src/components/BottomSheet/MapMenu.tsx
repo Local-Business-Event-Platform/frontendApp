@@ -25,7 +25,11 @@ const MapMenu = () => {
             setCategory(menu.name);
           }}>
           <View style={styles.menuItemBox}></View>
-          <SText fStyle="BmdMd" text={menu.name} color={colors.secondary} />
+          <SText
+            fStyle="BmdMd"
+            text={menu.name}
+            color={colors.text.secondary}
+          />
         </Pressable>
       ))}
     </BottomSheetView>
@@ -55,7 +59,7 @@ const styles = StyleSheet.create({
     width: SWidth * 64,
     height: SWidth * 64,
     borderRadius: SWidth * 8,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: colors.bg.tertiary,
     justifyContent: 'center',
     alignItems: 'center',
   },

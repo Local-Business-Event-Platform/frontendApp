@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 
 const BottomSheetHeader = () => {
   return (
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   handleIndicator: {
     width: SWidth * 56,
     height: SWidth * 5,
-    backgroundColor: '#A1A1A180',
+    backgroundColor: `${colors.icon.disabled}80`,
     borderRadius: 3,
   },
 });

@@ -35,9 +35,14 @@ const MapPage = () => {
           <SInput
             value={category}
             onChangeText={text => setCategory(text)}
-            borderColor={colors.tertiary}
+            borderColor={
+              category
+                ? colors.border.interactive.secondary
+                : colors.border.secondary
+            }
+            placeholder="검색"
             searchOn={true}
-            searchIconColor={colors.disabled}
+            searchIconColor={colors.icon.disabled}
             iconOnPress={() => {
               console.log('검색 아이콘 클릭됨');
             }}
