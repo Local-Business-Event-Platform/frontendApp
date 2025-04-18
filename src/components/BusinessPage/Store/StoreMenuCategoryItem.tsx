@@ -21,7 +21,7 @@ const StoreMenuCategoryItem = ({
           onLongPress={onLongPress}>
           <Burger24 />
         </TouchableOpacity>
-        <SText fStyle="BxlSb" text={title} color={colors.secondary} />
+        <SText fStyle="BxlSb" text={title} color={colors.text.secondary} />
       </View>
       <StoreUpdateButton onPress={onPress} />
     </View>

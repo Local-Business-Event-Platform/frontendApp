@@ -89,7 +89,7 @@ const NewPasswordPage = () => {
           </View>
           <SInput
             title="새 비밀번호"
-            titleColor={colors.tertiary}
+            titleColor={colors.text.tertiary}
             value={userPassword.password}
             onChangeText={text =>
               setUserPassword({...userPassword, password: text})
@@ -115,7 +115,7 @@ const NewPasswordPage = () => {
           />
           <SInput
             title="새 비밀번호 확인"
-            titleColor={colors.tertiary}
+            titleColor={colors.text.tertiary}
             value={userPassword.passwordCheck}
             onChangeText={text => {
               setUserPassword({...userPassword, passwordCheck: text});

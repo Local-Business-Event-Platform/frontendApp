@@ -21,7 +21,11 @@ const ModalBusiness = ({onPress}: OnPressProps) => {
       </View>
       <View style={styles.inputContainer}>
         <View style={styles.contentStyle}>
-          <SText fStyle="BmdMd" text={'카테고리'} color={colors.secondary} />
+          <SText
+            fStyle="BmdMd"
+            text={'카테고리'}
+            color={colors.text.secondary}
+          />
           <SListButton title="카테고리 선택" onPress={() => {}} />
         </View>
         <SInput

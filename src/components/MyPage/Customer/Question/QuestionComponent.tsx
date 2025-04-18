@@ -39,7 +39,11 @@ const QuestionComponent = () => {
           placeholder="문의하실 내용을 자세하게 작성해주세요"
         />
         <View style={styles.fileContainer}>
-          <SText fStyle="BmdMd" text={'첨부파일'} color={colors.tertiary} />
+          <SText
+            fStyle="BmdMd"
+            text={'첨부파일'}
+            color={colors.text.tertiary}
+          />
           <View style={styles.fileBox}>
             <Plus24 color={colors.icon.primary} />
           </View>

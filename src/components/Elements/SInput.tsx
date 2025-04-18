@@ -123,7 +123,7 @@ const SInput = ({
                   ? colors.text.danger
                   : msgType === 'success'
                   ? colors.text.success
-                  : colors.tertiary
+                  : colors.text.tertiary
               }
             />
           </View>

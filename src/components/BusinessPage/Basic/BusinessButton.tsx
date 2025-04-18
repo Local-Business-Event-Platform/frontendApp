@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: SWidth * 8,
     borderWidth: 1.25,
-    borderColor: colors.tertiary,
     borderRadius: 8,
   },
 });

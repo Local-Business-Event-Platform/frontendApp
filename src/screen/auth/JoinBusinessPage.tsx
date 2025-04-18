@@ -34,7 +34,7 @@ const JoinBusinessPage = () => {
             <SText
               fStyle="BlgSb"
               text={'(아이콘, 이미지 들어갈 예정)'}
-              color={colors.tertiary}
+              color={colors.text.interactive.secondary}
             />
           </View>
         </View>

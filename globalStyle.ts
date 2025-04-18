@@ -38,6 +38,7 @@ export const colors = {
   border: {
     primary: '#A1A1A1',
     focusRing: '#155DFC',
+    disabled: '#A1A1A1',
     interactive: {
       primary: '#155DFC',
       primaryHovered: '#1447E6',
@@ -54,23 +55,20 @@ export const colors = {
     info02: '#FDC700',
     disabled: '#A1A1A1',
     danger: '#C10007',
+    success: '#008236',
     interactive: {
       primary: '#155DFC',
       primaryHovered: '#1447E6',
       secondary: '#525252',
     },
   },
-  primary: '#171717',
-  secondary: '#404040',
-  tertiary: '#525252',
-  black: '#000000',
-  white: '#FFFFFF',
   interactive: {
     primary: '#155DFC',
     secondary: '#525252',
     selected: '#EFF6FF',
   },
-  disabled: '#A1A1A1',
+  black: '#000000',
+  white: '#FFFFFF',
 } as const;
 
 export const fontFamilies = {

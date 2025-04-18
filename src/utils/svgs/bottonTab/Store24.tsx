@@ -6,7 +6,7 @@ import {SvgFocusColorProps} from '../../types/svgType';
 const Store24 = ({
   focus,
   newColor = colors.text.interactive.primaryHovered,
-  color = colors.secondary,
+  color = colors.text.secondary,
 }: SvgFocusColorProps) => {
   return (
     <Svg

@@ -54,7 +54,7 @@ const Map = ({
         <NaverMapMarkerOverlay
           caption={{
             text: '내 위치',
-            color: colors.primary,
+            color: colors.text.primary,
             textSize: SWidth * 12,
           }}
           isHideCollidedMarkers={true}
@@ -72,7 +72,7 @@ const Map = ({
             key={index}
             caption={{
               text: building.name,
-              color: colors.primary,
+              color: colors.text.primary,
               textSize: SWidth * 12,
             }}
             isHideCollidedMarkers={true}

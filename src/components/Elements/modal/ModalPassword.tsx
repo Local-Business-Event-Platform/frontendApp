@@ -15,7 +15,7 @@ const ModalPassword = ({setModalOpen}: ModalPasswordProps) => {
     <View style={styles.container}>
       <SText fStyle="Hsm" text={'비밀번호 변경 완료'} />
       <View style={styles.iconContainer}>
-        <SText fStyle="BlgSb" text={'아이콘'} color={colors.disabled} />
+        <SText fStyle="BlgSb" text={'아이콘'} color={colors.text.disabled} />
       </View>
       <SText
         fStyle="BlgMd"

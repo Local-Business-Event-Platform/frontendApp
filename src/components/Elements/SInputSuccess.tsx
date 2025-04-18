@@ -6,9 +6,9 @@ import SText from './SText';
 
 const SInputSuccess = ({
   title,
-  titleColor = colors.tertiary,
+  titleColor = colors.text.tertiary,
   content,
-  contentColor = colors.disabled,
+  contentColor = colors.text.disabled,
 }: SInputSuccessProps) => {
   return (
     <View style={styles.container}>

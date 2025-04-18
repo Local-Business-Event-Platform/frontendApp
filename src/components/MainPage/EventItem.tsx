@@ -33,7 +33,7 @@ const EventItem = ({item, clicked, onPress, likeOnPress}: EventItemProps) => {
                 color={colors.text.secondary}
               />
             </View>
-            <SText fStyle="BmdMd" text={'·'} color={colors.secondary} />
+            <SText fStyle="BmdMd" text={'·'} color={colors.text.secondary} />
             <SText
               fStyle="BmdMd"
               text={item.km}

@@ -6,7 +6,7 @@ import {SvgFocusColorProps} from '../../types/svgType';
 const Gift24 = ({
   focus,
   newColor = colors.text.interactive.selected,
-  color = colors.secondary,
+  color = colors.text.secondary,
 }: SvgFocusColorProps) => {
   return (
     <Svg

@@ -44,8 +44,12 @@ const AddLocation = () => {
           />
         ))}
         <Pressable style={styles.addButton} onPress={() => {}}>
-          <SText fStyle="BlgSb" text={'추가하기'} color={colors.disabled} />
-          <Plus24 color={colors.disabled} />
+          <SText
+            fStyle="BlgSb"
+            text={'추가하기'}
+            color={colors.text.disabled}
+          />
+          <Plus24 color={colors.icon.disabled} />
         </Pressable>
       </View>
     </View>
@@ -78,7 +82,7 @@ const styles = StyleSheet.create({
     borderRadius: SWidth * 8,
     paddingHorizontal: SWidth * 24,
     borderStyle: 'dashed',
-    borderColor: colors.disabled,
+    borderColor: colors.border.disabled,
     backgroundColor: colors.white,
   },
 });

@@ -14,7 +14,9 @@ const PButton = ({checked, title, newTitle, onPress}: PButtonProps) => {
   return (
     <SSButton
       title={!checked ? title : newTitle}
-      textColor={checked ? '#8c8c8c' : colors.tertiary}
+      textColor={
+        checked ? colors.icon.secondary : colors.text.interactive.secondary
+      }
       ButtonColor={
         checked ? colors.bg.interactive.secondaryHovered : colors.white
       }

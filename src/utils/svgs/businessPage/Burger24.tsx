@@ -3,7 +3,7 @@ import Svg, {Path} from 'react-native-svg';
 import {colors, SWidth} from '../../../../globalStyle';
 import {SvgColorProps} from '../../types/svgType';
 
-const Burger24 = ({color = colors.tertiary}: SvgColorProps) => {
+const Burger24 = ({color = colors.text.tertiary}: SvgColorProps) => {
   return (
     <Svg
       width={SWidth * 24}

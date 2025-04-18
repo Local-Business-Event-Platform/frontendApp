@@ -15,7 +15,9 @@ const NameComponent = ({focused, name}: NameComponentProps) => {
         fStyle="BsmMd"
         text={name}
         color={
-          focused ? colors.text.interactive.primaryHovered : colors.secondary
+          focused
+            ? colors.text.interactive.primaryHovered
+            : colors.text.secondary
         }
       />
     </View>

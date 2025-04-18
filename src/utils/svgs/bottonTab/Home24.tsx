@@ -3,7 +3,7 @@ import Svg, {Path} from 'react-native-svg';
 import {colors, SWidth} from '../../../../globalStyle';
 import {TabProps} from '../../types/tabMenuType';
 
-const Home24 = ({focus, color = colors.secondary}: TabProps) => {
+const Home24 = ({focus, color = colors.text.secondary}: TabProps) => {
   return (
     <Svg
       width={SWidth * 25}

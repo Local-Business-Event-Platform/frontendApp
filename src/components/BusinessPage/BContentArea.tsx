@@ -11,7 +11,7 @@ const BContentArea = ({
   underline,
   onClick,
   content,
-  contentColor = colors.disabled,
+  contentColor = colors.text.disabled,
   value,
   onChangeText,
 }: BContentAreaProps) => {

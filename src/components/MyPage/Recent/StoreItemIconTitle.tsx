@@ -32,8 +32,8 @@ const StoreItemIconTitle = ({
 
       {km && (
         <>
-          <SText fStyle="BmdMd" text={'·'} color={colors.secondary} />
-          <SText fStyle="BmdMd" text={km} color={colors.secondary} />
+          <SText fStyle="BmdMd" text={'·'} color={colors.text.secondary} />
+          <SText fStyle="BmdMd" text={km} color={colors.text.secondary} />
         </>
       )}
     </View>

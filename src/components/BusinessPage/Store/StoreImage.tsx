@@ -68,7 +68,7 @@ const StoreImage = ({
             <SText
               fStyle="BlgSb"
               text={'이미지 등록하기 (최대 6장)'}
-              color={colors.tertiary}
+              color={colors.text.interactive.secondary}
             />
           </View>
         </View>

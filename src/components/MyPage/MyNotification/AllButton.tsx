@@ -16,7 +16,7 @@ const AllButton = ({allClick, allOnPress}: AllButtonProps) => {
       <SText
         fStyle="BlgMd"
         text={'알림을 한 번에 켜거나 끌 수 있어요'}
-        color={colors.secondary}
+        color={colors.text.secondary}
       />
     </View>
   );

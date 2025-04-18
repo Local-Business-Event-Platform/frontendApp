@@ -19,7 +19,7 @@ const JoinButton = ({
       <SText
         fStyle="BlgSb"
         text={title}
-        color={colors.secondary}
+        color={colors.text.secondary}
         textDecorationLine={textDecorationLine}
       />
     </Pressable>
