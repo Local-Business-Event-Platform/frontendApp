@@ -4,7 +4,7 @@ import {SWidth} from '../../../globalStyle';
 import BAddButton from '../../components/BusinessPage/BAddButton';
 import BStoreCard from '../../components/BusinessPage/BStoreCard';
 import SFlatList from '../../components/Elements/SFlatList';
-import SImageCardLoading from '../../components/Elements/Skeleton/SImageCardLoading';
+// import SImageCardLoading from '../../components/Elements/Skeleton/SImageCardLoading';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {screenNames} from '../../utils/listData';
 const BusinessPage = () => {
@@ -56,7 +56,7 @@ const BusinessPage = () => {
           data={data}
           paddingBottom={SWidth * 100}
           gap={SWidth * 20}
-          skeleton={<SImageCardLoading count={3} />}
+          skeleton={<View />}
           dataItem={({item}) => (
             <BStoreCard
               item={item}

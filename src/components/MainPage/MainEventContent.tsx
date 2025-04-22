@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
 import {screenNames} from '../../utils/listData';
 import SFlatList from '../Elements/SFlatList';
-import SImageCardLoading from '../Elements/Skeleton/SImageCardLoading';
+// import SImageCardLoading from '../Elements/Skeleton/SImageCardLoading';
 import EventItem from './EventItem';
 
 type EventItemType = {
@@ -61,7 +61,7 @@ const MainEventContent = () => {
   return (
     <SFlatList
       data={list}
-      skeleton={<SImageCardLoading count={3} />}
+      skeleton={<View />}
       paddingBottom={SWidth * 150}
       gap={SWidth * 24}
       dataItem={({item}) => (

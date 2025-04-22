@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../../globalStyle';
 import {StoreDetailEventProps} from '../../../../utils/types/StoreDetailType';
 import SFlatList from '../../../Elements/SFlatList';
-import EventItemLoading from '../../../Elements/Skeleton/EventItemLoading';
+// import EventItemLoading from '../../../Elements/Skeleton/EventItemLoading';
 import StoreDetailEventItem from './StoreDetailEventItem';
 
 const StoreDetailEvent = ({data}: StoreDetailEventProps) => {
@@ -15,7 +15,7 @@ const StoreDetailEvent = ({data}: StoreDetailEventProps) => {
         paddingHorizontal={SWidth * 24}
         paddingBottom={SWidth * 24}
         horizontal
-        skeleton={<EventItemLoading count={3} />}
+        skeleton={<View />}
         dataItem={({item}) => <StoreDetailEventItem item={item} />}
       />
     </View>

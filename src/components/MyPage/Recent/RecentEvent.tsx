@@ -8,7 +8,7 @@ import Calendar24 from '../../../utils/svgs/businessPage/Calendar24';
 import Location24 from '../../../utils/svgs/businessPage/Location24';
 import SFlatList from '../../Elements/SFlatList';
 import SImageCard from '../../Elements/SImageCard';
-import SImageCardLoading from '../../Elements/Skeleton/SImageCardLoading';
+// import SImageCardLoading from '../../Elements/Skeleton/SImageCardLoading';
 import SText from '../../Elements/SText';
 import StoreItemIconTitle from './StoreItemIconTitle';
 
@@ -83,7 +83,7 @@ const RecentEvent = () => {
       data={data}
       gap={SWidth * 40}
       paddingBottom={SWidth * 100}
-      skeleton={<SImageCardLoading count={3} />}
+      skeleton={<View />}
       dataItem={({item}) => (
         <View style={styles.container}>
           <SText fStyle="BxlMd" text={item.date} color={colors.black} />

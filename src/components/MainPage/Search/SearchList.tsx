@@ -5,7 +5,7 @@ import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {useStoreData} from '../../../store/storeRoute';
 import {screenNames} from '../../../utils/listData';
 import SFlatList from '../../Elements/SFlatList';
-import SImageCard2Loading from '../../Elements/Skeleton/SImageCard2Loading';
+// import SImageCard2Loading from '../../Elements/Skeleton/SImageCard2Loading';
 import MainStoreItem from '../MainStoreItem';
 
 const SearchList = () => {
@@ -93,7 +93,7 @@ const SearchList = () => {
         data={data}
         gap={SWidth * 16}
         paddingBottom={SWidth * 50}
-        skeleton={<SImageCard2Loading count={4} />}
+        skeleton={<View />}
         dataItem={({item}) => (
           <MainStoreItem
             storeImg={item.storeImg}

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {screenNames} from '../../utils/listData';
 import SFlatList from '../Elements/SFlatList';
-import SImageCard2Loading from '../Elements/Skeleton/SImageCard2Loading';
+// import SImageCard2Loading from '../Elements/Skeleton/SImageCard2Loading';
 import MainStoreItem from './MainStoreItem';
 
 type ListType = {
@@ -97,7 +97,7 @@ const MainStoreContent = () => {
       data={data}
       gap={SWidth * 16}
       paddingBottom={SWidth * 100}
-      skeleton={<SImageCard2Loading count={4} />}
+      skeleton={<View />}
       dataItem={({item}) => (
         <MainStoreItem
           storeImg={item.storeImg}
