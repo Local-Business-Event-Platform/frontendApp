@@ -66,7 +66,7 @@ react {
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */
-def enableProguardInReleaseBuilds = false
+def enableProguardInReleaseBuilds = true
 
 /**
  * The preferred build flavor of JavaScriptCore (JSC)
@@ -96,6 +96,8 @@ android {
         vectorDrawables.useSupportLibrary = true
         resValue "string", "google_map_api_key", project.env.get("GOOGLE_MAY_API_KEY")
         resValue "string", "naver_client_id", project.env.get("NAVER_CLIENT_ID")
+        resValue "string", "kakao_manifest_app_key", project.env.get("KAKAO_MANIFEST_KEY")
+        resValue "string", "kakao_key", project.env.get("KAKAO_API_KEY")
     }
     signingConfigs {
         debug {
@@ -103,6 +105,12 @@ android {
             storePassword 'android'
             keyAlias 'androiddebugkey'
             keyPassword 'android'
+        }
+        release {
+            storeFile file(project.env.get("MYAPP_RELEASE_STORE_FILE"))
+            storePassword project.env.get("MYAPP_RELEASE_STORE_PASSWORD")
+            keyAlias project.env.get("MYAPP_RELEASE_KEY_ALIAS")
+            keyPassword project.env.get("MYAPP_RELEASE_KEY_PASSWORD")
         }
     }
     buildTypes {
@@ -112,7 +120,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
@@ -122,7 +130,6 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {

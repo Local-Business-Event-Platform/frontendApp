@@ -61,5 +61,23 @@
 	</array>
 	<key>NMFClientId</key>
 	<string>YOUR_CLIENT_ID_HERE</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>naversearchapp</string>
+		<string>naversearchthirdlogin</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>naver</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>{{ CUSTOM URL SCHEME }}</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

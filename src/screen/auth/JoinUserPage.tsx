@@ -10,7 +10,6 @@ import {ScrollView} from 'react-native-gesture-handler';
 import {colors, SWidth} from '../../../globalStyle';
 import SButton56 from '../../components/Elements/SButton56';
 import SInput from '../../components/Elements/SInput';
-import SText from '../../components/Elements/SText';
 import JoinTitle from '../../components/Join/JoinTitle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useUserData} from '../../store/userRoute';
@@ -42,9 +41,9 @@ const JoinUserPage = () => {
     if (
       userData.name === '' ||
       userData.phone === '' ||
-      userData.zonecode === null ||
-      userData.address === '' ||
-      userData.detailAddress === '' ||
+      // userData.zonecode === null ||
+      // userData.address === '' ||
+      // userData.detailAddress === '' ||
       authCheck !== 1
     ) {
       console.log('모든 정보를 입력해주세요.');
@@ -127,7 +126,7 @@ const JoinUserPage = () => {
                   buttonOnPress={handleSendAuthNumber}
                 />
               </View>
-              <View style={styles.gapContainer}>
+              {/* <View style={styles.gapContainer}>
                 <SText fStyle="BmdMd" text={'주소'} />
                 <SInput
                   value={userData.zonecode?.toString()!}
@@ -166,7 +165,7 @@ const JoinUserPage = () => {
                     })
                   }
                 />
-              </View>
+              </View> */}
             </View>
           </View>
           <View style={styles.buttonContainer}>

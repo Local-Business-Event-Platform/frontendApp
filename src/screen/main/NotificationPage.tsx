@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
 import SFlatList from '../../components/Elements/SFlatList';
-// import NotificationLoading from '../../components/Elements/Skeleton/NotificationLoading';
+import NotificationLoading from '../../components/Elements/Skeleton/NotificationLoading';
 import NotificationItem from '../../components/MainPage/Notification/NotificationItem';
 import Home24 from '../../utils/svgs/bottonTab/Home24';
 import Comment24 from '../../utils/svgs/mainPage/Comment24';
@@ -61,7 +61,7 @@ const NotificationPage = () => {
       <SFlatList
         data={notificationData}
         paddingHorizontal={SWidth * 12}
-        skeleton={<View />}
+        skeleton={<NotificationLoading count={4} />}
         gap={SWidth * 4}
         dataItem={({item}) => (
           <NotificationItem
