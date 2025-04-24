@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet} from 'react-native';
 import {colors} from '../../../globalStyle';
 import {handleKakaoLogin} from '../../service/kakaoLogin';
@@ -6,12 +6,10 @@ import {handleNaverLogin} from '../../service/naverLogin';
 import SButton56 from '../Elements/SButton56';
 
 const SocialLogin = () => {
-  const [test, setTest] = useState('');
   const handleKakaoLogin11 = async () => {
     try {
       const token: any = await handleKakaoLogin();
       console.log('Kakao login token:', token);
-      setTest(token.accessToken);
     } catch (error) {
       console.log('Kakao login error:', error);
     }
