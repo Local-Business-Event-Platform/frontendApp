@@ -9,11 +9,18 @@ import UserInfoContainer from '../../../components/MyPage/UserInfo/UserInfoConta
 import UserInfoUser from '../../../components/MyPage/UserInfo/UserInfoUser';
 
 const UserInfoPage = () => {
+  const [userData, setUserData] = useState({
+    userId: '',
+    userNickname: '이*진',
+    userImg: '',
+  });
+
   const [userImg, setUserImg] = useState({
     url: '',
     name: '',
     type: '',
   });
+
   return (
     <ScrollView
       overScrollMode="never"
@@ -23,6 +30,8 @@ const UserInfoPage = () => {
         source={
           userImg.url
             ? {uri: userImg.url}
+            : userData.userImg
+            ? userData.userImg
             : require('../../../assets/images/no_image.jpg')
         }
         setUserImg={setUserImg}
@@ -76,7 +85,7 @@ const UserInfoPage = () => {
               </>
             }
           </View>
-          <View style={styles.gapContainer}>
+          {/* <View style={styles.gapContainer}>
             <SInput
               value=""
               title="주소"
@@ -87,7 +96,7 @@ const UserInfoPage = () => {
             />
             <SInput value="" onChangeText={() => {}} />
             <SInput value="" onChangeText={() => {}} />
-          </View>
+          </View> */}
         </UserInfoContainer>
       </View>
       <View style={styles.submitButtonContainer}>

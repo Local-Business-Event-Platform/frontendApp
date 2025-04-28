@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import SButton56 from '../../../components/Elements/SButton56';
 import UserUpdateInput from '../../../components/MyPage/UserUpdate/UserUpdateInput';
@@ -15,7 +15,7 @@ const UserUpdatePage = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container} onPress={Keyboard.dismiss}>
       <View style={styles.topContainer}>
         <UserUpdateTitle />
         <UserUpdateInput
@@ -32,7 +32,7 @@ const UserUpdatePage = () => {
           onPress={handleSubmit}
         />
       </View>
-    </View>
+    </Pressable>
   );
 };
 
