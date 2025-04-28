@@ -3,6 +3,8 @@ import {create} from 'zustand';
 type BottomSheetType = {
   category: string;
   bottomSheetTitle: string;
+  index: number;
+  setIndex: (index: number) => void;
   setCategory: (category: string) => void;
   setBottomSheetTitle: (bottomSheetTitle: string) => void;
 };
@@ -20,6 +22,8 @@ type MyLocationType = {
 export const useBottomSheetTitle = create<BottomSheetType>(set => ({
   category: '',
   bottomSheetTitle: 'menuSelect',
+  index: 1,
+  setIndex: (index: number) => set({index}),
   setCategory: (category: string) => set({category}),
   setBottomSheetTitle: (bottomSheetTitle: string) => set({bottomSheetTitle}),
 }));

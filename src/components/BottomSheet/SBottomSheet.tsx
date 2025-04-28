@@ -1,5 +1,5 @@
 import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useMemo, useRef} from 'react';
 import {StyleSheet} from 'react-native';
 
 import {colors, SWidth} from '../../../globalStyle';
@@ -10,7 +10,16 @@ import MapMenu from './MapMenu';
 
 const SBottomSheet = () => {
   const bottomRef = useRef<BottomSheetModal>(null);
-  const {bottomSheetTitle} = useBottomSheetTitle();
+  const {bottomSheetTitle, index, setIndex} = useBottomSheetTitle();
+
+  const snapPoints = useMemo(() => {
+    switch (bottomSheetTitle) {
+      case 'menuSelect':
+        return [SWidth * 30, SWidth * 168];
+      case 'itemList':
+        return [SWidth * 30, SWidth * 376, '95%'];
+    }
+  }, [bottomSheetTitle]);
 
   const bottomScreen = () => {
     switch (bottomSheetTitle) {
@@ -24,19 +33,23 @@ const SBottomSheet = () => {
   useEffect(() => {
     if (bottomRef.current) {
       bottomRef.current.present();
+      requestAnimationFrame(() => {
+        bottomRef.current?.snapToIndex(1);
+      });
     }
   }, []);
+
   return (
     <BottomSheetModalProvider>
       <BottomSheetModal
         ref={bottomRef}
-        enableDynamicSizing={bottomSheetTitle === 'menuSelect'}
-        snapPoints={
-          bottomSheetTitle === 'menuSelect' ? undefined : [SWidth * 376]
-        }
+        enableDynamicSizing={false}
+        // enableDynamicSizing={bottomSheetTitle === 'menuSelect'}
+        snapPoints={snapPoints}
         enableDismissOnClose={false}
         enablePanDownToClose={false}
-        enableContentPanningGesture={false}
+        enableContentPanningGesture={true}
+        enableHandlePanningGesture={true}
         overDragResistanceFactor={0}
         handleStyle={{
           borderTopLeftRadius: SWidth * 16,
@@ -44,11 +57,11 @@ const SBottomSheet = () => {
           elevation: 0,
         }}
         handleComponent={() => <BottomSheetHeader />}
-        onChange={() => {}}
+        onChange={index => setIndex(index)}
         backgroundStyle={{
           backgroundColor: colors.white,
         }}
-        index={0}
+        index={index}
         style={[styles.contentContainer]}>
         {/* <BottomSheetScrollView showsVerticalScrollIndicator={false}> */}
         {bottomScreen()}

@@ -40,13 +40,11 @@ export default MapMenu;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     width: '100%',
     paddingTop: SWidth * 35,
     paddingBottom: SWidth * 28,
     paddingLeft: SWidth * 31,
     flexDirection: 'row',
-    // alignItems: 'center',
     gap: SWidth * 28,
   },
 

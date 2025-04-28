@@ -1,9 +1,9 @@
+import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import {colors} from '../../../globalStyle';
+import {Pressable, StyleSheet, View} from 'react-native';
+import {SWidth} from '../../../globalStyle';
 import {handleKakaoLogin} from '../../service/kakaoLogin';
 import {handleNaverLogin} from '../../service/naverLogin';
-import SButton56 from '../Elements/SButton56';
 
 const SocialLogin = () => {
   const handleKakaoLogin11 = async () => {
@@ -16,23 +16,37 @@ const SocialLogin = () => {
   };
 
   return (
-    <>
-      <SButton56
-        title="카카오"
-        textColor={colors.text.primary}
-        ButtonColor={'#FEE500'}
-        onPress={handleKakaoLogin11}
-      />
-      <SButton56
-        title="네이버"
-        textColor={colors.text.interactive.inverse}
-        ButtonColor={'#03C75A'}
-        onPress={handleNaverLogin}
-      />
-    </>
+    <View style={styles.container}>
+      <Pressable onPress={handleKakaoLogin11}>
+        <FastImage
+          source={require('../../assets/icons/kakao.png')}
+          resizeMode={FastImage.resizeMode.contain}
+          style={styles.iconStyle}
+        />
+      </Pressable>
+      <Pressable onPress={handleNaverLogin}>
+        <FastImage
+          source={require('../../assets/icons/naver.png')}
+          resizeMode={FastImage.resizeMode.contain}
+          style={styles.iconStyle}
+        />
+      </Pressable>
+    </View>
   );
 };
 
 export default SocialLogin;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: SWidth * 12,
+  },
+
+  iconStyle: {
+    width: 60,
+    height: 60,
+  },
+});

@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {SWidth} from '../../../globalStyle';
+import {useBottomSheetTitle} from '../../store/mapRoute';
 import {useUserData} from '../../store/userRoute';
 import BusinessPageScreen from './BusinessPageScreen';
 import CommunityScreen from './CommunityScreen';
@@ -18,6 +19,7 @@ const BottomTab = () => {
   const Tab = createBottomTabNavigator();
   const {userData} = useUserData();
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const {index, setIndex} = useBottomSheetTitle();
   useEffect(() => {
     // 키보드가 나타나면 그라디언트 숨기기
     const keyboardDidShowListener = Keyboard.addListener(
@@ -56,7 +58,16 @@ const BottomTab = () => {
             borderWidth: 0,
             borderColor: 'transparent',
           },
-          tabBarButton: props => <Pressable {...props} android_ripple={null} />,
+          tabBarButton: props => (
+            <Pressable
+              {...props}
+              android_ripple={null}
+              onPress={event => {
+                props.onPress?.(event);
+                setIndex(1);
+              }}
+            />
+          ),
           tabBarLabel({focused}) {
             return <NameComponent focused={focused} name={route.name} />;
           },
@@ -77,7 +88,7 @@ const BottomTab = () => {
         <Tab.Screen name="커뮤니티" component={CommunityScreen} />
         <Tab.Screen name="마이페이지" component={MyPageScreen} />
       </Tab.Navigator>
-      {!isKeyboardVisible && (
+      {!isKeyboardVisible && index !== 0 && (
         <LinearGradient
           colors={['transparent', '#D3D3D333']}
           style={styles.shadow}
