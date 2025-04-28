@@ -1,6 +1,6 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
 import Calendar24 from '../../../../utils/svgs/businessPage/Calendar24';
 import {StoreDetailEventItemProps} from '../../../../utils/types/StoreDetailType';
@@ -9,9 +9,9 @@ import StoreDetailIconTitle from '../StoreDetailIconTitle';
 import StoreDetailDDay from './StoreDetailDDay';
 import StoreDetailImageText from './StoreDetailImageText';
 
-const StoreDetailEventItem = ({item}: StoreDetailEventItemProps) => {
+const StoreDetailEventItem = ({item, onPress}: StoreDetailEventItemProps) => {
   return (
-    <View style={styles.listItem}>
+    <Pressable style={styles.listItem} onPress={onPress}>
       <View style={styles.imgContainer}>
         <FastImage
           source={{uri: item.img}}
@@ -47,7 +47,7 @@ const StoreDetailEventItem = ({item}: StoreDetailEventItemProps) => {
           ))}
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

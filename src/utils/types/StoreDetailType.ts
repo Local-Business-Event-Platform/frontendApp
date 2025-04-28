@@ -44,6 +44,7 @@ export type StoreItemProps = {
 
 export type StoreDetailEventItemProps = {
   item: StoreItemProps;
+  onPress: () => void;
 };
 export type StoreDetailEventProps = {
   data: StoreItemProps[];

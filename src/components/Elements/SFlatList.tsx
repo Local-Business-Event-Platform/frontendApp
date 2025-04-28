@@ -2,17 +2,21 @@ import React from 'react';
 import {FlatList, ListRenderItem, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 
-type SFlatListProps = {
-  data: any[];
+type ItemWithId = {
+  id: string | number;
+};
+
+type SFlatListProps<T> = {
+  data: T[];
   gap?: number;
   paddingHorizontal?: number;
   paddingBottom?: number;
   skeleton: React.ReactNode;
-  dataItem: ListRenderItem<any>;
+  dataItem: ListRenderItem<T>;
   horizontal?: boolean;
 };
 
-const SFlatList = ({
+const SFlatList = <T extends ItemWithId>({
   data,
   gap,
   paddingHorizontal = SWidth * 16,
@@ -20,7 +24,7 @@ const SFlatList = ({
   skeleton,
   horizontal,
   dataItem,
-}: SFlatListProps) => {
+}: SFlatListProps<T>) => {
   return (
     <FlatList
       data={data}

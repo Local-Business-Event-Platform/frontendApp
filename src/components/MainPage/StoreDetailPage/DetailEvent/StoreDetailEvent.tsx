@@ -1,12 +1,15 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../../globalStyle';
+import useCustomNavigation from '../../../../hooks/useCustomNavigation';
+import {screenNames} from '../../../../utils/listData';
 import {StoreDetailEventProps} from '../../../../utils/types/StoreDetailType';
 import SFlatList from '../../../Elements/SFlatList';
 import EventItemLoading from '../../../Elements/Skeleton/EventItemLoading';
 import StoreDetailEventItem from './StoreDetailEventItem';
 
 const StoreDetailEvent = ({data}: StoreDetailEventProps) => {
+  const navigation = useCustomNavigation();
   return (
     <View style={styles.container}>
       <SFlatList
@@ -16,7 +19,17 @@ const StoreDetailEvent = ({data}: StoreDetailEventProps) => {
         paddingBottom={SWidth * 24}
         horizontal
         skeleton={<EventItemLoading count={4} />}
-        dataItem={({item}) => <StoreDetailEventItem item={item} />}
+        dataItem={({item}) => (
+          <StoreDetailEventItem
+            item={item}
+            onPress={() =>
+              navigation.navigate(screenNames.EVENT_DETAIL_PAGE, {
+                id: item.id,
+                itemImgs: item.img,
+              })
+            }
+          />
+        )}
       />
     </View>
   );

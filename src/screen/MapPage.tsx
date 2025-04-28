@@ -7,7 +7,7 @@ import Map from '../components/Map/Map';
 import {useBottomSheetTitle, useMyLocation} from '../store/mapRoute';
 
 const MapPage = () => {
-  const {myLocation} = useMyLocation();
+  const {myLocation, radius} = useMyLocation();
 
   const {category, setCategory} = useBottomSheetTitle();
 
@@ -18,13 +18,24 @@ const MapPage = () => {
     {name: '피슈마라홍탕신촌점', latitude: 37.5563246, longitude: 126.9342936},
     {name: '형제식당', latitude: 37.5554663, longitude: 126.9348035},
   ];
+  console.log('맵페이지', radius);
+  const myRadius = () => {
+    switch (radius) {
+      case 1000:
+        return 100;
+      case 2000:
+        return 200;
+      case 3000:
+        return 300;
+    }
+  };
 
   const nearbyBuildings = buildings.filter(building => {
     const distance = getDistance(
       {latitude: myLocation.latitude, longitude: myLocation.longitude},
       {latitude: building.latitude, longitude: building.longitude},
     );
-    return distance <= 300; // 1km = 1000m
+    return distance <= myRadius()!; // 1km = 1000m
   });
 
   console.log('nearbyBuildings', myLocation);
@@ -52,7 +63,7 @@ const MapPage = () => {
       <Map
         myLatitude={myLocation.latitude}
         myLongitude={myLocation.longitude}
-        myRadius={200} // 200m 반경
+        myRadius={myRadius()!} // 200m 반경
         cameraZoom={14}
         nearbyBuildings={nearbyBuildings}
       />

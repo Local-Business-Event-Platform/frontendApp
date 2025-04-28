@@ -24,6 +24,7 @@ export const screenNames = {
   COMMUNITY: 'community',
   CUSTOMER: 'customer',
   DETAIL_PAGE: 'detailPage',
+  EVENT_DETAIL_PAGE: 'eventDetail',
   FIND: 'find',
   INTEREST_STORE: 'interestStore',
   JOIN: 'join',

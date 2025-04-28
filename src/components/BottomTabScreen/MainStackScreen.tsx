@@ -16,6 +16,7 @@ import CustomerPage from '../../screen/myPage/CustomerPage';
 import MyLocationMapPage from '../../screen/myPage/location/MyLocationMapPage';
 import MyNotificationPage from '../../screen/myPage/MyNotificationPage';
 
+import EventDetailPage from '../../screen/main/EventDetailPage';
 import NoticeDetailPage from '../../screen/myPage/notice/NoticeDetailPage';
 import NoticePage from '../../screen/myPage/notice/NoticePage';
 import SettingPage from '../../screen/myPage/SettingPage';
@@ -23,6 +24,7 @@ import UserInfoPage from '../../screen/myPage/userUpdate/UserInfoPage';
 import UserUpdatePage from '../../screen/myPage/userUpdate/UserUpdatePage';
 import SplashScreen from '../../screen/SplashScreen';
 import {useModalOpen} from '../../store/modalRoute';
+import {useStoreData} from '../../store/storeRoute';
 import {useUserData} from '../../store/userRoute';
 import {screenNames} from '../../utils/listData';
 import {StackOptionType} from '../../utils/types/type';
@@ -34,6 +36,7 @@ import BottomTab from './BottomTab';
 const MainStackScreen = () => {
   const Stack = createNativeStackNavigator();
   const {userData} = useUserData();
+  const {title} = useStoreData();
   const insets = useSafeAreaInsets();
   const {modalOpen} = useModalOpen();
   const options = ({
@@ -154,6 +157,11 @@ const MainStackScreen = () => {
         name={screenNames.JOIN}
         component={JoinPage}
         options={options({headerShown: true, screen: 'join'})}
+      />
+      <Stack.Screen
+        name={screenNames.EVENT_DETAIL_PAGE}
+        component={EventDetailPage}
+        options={options({headerShown: true, title: title})}
       />
       <Stack.Screen
         name={screenNames.MY_NOTIFICATION}
