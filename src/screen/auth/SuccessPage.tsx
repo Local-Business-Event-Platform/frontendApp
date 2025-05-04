@@ -14,7 +14,7 @@ const SuccessPage = () => {
     <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <View style={styles.container}>
         <View style={styles.topContainer}>
-          <JoinTitle title1="환영합니다!" title2="가입이 완료됐어요." />
+          <JoinTitle title1="환영해요!" title2="가입이 완료됐어요" />
           <JoinSuccessSubTitle userType={userData.type} />
         </View>
         <View style={styles.buttonContainer}>

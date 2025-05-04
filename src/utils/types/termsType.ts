@@ -3,6 +3,7 @@ export type TermsType = {
   check2: boolean;
   check3: boolean;
   check4: boolean;
+  check5: boolean;
 };
 
 export type TermsCheckProps = {

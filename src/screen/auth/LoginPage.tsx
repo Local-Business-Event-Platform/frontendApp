@@ -78,7 +78,6 @@ const LoginPage = () => {
               });
             }}
           />
-
           <View style={styles.loginButtonContainer}>
             <SButton56
               title="로그인"
@@ -86,8 +85,8 @@ const LoginPage = () => {
               ButtonColor={colors.bg.interactive.primary}
               onPress={handleLogin}
             />
-            <SocialLogin />
           </View>
+          <SocialLogin />
         </View>
         {/* <SText fStyle="BlgMd" text={test} /> */}
         <View style={styles.bottomContainer}>

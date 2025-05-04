@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import {checkItems} from '../../../utils/listData';
 import {TermsCheckProps} from '../../../utils/types/termsType';
 import SCheckText from '../../Elements/SCheckText';
@@ -19,6 +19,7 @@ const TermsCheck = ({
       check2: newCheckedState,
       check3: newCheckedState,
       check4: newCheckedState,
+      check5: newCheckedState,
     });
   };
 
@@ -33,10 +34,9 @@ const TermsCheck = ({
   return (
     <View style={styles.container}>
       <SCheckText
-        main
         checkValue={isChecked}
         fStyle="BlgSb"
-        title="약관에 모두 동의합니다. (선택 동의 포함)"
+        title="전체 동의"
         onPress={handleAllCheck}
       />
       <View style={styles.checkContainer}>
@@ -61,7 +61,7 @@ export default TermsCheck;
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    gap: SWidth * 22,
+    gap: SWidth * 16,
   },
 
   rowLine: {
@@ -72,7 +72,9 @@ const styles = StyleSheet.create({
   },
 
   checkContainer: {
-    paddingLeft: SWidth * 24,
+    paddingTop: SWidth * 24,
+    borderTopWidth: 1,
+    borderColor: colors.border.secondary,
     gap: SWidth * 12,
   },
 });

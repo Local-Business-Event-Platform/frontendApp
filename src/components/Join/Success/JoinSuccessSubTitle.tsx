@@ -27,7 +27,7 @@ const JoinSuccessSubTitle = ({userType}: JoinSuccessSubTitleProps) => {
               flexShrink={1}
               lineHeight={SWidth * 24}
               fStyle="BlgRg"
-              text={'가게를 등록하고 첫 이벤트를 등록해보세요!'}
+              text={'가게를 등록하고 첫 이벤트를 등록해보세요'}
             />
           </>
         )}

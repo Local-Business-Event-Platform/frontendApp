@@ -19,8 +19,6 @@ const NewPasswordPage = () => {
   const passwordRegex =
     /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,15}$/;
 
-  const [passwordCheck, setPasswordCheck] = useState(false);
-
   const passwordMagCheck = () => {
     if (userPassword.password === '') {
       return 'undefined';

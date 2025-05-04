@@ -1,5 +1,5 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Address from '../../screen/auth/Address';
 import FindIdPassword from '../../screen/auth/FindIdPassword';
 import JoinIdPage from '../../screen/auth/JoinIdPage';
@@ -23,11 +23,11 @@ import SettingPage from '../../screen/myPage/SettingPage';
 import UserInfoPage from '../../screen/myPage/userUpdate/UserInfoPage';
 import UserUpdatePage from '../../screen/myPage/userUpdate/UserUpdatePage';
 import SplashScreen from '../../screen/SplashScreen';
-import {useModalOpen} from '../../store/modalRoute';
-import {useStoreData} from '../../store/storeRoute';
-import {useUserData} from '../../store/userRoute';
-import {screenNames} from '../../utils/listData';
-import {StackOptionType} from '../../utils/types/type';
+import { useModalOpen } from '../../store/modalRoute';
+import { useStoreData } from '../../store/storeRoute';
+import { useUserData } from '../../store/userRoute';
+import { screenNames } from '../../utils/listData';
+import { StackOptionType } from '../../utils/types/type';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
 import JoinAppBar from './AppBar/JoinAppBar';
 import SearchAppBar from './AppBar/SearchAppBar';
@@ -60,7 +60,7 @@ const MainStackScreen = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName={screenNames.BOTTOM_TAB}
+      initialRouteName={screenNames.LOGIN}
       screenOptions={{
         headerShown: false,
         statusBarBackgroundColor: modalOpen ? 'transparent' : 'white',

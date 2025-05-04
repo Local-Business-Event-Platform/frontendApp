@@ -1,9 +1,10 @@
-import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import {handleKakaoLogin} from '../../service/kakaoLogin';
 import {handleNaverLogin} from '../../service/naverLogin';
+import KakaoIcon from '../../utils/svgs/auth/KakaoIcon';
+import NaverIcon from '../../utils/svgs/auth/NaverIcon';
 
 const SocialLogin = () => {
   const handleKakaoLogin11 = async () => {
@@ -18,18 +19,10 @@ const SocialLogin = () => {
   return (
     <View style={styles.container}>
       <Pressable onPress={handleKakaoLogin11}>
-        <FastImage
-          source={require('../../assets/icons/kakao.png')}
-          resizeMode={FastImage.resizeMode.contain}
-          style={styles.iconStyle}
-        />
+        <KakaoIcon />
       </Pressable>
       <Pressable onPress={handleNaverLogin}>
-        <FastImage
-          source={require('../../assets/icons/naver.png')}
-          resizeMode={FastImage.resizeMode.contain}
-          style={styles.iconStyle}
-        />
+        <NaverIcon />
       </Pressable>
     </View>
   );
@@ -39,14 +32,10 @@ export default SocialLogin;
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: SWidth * 40,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: SWidth * 12,
-  },
-
-  iconStyle: {
-    width: 60,
-    height: 60,
+    gap: SWidth * 20,
   },
 });

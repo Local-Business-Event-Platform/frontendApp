@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "postinstall": "patch-package"
+    "_postinstall": "patch-package"
   },
   "dependencies": {
     "@actbase/react-daum-postcode": "^1.0.4",

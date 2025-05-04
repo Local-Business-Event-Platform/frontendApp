@@ -3,6 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {screenNames} from '../../../utils/listData';
+import Success56 from '../../../utils/svgs/auth/Success56';
 import SButton56 from '../SButton56';
 import SText from '../SText';
 
@@ -14,15 +15,15 @@ const ModalPassword = ({setModalOpen}: ModalPasswordProps) => {
   const navigation = useCustomNavigation();
   return (
     <View style={styles.container}>
-      <SText fStyle="Hsm" text={'비밀번호 변경 완료'} />
-      <View style={styles.iconContainer}>
-        <SText fStyle="BlgSb" text={'아이콘'} color={colors.text.disabled} />
+      <Success56 />
+      <View style={styles.textContainer}>
+        <SText fStyle="BxlSb" text={'비밀번호 변경 완료'} />
+        <SText
+          fStyle="BlgMd"
+          text={'비밀번호가 성공적으로 변경되었습니다.'}
+          color={colors.text.secondary}
+        />
       </View>
-      <SText
-        fStyle="BlgMd"
-        text={'비밀번호가 성공적으로 변경되었습니다.'}
-        color={colors.text.secondary}
-      />
       <View style={{width: '100%', height: SWidth * 56}}>
         <SButton56
           title="확인"
@@ -46,18 +47,14 @@ export default ModalPassword;
 const styles = StyleSheet.create({
   container: {
     paddingTop: SWidth * 24,
-    padding: SWidth * 16,
+    padding: SWidth * 20,
     justifyContent: 'center',
     alignItems: 'center',
-    gap: SWidth * 24,
+    gap: SWidth * 28,
   },
 
-  iconContainer: {
-    width: SWidth * 110,
-    height: SWidth * 110,
-    borderRadius: SWidth * 8,
-    backgroundColor: '#F5F5F5',
-    justifyContent: 'center',
+  textContainer: {
+    gap: SWidth * 4,
     alignItems: 'center',
   },
 });

@@ -15,10 +15,16 @@ const TermsOfUsePage = () => {
     check2: false,
     check3: false,
     check4: false,
+    check5: false,
   });
 
   const handleCheck = () => {
-    if (checkList.check1 && checkList.check2) {
+    if (
+      checkList.check1 &&
+      checkList.check2 &&
+      checkList.check3 &&
+      checkList.check4
+    ) {
       navigation.navigate(screenNames.JOIN_USER);
     } else {
       console.log('약관에 모두 동의해주세요');
@@ -29,7 +35,7 @@ const TermsOfUsePage = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <JoinTitle title1="ㅇㅇ 이용 약관에" title2="동의해 주세요" />
+        <JoinTitle title1="이음터 시작을 위해" title2="약관에 동의해 주세요." />
         <TermsCheck
           isChecked={isChecked}
           setIsChecked={setIsChecked}

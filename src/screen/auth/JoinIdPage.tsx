@@ -70,21 +70,23 @@ const JoinIdPage = () => {
             <SInput
               value={userData.nickname}
               title="닉네임"
-              titleColor={colors.text.tertiary}
+              titleColor={colors.text.primary}
               onChangeText={value =>
                 setUserData({...userData, nickname: value})
               }
               placeholder="닉네임 4~12자"
+              buttonTitle="중복 확인"
               borderColor={
                 !userData.nickname
                   ? colors.border.secondary
                   : colors.border.interactive.secondary
               }
+              buttonOnPress={() => {}}
             />
             <SInput
               value={userData.id}
               title="아이디"
-              titleColor={colors.text.tertiary}
+              titleColor={colors.text.primary}
               onChangeText={value => setUserData({...userData, id: value})}
               placeholder="영문/숫자 조합 4~12자"
               buttonTitle="중복 확인"
@@ -101,7 +103,7 @@ const JoinIdPage = () => {
               iconOnPress={() => setIconClicked(prev => [!prev[0], prev[1]])}
               value={userData.password}
               title="비밀번호"
-              titleColor={colors.text.tertiary}
+              titleColor={colors.text.primary}
               onChangeText={value =>
                 setUserData({...userData, password: value})
               }
@@ -122,7 +124,7 @@ const JoinIdPage = () => {
               iconOnPress={() => setIconClicked(prev => [prev[0], !prev[1]])}
               value={passwordChecked}
               title="비밀번호 확인"
-              titleColor={colors.text.tertiary}
+              titleColor={colors.text.primary}
               onChangeText={value => setPasswordChecked(value)}
               placeholder="비밀번호 재입력"
               msg={handlePasswordCheck()}

@@ -68,14 +68,15 @@ export const textItems = [
 ];
 
 export const checkItems = [
-  {key: 'check1', title: '[필수] 만 14세 이상입니다.', arrow: true},
-  {key: 'check2', title: '[필수] ㅇㅇ 스토어 이용 약관', arrow: true},
+  {key: 'check1', title: '만 14세 이상 이용 동의 (필수)', arrow: true},
+  {key: 'check2', title: '서비스 이용약관 (필수)', arrow: true},
+  {key: 'check3', title: '위치기반 서비스 이용약관 (필수)', arrow: true},
   {
-    key: 'check3',
-    title: '[선택] 마케팅 목적의 개인정보 수집 및 이용 동의',
+    key: 'check4',
+    title: '개인정보 수집 및 이용 동의 (필수)',
     arrow: true,
   },
-  {key: 'check4', title: '[선택] 광고성 정보 수신 동의', arrow: true},
+  {key: 'check5', title: '마케팅 정보 수신 동의 (선택)', arrow: true},
 ] as const;
 
 export const mainTabItems = [

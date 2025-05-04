@@ -91,7 +91,7 @@ const FindIdPassword = () => {
         <View style={styles.topContainer}>
           <SInput
             title="휴대폰 번호"
-            titleColor={colors.text.tertiary}
+            titleColor={colors.text.primary}
             value={userData.phone}
             keyboardType="numeric"
             msg={phoneAuth ? '인증번호가 전송되었습니다.' : ''}
@@ -112,7 +112,7 @@ const FindIdPassword = () => {
           />
           <SInput
             title="인증번호"
-            titleColor={colors.text.tertiary}
+            titleColor={colors.text.primary}
             value={userData.authNumber}
             onChangeText={text => {
               setAuthCheck(0);
@@ -147,7 +147,7 @@ const FindIdPassword = () => {
         <View>
           <SButton56
             title="다음"
-            ButtonColor={colors.interactive.primary}
+            ButtonColor={colors.bg.interactive.primary}
             disabled={authCheck === 2 ? false : true}
             textColor={'white'}
             onPress={() => navigation.navigate(screenNames.PASSWORD)}
