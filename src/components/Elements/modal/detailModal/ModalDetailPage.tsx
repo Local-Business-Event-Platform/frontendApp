@@ -1,12 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
+import {ModalDetailPageProps} from '../../../../utils/types/modalType';
 import ModalDetailItem from './ModalDetailItem';
-
-type ModalDetailPageProps = {
-  id: number;
-  setModalOpen: (newModalOpen: boolean) => void;
-};
 
 const ModalDetailPage = ({id, setModalOpen}: ModalDetailPageProps) => {
   const menuList = [

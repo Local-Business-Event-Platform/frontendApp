@@ -5,9 +5,10 @@ import SButton56 from '../../components/Elements/SButton56';
 import SInput from '../../components/Elements/SInput';
 import SText from '../../components/Elements/SText';
 import {useModalOpen} from '../../store/modalRoute';
+import {modalNames, singleModalTypes} from '../../utils/listData';
 
 const NewPasswordPage = () => {
-  const {setModalTitle, setModalOpen} = useModalOpen();
+  const {setModalTitle, setModalOpen, setContent} = useModalOpen();
   const [userPassword, setUserPassword] = useState({
     password: '',
     passwordCheck: '',
@@ -66,7 +67,8 @@ const NewPasswordPage = () => {
 
   const handleSubmit = () => {
     setModalOpen(true);
-    setModalTitle('password');
+    setModalTitle(modalNames.SINGLE);
+    setContent(singleModalTypes.PASSWORD);
   };
 
   return (

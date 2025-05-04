@@ -6,8 +6,8 @@ import {modalNames} from '../../utils/listData';
 import ModalDetailPage from './modal/detailModal/ModalDetailPage';
 import ModalBlock from './modal/ModalBlock';
 import ModalBusiness from './modal/ModalBusiness';
-import ModalPassword from './modal/ModalPassword';
 import ModalSetting from './modal/settingModal/ModalSetting';
+import SingleModal from './modal/SingleModal/SingleModal';
 
 const SModal = () => {
   const {modalTitle, content, setModalOpen, id} = useModalOpen();
@@ -15,8 +15,6 @@ const SModal = () => {
     switch (modalTitle) {
       case modalNames.BUSINESS:
         return <ModalBusiness onPress={() => setModalOpen(false)} />;
-      case modalNames.PASSWORD:
-        return <ModalPassword setModalOpen={setModalOpen} />;
       case modalNames.SETTING:
         return (
           <ModalSetting content={content} onPress={() => setModalOpen(false)} />
@@ -25,6 +23,8 @@ const SModal = () => {
         return <ModalDetailPage setModalOpen={setModalOpen} id={id} />;
       case modalNames.BLOCK:
         return <ModalBlock setModalOpen={setModalOpen} id={id} />;
+      case modalNames.SINGLE:
+        return <SingleModal content={content} setModalOpen={setModalOpen} />;
     }
   };
   return (

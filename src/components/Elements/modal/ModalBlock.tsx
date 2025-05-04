@@ -1,13 +1,9 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
+import {ModalDetailPageProps} from '../../../utils/types/modalType';
 import SButton56 from '../SButton56';
 import SText from '../SText';
-
-type ModalDetailPageProps = {
-  id: number;
-  setModalOpen: (newModalOpen: boolean) => void;
-};
 
 const ModalBlock = ({id, setModalOpen}: ModalDetailPageProps) => {
   return (

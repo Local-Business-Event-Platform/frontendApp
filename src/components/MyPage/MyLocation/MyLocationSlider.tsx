@@ -38,7 +38,7 @@ const MyLocationSlider = ({radius, setRadius}: MyLocationSliderProps) => {
           minimumValue={1000}
           maximumValue={3000}
           step={1000}
-          minimumTrackTintColor={colors.interactive.primary}
+          minimumTrackTintColor={colors.bg.interactive.primary}
           thumbStyle={styles.thumbStyle}
           trackStyle={styles.trackStyle}
         />
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border.interactive.primaryHovered,
     borderRadius: 999,
-    backgroundColor: colors.interactive.primary,
+    backgroundColor: colors.bg.interactive.primary,
     zIndex: 2,
   },
 

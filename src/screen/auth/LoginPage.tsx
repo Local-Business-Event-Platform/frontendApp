@@ -8,11 +8,13 @@ import LoginInput from '../../components/Login/LoginInput';
 import Logo from '../../components/Login/Logo';
 import SocialLogin from '../../components/Login/SocialLogin';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
-import {screenNames} from '../../utils/listData';
+import {useModalOpen} from '../../store/modalRoute';
+import {modalNames, screenNames, singleModalTypes} from '../../utils/listData';
 
 const LoginPage = () => {
   const navigation = useCustomNavigation();
   const [passwordOpen, setPasswordOpen] = useState(true);
+  const {setModalTitle, setModalOpen, setContent} = useModalOpen();
 
   const [errorMsg, setErrorMsg] = useState({
     id: '',
@@ -24,13 +26,16 @@ const LoginPage = () => {
   });
 
   const handleLogin = () => {
-    if (!userData.id || !userData.password) {
-      setErrorMsg({
-        id: userData.id ? '' : '아이디가 일치하지 않습니다.',
-        password: userData.password ? '' : '영문/숫자/특수문자 조합 8~15자리',
-      });
-      return;
-    }
+    setModalTitle(modalNames.SINGLE);
+    setContent(singleModalTypes.PASSWORD);
+    setModalOpen(true);
+    // if (!userData.id || !userData.password) {
+    //   setErrorMsg({
+    //     id: userData.id ? '' : '아이디가 일치하지 않습니다.',
+    //     password: userData.password ? '' : '영문/숫자/특수문자 조합 8~15자리',
+    //   });
+    //   return;
+    // }
   };
 
   useEffect(() => {

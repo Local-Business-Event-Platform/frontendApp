@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {SWidth} from '../../../../../globalStyle';
-import {settingsModalList} from '../../../../utils/listData';
+import {settingsModalList, settingTypes} from '../../../../utils/listData';
+import Version56 from '../../../../utils/svgs/auth/Version56';
 import Data56 from '../../../../utils/svgs/modal/Data56';
 import Login56 from '../../../../utils/svgs/modal/Login56';
 import Logout56 from '../../../../utils/svgs/modal/Logout56';
@@ -13,14 +14,18 @@ const ModalSetting = ({content, onPress}: OnPressProps) => {
   const modalData = settingsModalList.find(item => item.type === content);
   const modalIcon = () => {
     switch (content) {
-      case '로그아웃':
+      case settingTypes.LOGOUT:
         return <Logout56 />;
-      case '탈퇴':
+      case settingTypes.WARNING:
+      case settingTypes.ERROR:
+      case settingTypes.BLOCK:
         return <Warning56 />;
-      case '데이터':
+      case settingTypes.DATA:
         return <Data56 />;
-      case 'login':
+      case settingTypes.LOGIN:
         return <Login56 />;
+      case settingTypes.VERSION:
+        return <Version56 />;
     }
   };
 

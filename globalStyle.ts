@@ -11,8 +11,8 @@ export const colors = {
     success: '#00A63E',
     danger: '#E7000B',
     interactive: {
-      primary: '#155DFC',
-      primaryHovered: '#1447E6',
+      primary: '#46A44B',
+      primaryHovered: '#39843C',
       secondary: '#525252',
       selected: '#46A44B',
       inverse: '#FFFFFF',
@@ -29,7 +29,7 @@ export const colors = {
     inverseBold: '#404040',
     interactive: {
       primary: '#5EBA63',
-      selected: '#EFF6FF',
+      selected: '#EDF7EE',
       secondary: '#FAFAFA',
       secondaryHovered: '#E5E5E5',
       subtle: '#FEF2F2',
@@ -41,7 +41,7 @@ export const colors = {
     disabled: '#A1A1A1',
     interactive: {
       primary: '#5EBA63',
-      primaryHovered: '#1447E6',
+      primaryHovered: '#46A44B',
       secondary: '#525252',
       secondaryPressed: '#262626',
       secondaryHovered: '#404040',

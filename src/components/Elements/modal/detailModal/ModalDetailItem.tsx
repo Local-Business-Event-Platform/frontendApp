@@ -1,14 +1,8 @@
 import React from 'react';
-import {ColorValue, Pressable, StyleSheet} from 'react-native';
+import {Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../../../globalStyle';
+import {ModalDetailItemProps} from '../../../../utils/types/modalType';
 import SText from '../../SText';
-
-type ModalDetailItemProps = {
-  title: string;
-  titleColor: ColorValue;
-  onPress: () => void;
-  border: number;
-};
 
 const ModalDetailItem = ({
   title,

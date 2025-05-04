@@ -60,6 +60,7 @@ export const modalNames = {
   SETTING: 'setting',
   DETAIL_PAGE: 'detailPage',
   BLOCK: 'block',
+  SINGLE: 'single',
 } as const;
 
 export const textItems = [
@@ -213,7 +214,10 @@ export const settingTypes = {
   WARNING: '탈퇴',
   DATA: '데이터',
   LOGIN: 'login',
-};
+  ERROR: 'error',
+  BLOCK: 'blockUSer',
+  VERSION: 'version',
+} as const;
 
 export const settingsModalList = [
   {
@@ -243,6 +247,60 @@ export const settingsModalList = [
     title: '로그인이 필요해요',
     content: '로그인이 필요한 기능이에요. 지금 로그인하고',
     content2: '필요한 기능을 사용해보세요.',
+  },
+  {
+    type: settingTypes.ERROR,
+    id: 5,
+    title: '다른 기기에서 로그인 되어있어요',
+    content: '로그인 해제 후 현재 기기로 로그인 할게요',
+  },
+  {
+    type: settingTypes.BLOCK,
+    id: 6,
+    title: '사용 정지된 계정이에요',
+    content: 'CS센터에 문의해주세요.',
+  },
+  {
+    type: settingTypes.VERSION,
+    id: 7,
+    title: '새로운 버전이 출시되었어요',
+    content: '새로워진 기능을 만나보세요!',
+  },
+];
+
+export const singleModalTypes = {
+  LOGIN_ERROR: 'loginError',
+  PASSWORD: 'password',
+  AUTH: 'auth',
+  SERVER: 'server',
+};
+
+export const singleModalList = [
+  {
+    type: singleModalTypes.LOGIN_ERROR,
+    id: 1,
+    title: '로그인에 실패했어요',
+    content: '다시 시도해주세요',
+  },
+  {
+    type: singleModalTypes.PASSWORD,
+    id: 2,
+    title: '비밀번호 변경 완료',
+    content: '비밀번호가 성공적으로 변경되었습니다.',
+  },
+  {
+    type: singleModalTypes.AUTH,
+    id: 3,
+    title: '인증번호는 하루 5회까지만',
+    title2: '발송할 수 있어요',
+    content: '내일 다시 시도해주세요.',
+  },
+  {
+    type: singleModalTypes.SERVER,
+    id: 4,
+    title: '서버 점검중입니다!',
+    content: '잠시 후에 접속해주세요',
+    content2: '(서버 점검 시간: 23.08.11 00시 00분 ~ 23.08.11 00시 00분)',
   },
 ];
 

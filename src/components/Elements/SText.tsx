@@ -15,6 +15,7 @@ const SText = ({
   nLine,
   flexShrink,
   lineHeight,
+  textAlign = 'left',
   text,
   textDecorationLine,
 }: STextProps) => {
@@ -81,7 +82,13 @@ const SText = ({
           numberOfLines={nLine}
           style={[
             fontSizeList[fStyle],
-            {color, textDecorationLine, flexShrink, lineHeight},
+            {
+              color,
+              textDecorationLine,
+              flexShrink,
+              lineHeight,
+              textAlign,
+            },
           ]}>
           {text}
         </Text>

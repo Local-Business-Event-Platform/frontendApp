@@ -59,6 +59,7 @@ export type STextProps = {
   nLine?: number;
   flexShrink?: number;
   lineHeight?: number;
+  textAlign?: 'auto' | 'center' | 'left' | 'right' | 'justify';
   text: string | number;
   textDecorationLine?:
     | 'none'
