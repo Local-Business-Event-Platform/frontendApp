@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     borderRadius: SWidth * 8,
     paddingTop: 0,
     paddingBottom: 0,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     height: SWidth * 48,
     paddingHorizontal: SWidth * 12,
     fontSize: normalizeFont(16),

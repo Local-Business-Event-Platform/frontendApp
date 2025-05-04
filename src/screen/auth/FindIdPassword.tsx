@@ -149,7 +149,7 @@ const FindIdPassword = () => {
             title="다음"
             ButtonColor={colors.bg.interactive.primary}
             disabled={authCheck === 2 ? false : true}
-            textColor={'white'}
+            textColor={colors.white}
             onPress={() => navigation.navigate(screenNames.PASSWORD)}
           />
         </View>

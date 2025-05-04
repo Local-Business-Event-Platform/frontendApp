@@ -10,7 +10,8 @@ import ModalSetting from './modal/settingModal/ModalSetting';
 import SingleModal from './modal/SingleModal/SingleModal';
 
 const SModal = () => {
-  const {modalTitle, content, setModalOpen, id} = useModalOpen();
+  const {modalTitle, content, setModalOpen, id, userID, idType} =
+    useModalOpen();
   const modalList = () => {
     switch (modalTitle) {
       case modalNames.BUSINESS:
@@ -24,7 +25,14 @@ const SModal = () => {
       case modalNames.BLOCK:
         return <ModalBlock setModalOpen={setModalOpen} id={id} />;
       case modalNames.SINGLE:
-        return <SingleModal content={content} setModalOpen={setModalOpen} />;
+        return (
+          <SingleModal
+            content={content}
+            userID={userID}
+            idType={idType}
+            setModalOpen={setModalOpen}
+          />
+        );
     }
   };
   return (

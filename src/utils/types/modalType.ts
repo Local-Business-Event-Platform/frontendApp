@@ -2,6 +2,8 @@ import {ColorValue} from 'react-native';
 
 export type SingleModalProps = {
   content: string;
+  userID?: string | undefined;
+  idType?: string | undefined;
   setModalOpen: (newModalOpen: boolean) => void;
 };
 

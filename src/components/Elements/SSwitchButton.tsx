@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     width: SWidth * 20,
     height: SWidth * 20,
     borderRadius: 999,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
   },
 });

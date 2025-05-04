@@ -272,6 +272,7 @@ export const singleModalTypes = {
   LOGIN_ERROR: 'loginError',
   PASSWORD: 'password',
   AUTH: 'auth',
+  ID_ERROR: 'idError',
   SERVER: 'server',
 };
 
@@ -296,8 +297,14 @@ export const singleModalList = [
     content: '내일 다시 시도해주세요.',
   },
   {
-    type: singleModalTypes.SERVER,
+    type: singleModalTypes.ID_ERROR,
     id: 4,
+    title: '이미 계정이 있어요',
+    content: '아래 계정으로 로그인해주세요.',
+  },
+  {
+    type: singleModalTypes.SERVER,
+    id: 5,
     title: '서버 점검중입니다!',
     content: '잠시 후에 접속해주세요',
     content2: '(서버 점검 시간: 23.08.11 00시 00분 ~ 23.08.11 00시 00분)',

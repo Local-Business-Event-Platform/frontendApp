@@ -8,13 +8,20 @@ import {
   singleModalTypes,
 } from '../../../../utils/listData';
 import ErrorTwo56 from '../../../../utils/svgs/auth/ErrorTwo56';
+import IdError56 from '../../../../utils/svgs/auth/IdError56';
+import Kakao24 from '../../../../utils/svgs/auth/Kakao24';
 import Success56 from '../../../../utils/svgs/auth/Success56';
 import Warning56 from '../../../../utils/svgs/modal/Warning56';
 import {SingleModalProps} from '../../../../utils/types/modalType';
 import SButton56 from '../../SButton56';
 import SText from '../../SText';
 
-const SingleModal = ({content, setModalOpen}: SingleModalProps) => {
+const SingleModal = ({
+  content,
+  userID,
+  idType,
+  setModalOpen,
+}: SingleModalProps) => {
   const navigation = useCustomNavigation();
   const modalData = singleModalList.find(item => item.type === content);
   const modalIcon = () => {
@@ -26,6 +33,8 @@ const SingleModal = ({content, setModalOpen}: SingleModalProps) => {
       case singleModalTypes.LOGIN_ERROR:
       case singleModalTypes.SERVER:
         return <Warning56 />;
+      case singleModalTypes.ID_ERROR:
+        return <IdError56 />;
     }
   };
 
@@ -36,6 +45,7 @@ const SingleModal = ({content, setModalOpen}: SingleModalProps) => {
       case singleModalTypes.LOGIN_ERROR:
       case singleModalTypes.AUTH:
       case singleModalTypes.SERVER:
+      case singleModalTypes.ID_ERROR:
         return colors.bg.interactive.subtle;
     }
   };
@@ -46,6 +56,7 @@ const SingleModal = ({content, setModalOpen}: SingleModalProps) => {
       case singleModalTypes.LOGIN_ERROR:
       case singleModalTypes.AUTH:
       case singleModalTypes.SERVER:
+      case singleModalTypes.ID_ERROR:
         return '확인';
     }
   };
@@ -57,6 +68,7 @@ const SingleModal = ({content, setModalOpen}: SingleModalProps) => {
       case singleModalTypes.LOGIN_ERROR:
       case singleModalTypes.AUTH:
       case singleModalTypes.SERVER:
+      case singleModalTypes.ID_ERROR:
         return colors.text.danger;
     }
   };
@@ -74,6 +86,7 @@ const SingleModal = ({content, setModalOpen}: SingleModalProps) => {
       case singleModalTypes.AUTH:
       case singleModalTypes.LOGIN_ERROR:
       case singleModalTypes.SERVER:
+      case singleModalTypes.ID_ERROR:
         return () => {
           setModalOpen(false);
         };
@@ -113,6 +126,12 @@ const SingleModal = ({content, setModalOpen}: SingleModalProps) => {
           )}
         </View>
       </View>
+      {userID && (
+        <View style={styles.idContainer}>
+          <SText fStyle="BlgMd" text={userID} />
+          {idType === 'kakao' && <Kakao24 />}
+        </View>
+      )}
       <View style={{width: '100%', height: SWidth * 56}}>
         <SButton56
           title={buttonText()!}
@@ -139,5 +158,18 @@ const styles = StyleSheet.create({
   textContainer: {
     gap: SWidth * 4,
     alignItems: 'center',
+  },
+
+  idContainer: {
+    width: '100%',
+    height: SWidth * 48,
+    paddingHorizontal: SWidth * 12,
+    borderWidth: 1.25,
+    flexDirection: 'row',
+    borderColor: colors.border.secondary,
+    backgroundColor: colors.bg.primary,
+    borderRadius: SWidth * 8,
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 });

@@ -16,6 +16,7 @@ import CustomerPage from '../../screen/myPage/CustomerPage';
 import MyLocationMapPage from '../../screen/myPage/location/MyLocationMapPage';
 import MyNotificationPage from '../../screen/myPage/MyNotificationPage';
 
+import {colors} from '../../../globalStyle';
 import EventDetailPage from '../../screen/main/EventDetailPage';
 import NoticeDetailPage from '../../screen/myPage/notice/NoticeDetailPage';
 import NoticePage from '../../screen/myPage/notice/NoticePage';
@@ -63,13 +64,13 @@ const MainStackScreen = () => {
       initialRouteName={screenNames.LOGIN}
       screenOptions={{
         headerShown: false,
-        statusBarBackgroundColor: modalOpen ? 'transparent' : 'white',
+        statusBarBackgroundColor: modalOpen ? 'transparent' : colors.white,
         navigationBarHidden: modalOpen ? true : false,
         statusBarStyle: 'dark',
-        navigationBarColor: 'white',
+        navigationBarColor: colors.white,
         contentStyle: {
           paddingTop: insets.top,
-          backgroundColor: 'white',
+          backgroundColor: colors.white,
         },
       }}>
       <Stack.Screen
@@ -97,25 +98,13 @@ const MainStackScreen = () => {
         component={BottomTab}
         options={{
           contentStyle: {
-            backgroundColor: 'white',
+            backgroundColor: colors.white,
           },
           ...options({
             headerShown: false,
           }),
         }}
       />
-      {/* <Stack.Screen
-        name="business"
-        component={JoinBusinessPage}
-        options={{
-          header() {
-            return <BackTitleAppBar title="소상공인 회원가입" />;
-          },
-          title: '',
-          headerShown: true,
-          headerShadowVisible: false,
-        }}
-      /> */}
       <Stack.Screen
         name={screenNames.TERMS}
         component={TermsOfUsePage}

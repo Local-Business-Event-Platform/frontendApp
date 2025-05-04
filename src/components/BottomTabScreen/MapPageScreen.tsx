@@ -1,5 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
+import {colors} from '../../../globalStyle';
 import MapPage from '../../screen/MapPage';
 import {screenNames} from '../../utils/listData';
 import SBottomSheet from '../BottomSheet/SBottomSheet';
@@ -15,7 +16,7 @@ const MapPageScreen = () => {
           statusBarTranslucent: true,
           statusBarBackgroundColor: 'transparent',
           contentStyle: {
-            backgroundColor: 'white',
+            backgroundColor: colors.white,
           },
         }}
         initialRouteName={screenNames.MAP_PAGE}>

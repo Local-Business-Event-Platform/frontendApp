@@ -1,6 +1,7 @@
 import NaverLogin from '@react-native-seoul/naver-login';
 import React, {useEffect, useState} from 'react';
 import {Keyboard, Pressable, ScrollView, StyleSheet, View} from 'react-native';
+import Config from 'react-native-config';
 import {colors, SWidth} from '../../../globalStyle';
 import SButton56 from '../../components/Elements/SButton56';
 import FindUser from '../../components/Login/FindUser';
@@ -14,7 +15,8 @@ import {modalNames, screenNames, singleModalTypes} from '../../utils/listData';
 const LoginPage = () => {
   const navigation = useCustomNavigation();
   const [passwordOpen, setPasswordOpen] = useState(true);
-  const {setModalTitle, setModalOpen, setContent} = useModalOpen();
+  const {setModalTitle, setModalOpen, setContent, setUserID, setIdType} =
+    useModalOpen();
 
   const [errorMsg, setErrorMsg] = useState({
     id: '',
@@ -24,6 +26,18 @@ const LoginPage = () => {
     id: '',
     password: '',
   });
+
+  const maskEmail = (email: string) => {
+    const [local, domain] = email.split('@');
+    if (local.length <= 2) {
+      return '*'.repeat(local.length) + '@' + domain;
+    }
+    const firstChar = local[0];
+    const lastChar = local[local.length - 1];
+    const maskedMiddle = '*'.repeat(local.length - 2);
+
+    return `${firstChar}${maskedMiddle}${lastChar}@${domain}`;
+  };
 
   const handleLogin = () => {
     setModalTitle(modalNames.SINGLE);
@@ -41,8 +55,8 @@ const LoginPage = () => {
   useEffect(() => {
     NaverLogin.initialize({
       appName: 'mapTest',
-      consumerKey: '9vn6LKEwhPxUG61MEWpQ',
-      consumerSecret: '2QVRdGc5dj',
+      consumerKey: Config.NAVER_CLIENT_ID!,
+      consumerSecret: Config.NAVER_SECRET_KEY!,
       serviceUrlSchemeIOS: '',
       disableNaverAppAuthIOS: false,
     });

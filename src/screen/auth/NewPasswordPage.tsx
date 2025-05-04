@@ -152,7 +152,7 @@ const NewPasswordPage = () => {
             textColor={
               userPassword.password !== '' &&
               userPassword.password === userPassword.passwordCheck
-                ? 'white'
+                ? colors.white
                 : colors.icon.secondary
             }
             disabled={

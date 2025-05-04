@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import useCustomNavigation from '../../../hooks/useCustomNavigation';
 import {screenNames} from '../../../utils/listData';
 import DownArrowTwo24 from '../../../utils/svgs/mainPage/DownArrowTwo24';
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     height: SWidth * 50,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     justifyContent: 'space-between',
     paddingHorizontal: SWidth * 24,
   },

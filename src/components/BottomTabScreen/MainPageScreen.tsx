@@ -2,6 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {colors} from '../../../globalStyle';
 import MainPage from '../../screen/main/MainPage';
 import StoreDetailPage from '../../screen/main/StoreDetailPage';
 import {screenNames} from '../../utils/listData';
@@ -37,7 +38,7 @@ const MainPageScreen = () => {
         statusBarTranslucent: true,
         contentStyle: {
           paddingTop: insets.top,
-          backgroundColor: 'white',
+          backgroundColor: colors.white,
         },
       }}
       initialRouteName={screenNames.MAIN_PAGE}>

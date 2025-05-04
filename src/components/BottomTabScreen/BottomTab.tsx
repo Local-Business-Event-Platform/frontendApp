@@ -2,7 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React, {useEffect, useState} from 'react';
 import {Keyboard, Pressable, StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {useBottomSheetTitle} from '../../store/mapRoute';
 import {useUserData} from '../../store/userRoute';
 import BusinessPageScreen from './BusinessPageScreen';
@@ -50,7 +50,7 @@ const BottomTab = () => {
         screenOptions={({route}) => ({
           animation: 'shift',
           tabBarHideOnKeyboard: true,
-          sceneStyle: {backgroundColor: 'white'},
+          sceneStyle: {backgroundColor: colors.white},
           tabBarShowLabel: true,
           tabBarStyle: {
             height: tabHeight,
@@ -77,7 +77,7 @@ const BottomTab = () => {
           headerShown: false,
           headerShadowVisible: false,
           headerBackgroundContainerStyle: {
-            backgroundColor: 'white',
+            backgroundColor: colors.white,
           },
         })}>
         <Tab.Screen name="홈" component={MainPageScreen} />
