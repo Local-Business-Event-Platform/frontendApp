@@ -20,7 +20,7 @@ const MyPageScreen = () => {
     header() {
       return <BackTitleAppBar title={title} />;
     },
-    title: '',
+    title: title,
     headerShown: headerShown,
     headerShadowVisible: false,
   });

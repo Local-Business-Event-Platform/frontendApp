@@ -26,7 +26,7 @@ const MainPageScreen = () => {
         <StoreDetailAppBar />
       ) : null;
     },
-    title: '',
+    title: title,
     headerShown: headerShown,
     headerShadowVisible: false,
   });

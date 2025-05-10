@@ -54,7 +54,7 @@ const MainStackScreen = () => {
         <BackTitleAppBar title={title} />
       );
     },
-    title: '',
+    title: title,
     headerShown: headerShown,
     headerShadowVisible: false,
   });

@@ -26,7 +26,7 @@ const BusinessPageScreen = () => {
         <JoinAppBar />
       ) : null;
     },
-    title: '',
+    title: title,
     headerShown: headerShown,
     headerShadowVisible: false,
   });
