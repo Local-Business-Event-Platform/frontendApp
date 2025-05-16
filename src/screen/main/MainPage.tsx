@@ -18,7 +18,7 @@ const MainPage = () => {
         setTabIndex={setMainTab}
       />
       <View style={styles.contentContainer}>
-        <MainFilter />
+        <MainFilter search={false} />
         {mainTab === 1 && <MainEventContent />}
         {mainTab === 2 && <MainStoreContent />}
       </View>
