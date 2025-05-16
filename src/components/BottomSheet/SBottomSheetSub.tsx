@@ -4,7 +4,7 @@ import {
   BottomSheetModalProvider,
 } from '@gorhom/bottom-sheet';
 import React, {useCallback, useEffect, useRef} from 'react';
-import {StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import {colors} from '../../../globalStyle';
 import {
   useArrayBottomSheetTitle,
@@ -35,10 +35,12 @@ const SBottomSheetSub = () => {
         return <SubArraySheet />;
     }
   };
-  console.log('bottomSheetTitle', bottomSheetTitle);
 
   useEffect(() => {
     setBottomSheetRef(bottomRef);
+    if (bottomRef.current) {
+      StatusBar.setBackgroundColor('transparent');
+    }
   }, []);
 
   return (
