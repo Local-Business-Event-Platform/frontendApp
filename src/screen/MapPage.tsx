@@ -8,7 +8,6 @@ import {useBottomSheetTitle, useMyLocation} from '../store/mapRoute';
 
 const MapPage = () => {
   const {myLocation, radius} = useMyLocation();
-
   const {category, setCategory} = useBottomSheetTitle();
 
   const buildings = [

@@ -2,8 +2,8 @@ import {Dimensions, PixelRatio} from 'react-native';
 
 export const colors = {
   text: {
-    primary: '#171717',
-    secondary: '#404040',
+    primary: '#0F172B',
+    secondary: '#314158',
     tertiary: '#525252',
     info: '#46A44B',
     warning: '#FFB800',

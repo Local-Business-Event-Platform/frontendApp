@@ -63,6 +63,12 @@ export const modalNames = {
   SINGLE: 'single',
 } as const;
 
+export const bottomSheetNames = {
+  MENU_SELECT: 'menuSelect',
+  ITEM_LIST: 'itemList',
+  ARRAY_MENU: 'arrayMenu',
+} as const;
+
 export const textItems = [
   {text: '아이디/비밀번호', color: colors.text.info},
   {text: '를 잊으셨나요?', color: colors.text.disabled},
@@ -386,4 +392,11 @@ export const storeServiceList = [
     click: false,
     border: false,
   },
+];
+
+export const arrayBottomSheetMenuList = [
+  {id: 1, title: '최신순'},
+  {id: 2, title: '조회순'},
+  {id: 3, title: '거리순'},
+  {id: 4, title: '리뷰순'},
 ];

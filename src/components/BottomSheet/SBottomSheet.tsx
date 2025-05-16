@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 
 import {colors, SWidth} from '../../../globalStyle';
 import {useBottomSheetTitle} from '../../store/mapRoute';
+import {bottomSheetNames} from '../../utils/listData';
 import BottomSheetHeader from './BottomSheetHeader';
 import BottomSheetItemList from './BottomSheetItemList';
 import MapMenu from './MapMenu';
@@ -14,18 +15,18 @@ const SBottomSheet = () => {
 
   const snapPoints = useMemo(() => {
     switch (bottomSheetTitle) {
-      case 'menuSelect':
+      case bottomSheetNames.MENU_SELECT:
         return [SWidth * 30, SWidth * 168];
-      case 'itemList':
+      case bottomSheetNames.ITEM_LIST:
         return [SWidth * 30, SWidth * 376, '95%'];
     }
   }, [bottomSheetTitle]);
 
   const bottomScreen = () => {
     switch (bottomSheetTitle) {
-      case 'menuSelect':
+      case bottomSheetNames.MENU_SELECT:
         return <MapMenu />;
-      case 'itemList':
+      case bottomSheetNames.ITEM_LIST:
         return <BottomSheetItemList />;
     }
   };
@@ -43,7 +44,6 @@ const SBottomSheet = () => {
     <BottomSheetModalProvider>
       <BottomSheetModal
         ref={bottomRef}
-        enableDynamicSizing={false}
         // enableDynamicSizing={bottomSheetTitle === 'menuSelect'}
         snapPoints={snapPoints}
         enableDismissOnClose={false}

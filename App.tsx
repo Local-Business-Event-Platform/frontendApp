@@ -2,6 +2,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {useEffect} from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import SBottomSheetSub from './src/components/BottomSheet/SBottomSheetSub';
 import MainStackScreen from './src/components/BottomTabScreen/MainStackScreen';
 import SModal from './src/components/Elements/SModal';
 import ReactQueryProvider from './src/ReactQuery/Provider';
@@ -30,6 +31,7 @@ function App() {
         <NavigationContainer>
           <ReactQueryProvider>
             <MainStackScreen />
+            <SBottomSheetSub />
           </ReactQueryProvider>
           {modalOpen && <SModal />}
         </NavigationContainer>

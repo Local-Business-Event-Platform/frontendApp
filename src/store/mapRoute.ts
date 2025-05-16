@@ -1,4 +1,5 @@
 import {create} from 'zustand';
+import {bottomSheetNames} from '../utils/listData';
 
 type BottomSheetType = {
   category: string;
@@ -21,7 +22,7 @@ type MyLocationType = {
 
 export const useBottomSheetTitle = create<BottomSheetType>(set => ({
   category: '',
-  bottomSheetTitle: 'menuSelect',
+  bottomSheetTitle: bottomSheetNames.MENU_SELECT,
   index: 1,
   setIndex: (index: number) => set({index}),
   setCategory: (category: string) => set({category}),
