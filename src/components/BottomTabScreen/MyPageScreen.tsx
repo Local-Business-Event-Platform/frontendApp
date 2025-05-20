@@ -1,6 +1,5 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {colors} from '../../../globalStyle';
 import ReviewManagementPage from '../../scre../../screen/myPage/user/ReviewManagementPage';
 import MyLocationPage from '../../screen/myPage/location/MyLocationPage';
@@ -14,7 +13,6 @@ import BackTitleAppBar from './AppBar/BackTitleAppBar';
 
 const MyPageScreen = () => {
   const Stack = createNativeStackNavigator();
-  const insets = useSafeAreaInsets();
 
   const options = ({headerShown, title = ''}: StackOptionType) => ({
     header() {
@@ -28,9 +26,7 @@ const MyPageScreen = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        statusBarTranslucent: true,
         contentStyle: {
-          paddingTop: insets.top,
           backgroundColor: colors.white,
         },
       }}

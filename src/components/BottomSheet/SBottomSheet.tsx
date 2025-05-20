@@ -16,9 +16,9 @@ const SBottomSheet = () => {
   const snapPoints = useMemo(() => {
     switch (bottomSheetTitle) {
       case bottomSheetNames.MENU_SELECT:
-        return [SWidth * 30, SWidth * 168];
+        return [SWidth * 39, SWidth * 168];
       case bottomSheetNames.ITEM_LIST:
-        return [SWidth * 30, SWidth * 376, '95%'];
+        return [SWidth * 39, SWidth * 344, SWidth * 685];
     }
   }, [bottomSheetTitle]);
 
@@ -34,12 +34,9 @@ const SBottomSheet = () => {
   useEffect(() => {
     if (bottomRef.current) {
       bottomRef.current.present();
-      requestAnimationFrame(() => {
-        bottomRef.current?.snapToIndex(1);
-      });
     }
   }, []);
-
+  console.log('bottomSheetTitle', bottomSheetTitle);
   return (
     <BottomSheetModalProvider>
       <BottomSheetModal
@@ -62,7 +59,7 @@ const SBottomSheet = () => {
           backgroundColor: colors.white,
         }}
         index={index}
-        style={[styles.contentContainer]}>
+        style={[styles.container]}>
         {/* <BottomSheetScrollView showsVerticalScrollIndicator={false}> */}
         {bottomScreen()}
         {/* <BottomSheetItemList /> */}
@@ -75,7 +72,7 @@ const SBottomSheet = () => {
 export default SBottomSheet;
 
 const styles = StyleSheet.create({
-  contentContainer: {
+  container: {
     flex: 1,
   },
 });

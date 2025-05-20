@@ -8,7 +8,6 @@ import {Keyboard, Pressable, StyleSheet} from 'react-native';
 
 import {colors, SWidth} from '../../../globalStyle';
 import {useBottomSheetTitle} from '../../store/mapRoute';
-import {bottomSheetNames} from '../../utils/listData';
 
 type MapProps = {
   cameraZoom: number;
@@ -38,7 +37,7 @@ const Map = ({
         // isShowLocationButton={false}
         isShowZoomControls={false}
         onTapMap={() => {
-          setBottomSheetTitle(bottomSheetNames.MENU_SELECT);
+          // setBottomSheetTitle(bottomSheetNames.MENU_SELECT);
           Keyboard.dismiss();
         }}
         camera={{

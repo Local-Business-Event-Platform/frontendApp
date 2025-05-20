@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
     gap: SWidth * 8,
     paddingHorizontal: SWidth * 16,
     borderRadius: SWidth * 8,
+    backgroundColor: colors.white,
   },
 });

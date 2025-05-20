@@ -1,6 +1,6 @@
-import {BottomSheetFlatList} from '@gorhom/bottom-sheet';
+import {BottomSheetFlatList, BottomSheetView} from '@gorhom/bottom-sheet';
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {SWidth} from '../../../globalStyle';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useStoreData} from '../../store/storeRoute';
@@ -85,7 +85,7 @@ const BottomSheetItemList = () => {
   ];
 
   return (
-    <View style={styles.container}>
+    <BottomSheetView style={styles.container}>
       <MainFilter />
       <BottomSheetFlatList
         data={data}
@@ -110,7 +110,7 @@ const BottomSheetItemList = () => {
           />
         )}
       />
-    </View>
+    </BottomSheetView>
   );
 };
 

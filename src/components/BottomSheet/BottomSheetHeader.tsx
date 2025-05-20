@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
 
 const BottomSheetHeader = () => {
   return (
-    <View style={styles.handleContainer}>
+    <Pressable style={styles.handleContainer} hitSlop={20}>
       <View style={styles.handleIndicator} />
-    </View>
+    </Pressable>
   );
 };
 

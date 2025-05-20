@@ -4,6 +4,7 @@ import {colors} from '../../../globalStyle';
 import MapPage from '../../screen/MapPage';
 import {screenNames} from '../../utils/listData';
 import SBottomSheet from '../BottomSheet/SBottomSheet';
+import MapAppBar from './AppBar/MapAppBar';
 
 const MapPageScreen = () => {
   const Stack = createNativeStackNavigator();
@@ -13,8 +14,8 @@ const MapPageScreen = () => {
         screenOptions={{
           headerShown: false,
           statusBarStyle: 'dark',
-          statusBarTranslucent: true,
-          statusBarBackgroundColor: 'transparent',
+          // statusBarTranslucent: true,
+          // statusBarBackgroundColor: 'transparent',
           contentStyle: {
             backgroundColor: colors.white,
           },
@@ -24,8 +25,10 @@ const MapPageScreen = () => {
           name={screenNames.MAP_PAGE}
           options={{
             title: '',
-
-            headerShown: false,
+            header() {
+              return <MapAppBar />;
+            },
+            headerShown: true,
             headerShadowVisible: false,
           }}
           component={MapPage}

@@ -1,7 +1,7 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {SImageCard2Props} from '../../utils/types/type';
 
 const SImageCard2 = ({children, image, onPress}: SImageCard2Props) => {
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: SWidth * 8,
     overflow: 'hidden',
     boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.05)',
+    backgroundColor: colors.white,
   },
 
   imgStyle: {

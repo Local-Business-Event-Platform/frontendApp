@@ -1,7 +1,7 @@
 import FastImage from '@d11/react-native-fast-image';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../globalStyle';
+import {colors, SWidth} from '../../../globalStyle';
 import {SImageCardProps} from '../../utils/types/type';
 
 const SImageCard = ({
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.05)',
     overflow: 'hidden',
     zIndex: 10,
+    backgroundColor: colors.white,
   },
 
   imgContainer: {

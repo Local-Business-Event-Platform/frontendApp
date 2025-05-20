@@ -55,6 +55,7 @@ const BottomTab = () => {
           tabBarStyle: {
             height: tabHeight,
             elevation: 0,
+            shadowColor: 'black',
             borderWidth: 0,
             borderColor: 'transparent',
           },

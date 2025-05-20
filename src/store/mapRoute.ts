@@ -22,8 +22,8 @@ type MyLocationType = {
 
 export const useBottomSheetTitle = create<BottomSheetType>(set => ({
   category: '',
-  bottomSheetTitle: bottomSheetNames.MENU_SELECT,
-  index: 1,
+  bottomSheetTitle: bottomSheetNames.ITEM_LIST,
+  index: 0,
   setIndex: (index: number) => set({index}),
   setCategory: (category: string) => set({category}),
   setBottomSheetTitle: (bottomSheetTitle: string) => set({bottomSheetTitle}),

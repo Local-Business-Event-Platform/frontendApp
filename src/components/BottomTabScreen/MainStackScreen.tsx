@@ -1,5 +1,5 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {colors} from '../../../globalStyle';
 import Address from '../../screen/auth/Address';
 import FindIdPassword from '../../screen/auth/FindIdPassword';
 import JoinIdPage from '../../screen/auth/JoinIdPage';
@@ -9,15 +9,13 @@ import LoginPage from '../../screen/auth/LoginPage';
 import NewPasswordPage from '../../screen/auth/NewPasswordPage';
 import SuccessPage from '../../screen/auth/SuccessPage';
 import TermsOfUsePage from '../../screen/auth/TermsOfUsePage';
+import EventDetailPage from '../../screen/main/EventDetailPage';
 import NotificationPage from '../../screen/main/NotificationPage';
 import SearchPage from '../../screen/main/SearchPage';
 import BlockUserPage from '../../screen/myPage/BlockUserPage';
 import CustomerPage from '../../screen/myPage/CustomerPage';
 import MyLocationMapPage from '../../screen/myPage/location/MyLocationMapPage';
 import MyNotificationPage from '../../screen/myPage/MyNotificationPage';
-
-import {colors} from '../../../globalStyle';
-import EventDetailPage from '../../screen/main/EventDetailPage';
 import NoticeDetailPage from '../../screen/myPage/notice/NoticeDetailPage';
 import NoticePage from '../../screen/myPage/notice/NoticePage';
 import SettingPage from '../../screen/myPage/SettingPage';
@@ -38,7 +36,7 @@ const MainStackScreen = () => {
   const Stack = createNativeStackNavigator();
   const {userData} = useUserData();
   const {title} = useStoreData();
-  const insets = useSafeAreaInsets();
+  // const insets = useSafeAreaInsets();
   const {modalOpen} = useModalOpen();
   const options = ({
     headerShown,
@@ -69,7 +67,6 @@ const MainStackScreen = () => {
         statusBarStyle: 'dark',
         navigationBarColor: colors.white,
         contentStyle: {
-          paddingTop: insets.top,
           backgroundColor: colors.white,
         },
       }}>
@@ -97,9 +94,6 @@ const MainStackScreen = () => {
         name={screenNames.BOTTOM_TAB}
         component={BottomTab}
         options={{
-          contentStyle: {
-            backgroundColor: colors.white,
-          },
           ...options({
             headerShown: false,
           }),

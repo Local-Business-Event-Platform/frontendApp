@@ -1,7 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {colors} from '../../../globalStyle';
 import BusinessPage from '../../screen/business/BusinessPage';
 import StoreInfoPage from '../../screen/business/StoreInfoPage';
@@ -12,7 +11,6 @@ import OnlyTitleAppBar from './AppBar/OnlyTitleAppBar';
 
 const BusinessPageScreen = () => {
   const Stack = createNativeStackNavigator();
-  const insets = useSafeAreaInsets();
 
   const options = ({
     headerShown,
@@ -35,9 +33,7 @@ const BusinessPageScreen = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        statusBarTranslucent: true,
         contentStyle: {
-          paddingTop: insets.top,
           backgroundColor: colors.white,
         },
       }}

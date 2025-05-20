@@ -1,23 +1,15 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {colors} from '../../../globalStyle';
 import CommunityPage from '../../screen/CommunityPage';
 import {screenNames} from '../../utils/listData';
 
 const CommunityScreen = () => {
   const Stack = createNativeStackNavigator();
-  const insets = useSafeAreaInsets();
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        statusBarTranslucent: true,
-        contentStyle: {
-          paddingTop: insets.top,
-          backgroundColor: colors.white,
-        },
       }}
       initialRouteName={screenNames.COMMUNITY}>
       <Stack.Screen

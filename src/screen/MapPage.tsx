@@ -1,8 +1,7 @@
 import {getDistance} from 'geolib';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {colors, SWidth} from '../../globalStyle';
-import SInput from '../components/Elements/SInput';
+import {SWidth} from '../../globalStyle';
 import Map from '../components/Map/Map';
 import {useBottomSheetTitle, useMyLocation} from '../store/mapRoute';
 
@@ -41,7 +40,7 @@ const MapPage = () => {
   return (
     <View style={styles.container}>
       <View style={styles.searchBarContainer}>
-        <View style={styles.searchBar}>
+        {/* <View style={styles.searchBar}>
           <SInput
             value={category}
             onChangeText={text => setCategory(text)}
@@ -57,7 +56,7 @@ const MapPage = () => {
               console.log('검색 아이콘 클릭됨');
             }}
           />
-        </View>
+        </View> */}
       </View>
       <Map
         myLatitude={myLocation.latitude}
