@@ -3,22 +3,26 @@ import React, {useEffect, useMemo, useRef} from 'react';
 import {StyleSheet} from 'react-native';
 
 import {colors, SWidth} from '../../../globalStyle';
-import {useBottomSheetTitle} from '../../store/mapRoute';
+import {useBottomSheetTitle, useMyLocation} from '../../store/mapRoute';
 import {bottomSheetNames} from '../../utils/listData';
 import BottomSheetHeader from './BottomSheetHeader';
-import BottomSheetItemList from './BottomSheetItemList';
+import BottomSheetItemList from './BottomSheetItemList/BottomSheetItemList';
 import MapMenu from './MapMenu';
 
 const SBottomSheet = () => {
   const bottomRef = useRef<BottomSheetModal>(null);
-  const {bottomSheetTitle, index, setIndex} = useBottomSheetTitle();
-
+  const {bottomSheetTitle, setIndex} = useBottomSheetTitle();
+  const {myLocation} = useMyLocation();
   const snapPoints = useMemo(() => {
     switch (bottomSheetTitle) {
       case bottomSheetNames.MENU_SELECT:
         return [SWidth * 39, SWidth * 168];
       case bottomSheetNames.ITEM_LIST:
-        return [SWidth * 39, SWidth * 344, SWidth * 685];
+        if (myLocation.latitude !== 0) {
+          return [SWidth * 39, SWidth * 344, SWidth * 685];
+        } else {
+          return [SWidth * 39, SWidth * 344];
+        }
     }
   }, [bottomSheetTitle]);
 
@@ -58,7 +62,7 @@ const SBottomSheet = () => {
         backgroundStyle={{
           backgroundColor: colors.white,
         }}
-        index={index}
+        index={0}
         style={[styles.container]}>
         {/* <BottomSheetScrollView showsVerticalScrollIndicator={false}> */}
         {bottomScreen()}

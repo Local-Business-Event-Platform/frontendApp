@@ -41,51 +41,54 @@ const Map = ({
           Keyboard.dismiss();
         }}
         camera={{
-          latitude: myLatitude - 0.004,
-          longitude: myLongitude,
+          latitude: myLatitude !== 0 ? myLatitude - 0.004 : 37.5564503,
+          longitude: myLongitude !== 0 ? myLongitude : 126.9371086,
           zoom: cameraZoom,
         }}>
-        <NaverMapCircleOverlay
-          latitude={myLatitude}
-          longitude={myLongitude}
-          radius={myRadius}
-          color={'#F1425C33'}
-        />
-        <NaverMapMarkerOverlay
-          caption={{
-            text: '내 위치',
-            color: colors.text.primary,
-            textSize: SWidth * 12,
-          }}
-          isHideCollidedMarkers={true}
-          width={SWidth * 20}
-          height={SWidth * 20}
-          image={require('../../assets/images/MapMyIcon.png')}
-          latitude={myLatitude}
-          longitude={myLongitude}
-          anchor={{x: 0.5, y: 0.5}}
-          isIconPerspectiveEnabled={true}
-        />
-
-        {nearbyBuildings.map((building, index) => (
-          <NaverMapMarkerOverlay
-            key={index}
-            caption={{
-              text: building.name,
-              color: colors.text.primary,
-              textSize: SWidth * 12,
-            }}
-            isHideCollidedMarkers={true}
-            width={SWidth * 24}
-            height={SWidth * 24}
-            image={require('../../assets/images/marker.png')}
-            latitude={building.latitude}
-            longitude={building.longitude}
-            onTap={() => {
-              console.log('건물 클릭됨', building.name);
-            }}
-          />
-        ))}
+        {myLatitude !== 0 && myLongitude !== 0 && (
+          <>
+            <NaverMapCircleOverlay
+              latitude={myLatitude}
+              longitude={myLongitude}
+              radius={myRadius}
+              color={'#F1425C33'}
+            />
+            <NaverMapMarkerOverlay
+              caption={{
+                text: '내 위치',
+                color: colors.text.primary,
+                textSize: SWidth * 12,
+              }}
+              isHideCollidedMarkers={true}
+              width={SWidth * 20}
+              height={SWidth * 20}
+              image={require('../../assets/images/MapMyIcon.png')}
+              latitude={myLatitude}
+              longitude={myLongitude}
+              anchor={{x: 0.5, y: 0.5}}
+              isIconPerspectiveEnabled={true}
+            />
+            {nearbyBuildings.map((building, index) => (
+              <NaverMapMarkerOverlay
+                key={index}
+                caption={{
+                  text: building.name,
+                  color: colors.text.primary,
+                  textSize: SWidth * 12,
+                }}
+                isHideCollidedMarkers={true}
+                width={SWidth * 24}
+                height={SWidth * 24}
+                image={require('../../assets/images/marker.png')}
+                latitude={building.latitude}
+                longitude={building.longitude}
+                onTap={() => {
+                  console.log('건물 클릭됨', building.name);
+                }}
+              />
+            ))}
+          </>
+        )}
       </NaverMapView>
     </Pressable>
   );
