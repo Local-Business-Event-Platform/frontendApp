@@ -29,9 +29,7 @@ export type EventItemProps = {
     km: string;
     date: string;
   };
-  clicked: boolean;
   onPress: () => void;
-  likeOnPress?: () => void;
 };
 
 export type NotificationItemProps = {

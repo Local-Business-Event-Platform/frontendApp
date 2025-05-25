@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors, SWidth} from '../../../globalStyle';
 import Calendar24 from '../../utils/svgs/businessPage/Calendar24';
@@ -8,13 +8,14 @@ import SImageCard from '../Elements/SImageCard';
 import SText from '../Elements/SText';
 import EventLikeButton from './EventLikeButton';
 
-const EventItem = ({item, clicked, onPress, likeOnPress}: EventItemProps) => {
+const EventItem = ({item, onPress}: EventItemProps) => {
+  const [clicked, setClicked] = useState(false);
   return (
     <SImageCard
       image={item.img}
       onPress={onPress}
       childrenButton={
-        <EventLikeButton click={clicked} onPress={likeOnPress} />
+        <EventLikeButton click={clicked} onPress={() => setClicked(!clicked)} />
       }>
       <View style={styles.container}>
         <SText fStyle="BxlSb" text={item.title} />

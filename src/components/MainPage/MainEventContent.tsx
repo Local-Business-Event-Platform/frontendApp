@@ -20,7 +20,7 @@ type EventItemType = {
 
 const MainEventContent = () => {
   const navigation = useCustomNavigation();
-  const [clicked, setClicked] = useState(false);
+
   const {setTitle} = useStoreData();
   const [data, setData] = useState<EventItemType[]>([]);
 
@@ -64,15 +64,13 @@ const MainEventContent = () => {
       skeleton={<SImageCardLoading count={4} />}
       paddingBottom={SWidth * 150}
       gap={SWidth * 24}
-      dataItem={({item}) => (
+      dataItem={({item, index}) => (
         <EventItem
-          clicked={clicked}
           item={item}
           onPress={() => {
             setTitle(item.store);
             navigation.navigate(screenNames.DETAIL_PAGE, {item: item});
           }}
-          likeOnPress={() => setClicked(!clicked)}
         />
       )}
     />
