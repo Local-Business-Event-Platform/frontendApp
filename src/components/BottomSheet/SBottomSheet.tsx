@@ -19,10 +19,12 @@ const SBottomSheet = () => {
         return [SWidth * 39, SWidth * 168];
       case bottomSheetNames.ITEM_LIST:
         if (myLocation.latitude !== 0) {
-          return [SWidth * 39, SWidth * 344, SWidth * 685];
+          return [SWidth * 39, SWidth * 344, '85%'];
         } else {
           return [SWidth * 39, SWidth * 344];
         }
+      default:
+        return [SWidth * 39];
     }
   }, [bottomSheetTitle]);
 
@@ -45,7 +47,7 @@ const SBottomSheet = () => {
     <BottomSheetModalProvider>
       <BottomSheetModal
         ref={bottomRef}
-        // enableDynamicSizing={bottomSheetTitle === 'menuSelect'}
+        enableDynamicSizing={false}
         snapPoints={snapPoints}
         enableDismissOnClose={false}
         enablePanDownToClose={false}
@@ -58,7 +60,17 @@ const SBottomSheet = () => {
           elevation: 0,
         }}
         handleComponent={() => <BottomSheetHeader />}
-        onChange={index => setIndex(index)}
+        onChange={index => {
+          if (
+            typeof index === 'number' &&
+            index >= 0 &&
+            index < snapPoints.length
+          ) {
+            setIndex(index);
+          } else {
+            console.warn('Invalid bottom sheet index:', index);
+          }
+        }}
         backgroundStyle={{
           backgroundColor: colors.white,
         }}
