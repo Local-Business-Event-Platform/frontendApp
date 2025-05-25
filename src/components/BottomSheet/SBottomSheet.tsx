@@ -14,7 +14,6 @@ const SBottomSheet = () => {
   const {bottomSheetTitle, setIndex} = useBottomSheetTitle();
   const {myLocation} = useMyLocation();
 
-  console.log('myLocation', myLocation.latitude);
   const snapPoints = useMemo(() => {
     switch (bottomSheetTitle) {
       case bottomSheetNames.MENU_SELECT:
@@ -44,7 +43,7 @@ const SBottomSheet = () => {
       bottomRef.current.present();
     }
   }, []);
-  console.log('bottomSheetTitle', bottomSheetTitle);
+
   return (
     <BottomSheetModalProvider>
       <BottomSheetModal

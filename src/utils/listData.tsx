@@ -2,9 +2,9 @@ import {ColorValue} from 'react-native';
 import {colors} from '../../globalStyle';
 import Home24 from './svgs/bottonTab/Home24';
 import Store24 from './svgs/bottonTab/Store24';
-import Array20 from './svgs/mainPage/Array20';
 import Filter20 from './svgs/mainPage/Filter20';
 import Gift24 from './svgs/mainPage/Gift24';
+import ListIcon20 from './svgs/mainPage/ListIcon20';
 import CircleCheck24 from './svgs/myPage/CircleCheck24';
 import CircleUser24 from './svgs/myPage/CircleUser24';
 import CommentEdit24 from './svgs/myPage/CommentEdit24';
@@ -110,7 +110,7 @@ export const customerTabItems = [
 
 export const mainFilterItems = [
   {id: 1, title: '필터', icon: Filter20},
-  {id: 2, title: '정렬', icon: Array20},
+  {id: 2, title: '정렬', icon: ListIcon20},
 ];
 
 export const storeDetailTabItems = [

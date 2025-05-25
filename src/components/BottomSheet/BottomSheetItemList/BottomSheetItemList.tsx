@@ -91,7 +91,7 @@ const BottomSheetItemList = () => {
     <BottomSheetView style={styles.container}>
       {myLocation.latitude && myLocation.longitude ? (
         <>
-          <MainFilter />
+          <MainFilter search={false} />
           <BottomSheetFlatList
             data={data}
             showsVerticalScrollIndicator={false}
