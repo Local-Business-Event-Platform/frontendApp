@@ -19,7 +19,7 @@ const SBottomSheet = () => {
         return [SWidth * 39, SWidth * 168];
       case bottomSheetNames.ITEM_LIST:
         if (myLocation.latitude !== 0) {
-          return [SWidth * 39, SWidth * 344, '85%'];
+          return [SWidth * 39, SWidth * 344, '86%'];
         } else {
           return [SWidth * 39, SWidth * 344];
         }

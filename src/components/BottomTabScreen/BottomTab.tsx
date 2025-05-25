@@ -45,7 +45,7 @@ const BottomTab = () => {
   }, []);
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, zIndex: 999}}>
       <Tab.Navigator
         screenOptions={({route}) => ({
           animation: 'shift',
@@ -55,8 +55,6 @@ const BottomTab = () => {
           tabBarStyle: {
             height: tabHeight,
             elevation: 0,
-            shadowColor: 'black',
-            borderWidth: 0,
             borderColor: 'transparent',
           },
           tabBarButton: props => (
@@ -89,12 +87,13 @@ const BottomTab = () => {
         <Tab.Screen name="커뮤니티" component={CommunityScreen} />
         <Tab.Screen name="마이페이지" component={MyPageScreen} />
       </Tab.Navigator>
-      {!isKeyboardVisible && index !== 0 && (
+      {
         <LinearGradient
           colors={['transparent', '#D3D3D333']}
           style={styles.shadow}
+          pointerEvents="none"
         />
-      )}
+      }
     </View>
   );
 };
