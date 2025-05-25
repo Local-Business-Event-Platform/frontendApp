@@ -13,12 +13,14 @@ const SBottomSheet = () => {
   const bottomRef = useRef<BottomSheetModal>(null);
   const {bottomSheetTitle, setIndex} = useBottomSheetTitle();
   const {myLocation} = useMyLocation();
+
+  console.log('myLocation', myLocation.latitude);
   const snapPoints = useMemo(() => {
     switch (bottomSheetTitle) {
       case bottomSheetNames.MENU_SELECT:
         return [SWidth * 39, SWidth * 168];
       case bottomSheetNames.ITEM_LIST:
-        if (myLocation.latitude !== 0) {
+        if (myLocation.latitude !== 0 && myLocation.longitude !== 0) {
           return [SWidth * 39, SWidth * 344, '86%'];
         } else {
           return [SWidth * 39, SWidth * 344];
@@ -26,7 +28,7 @@ const SBottomSheet = () => {
       default:
         return [SWidth * 39];
     }
-  }, [bottomSheetTitle]);
+  }, [bottomSheetTitle, myLocation]);
 
   const bottomScreen = () => {
     switch (bottomSheetTitle) {
