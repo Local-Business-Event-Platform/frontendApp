@@ -10,7 +10,7 @@ import EventDateButton from './Event/EventDateButton';
 const BContentTime = ({
   title,
   content,
-  contentColor = colors.disabled,
+  contentColor = colors.text.disabled,
   color,
   underline,
   onClick,

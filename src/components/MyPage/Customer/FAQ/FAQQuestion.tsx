@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {colors, SWidth} from '../../../../../globalStyle';
+import {SWidth} from '../../../../../globalStyle';
 import MyPageTitle from '../../MyPageTitle';
 import FAQQuestionItem from './FAQQuestionItem';
 
@@ -58,16 +58,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderBottomWidth: 1.5,
     borderColor: '#000000',
-  },
-
-  questionItemBox: {
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    height: SWidth * 64,
-    borderBottomWidth: 1,
-    borderColor: colors.interactive.secondary,
   },
 
   questionIconBox: {

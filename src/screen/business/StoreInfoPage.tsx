@@ -25,13 +25,16 @@ const StoreInfoPage = ({route}: StoreInfoPageProps) => {
   console.log('스토어 데이터', storeData);
   const [isClicked, setIsClicked] = useState(0);
   const [data, setData] = useState({
-    storeName: '우리가게',
-    storeContent: '맛있음',
+    storeName: '',
+    storeContent: '',
+    // storeName: '우리가게',
+    // storeContent: '맛있음',
     storeInfoNumber: '',
     storeBusinessTime: '',
     storeImage: [
       'https://cdn.imweb.me/upload/S202207202685e30f16e24/8b48c67f8cdf6.jpeg',
     ],
+    // storeImage: [''],
     storeCEO: '',
     storeCategory: '',
     storeDetailCategory: '',

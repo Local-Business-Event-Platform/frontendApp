@@ -18,7 +18,7 @@ const StoreImage = ({
   setStoreImages,
 }: StoreImageProps) => {
   const [containerWidth, setContainerWidth] = useState(0);
-
+  console.log('storeImages', storeImages);
   const handleLayout = (onLayout: any) => {
     const {width} = onLayout.nativeEvent.layout;
     setContainerWidth(width);
@@ -35,7 +35,7 @@ const StoreImage = ({
         })
       }
       onLayout={handleLayout}>
-      {storeImages && storeImages.length > 0 ? (
+      {storeImages && storeImages[0] ? (
         <View style={styles.carouselContainer}>
           {containerWidth > 0 && (
             <SCarousel
@@ -56,7 +56,7 @@ const StoreImage = ({
             <SText
               fStyle="BmdSb"
               text={'이미지 변경'}
-              color={colors.interactive.primary}
+              color={colors.text.interactive.primary}
             />
             <Camera20 />
           </Pressable>
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     height: SWidth * 40,
     borderWidth: 1.25,
     borderRadius: SWidth * 8,
-    borderColor: colors.interactive.primary,
+    borderColor: colors.border.interactive.primary,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: SWidth * 16,

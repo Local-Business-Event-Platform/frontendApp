@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: SWidth * 12,
     borderWidth: 1.25,
-    borderColor: colors.interactive.secondary,
+    borderColor: colors.border.secondary,
     borderRadius: SWidth * 8,
   },
 });

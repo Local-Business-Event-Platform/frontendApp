@@ -8,7 +8,7 @@ import Calendar24 from '../../utils/svgs/businessPage/Calendar24';
 
 const EventDetailPage = () => {
   const route = useRoute();
-  console.log(route.params);
+  console.log('ddddd', route.params);
   return (
     <View style={styles.container}>
       <View>
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: colors.border.interactive.primaryHovered,
     borderRadius: 999,
-    backgroundColor: colors.interactive.primary,
+    backgroundColor: colors.bg.interactive.primary,
     paddingHorizontal: SWidth * 10,
     justifyContent: 'center',
   },

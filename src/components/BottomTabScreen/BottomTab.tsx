@@ -19,7 +19,7 @@ const BottomTab = () => {
   const Tab = createBottomTabNavigator();
   const {userData} = useUserData();
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
-  const {index, setIndex} = useBottomSheetTitle();
+  const {setIndex} = useBottomSheetTitle();
   useEffect(() => {
     // 키보드가 나타나면 그라디언트 숨기기
     const keyboardDidShowListener = Keyboard.addListener(

@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {colors, SWidth} from '../../../globalStyle';
 import SButton56 from '../../components/Elements/SButton56';
 import SText from '../../components/Elements/SText';
@@ -40,7 +39,7 @@ const JoinBusinessPage = () => {
         </View>
       </View>
       <SButton56
-        ButtonColor={Colors.interactive.primary}
+        ButtonColor={colors.bg.brand}
         title="둘러보기"
         textColor={colors.white}
         onPress={() => {}}

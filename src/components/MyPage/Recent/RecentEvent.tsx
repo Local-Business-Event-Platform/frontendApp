@@ -105,7 +105,9 @@ const RecentEvent = () => {
                     km={event.km}
                   />
                   <StoreItemIconTitle
-                    icon={<Calendar24 color={colors.interactive.primary} />}
+                    icon={
+                      <Calendar24 color={colors.icon.interactive.primary} />
+                    }
                     title={event.date}
                   />
                 </View>
