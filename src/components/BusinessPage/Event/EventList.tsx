@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {colors} from '../../../../globalStyle';
+import CircleTime24 from '../../../utils/svgs/businessPage/CircleTime24';
 import {BDataProps} from '../../../utils/types/businessType';
 import BButtonTitle from '../BButtonTitle';
 import BContainer from '../BContainer';
@@ -41,10 +42,15 @@ const EventList = ({data}: EventListProps) => {
       />
       <BContentTime
         title="기간"
+        startTitle="시작일"
+        endTitle="종료일"
+        DateIcon={<CircleTime24 />}
         color={colors.text.tertiary}
         content="2025년 3월 15일 ~ 2025년 3월 31일"
         contentColor={colors.text.secondary}
         onClick={isClicked}
+        startPress={() => {}}
+        endPress={() => {}}
       />
 
       <BContentArea

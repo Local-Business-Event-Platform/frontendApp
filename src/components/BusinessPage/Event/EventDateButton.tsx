@@ -1,13 +1,23 @@
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
-import {colors, SWidth} from '../../../../globalStyle';
+import {SWidth} from '../../../../globalStyle';
 import {EventDateButtonProps} from '../../../utils/types/businessType';
 import SText from '../../Elements/SText';
 
-const EventDateButton = ({title, icon, onPress}: EventDateButtonProps) => {
+const EventDateButton = ({
+  title,
+  icon,
+  onPress,
+  onLayout,
+  borderColor,
+  textColor,
+}: EventDateButtonProps) => {
   return (
-    <Pressable style={styles.container} onPress={onPress}>
-      <SText fStyle="BlgMd" text={title} color={colors.text.disabled} />
+    <Pressable
+      style={[styles.container, {borderColor: borderColor}]}
+      onPress={onPress}
+      onLayout={onLayout}>
+      <SText fStyle="BlgMd" text={title} color={textColor} />
       {icon}
     </Pressable>
   );
@@ -24,7 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: SWidth * 12,
     borderWidth: 1.25,
-    borderColor: colors.border.secondary,
+
     borderRadius: SWidth * 8,
   },
 });

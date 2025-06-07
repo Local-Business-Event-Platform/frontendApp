@@ -1,13 +1,19 @@
 import React, {useState} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {colors} from '../../../../globalStyle';
-import {BDataProps} from '../../../utils/types/businessType';
+import CircleTime24 from '../../../utils/svgs/businessPage/CircleTime24';
+import {
+  BDataProps,
+  BStoreInfoData,
+  BStoreTimeOpen,
+} from '../../../utils/types/businessType';
 import BButtonTitle from '../BButtonTitle';
 import BContainer from '../BContainer';
 import BContentArea from '../BContentArea';
 import BContentText from '../BContentText';
 import BContentTime from '../BContentTime';
 import StoreImage from './StoreImage';
+import StoreTimeList from './StoreTimeList';
 
 type BasicInformationProps = {
   data: BDataProps;
@@ -15,17 +21,18 @@ type BasicInformationProps = {
 
 const StoreInfo = ({data}: BasicInformationProps) => {
   const [storeAdd, setStoreAdd] = useState(false);
-  const [storeData, setStoreData] = useState<{
-    images: {url: string; name: string; type: string}[];
-    title: string;
-    time: string;
-    content: string;
-  }>({
+  const [openTime, setOpenTime] = useState<BStoreTimeOpen>({
+    start: false,
+    end: false,
+  });
+  const [storeData, setStoreData] = useState<BStoreInfoData>({
     images: [],
     title: '',
-    time: '',
+    startTime: '오픈 시간',
+    endTime: '마감 시간',
     content: '',
   });
+  const [listWidth, setListWidth] = useState(0);
   const filteredImages = storeData.images
     .filter(item => item.url)
     .map(item => item.url);
@@ -37,7 +44,8 @@ const StoreInfo = ({data}: BasicInformationProps) => {
         console.log('가게 정보 등록', storeData);
         setStoreData({
           title: '',
-          time: '',
+          startTime: '',
+          endTime: '',
           content: '',
           images: [],
         });
@@ -58,7 +66,8 @@ const StoreInfo = ({data}: BasicInformationProps) => {
         console.log('가게 정보 수정', storeData);
         setStoreData({
           title: '',
-          time: '',
+          startTime: '',
+          endTime: '',
           content: '',
           images: [],
         });
@@ -71,6 +80,8 @@ const StoreInfo = ({data}: BasicInformationProps) => {
       setStoreAdd(false);
     }
   };
+
+  console.log('storeData', openTime.start, openTime.end);
 
   return (
     <BContainer>
@@ -118,17 +129,81 @@ const StoreInfo = ({data}: BasicInformationProps) => {
           });
         }}
       />
-      <BContentTime
-        title="영업시간"
-        color={colors.text.tertiary}
-        content="00:00 ~ 00:00"
-        contentColor={
-          storeData.time || data.storeBusinessTime
-            ? colors.text.secondary
-            : colors.text.disabled
-        }
-        onClick={storeAdd}
-      />
+      <View style={{position: 'relative'}}>
+        {openTime.start && (
+          <StoreTimeList
+            listWidth={listWidth}
+            storeData={storeData}
+            setStoreData={setStoreData}
+            openTime={openTime}
+            setOpenTime={setOpenTime}
+          />
+        )}
+        {openTime.end && (
+          <StoreTimeList
+            listWidth={listWidth}
+            storeData={storeData}
+            setStoreData={setStoreData}
+            openTime={openTime}
+            setOpenTime={setOpenTime}
+          />
+        )}
+        <BContentTime
+          title="영업시간"
+          startTitle={storeData.startTime}
+          endTitle={storeData.endTime}
+          DateIcon={<CircleTime24 />}
+          color={colors.text.tertiary}
+          content="00:00 ~ 00:00"
+          startTitleColor={
+            storeData.startTime !== '오픈 시간'
+              ? colors.text.primary
+              : colors.text.disabled
+          }
+          endTitleColor={
+            storeData.endTime !== '마감 시간'
+              ? colors.text.primary
+              : colors.text.disabled
+          }
+          contentColor={
+            (storeData.startTime !== '오픈 시간' &&
+              storeData.endTime !== '마감 시간') ||
+            data.storeBusinessTime
+              ? colors.text.secondary
+              : colors.text.disabled
+          }
+          onClick={storeAdd}
+          startBorderColor={
+            openTime.start
+              ? colors.border.interactive.primaryPressed
+              : storeData.startTime === '오픈 시간'
+              ? colors.border.secondary
+              : colors.border.interactive.secondary
+          }
+          endBorderColor={
+            openTime.end
+              ? colors.border.interactive.primaryPressed
+              : storeData.endTime === '마감 시간'
+              ? colors.border.secondary
+              : colors.border.interactive.secondary
+          }
+          startPress={() =>
+            setOpenTime({
+              start: !openTime.start,
+              end: false,
+            })
+          }
+          endPress={() =>
+            setOpenTime({
+              start: false,
+              end: !openTime.end,
+            })
+          }
+          onLayout={event => {
+            setListWidth(event.nativeEvent.layout.width);
+          }}
+        />
+      </View>
       <BContentArea
         value={storeData.content}
         onChangeText={text => {

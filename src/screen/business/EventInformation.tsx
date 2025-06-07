@@ -8,6 +8,7 @@ import BContentArea from '../../components/BusinessPage/BContentArea';
 import BContentTime from '../../components/BusinessPage/BContentTime';
 import EventConditions from '../../components/BusinessPage/Event/EventConditions';
 import SInput from '../../components/Elements/SInput';
+import Calendar24 from '../../utils/svgs/businessPage/Calendar24';
 import {BDataProps} from '../../utils/types/businessType';
 
 type BasicInformationProps = {
@@ -41,10 +42,15 @@ const EventInformation = ({data}: BasicInformationProps) => {
         />
         <BContentTime
           title="기간"
+          startTitle="시작일"
+          endTitle="종료일"
+          DateIcon={<Calendar24 />}
           color={colors.text.tertiary}
           content=""
           contentColor={colors.text.primary}
           onClick={true}
+          startPress={() => {}}
+          endPress={() => {}}
         />
         <BContentArea
           value=""
