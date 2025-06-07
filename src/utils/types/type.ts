@@ -158,7 +158,7 @@ export type STabBarProps = {
   menuList: {
     id: number;
     title: string;
-    icon: ({
+    icon?: ({
       focus,
       newColor,
     }: {

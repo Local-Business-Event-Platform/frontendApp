@@ -26,10 +26,12 @@ const STabBar = ({menuList, tabIndex, setTabIndex}: STabBarProps) => {
             },
           ]}
           onPress={() => setTabIndex(item.id)}>
-          <item.icon
-            focus={tabIndex}
-            newColor={colors.text.interactive.selected}
-          />
+          {item.icon && (
+            <item.icon
+              focus={tabIndex}
+              newColor={colors.text.interactive.selected}
+            />
+          )}
           <SText
             fStyle="BlgMd"
             text={item.title}

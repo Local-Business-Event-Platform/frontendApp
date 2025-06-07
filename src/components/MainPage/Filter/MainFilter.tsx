@@ -21,7 +21,9 @@ const MainFilter = ({search = true}: MainFilterProps) => {
   const handleFilterPress = (title: string) => {
     switch (title) {
       case '필터':
-        console.log('필터 눌림');
+        setBottomSheetTitle(bottomSheetNames.FILTER_LIST);
+        console.log('필터');
+        bottomSheetRef.current?.present();
         break;
       case '정렬':
         setBottomSheetTitle(bottomSheetNames.ARRAY_MENU);
@@ -29,7 +31,6 @@ const MainFilter = ({search = true}: MainFilterProps) => {
           console.log('정렬 눌림');
           bottomSheetRef.current?.present();
         }
-
         break;
     }
   };

@@ -33,7 +33,7 @@ const SubArraySheet = () => {
 
   return (
     <BottomSheetView style={styles.container}>
-      <ArraySheetHead onPress={bottomSheetRef.current?.close} />
+      <ArraySheetHead content="정렬" onPress={bottomSheetRef.current?.close} />
       {arrayBottomSheetMenuList.map((item, index) => (
         <Pressable
           key={item.id}

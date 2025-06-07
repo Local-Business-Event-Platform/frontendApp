@@ -67,6 +67,7 @@ export const bottomSheetNames = {
   MENU_SELECT: 'menuSelect',
   ITEM_LIST: 'itemList',
   ARRAY_MENU: 'arrayMenu',
+  FILTER_LIST: 'filterList',
 } as const;
 
 export const textItems = [
@@ -128,6 +129,25 @@ export const customerTabItems = [
 export const mainFilterItems = [
   {id: 1, title: '필터', icon: Filter20},
   {id: 2, title: '정렬', icon: ListIcon20},
+];
+
+export const filterItems = [
+  {
+    id: 1,
+    title: '음식',
+  },
+  {
+    id: 2,
+    title: '카페',
+  },
+  {
+    id: 3,
+    title: '소매·유통',
+  },
+  {
+    id: 4,
+    title: '뷰티',
+  },
 ];
 
 export const storeDetailTabItems = [

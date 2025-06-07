@@ -11,6 +11,7 @@ import {
   useBottomSheetRef,
 } from '../../store/arrayBottomSheetRoute';
 import {bottomSheetNames} from '../../utils/listData';
+import FilterBottomSheet from './FilterBottomSheet/FilterBottomSheet';
 import SubArraySheet from './SubArraySheet/SubArraySheet';
 
 const SBottomSheetSub = () => {
@@ -31,6 +32,8 @@ const SBottomSheetSub = () => {
 
   const bottomScreen = () => {
     switch (bottomSheetTitle) {
+      case bottomSheetNames.FILTER_LIST:
+        return <FilterBottomSheet />;
       case bottomSheetNames.ARRAY_MENU:
         return <SubArraySheet />;
     }
