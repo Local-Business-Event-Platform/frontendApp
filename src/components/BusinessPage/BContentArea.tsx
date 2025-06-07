@@ -9,7 +9,7 @@ const BContentArea = ({
   title,
   color,
   underline,
-  onClick,
+  textLength,
   content,
   contentColor = colors.text.disabled,
   value,
@@ -26,9 +26,9 @@ const BContentArea = ({
           textDecorationLine={underline}
           lineColor={color}
         />
-        {onClick && <SText fStyle="BmdMd" text={`${TextCount} / 200`} />}
+        {textLength && <SText fStyle="BmdMd" text={`${TextCount} / 200`} />}
       </View>
-      {onClick ? (
+      {textLength ? (
         <STextArea
           value={value}
           onChangeText={text => {

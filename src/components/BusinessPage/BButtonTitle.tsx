@@ -8,6 +8,7 @@ import BusinessButton from './Basic/BusinessButton';
 
 const BButtonTitle = ({
   title,
+  titleSize = 'Hmd',
   buttonText,
   buttonTextColor,
   onClick,
@@ -17,7 +18,7 @@ const BButtonTitle = ({
 }: BTitleContainerProps) => {
   return (
     <View style={styles.container}>
-      <SText fStyle="Hmd" text={title} />
+      <SText fStyle={titleSize} text={title} />
       <View style={styles.buttonContainer}>
         <BusinessButton
           buttonText={buttonText}

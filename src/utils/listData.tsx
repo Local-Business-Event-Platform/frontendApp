@@ -86,6 +86,23 @@ export const checkItems = [
   {key: 'check5', title: '마케팅 정보 수신 동의 (선택)', arrow: true},
 ] as const;
 
+export const loginTabItems = [
+  {
+    id: 1,
+    title: '사용자',
+    icon: ({focus, newColor}: {focus: number; newColor?: ColorValue}) => (
+      <CircleUser24 focus={focus} newColor={newColor} />
+    ),
+  },
+  {
+    id: 2,
+    title: '소상공인',
+    icon: ({focus, newColor}: {focus: number; newColor?: ColorValue}) => (
+      <Store24 focus={focus} newColor={newColor} />
+    ),
+  },
+];
+
 export const mainTabItems = [
   {
     id: 1,

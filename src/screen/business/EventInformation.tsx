@@ -5,8 +5,9 @@ import BAddButton from '../../components/BusinessPage/BAddButton';
 import BButtonTitle from '../../components/BusinessPage/BButtonTitle';
 import BContainer from '../../components/BusinessPage/BContainer';
 import BContentArea from '../../components/BusinessPage/BContentArea';
-import BContentText from '../../components/BusinessPage/BContentText';
 import BContentTime from '../../components/BusinessPage/BContentTime';
+import EventConditions from '../../components/BusinessPage/Event/EventConditions';
+import SInput from '../../components/Elements/SInput';
 import {BDataProps} from '../../utils/types/businessType';
 
 type BasicInformationProps = {
@@ -14,50 +15,63 @@ type BasicInformationProps = {
 };
 
 const EventInformation = ({data}: BasicInformationProps) => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [eventAdd, setEventAdd] = useState(false);
+
   return (
     <View style={styles.container}>
-      <BAddButton title="이벤트 추가" onPress={() => {}} />
+      <BAddButton title="이벤트 추가" onPress={() => setEventAdd(!eventAdd)} />
+      {/* <EventList data={data} /> */}
       <BContainer>
         <BButtonTitle
           title="이벤트 정보"
-          buttonText={data ? '수정하기' : '등록하기'}
-          buttonTextColor={
-            isClicked
-              ? colors.text.interactive.inverse
-              : colors.text.interactive.secondary
-          }
+          titleSize="Hsm"
+          buttonText={'수정완료'}
+          buttonTextColor={colors.text.interactive.inverse}
+          onClick={true}
           deleteButton={true}
-          onClick={isClicked}
           deleteOnPress={() => {}}
-          onPress={() => setIsClicked(!isClicked)}
+          onPress={() => {}}
         />
-        <BContentText
+        <SInput
           value=""
-          title="혜택"
-          color={colors.text.tertiary}
           onChangeText={() => {}}
-          content={data ? '첫 방문 고객에게 무료 음료 증정' : '혜택 입력'}
-          contentColor={colors.text.secondary}
+          title="혜택"
+          titleColor={colors.text.tertiary}
           placeholder="예) 전 메뉴 10% 할인"
-          onClick={isClicked}
         />
         <BContentTime
           title="기간"
           color={colors.text.tertiary}
-          content="2025년 3월 15일 ~ 2025년 3월 31일"
-          contentColor={colors.text.secondary}
-          onClick={isClicked}
+          content=""
+          contentColor={colors.text.primary}
+          onClick={true}
         />
-
         <BContentArea
           value=""
-          title="이벤트 설명"
-          color={colors.text.tertiary}
           onChangeText={() => {}}
-          content="이벤트는 3월 15일부터 31일까지 진행되며, 매일 선착순 50명에게 특별 음료도 제공하니 놓치지 마세요!"
-          contentColor={colors.text.secondary}
-          onClick={isClicked}
+          title="이벤트 내용"
+          color={colors.text.tertiary}
+          content=""
+          contentColor={colors.text.primary}
+          textLength={true}
+          placeholder="상세 설명 (200자 내외)"
+        />
+        <BContentArea
+          value=""
+          onChangeText={() => {}}
+          title="유의사항"
+          color={colors.text.tertiary}
+          content=""
+          contentColor={colors.text.primary}
+          textLength={true}
+          placeholder="상세 설명 (200자 내외)"
+        />
+        <EventConditions />
+        <SInput
+          value=""
+          onChangeText={() => {}}
+          title="이벤트 코드"
+          titleColor={colors.text.tertiary}
         />
       </BContainer>
     </View>

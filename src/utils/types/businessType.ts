@@ -49,7 +49,7 @@ export type BContentAreaProps = {
   color: ColorValue;
   placeholder?: string;
   underline?: 'none' | 'underline' | 'line-through' | 'underline line-through';
-  onClick: boolean;
+  textLength: boolean;
   value: string;
   onChangeText: (text: string) => void;
 };
@@ -78,6 +78,26 @@ export type BContentAddressProps = {
 
 export type BTitleContainerProps = {
   title: string;
+  titleSize?:
+    | 'H4xl'
+    | 'H3xl'
+    | 'H2xl'
+    | 'Hxl'
+    | 'Hlg'
+    | 'Hmd'
+    | 'Hsm'
+    | 'BxlSb'
+    | 'BxlMd'
+    | 'BxlRg'
+    | 'BlgSb'
+    | 'BlgMd'
+    | 'BlgRg'
+    | 'BmdSb'
+    | 'BmdMd'
+    | 'BmdRg'
+    | 'BsmSb'
+    | 'BsmMd'
+    | 'BsmRg';
   onClick: boolean;
   buttonText: string | number;
   buttonTextColor: ColorValue;

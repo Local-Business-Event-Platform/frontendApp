@@ -28,7 +28,6 @@ import {useUserData} from '../../store/userRoute';
 import {screenNames} from '../../utils/listData';
 import {StackOptionType} from '../../utils/types/type';
 import BackTitleAppBar from './AppBar/BackTitleAppBar';
-import JoinAppBar from './AppBar/JoinAppBar';
 import SearchAppBar from './AppBar/SearchAppBar';
 import BottomTab from './BottomTab';
 
@@ -44,9 +43,7 @@ const MainStackScreen = () => {
     title = '',
   }: StackOptionType) => ({
     header() {
-      return screen === 'join' ? (
-        <JoinAppBar />
-      ) : screen === 'search' ? (
+      return screen === 'search' ? (
         <SearchAppBar />
       ) : (
         <BackTitleAppBar title={title} />
@@ -78,7 +75,7 @@ const MainStackScreen = () => {
       <Stack.Screen
         name={screenNames.LOGIN}
         component={LoginPage}
-        options={options({headerShown: false})}
+        options={options({headerShown: true})}
       />
       <Stack.Screen
         name={screenNames.FIND}

@@ -150,7 +150,7 @@ const StoreInfo = ({data}: BasicInformationProps) => {
             ? colors.text.secondary
             : colors.text.disabled
         }
-        onClick={storeAdd}
+        textLength={storeAdd}
       />
     </BContainer>
   );

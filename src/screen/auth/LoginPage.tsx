@@ -4,25 +4,33 @@ import {Keyboard, Pressable, ScrollView, StyleSheet, View} from 'react-native';
 import Config from 'react-native-config';
 import {colors, SWidth} from '../../../globalStyle';
 import SButton56 from '../../components/Elements/SButton56';
+import STabBar from '../../components/Elements/STabBar';
 import FindUser from '../../components/Login/FindUser';
 import LoginInput from '../../components/Login/LoginInput';
 import Logo from '../../components/Login/Logo';
 import SocialLogin from '../../components/Login/SocialLogin';
 import useCustomNavigation from '../../hooks/useCustomNavigation';
 import {useModalOpen} from '../../store/modalRoute';
-import {modalNames, screenNames, singleModalTypes} from '../../utils/listData';
+import {useUserData} from '../../store/userRoute';
+import {
+  loginTabItems,
+  modalNames,
+  screenNames,
+  singleModalTypes,
+} from '../../utils/listData';
 
 const LoginPage = () => {
   const navigation = useCustomNavigation();
   const [passwordOpen, setPasswordOpen] = useState(true);
+  const [loginTab, setLoginTab] = useState(1);
   const {setModalTitle, setModalOpen, setContent, setUserID, setIdType} =
     useModalOpen();
-
+  const {userData, setUserData} = useUserData();
   const [errorMsg, setErrorMsg] = useState({
     id: '',
     password: '',
   });
-  const [userData, setUserData] = useState({
+  const [user, setData] = useState({
     id: '',
     password: '',
   });
@@ -67,15 +75,20 @@ const LoginPage = () => {
       overScrollMode="never"
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{flexGrow: 1}}>
+      <STabBar
+        menuList={loginTabItems}
+        tabIndex={loginTab}
+        setTabIndex={setLoginTab}
+      />
       <Pressable style={styles.container} onPress={Keyboard.dismiss}>
         <View style={styles.topContainer}>
           <Logo />
           <LoginInput
-            userData={userData}
+            userData={user}
             idMsg={errorMsg.id}
             idOnChangeText={text => {
-              setUserData({
-                ...userData,
+              setData({
+                ...user,
                 id: text,
               });
               setErrorMsg({
@@ -87,8 +100,8 @@ const LoginPage = () => {
             passwordMsg={errorMsg.password}
             secureTextEntry={passwordOpen}
             passwordOnChangeText={text => {
-              setUserData({
-                ...userData,
+              setData({
+                ...user,
                 password: text,
               });
               setErrorMsg({
@@ -115,7 +128,13 @@ const LoginPage = () => {
               title="회원가입"
               textColor={colors.icon.secondary}
               ButtonColor={colors.bg.interactive.secondary}
-              onPress={() => navigation.navigate(screenNames.JOIN)}
+              onPress={() => {
+                setUserData({
+                  ...userData,
+                  type: loginTab,
+                });
+                navigation.navigate(screenNames.JOIN);
+              }}
             />
           </View>
         </View>
