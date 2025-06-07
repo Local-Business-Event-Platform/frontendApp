@@ -11,13 +11,6 @@ const EventConditions = () => {
   const [checkBox, setCheckBox] = useState(false);
   const [dateClicked, setDateClicked] = useState(false);
   const [dateTitle, setDateTitle] = useState('전체기간');
-  const dateList = [
-    {id: 1, title: '전체 기간'},
-    {id: 2, title: '1일'},
-    {id: 3, title: '3일'},
-    {id: 4, title: '7일'},
-    {id: 5, title: '최초'},
-  ];
 
   return (
     <Pressable style={styles.container} onPress={() => setDateClicked(false)}>
@@ -136,26 +129,5 @@ const styles = StyleSheet.create({
     borderRadius: SWidth * 8,
     borderWidth: 1.25,
     justifyContent: 'space-between',
-  },
-
-  dateList: {
-    width: SWidth * 112,
-    position: 'absolute',
-    bottom: SWidth * 54,
-    left: 0,
-    backgroundColor: colors.bg.primary,
-    borderRadius: SWidth * 8,
-    borderWidth: 1,
-    borderColor: colors.border.secondary,
-    boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.08)',
-    paddingVertical: SWidth * 8,
-  },
-
-  dateItemBox: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SWidth * 4,
-    height: SWidth * 40,
-    paddingHorizontal: SWidth * 8,
   },
 });

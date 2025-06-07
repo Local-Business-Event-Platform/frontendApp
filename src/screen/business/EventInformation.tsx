@@ -68,6 +68,7 @@ const EventInformation = ({data}: BasicInformationProps) => {
         />
         <EventConditions />
         <SInput
+          editable={false}
           value=""
           onChangeText={() => {}}
           title="이벤트 코드"
