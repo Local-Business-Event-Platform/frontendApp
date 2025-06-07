@@ -56,7 +56,7 @@ const MainStackScreen = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName={screenNames.LOGIN}
+      initialRouteName={screenNames.BOTTOM_TAB}
       screenOptions={{
         headerShown: false,
 

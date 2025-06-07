@@ -8,7 +8,7 @@ import Calendar24 from '../../utils/svgs/businessPage/Calendar24';
 
 const EventDetailPage = () => {
   const route = useRoute();
-  console.log('ddddd', route.params);
+
   return (
     <View style={styles.container}>
       <View>

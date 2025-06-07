@@ -38,24 +38,12 @@ const StoreDetailPage = () => {
       {
         id: 1,
         title: '신메뉴 출시 기념 전 메뉴 20% 할인',
-        content: [
-          '• 신메뉴 주문시 전 메뉴 20% 할인',
-          '• 리뷰 작성시 3,000원 할인권 증정',
-        ],
-        img: Image.resolveAssetSource(
-          require('../../assets/images/background.png'),
-        ).uri,
+        content: '2월 1일(목) ~ 4월 28일(금)',
       },
       {
         id: 2,
-        title: '신메뉴 출시 기념 전 메뉴 20% 할인',
-        content: [
-          '• 신메뉴 주문시 전 메뉴 20% 할인',
-          '• 리뷰 작성시 3,000원 할인권 증정',
-        ],
-        img: Image.resolveAssetSource(
-          require('../../assets/images/background.png'),
-        ).uri,
+        title: '6인 이상, ㅇㅇㅇ 메뉴 증정정',
+        content: '2월 1일(목) ~ 4월 28일(금)',
       },
     ],
     reviews: [

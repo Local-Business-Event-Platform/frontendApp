@@ -38,8 +38,7 @@ export type StoreDetailTabProps = {
 export type StoreItemProps = {
   id: number;
   title: string;
-  content: string[];
-  img: string;
+  content: string;
 };
 
 export type StoreDetailEventItemProps = {
