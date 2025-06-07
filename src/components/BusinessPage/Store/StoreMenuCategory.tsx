@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {SWidth} from '../../../../globalStyle';
+import {colors, SWidth} from '../../../../globalStyle';
 import BAddButton from '../BAddButton';
+import BButtonTitle from '../BButtonTitle';
 import BContainer from '../BContainer';
-import BOnlyTitle from '../BOnlyTitle';
 import StoreCategoryInput from './StoreCategoryInput';
 import StoreMenuCategoryItem from './StoreMenuCategoryItem';
 
@@ -39,7 +39,13 @@ const StoreMenuCategory = () => {
 
   return (
     <BContainer>
-      <BOnlyTitle title="메뉴 카테고리" />
+      <BButtonTitle
+        title="메뉴 카테고리"
+        buttonText={'등록 완료'}
+        buttonTextColor={colors.text.interactive.inverse}
+        onClick={false}
+        onPress={() => {}}
+      />
       {categories.length !== 0 && (
         <View style={styles.categories}>
           {categories.map(item =>

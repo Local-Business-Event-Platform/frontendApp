@@ -18,22 +18,24 @@ const StoreImage = ({
   setStoreImages,
 }: StoreImageProps) => {
   const [containerWidth, setContainerWidth] = useState(0);
-  console.log('storeImages', storeImages);
+
   const handleLayout = (onLayout: any) => {
     const {width} = onLayout.nativeEvent.layout;
     setContainerWidth(width);
   };
+
   return (
     <Pressable
       style={styles.container}
       disabled={!storeAdd || storeImages.length > 0}
-      onPress={() =>
+      onPress={() => {
+        console.log('이미지 선택');
         multipleImageSelected({
           width: containerWidth || 0,
           height: SWidth * 200,
           setImages: setStoreImages,
-        })
-      }
+        });
+      }}
       onLayout={handleLayout}>
       {storeImages && storeImages[0] ? (
         <View style={styles.carouselContainer}>

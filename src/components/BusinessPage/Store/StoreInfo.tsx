@@ -29,6 +29,7 @@ const StoreInfo = ({data}: BasicInformationProps) => {
   const filteredImages = storeData.images
     .filter(item => item.url)
     .map(item => item.url);
+
   const handleStoreAdd = async () => {
     setStoreAdd(!storeAdd);
     try {
@@ -70,16 +71,14 @@ const StoreInfo = ({data}: BasicInformationProps) => {
       setStoreAdd(false);
     }
   };
-  console.log('이미지1', data.storeImage);
-  console.log(
-    '이미지2',
-    storeData.images.filter(item => item.url).map(item => item.url),
-  );
+
   return (
     <BContainer>
       <BButtonTitle
         title="가게 정보"
-        buttonText={data.storeName ? '수정하기' : '등록하기'}
+        buttonText={
+          data.storeName ? '수정하기' : storeAdd ? '등록완료' : '등록하기'
+        }
         buttonTextColor={
           storeAdd
             ? colors.text.interactive.inverse

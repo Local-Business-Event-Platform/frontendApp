@@ -32,7 +32,7 @@ const StoreInfoPage = ({route}: StoreInfoPageProps) => {
     storeInfoNumber: '',
     storeBusinessTime: '',
     storeImage: [
-      'https://cdn.imweb.me/upload/S202207202685e30f16e24/8b48c67f8cdf6.jpeg',
+      // 'https://cdn.imweb.me/upload/S202207202685e30f16e24/8b48c67f8cdf6.jpeg',
     ],
     // storeImage: [''],
     storeCEO: '',

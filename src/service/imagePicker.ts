@@ -47,29 +47,31 @@ export const multipleImageSelected = ({
   height,
   setImages,
 }: MultipleImageSelectedProps) => {
-  ImagePicker.openPicker({
-    multiple: true,
-    mediaType: 'photo',
-    width: width,
-    height: height,
-    writeTempFile: false,
-    compressImageQuality: 0.8,
-    cropping: true,
-    maxFiles: 6,
-    minFiles: 1,
-  })
-    .then(images => {
-      const limitedImages = images.slice(0, 6);
-      const formattedImages = limitedImages.map((image: any) => ({
-        url: image.path,
-        name: image.filename,
-        type: image.mime,
-      }));
-
-      setImages(formattedImages);
-      console.log('Selected images:', formattedImages);
+  setTimeout(() => {
+    ImagePicker.openPicker({
+      multiple: true,
+      mediaType: 'photo',
+      width: width,
+      height: height,
+      writeTempFile: false,
+      compressImageQuality: 0.8,
+      cropping: true,
+      maxFiles: 6,
+      minFiles: 1,
     })
-    .catch(error => {
-      console.error(error);
-    });
+      .then(images => {
+        const limitedImages = images.slice(0, 6);
+        const formattedImages = limitedImages.map((image: any) => ({
+          url: image.path,
+          name: image.filename,
+          type: image.mime,
+        }));
+
+        setImages(formattedImages);
+        console.log('Selected images:', formattedImages);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, 500);
 };

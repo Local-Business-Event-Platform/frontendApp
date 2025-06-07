@@ -2,6 +2,7 @@ import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {colors, SWidth} from '../../../../globalStyle';
 import Edit20 from '../../../utils/svgs/businessPage/Edit20';
+import CircleCheck24 from '../../../utils/svgs/myPage/CircleCheck24';
 import {BusinessButtonProps} from '../../../utils/types/businessType';
 import SText from '../../Elements/SText';
 
@@ -26,7 +27,11 @@ const BusinessButton = ({
       ]}
       onPress={onPress}>
       <SText fStyle="BmdSb" text={buttonText} color={buttonTextColor} />
-      <Edit20 onClick={onClick} />
+      {onClick ? (
+        <CircleCheck24 color={colors.icon.interactive.inverse} />
+      ) : (
+        <Edit20 onClick={onClick} />
+      )}
     </Pressable>
   );
 };

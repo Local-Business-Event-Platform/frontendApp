@@ -4,7 +4,7 @@ import {BOnlyTitleProps} from '../../utils/types/businessType';
 import SText from '../Elements/SText';
 
 const BOnlyTitle = ({title}: BOnlyTitleProps) => {
-  return <SText fStyle="Hmd" text={title} />;
+  return <SText fStyle="Hsm" text={title} />;
 };
 
 export default BOnlyTitle;
