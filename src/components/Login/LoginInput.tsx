@@ -66,7 +66,7 @@ export default LoginInput;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 44,
+    marginTop: SWidth * 16,
     gap: SWidth * 24,
   },
 });

@@ -5,26 +5,26 @@ import {SWidth} from '../../../../globalStyle';
 const KakaoIcon = () => {
   return (
     <Svg
-      width={SWidth * 56}
-      height={SWidth * 56}
-      viewBox="0 0 56 56"
+      width={SWidth * 48}
+      height={SWidth * 48}
+      viewBox="0 0 48 48"
       fill="none">
-      <Rect width="56" height="56" rx="28" fill="#FEE500" />
-      <G clip-path="url(#clip0_279_9504)">
+      <Rect width="48" height="48" rx="24" fill="#FEE500" />
+      <G clip-path="url(#clip0_507_12900)">
         <Path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M28.0001 18.6667C22.4769 18.6667 18 22.1256 18 26.3915C18 29.0446 19.7316 31.3834 22.3684 32.7745L21.2589 36.8273C21.1609 37.1854 21.5705 37.4708 21.885 37.2633L26.7482 34.0536C27.1586 34.0932 27.5757 34.1164 28.0001 34.1164C33.5228 34.1164 38 30.6576 38 26.3915C38 22.1256 33.5228 18.6667 28.0001 18.6667Z"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M24.0001 14.6667C18.4769 14.6667 14 18.1255 14 22.3914C14 25.0445 15.7316 27.3833 18.3684 28.7744L17.2589 32.8272C17.1609 33.1853 17.5705 33.4708 17.885 33.2633L22.7482 30.0536C23.1586 30.0932 23.5757 30.1163 24.0001 30.1163C29.5228 30.1163 34 26.6576 34 22.3914C34 18.1255 29.5228 14.6667 24.0001 14.6667Z"
           fill="black"
         />
       </G>
       <Defs>
-        <ClipPath id="clip0_279_9504">
+        <ClipPath id="clip0_507_12900">
           <Rect
-            width={SWidth * 20}
-            height={SWidth * 20}
+            width="20"
+            height="20"
             fill="white"
-            transform="translate(18 18)"
+            transform="translate(14 14)"
           />
         </ClipPath>
       </Defs>

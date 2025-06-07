@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   },
 
   logoStyle: {
-    width: SWidth * 140,
-    height: SWidth * 140,
+    width: SWidth * 100,
+    height: SWidth * 100,
     backgroundColor: colors.bg.tertiary,
     alignItems: 'center',
     justifyContent: 'center',

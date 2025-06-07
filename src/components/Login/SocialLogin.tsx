@@ -32,7 +32,7 @@ export default SocialLogin;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SWidth * 40,
+    marginTop: SWidth * 24,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

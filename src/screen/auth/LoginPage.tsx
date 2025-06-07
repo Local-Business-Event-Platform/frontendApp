@@ -49,15 +49,15 @@ const LoginPage = () => {
 
   const handleLogin = () => {
     setModalTitle(modalNames.SINGLE);
-    setContent(singleModalTypes.PASSWORD);
+    setContent(singleModalTypes.LOGIN_ERROR);
     setModalOpen(true);
-    // if (!userData.id || !userData.password) {
-    //   setErrorMsg({
-    //     id: userData.id ? '' : '아이디가 일치하지 않습니다.',
-    //     password: userData.password ? '' : '영문/숫자/특수문자 조합 8~15자리',
-    //   });
-    //   return;
-    // }
+    if (!userData.id || !userData.password) {
+      setErrorMsg({
+        id: userData.id ? '' : '아이디가 일치하지 않습니다.',
+        password: userData.password ? '' : '영문/숫자/특수문자 조합 8~15자리',
+      });
+      return;
+    }
   };
 
   useEffect(() => {
