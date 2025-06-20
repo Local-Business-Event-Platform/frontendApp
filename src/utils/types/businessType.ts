@@ -19,6 +19,14 @@ export type StoreInfoTabProps = {
   setIsClicked: (index: number) => void;
 };
 
+export type BTitleTextProps = {
+  title: string;
+  content: string;
+  contentColor: ColorValue;
+  color: ColorValue;
+  underline?: 'none' | 'underline' | 'line-through' | 'underline line-through';
+};
+
 export type BContentProps = {
   title: string;
   content: string;
@@ -84,6 +92,33 @@ export type BContentAddressProps = {
   placeholder?: string;
   underline?: 'none' | 'underline' | 'line-through' | 'underline line-through';
   onClick: boolean;
+};
+
+export type BTitleButtonPRops = {
+  title: string;
+  titleSize?:
+    | 'H4xl'
+    | 'H3xl'
+    | 'H2xl'
+    | 'Hxl'
+    | 'Hlg'
+    | 'Hmd'
+    | 'Hsm'
+    | 'BxlSb'
+    | 'BxlMd'
+    | 'BxlRg'
+    | 'BlgSb'
+    | 'BlgMd'
+    | 'BlgRg'
+    | 'BmdSb'
+    | 'BmdMd'
+    | 'BmdRg'
+    | 'BsmSb'
+    | 'BsmMd'
+    | 'BsmRg';
+  buttonText: string;
+  buttonTextColor: ColorValue;
+  onPress: () => void;
 };
 
 export type BTitleContainerProps = {
